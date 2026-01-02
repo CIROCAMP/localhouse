@@ -1,6 +1,6 @@
 import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 /*
@@ -19,6 +19,7 @@ const navLinks = [
   { href: "/restaurant", label: "Restaurant" },
   { href: "/brunch", label: "Brunch" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -53,29 +54,11 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/">
-              <div className="flex flex-col items-center cursor-pointer">
-                <span
-                  className={`text-xs tracking-[0.3em] font-body ${
-                    isScrolled ? "text-[#2D2D2D]" : "text-white"
-                  }`}
-                >
-                  THE
-                </span>
-                <span
-                  className={`text-2xl font-display font-semibold tracking-wide ${
-                    isScrolled ? "text-[#2D2D2D]" : "text-white"
-                  }`}
-                >
-                  LOCAL HOUSE
-                </span>
-                <span
-                  className={`text-[10px] tracking-[0.4em] font-body ${
-                    isScrolled ? "text-[#C4846C]" : "text-[#C4846C]"
-                  }`}
-                >
-                  MIAMI
-                </span>
-              </div>
+              <img
+                src={isScrolled ? "/images/localhouse-logo-grey.png" : "/images/localhouse-logo-white.png"}
+                alt="The Local House Miami"
+                className="h-16 w-auto cursor-pointer"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -108,7 +91,7 @@ export default function Layout({ children }: LayoutProps) {
                 Book a Table
               </a>
               <a
-                href="https://www.booking.com"
+                href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-2.5 text-sm font-medium tracking-wide bg-[#C4846C] text-white hover:bg-[#B07460] transition-all duration-300 rounded"
@@ -163,7 +146,7 @@ export default function Layout({ children }: LayoutProps) {
                     Book a Table
                   </a>
                   <a
-                    href="https://www.booking.com"
+                    href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full py-3 text-center text-sm font-medium tracking-wide bg-[#C4846C] text-white rounded"
@@ -187,15 +170,11 @@ export default function Layout({ children }: LayoutProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Brand */}
             <div className="lg:col-span-1">
-              <div className="flex flex-col items-start mb-6">
-                <span className="text-xs tracking-[0.3em] text-[#C4846C]">THE</span>
-                <span className="text-2xl font-display font-semibold tracking-wide">
-                  LOCAL HOUSE
-                </span>
-                <span className="text-[10px] tracking-[0.4em] text-[#C4846C]">
-                  MIAMI
-                </span>
-              </div>
+              <img
+                src="/images/localhouse-logo-white.png"
+                alt="The Local House Miami"
+                className="h-20 w-auto mb-6"
+              />
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 A boutique hotel and restaurant on Ocean Drive, Miami Beach.
                 Unconditional hospitality since 2012.
@@ -306,6 +285,17 @@ export default function Layout({ children }: LayoutProps) {
           </div>
         </div>
       </footer>
+
+      {/* WhatsApp Floating Button */}
+      <a
+        href="https://wa.me/13055385529"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:bg-[#20BA5C] transition-all duration-300 hover:scale-110"
+        aria-label="Chat on WhatsApp"
+      >
+        <MessageCircle className="text-white" size={28} fill="white" />
+      </a>
     </div>
   );
 }

@@ -54,7 +54,7 @@ export default function Restaurant() {
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/hero-restaurant.jpg"
+            src="/images/outside-terrace.jpg"
             alt="The Local House Restaurant"
             className="w-full h-full object-cover"
           />
@@ -293,8 +293,8 @@ export default function Restaurant() {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2">
               <img
-                src="/images/hero-brunch.jpg"
-                alt="Brunch at The Local House"
+                src="/images/brunch-table-spread.jpg"
+                alt="Brunch spread at The Local House"
                 className="w-full rounded-lg shadow-xl"
               />
             </div>

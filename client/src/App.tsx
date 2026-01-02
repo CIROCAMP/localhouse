@@ -11,6 +11,8 @@ import Brunch from "./pages/Brunch";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Layout from "./components/Layout";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function Router() {
   return (
@@ -22,6 +24,8 @@ function Router() {
         <Route path="/brunch" component={Brunch} />
         <Route path="/gallery" component={Gallery} />
         <Route path="/contact" component={Contact} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>

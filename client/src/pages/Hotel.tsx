@@ -87,7 +87,7 @@ export default function Hotel() {
               Our Rooms & Suites
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Each room is thoughtfully designed to capture the essence of Miami Beach living with boutique comfort
+              Italian-owned since 2012. Each room blends Miami Beach style with European boutique comfort
             </p>
           </motion.div>
         </div>
@@ -158,7 +158,7 @@ export default function Hotel() {
                   </div>
 
                   <a
-                    href="https://www.booking.com"
+                    href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-6 py-3 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded inline-block"
@@ -236,7 +236,7 @@ export default function Hotel() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://www.booking.com"
+                href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded"

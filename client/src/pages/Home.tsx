@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
-import { Star, Clock, MapPin, ChefHat, Waves, Wine, Calendar } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, Clock, MapPin, ChefHat, Waves, Wine, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
+import { useState, useEffect } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -10,9 +11,27 @@ import {
 
 /*
  * Design: Miami Art Deco Revival
- * Homepage with hero slider, brunch section, testimonials, FAQ
+ * Homepage with hero carousel, brunch section, testimonials, FAQ
  * Colors: Coral (#C4846C), Seafoam (#7FBFB3), Gold (#D4AF37), Cream (#FAF7F2)
  */
+
+const heroSlides = [
+  {
+    image: "/images/restaurant-interior.jpg",
+    title: "The Local House",
+    subtitle: "Boutique Hotel & Famous Brunch in South of Fifth, Miami Beach",
+  },
+  {
+    image: "/images/restaurant-outdoor.jpg",
+    title: "Coastal Dining",
+    subtitle: "Fresh, local cuisine in a tropical paradise setting",
+  },
+  {
+    image: "/images/rooftop-pool.jpg",
+    title: "Rooftop Escape",
+    subtitle: "Stunning pool with panoramic Miami skyline views",
+  },
+];
 
 const testimonials = [
   {
@@ -70,24 +89,50 @@ const stats = [
 const features = [
   { icon: ChefHat, label: "Fresh Seafood" },
   { icon: Wine, label: "Craft Cocktails" },
-  { icon: Waves, label: "Ocean Views" },
+  { icon: Waves, label: "Ocean Drive Views" },
   { icon: Calendar, label: "Since 2012" },
 ];
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero Carousel Section */}
       <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src="/images/hero-restaurant.jpg"
-            alt="The Local House Restaurant"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
-        </div>
+        {/* Background Images */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7 }}
+            className="absolute inset-0"
+          >
+            <img
+              src={heroSlides[currentSlide].image}
+              alt={heroSlides[currentSlide].title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+          </motion.div>
+        </AnimatePresence>
 
         {/* Hero Content */}
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
@@ -101,23 +146,22 @@ export default function Home() {
             </span>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-display font-semibold mb-6 tracking-wide"
-          >
-            The Local House
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl font-light mb-10 text-white/90"
-          >
-            Boutique Hotel & Famous Brunch in South of Fifth, Miami Beach
-          </motion.p>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-semibold mb-6 tracking-wide">
+                {heroSlides[currentSlide].title}
+              </h1>
+              <p className="text-xl md:text-2xl font-light mb-10 text-white/90">
+                {heroSlides[currentSlide].subtitle}
+              </p>
+            </motion.div>
+          </AnimatePresence>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -134,7 +178,7 @@ export default function Home() {
               Book a Table
             </a>
             <a
-              href="https://www.booking.com"
+              href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 border-2 border-white text-white font-medium tracking-wide hover:bg-white hover:text-[#2D2D2D] transition-all duration-300 rounded"
@@ -149,21 +193,39 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center pt-2">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-1.5 bg-white rounded-full"
-            />
+        {/* Carousel Navigation */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4">
+          <button
+            onClick={prevSlide}
+            className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="text-white" size={20} />
+          </button>
+          
+          <div className="flex gap-2">
+            {heroSlides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all ${
+                  index === currentSlide
+                    ? "bg-white w-8"
+                    : "bg-white/50 hover:bg-white/70"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
-        </motion.div>
+
+          <button
+            onClick={nextSlide}
+            className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="text-white" size={20} />
+          </button>
+        </div>
       </section>
 
       {/* Brunch Section */}
@@ -176,7 +238,7 @@ export default function Home() {
             </h2>
             <p className="text-lg text-[#666] mb-2">Voted Best Brunch in South Beach</p>
             <p className="text-sm tracking-[0.2em] text-[#C4846C] uppercase">
-              An Ocean Drive Tradition Since 2012
+              Italian-owned & operated since 2012
             </p>
           </div>
 
@@ -191,7 +253,7 @@ export default function Home() {
             >
               <div className="relative">
                 <img
-                  src="/images/hero-brunch.jpg"
+                  src="/images/brunch-spread.jpg"
                   alt="Famous Brunch at The Local House"
                   className="w-full rounded-lg shadow-2xl"
                 />
@@ -218,7 +280,8 @@ export default function Home() {
               <p className="text-[#666] leading-relaxed mb-8">
                 From legendary brunch to intimate dinners, experience coastal cuisine
                 crafted with fresh, local ingredients in the heart of South of Fifth.
-                Our chefs blend Miami's vibrant flavors with timeless culinary traditions.
+                Founded by an Italian owner in 2012, our chefs blend Miami's vibrant flavors
+                with authentic Italian hospitality and timeless culinary traditions.
               </p>
 
               {/* Features */}
@@ -335,7 +398,7 @@ export default function Home() {
           {/* Review Links */}
           <div className="flex flex-wrap justify-center gap-6 mt-12">
             <a
-              href="https://www.tripadvisor.com"
+              href="https://www.tripadvisor.com/Hotel_Review-g34439-d1449858-Reviews-The_Local_House-Miami_Beach_Florida.html"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#666] hover:text-[#C4846C] transition-colors"
@@ -343,7 +406,7 @@ export default function Home() {
               Read more on TripAdvisor →
             </a>
             <a
-              href="https://www.google.com/maps"
+              href="https://share.google/0H2ptcjor9w7exBb0"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#666] hover:text-[#C4846C] transition-colors"
@@ -351,7 +414,7 @@ export default function Home() {
               Google Reviews →
             </a>
             <a
-              href="https://www.booking.com"
+              href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#666] hover:text-[#C4846C] transition-colors"
@@ -362,8 +425,80 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hotel Preview Section */}
+      {/* Our Story Section */}
       <section className="py-24 bg-white">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <img 
+                src="/images/italian-heart-watercolor.png" 
+                alt="Italian Heart" 
+                className="w-24 h-24 mx-auto mb-6 object-contain"
+              />
+              <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-4">
+                Our Story
+              </h2>
+              <p className="text-sm tracking-[0.2em] text-[#C4846C] uppercase">
+                A Love Story on Ocean Drive
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="prose prose-lg max-w-none"
+            >
+              <div className="bg-[#FAF7F2] p-8 md:p-12 rounded-lg">
+                <p className="text-[#666] leading-relaxed mb-6 text-lg">
+                  In the midst of the 2009 financial crisis, when the world seemed uncertain
+                  and opportunities scarce, an Italian real estate investor found himself
+                  wandering the iconic streets of Miami Beach. It was a chance encounter—a
+                  simple walk down Ocean Drive—that would change everything.
+                </p>
+                <p className="text-[#666] leading-relaxed mb-6 text-lg">
+                  There, at 400 Ocean Drive, stood a weathered Art Deco building with
+                  faded coral walls and sun-bleached shutters. Most saw a property in need
+                  of work. He saw something else entirely: <span className="italic text-[#C4846C]">potential,
+                  character, and a soul waiting to be awakened.</span>
+                </p>
+                <p className="text-[#666] leading-relaxed mb-6 text-lg">
+                  It was love at first sight.
+                </p>
+                <p className="text-[#666] leading-relaxed mb-6 text-lg">
+                  In 2012, he acquired the property and began a labor of love that would
+                  span years. Every detail was considered with the passion of an Italian
+                  craftsman—from the carefully restored architectural elements to the
+                  warm hospitality that would become the hotel's signature. He didn't just
+                  renovate a building; he breathed life into it.
+                </p>
+                <p className="text-[#666] leading-relaxed text-lg">
+                  Today, The Local House stands as a testament to that vision: a boutique
+                  hotel where Italian warmth meets Miami vibrancy, where every guest is
+                  treated like family, and where the famous brunch has become a beloved
+                  tradition for locals and travelers alike. What began as a chance encounter
+                  has blossomed into one of South Beach's most cherished destinations.
+                </p>
+                <div className="mt-8 pt-6 border-t border-[#E5DED5] text-center">
+                  <p className="text-[#C4846C] font-display text-xl italic">
+                    "Some places you visit. Others, you fall in love with."
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hotel Preview Section */}
+      <section className="py-24 bg-[#FAF7F2]">
         <div className="container">
           <div className="flex flex-col lg:flex-row-reverse gap-12 items-center">
             {/* Image */}
@@ -375,7 +510,7 @@ export default function Home() {
               className="lg:w-1/2"
             >
               <img
-                src="/images/hero-hotel.jpg"
+                src="/images/deluxe-king-room.jpg"
                 alt="Boutique Hotel Room"
                 className="w-full rounded-lg shadow-2xl"
               />
@@ -394,9 +529,10 @@ export default function Home() {
                 Your Miami Beach Escape
               </h2>
               <p className="text-[#666] leading-relaxed mb-6">
-                Each room is thoughtfully designed to capture the essence of Miami Beach
-                living with boutique comfort. Wake up to ocean views, Art Deco charm,
-                and the promise of our famous brunch just steps away.
+                Founded by an Italian owner in 2012, each room is thoughtfully designed
+                to capture the essence of Miami Beach living with European boutique comfort.
+                Wake up to Ocean Drive views, Art Deco charm, and the promise of our
+                famous brunch just steps away.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-[#666]">
@@ -430,7 +566,7 @@ export default function Home() {
       <section className="relative py-32">
         <div className="absolute inset-0">
           <img
-            src="/images/hero-pool.jpg"
+            src="/images/rooftop-pool.jpg"
             alt="Rooftop Pool"
             className="w-full h-full object-cover"
           />

@@ -271,8 +271,8 @@ export default function Brunch() {
             </div>
             <div className="lg:w-1/2">
               <img
-                src="/images/hero-restaurant.jpg"
-                alt="Brunch Cocktails"
+                src="/images/signature-cocktail.jpg"
+                alt="Signature Brunch Cocktail"
                 className="w-full rounded-lg shadow-2xl"
               />
             </div>

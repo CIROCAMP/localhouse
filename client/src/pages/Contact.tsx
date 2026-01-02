@@ -282,7 +282,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://www.booking.com"
+              href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
               target="_blank"
               rel="noopener noreferrer"
               className="p-8 bg-[#FAF7F2] rounded-lg text-center hover:shadow-lg transition-shadow"

@@ -145,7 +145,7 @@ export default function Gallery() {
               Book a Table
             </a>
             <a
-              href="https://www.booking.com"
+              href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 border-2 border-[#C4846C] text-[#C4846C] font-medium tracking-wide hover:bg-[#C4846C] hover:text-white transition-all duration-300 rounded"
