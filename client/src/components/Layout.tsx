@@ -1,0 +1,311 @@
+import { ReactNode, useState, useEffect } from "react";
+import { Link, useLocation } from "wouter";
+import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+/*
+ * Design: Miami Art Deco Revival
+ * Layout component with sticky header navigation and footer
+ * Colors: Coral (#C4846C), Seafoam (#7FBFB3), Gold (#D4AF37), Cream (#FAF7F2)
+ */
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/hotel", label: "Hotel" },
+  { href: "/restaurant", label: "Restaurant" },
+  { href: "/brunch", label: "Brunch" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/contact", label: "Contact" },
+];
+
+export default function Layout({ children }: LayoutProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [location] = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      {/* Header */}
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-[#FAF7F2]/95 backdrop-blur-md shadow-sm"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="container">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <Link href="/">
+              <div className="flex flex-col items-center cursor-pointer">
+                <span
+                  className={`text-xs tracking-[0.3em] font-body ${
+                    isScrolled ? "text-[#2D2D2D]" : "text-white"
+                  }`}
+                >
+                  THE
+                </span>
+                <span
+                  className={`text-2xl font-display font-semibold tracking-wide ${
+                    isScrolled ? "text-[#2D2D2D]" : "text-white"
+                  }`}
+                >
+                  LOCAL HOUSE
+                </span>
+                <span
+                  className={`text-[10px] tracking-[0.4em] font-body ${
+                    isScrolled ? "text-[#C4846C]" : "text-[#C4846C]"
+                  }`}
+                >
+                  MIAMI
+                </span>
+              </div>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  <span
+                    className={`text-sm font-medium tracking-wide transition-colors hover:text-[#C4846C] ${
+                      location === link.href
+                        ? "text-[#C4846C]"
+                        : isScrolled
+                        ? "text-[#2D2D2D]"
+                        : "text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              ))}
+            </nav>
+
+            {/* CTA Buttons */}
+            <div className="hidden lg:flex items-center gap-4">
+              <a
+                href="https://www.opentable.com/the-local-house"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 text-sm font-medium tracking-wide border-2 border-[#C4846C] text-[#C4846C] hover:bg-[#C4846C] hover:text-white transition-all duration-300 rounded"
+              >
+                Book a Table
+              </a>
+              <a
+                href="https://www.booking.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 text-sm font-medium tracking-wide bg-[#C4846C] text-white hover:bg-[#B07460] transition-all duration-300 rounded"
+              >
+                Book a Room
+              </a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`lg:hidden p-2 ${
+                isScrolled ? "text-[#2D2D2D]" : "text-white"
+              }`}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden bg-[#FAF7F2] border-t border-[#E5DED5]"
+            >
+              <nav className="container py-6 flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <Link key={link.href} href={link.href}>
+                    <span
+                      className={`block text-lg font-medium py-2 ${
+                        location === link.href
+                          ? "text-[#C4846C]"
+                          : "text-[#2D2D2D]"
+                      }`}
+                    >
+                      {link.label}
+                    </span>
+                  </Link>
+                ))}
+                <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-[#E5DED5]">
+                  <a
+                    href="https://www.opentable.com/the-local-house"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 text-center text-sm font-medium tracking-wide border-2 border-[#C4846C] text-[#C4846C] rounded"
+                  >
+                    Book a Table
+                  </a>
+                  <a
+                    href="https://www.booking.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 text-center text-sm font-medium tracking-wide bg-[#C4846C] text-white rounded"
+                  >
+                    Book a Room
+                  </a>
+                </div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-1">{children}</main>
+
+      {/* Footer */}
+      <footer className="bg-[#2D2D2D] text-white">
+        {/* Main Footer */}
+        <div className="container py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {/* Brand */}
+            <div className="lg:col-span-1">
+              <div className="flex flex-col items-start mb-6">
+                <span className="text-xs tracking-[0.3em] text-[#C4846C]">THE</span>
+                <span className="text-2xl font-display font-semibold tracking-wide">
+                  LOCAL HOUSE
+                </span>
+                <span className="text-[10px] tracking-[0.4em] text-[#C4846C]">
+                  MIAMI
+                </span>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                A boutique hotel and restaurant on Ocean Drive, Miami Beach.
+                Unconditional hospitality since 2012.
+              </p>
+              <div className="flex gap-4">
+                <a
+                  href="https://instagram.com/localhouse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:border-[#C4846C] hover:text-[#C4846C] transition-colors"
+                >
+                  <Instagram size={18} />
+                </a>
+                <a
+                  href="https://facebook.com/localhouse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:border-[#C4846C] hover:text-[#C4846C] transition-colors"
+                >
+                  <Facebook size={18} />
+                </a>
+              </div>
+            </div>
+
+            {/* Hours */}
+            <div>
+              <h4 className="text-lg font-display font-semibold mb-6">Hours</h4>
+              <div className="space-y-4 text-sm">
+                <div>
+                  <p className="text-[#C4846C] font-medium mb-1">Front Desk</p>
+                  <p className="text-gray-400">8:00 AM – 10:00 PM daily</p>
+                </div>
+                <div>
+                  <p className="text-[#C4846C] font-medium mb-1">Brunch</p>
+                  <p className="text-gray-400">8:00 AM – 4:00 PM daily</p>
+                </div>
+                <div>
+                  <p className="text-[#C4846C] font-medium mb-1">Dinner</p>
+                  <p className="text-gray-400">6:00 PM – 11:00 PM daily</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="text-lg font-display font-semibold mb-6">Contact</h4>
+              <div className="space-y-4 text-sm">
+                <a
+                  href="https://maps.google.com/?q=400+Ocean+Dr,+Miami+Beach,+FL+33139"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors"
+                >
+                  <MapPin size={18} className="mt-0.5 flex-shrink-0 text-[#C4846C]" />
+                  <span>400 Ocean Dr,<br />Miami Beach, FL 33139</span>
+                </a>
+                <a
+                  href="tel:+13055385529"
+                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
+                >
+                  <Phone size={18} className="flex-shrink-0 text-[#C4846C]" />
+                  <span>(305) 538-5529</span>
+                </a>
+                <a
+                  href="mailto:info@localhouse.com"
+                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
+                >
+                  <Mail size={18} className="flex-shrink-0 text-[#C4846C]" />
+                  <span>info@localhouse.com</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-display font-semibold mb-6">Explore</h4>
+              <nav className="space-y-3 text-sm">
+                {navLinks.map((link) => (
+                  <Link key={link.href} href={link.href}>
+                    <span className="block text-gray-400 hover:text-white transition-colors">
+                      {link.label}
+                    </span>
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800">
+          <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-500 text-sm">
+              © {new Date().getFullYear()} The Local House. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-sm">
+              <Link href="/contact">
+                <span className="text-gray-500 hover:text-white transition-colors">
+                  Privacy Policy
+                </span>
+              </Link>
+              <Link href="/contact">
+                <span className="text-gray-500 hover:text-white transition-colors">
+                  Terms of Service
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
