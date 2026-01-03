@@ -20,6 +20,7 @@ const navLinks = [
   { href: "/brunch", label: "Brunch" },
   { href: "/gallery", label: "Gallery" },
   { href: "/blog", label: "Blog" },
+  { href: "/press", label: "Press" },
   { href: "/contact", label: "Contact" },
 ];
 

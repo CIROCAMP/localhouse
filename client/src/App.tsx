@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { AnalyticsProvider } from "./components/Analytics";
 import Home from "./pages/Home";
 import Hotel from "./pages/Hotel";
 import Restaurant from "./pages/Restaurant";
@@ -13,6 +14,7 @@ import Contact from "./pages/Contact";
 import Layout from "./components/Layout";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Press from "./pages/Press";
 
 function Router() {
   return (
@@ -26,6 +28,7 @@ function Router() {
         <Route path="/contact" component={Contact} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
+        <Route path="/press" component={Press} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
@@ -37,10 +40,12 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+        <AnalyticsProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </AnalyticsProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
