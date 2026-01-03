@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage - Highest Priority -->
+  <url>
+    <loc>https://localhouse.com/</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://localhouse.com/images/restaurant-interior.jpg</image:loc>
+      <image:title>The Local House Miami Beach - Restaurant Interior</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Hotel Page -->
+  <url>
+    <loc>https://localhouse.com/hotel</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://localhouse.com/images/deluxe-king-room.jpg</image:loc>
+      <image:title>Boutique Hotel Room - The Local House Miami Beach</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Restaurant Page -->
+  <url>
+    <loc>https://localhouse.com/restaurant</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://localhouse.com/images/outside-terrace.jpg</image:loc>
+      <image:title>Ocean Drive Restaurant - The Local House</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Brunch Page - High Priority (Signature Offering) -->
+  <url>
+    <loc>https://localhouse.com/brunch</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://localhouse.com/images/hero-brunch.jpg</image:loc>
+      <image:title>Best Brunch Miami Beach - Lobster Eggs Benedict</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Gallery Page -->
+  <url>
+    <loc>https://localhouse.com/gallery</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://localhouse.com/contact</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Main Page -->
+  <url>
+    <loc>https://localhouse.com/blog</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://localhouse.com/blog/best-brunch-miami-beach-2025</loc>
+    <lastmod>2024-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://localhouse.com/blog/south-of-fifth-neighborhood-guide</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://localhouse.com/blog/ocean-drive-restaurants-guide</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://localhouse.com/blog/boutique-hotels-miami-beach</loc>
+    <lastmod>2024-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

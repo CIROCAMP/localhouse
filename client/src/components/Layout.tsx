@@ -175,10 +175,23 @@ export default function Layout({ children }: LayoutProps) {
                 alt="The Local House Miami"
                 className="h-20 w-auto mb-6"
               />
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
                 A boutique hotel and restaurant on Ocean Drive, Miami Beach.
                 Unconditional hospitality since 2012.
               </p>
+              
+              {/* Trust Badges */}
+              <div className="flex flex-wrap gap-3 mb-6">
+                <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/10 rounded-full text-xs">
+                  <span className="text-yellow-400">★</span> 4.9 Rating
+                </span>
+                <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/10 rounded-full text-xs">
+                  🇮🇹 Italian-Owned
+                </span>
+                <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/10 rounded-full text-xs">
+                  🏆 2025 Choice
+                </span>
+              </div>
               <div className="flex gap-4">
                 <a
                   href="https://instagram.com/localhouse"
@@ -260,6 +273,41 @@ export default function Layout({ children }: LayoutProps) {
                   </Link>
                 ))}
               </nav>
+            </div>
+          </div>
+        </div>
+
+        {/* Review Platforms Bar */}
+        <div className="border-t border-gray-800 bg-[#252525]">
+          <div className="container py-6">
+            <div className="flex flex-wrap justify-center items-center gap-8">
+              <a
+                href="https://www.tripadvisor.com/Hotel_Review-g34439-d1449858-Reviews-The_Local_House-Miami_Beach_Florida.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-400 hover:text-[#00aa6c] transition-colors text-sm"
+              >
+                <span className="font-medium">TripAdvisor</span>
+                <span className="text-yellow-400">★ 4.9</span>
+              </a>
+              <a
+                href="https://share.google/0H2ptcjor9w7exBb0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-400 hover:text-[#4285f4] transition-colors text-sm"
+              >
+                <span className="font-medium">Google Reviews</span>
+                <span className="text-yellow-400">★ 4.8</span>
+              </a>
+              <a
+                href="https://www.opentable.com/the-local-house"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-400 hover:text-[#da3743] transition-colors text-sm"
+              >
+                <span className="font-medium">OpenTable</span>
+                <span className="text-yellow-400">★ 4.7</span>
+              </a>
             </div>
           </div>
         </div>

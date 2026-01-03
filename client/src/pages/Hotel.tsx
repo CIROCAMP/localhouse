@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
-import { Wifi, Waves, Coffee, Sun, Dumbbell, Car, Users, Bath } from "lucide-react";
+import { Wifi, Waves, Coffee, Sun, Dumbbell, Car, Users, Bath, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { SEOHead, seoConfigs } from "@/components/SEOHead";
+import { SEOSchema } from "@/components/SEOSchema";
 
 /*
  * Design: Miami Art Deco Revival
@@ -16,10 +19,10 @@ const rooms = [
     bed: "1 King Bed",
     view: "Ocean & City Views",
     features: ["Ocean View", "Private Terrace", "Free Wi-Fi", "Mini Bar"],
-    image: "/images/hero-hotel.jpg",
+    images: ["/images/grand-ocean-king-1.jpg", "/images/grand-ocean-king-balcony.jpg", "/images/grand-ocean-king-bathroom.jpg"],
   },
   {
-    name: "Deluxe Double, Ocean Views",
+    name: "Partial Ocean View Double",
     type: null,
     price: 279,
     description: "Enjoy all the comforts of home in an elegant beach-inspired room. This spacious room features two double beds and partial views of the ocean.",
@@ -27,7 +30,7 @@ const rooms = [
     bed: "2 Double Beds",
     view: "Partial Ocean View",
     features: ["Ocean View", "Sleeps 4", "Free Wi-Fi", "Balcony"],
-    image: "/images/hero-hotel.jpg",
+    images: ["/images/partial-ocean-view-king.jpg", "/images/partial-ocean-view-double-2.jpg", "/images/partial-ocean-view-double-3.jpg"],
   },
   {
     name: "Deluxe King, Ocean Views",
@@ -38,7 +41,18 @@ const rooms = [
     bed: "1 King Bed",
     view: "Partial Ocean View",
     features: ["Ocean View", "Balcony", "Free Wi-Fi", "Smart TV"],
-    image: "/images/hero-hotel.jpg",
+    images: ["/images/deluxe-king.jpg", "/images/deluxe-king-2.jpg", "/images/deluxe-king-bathroom.jpg"],
+  },
+  {
+    name: "Deluxe Double",
+    type: null,
+    price: 239,
+    description: "Perfect for families or friends traveling together. This elegant beach-inspired room features two comfortable double beds with partial ocean views and a private balcony.",
+    size: "360 sq ft",
+    bed: "2 Double Beds",
+    view: "Partial Ocean View",
+    features: ["Ocean View", "Sleeps 4", "Free Wi-Fi", "Balcony"],
+    images: ["/images/deluxe-double.jpg"],
   },
   {
     name: "Standard King, City Views",
@@ -49,7 +63,7 @@ const rooms = [
     bed: "1 King Bed",
     view: "City View",
     features: ["City View", "Free Wi-Fi", "Mini Bar", "Rain Shower"],
-    image: "/images/hero-hotel.jpg",
+    images: ["/images/standard-king.jpg"],
   },
 ];
 
@@ -64,14 +78,78 @@ const amenities = [
   { icon: Bath, name: "Luxury Bath", description: "Premium toiletries & rain shower" },
 ];
 
+// Room Image Carousel Component
+function RoomImageCarousel({ images, name }: { images: string[], name: string }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  if (images.length === 1) {
+    return (
+      <img
+        src={images[0]}
+        alt={name}
+        className="w-full h-full object-cover rounded-lg"
+      />
+    );
+  }
+
+  return (
+    <div className="relative w-full h-full group">
+      <img
+        src={images[currentIndex]}
+        alt={`${name} - Photo ${currentIndex + 1}`}
+        className="w-full h-full object-cover rounded-lg transition-opacity duration-300"
+      />
+      
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevImage}
+        className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
+      >
+        <ChevronLeft className="w-5 h-5 text-[#2D2D2D]" />
+      </button>
+      <button
+        onClick={nextImage}
+        className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
+      >
+        <ChevronRight className="w-5 h-5 text-[#2D2D2D]" />
+      </button>
+
+      {/* Dots */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentIndex(i)}
+            className={`w-2 h-2 rounded-full transition-all ${
+              i === currentIndex ? "bg-white w-6" : "bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Hotel() {
   return (
     <div>
+      {/* SEO Components */}
+      <SEOHead {...seoConfigs.hotel} />
+      <SEOSchema page="hotel" />
+      
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/hero-pool.jpg"
+            src="/images/hotel-hero.jpg"
             alt="The Local House Hotel"
             className="w-full h-full object-cover"
           />
@@ -110,14 +188,13 @@ export default function Hotel() {
               >
                 {/* Image */}
                 <div className="lg:w-1/2">
-                  <div className="relative">
-                    <img
-                      src={room.image}
-                      alt={room.name}
-                      className="w-full rounded-lg shadow-xl"
+                  <div className="relative aspect-[4/3] shadow-xl rounded-lg overflow-hidden">
+                    <RoomImageCarousel 
+                      images={room.images} 
+                      name={room.name} 
                     />
                     {room.type && (
-                      <span className="absolute top-4 left-4 px-4 py-2 bg-[#C4846C] text-white text-xs font-medium tracking-wider rounded">
+                      <span className="absolute top-4 left-4 px-4 py-2 bg-[#C4846C] text-white text-xs font-medium tracking-wider rounded z-10">
                         {room.type}
                       </span>
                     )}

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Clock, Star, Award, Users } from "lucide-react";
 import { Link } from "wouter";
+import { SEOHead, seoConfigs } from "@/components/SEOHead";
+import { SEOSchema } from "@/components/SEOSchema";
 
 /*
  * Design: Miami Art Deco Revival
@@ -55,6 +57,10 @@ const stats = [
 export default function Brunch() {
   return (
     <div>
+      {/* SEO Components */}
+      <SEOHead {...seoConfigs.brunch} />
+      <SEOSchema page="brunch" />
+      
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">

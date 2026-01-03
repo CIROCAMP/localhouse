@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Clock, Phone, ExternalLink } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SEOHead, seoConfigs } from "@/components/SEOHead";
+import { SEOSchema } from "@/components/SEOSchema";
 
 /*
  * Design: Miami Art Deco Revival
@@ -50,6 +52,10 @@ const wines = [
 export default function Restaurant() {
   return (
     <div>
+      {/* SEO Components */}
+      <SEOHead {...seoConfigs.restaurant} />
+      <SEOSchema page="restaurant" />
+      
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { X } from "lucide-react";
+import { SEOHead, seoConfigs } from "@/components/SEOHead";
+import { SEOSchema } from "@/components/SEOSchema";
 
 /*
  * Design: Miami Art Deco Revival
@@ -8,14 +10,18 @@ import { X } from "lucide-react";
  */
 
 const galleryImages = [
-  { src: "/images/hero-restaurant.jpg", alt: "Restaurant Terrace", category: "restaurant" },
-  { src: "/images/hero-brunch.jpg", alt: "Famous Brunch Spread", category: "food" },
-  { src: "/images/hero-hotel.jpg", alt: "Ocean View Suite", category: "hotel" },
-  { src: "/images/hero-pool.jpg", alt: "Rooftop Pool", category: "hotel" },
-  { src: "/images/ocean-drive.jpg", alt: "Ocean Drive Location", category: "location" },
-  { src: "/images/hero-restaurant.jpg", alt: "Outdoor Dining", category: "restaurant" },
-  { src: "/images/hero-brunch.jpg", alt: "Lobster Benedict", category: "food" },
-  { src: "/images/hero-hotel.jpg", alt: "Boutique Room", category: "hotel" },
+  { src: "/images/gallery-cocktail.jpg", alt: "Signature Cocktail", category: "food" },
+  { src: "/images/gallery-brunch-spread.jpg", alt: "Brunch Spread", category: "food" },
+  { src: "/images/gallery-room.jpg", alt: "Boutique Room", category: "hotel" },
+  { src: "/images/gallery-outdoor-seating.jpg", alt: "Outdoor Seating", category: "restaurant" },
+  { src: "/images/gallery-restaurant.jpg", alt: "Restaurant Interior", category: "restaurant" },
+  { src: "/images/gallery-bathroom.jpg", alt: "Modern Bathroom", category: "hotel" },
+  { src: "/images/gallery-entrance.jpg", alt: "Hotel Entrance", category: "location" },
+  { src: "/images/gallery-tropical-dining.jpg", alt: "Tropical Dining Area", category: "restaurant" },
+  { src: "/images/gallery-lobby.jpg", alt: "Hotel Lobby", category: "hotel" },
+  { src: "/images/gallery-balcony.jpg", alt: "Balcony View", category: "hotel" },
+  { src: "/images/gallery-pasta.jpg", alt: "Fresh Pasta", category: "food" },
+  { src: "/images/gallery-seafood.jpg", alt: "Grilled Seafood", category: "food" },
 ];
 
 const categories = [
@@ -36,6 +42,10 @@ export default function Gallery() {
 
   return (
     <div>
+      {/* SEO Components */}
+      <SEOHead {...seoConfigs.gallery} />
+      <SEOSchema page="gallery" />
+      
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#2D2D2D]">
         <div className="relative z-10 text-center text-white px-4">
@@ -85,18 +95,15 @@ export default function Gallery() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer group"
+                className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer"
                 onClick={() => setLightboxImage(image.src)}
               >
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white font-medium">{image.alt}</p>
-                </div>
+                
               </motion.div>
             ))}
           </div>

@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { SEOHead, seoConfigs } from "@/components/SEOHead";
+import { SEOSchema } from "@/components/SEOSchema";
 
 /*
  * Design: Miami Art Deco Revival
@@ -18,6 +20,10 @@ export default function Contact() {
 
   return (
     <div>
+      {/* SEO Components */}
+      <SEOHead {...seoConfigs.contact} />
+      <SEOSchema page="contact" />
+      
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">

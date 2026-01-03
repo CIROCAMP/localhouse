@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { SEOHead, seoConfigs } from "@/components/SEOHead";
+import { SEOSchema } from "@/components/SEOSchema";
 
 /*
  * Design: Miami Art Deco Revival
@@ -49,6 +51,10 @@ const blogPosts = [
 export default function Blog() {
   return (
     <div>
+      {/* SEO Components */}
+      <SEOHead {...seoConfigs.blog} />
+      <SEOSchema page="blog" />
+      
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#2D2D2D]">
         <div className="relative z-10 text-center text-white px-4">
