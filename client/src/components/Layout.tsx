@@ -1,6 +1,8 @@
 import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { BookingNotification, StickyBookingBar, UrgencyBanner } from "@/components/SocialProof";
+import { ExitIntentPopup } from "@/components/ExitIntent";
 import { motion, AnimatePresence } from "framer-motion";
 
 /*
@@ -161,8 +163,16 @@ export default function Layout({ children }: LayoutProps) {
         </AnimatePresence>
       </header>
 
+      {/* Urgency Banner */}
+      <UrgencyBanner />
+
       {/* Main Content */}
       <main className="flex-1">{children}</main>
+
+      {/* Social Proof Notifications */}
+      <BookingNotification />
+      <StickyBookingBar />
+      <ExitIntentPopup />
 
       {/* Footer */}
       <footer className="bg-[#2D2D2D] text-white">

@@ -62,25 +62,50 @@ const testimonials = [
 ];
 
 const faqs = [
+  // Location & Access - Voice Search Optimized
   {
-    question: "Where is The Local House located?",
-    answer: "We're located at 400 Ocean Drive in the heart of South of Fifth (SoFi), Miami Beach's most exclusive neighborhood. Just steps from the beach and South Pointe Park.",
+    question: "Where is The Local House located in Miami Beach?",
+    answer: "We're located at 400 Ocean Drive in the heart of South of Fifth (SoFi), Miami Beach's most exclusive neighborhood. Just steps from the beach, South Pointe Park, and a 15-minute drive from Miami International Airport.",
   },
   {
-    question: "What makes your brunch famous?",
-    answer: "Our brunch has been voted Best Brunch in South Beach multiple times. We're known for our Lobster Eggs Benedict, fluffy pancakes, and signature mimosas. Fresh, local ingredients and ocean views make it unforgettable.",
+    question: "What is the best brunch in South Beach Miami?",
+    answer: "The Local House has been voted #1 Brunch in South Beach by locals and visitors. Our famous Lobster Eggs Benedict ($28), fluffy buttermilk pancakes, and signature mimosas have earned us a 4.9-star rating from over 2,500 guests.",
+  },
+  // Hotel Operations
+  {
+    question: "What time is check-in and check-out at The Local House?",
+    answer: "Check-in is at 3:00 PM and check-out is at 11:00 AM. Early check-in and late check-out are available upon request, subject to availability. Book directly for complimentary late checkout.",
   },
   {
-    question: "What time is check-in and check-out?",
-    answer: "Check-in is at 3:00 PM and check-out is at 11:00 AM. Early check-in and late check-out may be available upon request, subject to availability.",
+    question: "Is parking available at The Local House hotel?",
+    answer: "Yes, valet parking is available for $45/night. We also partner with nearby parking garages for self-parking options starting at $25/day.",
+  },
+  // Restaurant & Dining
+  {
+    question: "Do I need a hotel reservation to eat at The Local House restaurant?",
+    answer: "No! Our restaurant is open to everyone. We recommend making reservations through OpenTable, especially for weekend brunch (8AM-4PM daily). Walk-ins are welcome but tables fill up fast.",
   },
   {
-    question: "Is parking available at the hotel?",
-    answer: "Yes, valet parking is available for an additional fee. We also have partnerships with nearby parking garages for self-parking options.",
+    question: "What are The Local House brunch hours?",
+    answer: "Brunch is served daily from 8:00 AM to 4:00 PM. Our dinner service runs from 6:00 PM to 11:00 PM. The bar stays open until midnight on weekends.",
+  },
+  // Pricing & Booking
+  {
+    question: "How much does a room cost at The Local House Miami Beach?",
+    answer: "Room rates start from $199/night for a Standard King with city views, up to $329/night for our Grand Partial Ocean View King suite. Book directly on our website for the best rates and free breakfast.",
   },
   {
-    question: "Can I make a restaurant reservation without staying at the hotel?",
-    answer: "Absolutely! Our restaurant is open to all guests. We recommend making reservations through OpenTable, especially for weekend brunch.",
+    question: "Does The Local House have a rooftop pool?",
+    answer: "Yes! Our rooftop pool offers stunning panoramic views of the Miami skyline and ocean. It's exclusively available to hotel guests and features poolside service, loungers, and cabanas.",
+  },
+  // Special Occasions
+  {
+    question: "Can I host a private event at The Local House?",
+    answer: "Absolutely! We offer private dining and event spaces for birthdays, anniversaries, corporate events, and weddings. Contact us at events@localhouse.com or call (305) 538-5529 for custom packages.",
+  },
+  {
+    question: "Is The Local House pet-friendly?",
+    answer: "Yes, we welcome well-behaved pets under 25 lbs with a $50 pet fee per stay. Please notify us in advance so we can prepare pet amenities in your room.",
   },
 ];
 
@@ -396,6 +421,25 @@ export default function Home() {
             ))}
           </div>
           
+          {/* As Seen On - Media Logos */}
+          <div className="mt-12 pt-10 border-t border-[#E5DED5]">
+            <p className="text-center text-sm text-[#999] uppercase tracking-[0.2em] mb-8">As Featured In</p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70 hover:opacity-100 transition-opacity">
+              <a href="https://www.miamiandbeaches.com/restaurants/best-south-beach-brunches" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">
+                <img src="/images/badges/tripadvisor-travelers-choice-2025.png" alt="TripAdvisor Travelers' Choice" className="h-16 w-auto grayscale hover:grayscale-0 transition-all" />
+              </a>
+              <a href="https://miami.eater.com/venue/9241/the-local-house" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#2D2D2D] font-bold text-xl hover:text-[#e4002b] transition-colors">
+                <span>EATER</span>
+              </a>
+              <a href="https://www.opentable.com/the-local-house" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">
+                <img src="/images/badges/opentable-diners-choice-2024.png" alt="OpenTable Diners' Choice" className="h-16 w-auto grayscale hover:grayscale-0 transition-all" />
+              </a>
+              <a href="https://www.miamiandbeaches.com/l/hotels/the-local-house/4339" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#2D2D2D] font-semibold hover:text-[#e4145a] transition-colors">
+                <span className="text-lg">MIAMI & BEACHES</span>
+              </a>
+            </div>
+          </div>
+
           {/* Trust Badges Row */}
           <div className="flex flex-wrap justify-center items-center gap-8 mt-10 pt-10 border-t border-[#E5DED5]">
             <a href="https://www.tripadvisor.com/Hotel_Review-g34439-d1449858-Reviews-The_Local_House-Miami_Beach_Florida.html" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#666] hover:text-[#00aa6c] transition-colors">

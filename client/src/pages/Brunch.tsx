@@ -295,11 +295,23 @@ export default function Brunch() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            {/* Urgency Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-600 rounded-full text-sm font-medium mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+              </span>
+              Only 4 tables left for tomorrow's brunch
+            </div>
+            
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-6">
-              Ready for the Best Brunch in Miami?
+              Don't Miss Miami's #1 Brunch Experience
             </h2>
-            <p className="text-xl text-[#666] max-w-2xl mx-auto mb-10">
-              Join us daily from 8AM to 4PM. Reservations recommended, especially on weekends.
+            <p className="text-xl text-[#666] max-w-2xl mx-auto mb-4">
+              Join 2,500+ happy guests who've discovered why we're rated 4.9 stars.
+            </p>
+            <p className="text-lg text-[#999] max-w-xl mx-auto mb-10">
+              Daily 8AM – 4PM • Walk-ins welcome, reservations guarantee your spot
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
