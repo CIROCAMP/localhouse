@@ -229,6 +229,82 @@ export default function Press() {
         </div>
       </section>
 
+      {/* Official Award Badges Section */}
+      <section className="py-16 bg-white border-b border-[#E5DED5]">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-display font-semibold text-[#2D2D2D] mb-2">
+              Official Award Badges
+            </h3>
+            <p className="text-[#666]">
+              Proudly displaying our verified awards and certifications
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            <motion.a
+              href="https://www.tripadvisor.com/Hotel_Review-g34439-d1449858-Reviews-The_Local_House-Miami_Beach_Florida.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+              className="flex flex-col items-center group"
+            >
+              <img
+                src="/images/badges/tripadvisor-travelers-choice-2025.png"
+                alt="TripAdvisor Travelers' Choice 2025"
+                className="w-28 h-28 md:w-36 md:h-36 object-contain transition-transform"
+              />
+              <span className="mt-2 text-sm text-[#666] group-hover:text-[#00aa6c] transition-colors">
+                View on TripAdvisor
+              </span>
+            </motion.a>
+            <motion.a
+              href="https://www.opentable.com/the-local-house"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              className="flex flex-col items-center group"
+            >
+              <img
+                src="/images/badges/opentable-diners-choice-2024.png"
+                alt="OpenTable Diners' Choice 2024"
+                className="w-28 h-28 md:w-36 md:h-36 object-contain transition-transform"
+              />
+              <span className="mt-2 text-sm text-[#666] group-hover:text-[#da3743] transition-colors">
+                View on OpenTable
+              </span>
+            </motion.a>
+            <motion.a
+              href="https://www.tripadvisor.com/Restaurant_Review-g34439-d3741302-Reviews-The_Local_House-Miami_Beach_Florida.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ scale: 1.05 }}
+              className="flex flex-col items-center group"
+            >
+              <img
+                src="/images/badges/tripadvisor-certificate-excellence.png"
+                alt="TripAdvisor Certificate of Excellence"
+                className="w-28 h-28 md:w-36 md:h-36 object-contain transition-transform"
+              />
+              <span className="mt-2 text-sm text-[#666] group-hover:text-[#00aa6c] transition-colors">
+                Certificate of Excellence
+              </span>
+            </motion.a>
+          </div>
+        </div>
+      </section>
+
       {/* Press Features Section */}
       <section className="py-24 bg-white">
         <div className="container">
