@@ -152,8 +152,8 @@ export default function Home() {
       <SEOHead {...seoConfigs.home} />
       <SEOSchema page="home" />
       
-      {/* Hero Carousel Section */}
-      <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+      {/* Hero Carousel Section - pt-10 compensates for fixed urgency banner */}
+      <section className="relative h-screen min-h-[700px] pt-10 flex items-center justify-center overflow-hidden">
         {/* Background Images */}
         <AnimatePresence mode="wait">
           <motion.div

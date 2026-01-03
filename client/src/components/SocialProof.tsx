@@ -109,7 +109,7 @@ export function UrgencyBanner() {
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-gradient-to-r from-[#C4846C] to-[#B07460] text-white py-2 px-4"
+      className="fixed top-20 left-0 right-0 z-40 bg-gradient-to-r from-[#C4846C] to-[#B07460] text-white py-2 px-4"
     >
       <div className="container flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm">
         <div className="flex items-center gap-2">
