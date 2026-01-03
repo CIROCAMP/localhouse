@@ -81,7 +81,7 @@ export function ExitIntentPopup() {
           >
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
               {/* Header Image */}
-              <div className="relative h-48 bg-gradient-to-br from-[#C4846C] to-[#B07460]">
+              <div className="relative h-48 bg-gradient-to-br from-[#FF8F75] to-[#e67c63]">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
                     <Gift className="w-16 h-16 mx-auto mb-4 opacity-90" />
@@ -100,7 +100,7 @@ export function ExitIntentPopup() {
 
               {/* Content */}
               <div className="p-8 text-center">
-                <h4 className="text-2xl font-display font-semibold text-[#2D2D2D] mb-3">
+                <h4 className="text-2xl font-display font-semibold text-[#4C5254] mb-3">
                   Get 10% Off Your First Stay
                 </h4>
                 <p className="text-[#666] mb-6">
@@ -110,11 +110,11 @@ export function ExitIntentPopup() {
                 {/* Trust Signals */}
                 <div className="flex justify-center gap-6 mb-6 text-sm text-[#999]">
                   <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 text-[#D4AF37]" />
+                    <Star className="w-4 h-4 text-[#FF8F75]" />
                     <span>4.9 Rating</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Clock className="w-4 h-4 text-[#C4846C]" />
+                    <Clock className="w-4 h-4 text-[#FF8F75]" />
                     <span>Free Cancellation</span>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export function ExitIntentPopup() {
                     href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full py-4 bg-[#C4846C] text-white font-medium rounded-lg hover:bg-[#B07460] transition-colors"
+                    className="block w-full py-4 bg-[#FF8F75] text-white font-medium rounded-lg hover:bg-[#e67c63] transition-colors"
                   >
                     Claim My 10% Discount
                   </a>
@@ -138,7 +138,7 @@ export function ExitIntentPopup() {
                 </div>
 
                 {/* Urgency */}
-                <p className="mt-4 text-xs text-[#C4846C]">
+                <p className="mt-4 text-xs text-[#FF8F75]">
                   ⏰ Offer expires in 24 hours
                 </p>
               </div>
@@ -190,7 +190,7 @@ export function NewsletterPopup() {
       >
         <X className="w-5 h-5" />
       </button>
-      <h4 className="text-lg font-display font-semibold text-[#2D2D2D] mb-2">
+      <h4 className="text-lg font-display font-semibold text-[#4C5254] mb-2">
         Stay in the Loop
       </h4>
       <p className="text-sm text-[#666] mb-4">
@@ -202,12 +202,12 @@ export function NewsletterPopup() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
-          className="w-full px-4 py-2 border border-[#E5DED5] rounded focus:outline-none focus:border-[#C4846C]"
+          className="w-full px-4 py-2 border border-[#E5DED5] rounded focus:outline-none focus:border-[#FF8F75]"
           required
         />
         <button
           type="submit"
-          className="w-full py-2 bg-[#C4846C] text-white font-medium rounded hover:bg-[#B07460] transition-colors"
+          className="w-full py-2 bg-[#FF8F75] text-white font-medium rounded hover:bg-[#e67c63] transition-colors"
         >
           Subscribe
         </button>

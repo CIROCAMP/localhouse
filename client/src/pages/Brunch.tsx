@@ -77,7 +77,7 @@ export default function Brunch() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4846C]/90 rounded-full text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/90 rounded-full text-sm font-medium mb-6">
               🍳 Voted Best Brunch in South Beach
             </span>
           </motion.div>
@@ -106,7 +106,7 @@ export default function Brunch() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex items-center justify-center gap-3 mb-10"
           >
-            <Clock className="text-[#C4846C]" size={24} />
+            <Clock className="text-[#FF8F75]" size={24} />
             <span className="text-xl font-medium">Daily 8AM – 4PM</span>
           </motion.div>
 
@@ -119,7 +119,7 @@ export default function Brunch() {
               href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded inline-block"
+              className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded inline-block"
             >
               Reserve for Brunch
             </a>
@@ -141,10 +141,10 @@ export default function Brunch() {
                 className="flex items-center gap-4"
               >
                 <div className="w-12 h-12 bg-[#FAF7F2] rounded-full flex items-center justify-center">
-                  <stat.icon className="text-[#C4846C]" size={24} />
+                  <stat.icon className="text-[#FF8F75]" size={24} />
                 </div>
                 <div>
-                  <div className="text-2xl font-display font-semibold text-[#2D2D2D]">
+                  <div className="text-2xl font-display font-semibold text-[#4C5254]">
                     {stat.value}
                   </div>
                   <div className="text-sm text-[#666]">{stat.label}</div>
@@ -159,8 +159,8 @@ export default function Brunch() {
       <section className="py-24 bg-[#FAF7F2]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-px bg-[#D4AF37] mx-auto mb-6" />
-            <h2 className="text-4xl font-display font-semibold text-[#2D2D2D] mb-6">
+            <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
+            <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-6">
               Where Brunch Becomes an Experience
             </h2>
             <p className="text-lg text-[#666] leading-relaxed mb-6">
@@ -184,8 +184,8 @@ export default function Brunch() {
       <section className="py-24 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <div className="w-16 h-px bg-[#D4AF37] mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-4">
+            <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
               Brunch Favorites
             </h2>
             <p className="text-lg text-[#666]">
@@ -204,15 +204,15 @@ export default function Brunch() {
                 className="bg-[#FAF7F2] p-6 rounded-lg relative"
               >
                 {item.tag && (
-                  <span className="absolute top-4 right-4 px-3 py-1 bg-[#C4846C] text-white text-xs font-medium rounded">
+                  <span className="absolute top-4 right-4 px-3 py-1 bg-[#FF8F75] text-white text-xs font-medium rounded">
                     {item.tag}
                   </span>
                 )}
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-display font-semibold text-[#2D2D2D] pr-20">
+                  <h3 className="text-xl font-display font-semibold text-[#4C5254] pr-20">
                     {item.name}
                   </h3>
-                  <span className="text-[#C4846C] font-semibold">${item.price}</span>
+                  <span className="text-[#FF8F75] font-semibold">${item.price}</span>
                 </div>
                 <p className="text-[#666] text-sm leading-relaxed">
                   {item.description}
@@ -223,7 +223,7 @@ export default function Brunch() {
 
           <div className="text-center mt-12">
             <Link href="/restaurant">
-              <span className="text-[#C4846C] font-medium hover:underline">
+              <span className="text-[#FF8F75] font-medium hover:underline">
                 View Full Menu →
               </span>
             </Link>
@@ -232,7 +232,7 @@ export default function Brunch() {
       </section>
 
       {/* Cocktails Section */}
-      <section className="py-24 bg-[#2D2D2D]">
+      <section className="py-24 bg-[#4C5254]">
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2">
@@ -242,7 +242,7 @@ export default function Brunch() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="w-16 h-px bg-[#D4AF37] mb-6" />
+                <div className="w-16 h-px bg-[#FF8F75] mb-6" />
                 <h2 className="text-4xl font-display font-semibold text-white mb-6">
                   Signature Brunch Cocktails
                 </h2>
@@ -256,21 +256,21 @@ export default function Brunch() {
                       <h4 className="text-white font-medium">Mimosa</h4>
                       <p className="text-gray-500 text-sm">prosecco, cold pressed OJ</p>
                     </div>
-                    <span className="text-[#C4846C]">$14 / $45 bottle</span>
+                    <span className="text-[#FF8F75]">$14 / $45 bottle</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-gray-700 pb-3">
                     <div>
                       <h4 className="text-white font-medium">Bloody Mary</h4>
                       <p className="text-gray-500 text-sm">homemade mix, bacon, olives</p>
                     </div>
-                    <span className="text-[#C4846C]">$16</span>
+                    <span className="text-[#FF8F75]">$16</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-gray-700 pb-3">
                     <div>
                       <h4 className="text-white font-medium">Wake Me Up</h4>
                       <p className="text-gray-500 text-sm">vodka, baileys, espresso</p>
                     </div>
-                    <span className="text-[#C4846C]">$18</span>
+                    <span className="text-[#FF8F75]">$18</span>
                   </div>
                 </div>
               </motion.div>
@@ -304,7 +304,7 @@ export default function Brunch() {
               Only 4 tables left for tomorrow's brunch
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-6">
               Don't Miss Miami's #1 Brunch Experience
             </h2>
             <p className="text-xl text-[#666] max-w-2xl mx-auto mb-4">
@@ -318,13 +318,13 @@ export default function Brunch() {
                 href="https://www.opentable.com/the-local-house"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded"
+                className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
               >
                 Reserve on OpenTable
               </a>
               <a
                 href="tel:+13055385529"
-                className="px-8 py-4 border-2 border-[#C4846C] text-[#C4846C] font-medium tracking-wide hover:bg-[#C4846C] hover:text-white transition-all duration-300 rounded"
+                className="px-8 py-4 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded"
               >
                 Call (305) 538-5529
               </a>

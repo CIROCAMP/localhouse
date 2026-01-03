@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 /*
  * Design: Miami Art Deco Revival
  * Layout component with sticky header navigation and footer
- * Colors: Coral (#C4846C), Seafoam (#7FBFB3), Gold (#D4AF37), Cream (#FAF7F2)
+ * Colors: Coral (#FF8F75), Seafoam (#7FBFB3), Gold (#FF8F75), Cream (#FAF7F2)
  */
 
 interface LayoutProps {
@@ -68,11 +68,11 @@ export default function Layout({ children }: LayoutProps) {
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className={`text-sm font-medium tracking-wide transition-colors hover:text-[#C4846C] ${
+                    className={`text-sm font-medium tracking-wide transition-colors hover:text-[#FF8F75] ${
                       location === link.href
-                        ? "text-[#C4846C]"
+                        ? "text-[#FF8F75]"
                         : isScrolled
-                        ? "text-[#2D2D2D]"
+                        ? "text-[#4C5254]"
                         : "text-white"
                     }`}
                   >
@@ -88,7 +88,7 @@ export default function Layout({ children }: LayoutProps) {
                 href="https://www.opentable.com/the-local-house"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 text-sm font-medium tracking-wide border-2 border-[#C4846C] text-[#C4846C] hover:bg-[#C4846C] hover:text-white transition-all duration-300 rounded"
+                className="px-5 py-2.5 text-sm font-medium tracking-wide border-2 border-[#FF8F75] text-[#FF8F75] hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded"
               >
                 Book a Table
               </a>
@@ -96,7 +96,7 @@ export default function Layout({ children }: LayoutProps) {
                 href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 text-sm font-medium tracking-wide bg-[#C4846C] text-white hover:bg-[#B07460] transition-all duration-300 rounded"
+                className="px-5 py-2.5 text-sm font-medium tracking-wide bg-[#FF8F75] text-white hover:bg-[#e67c63] transition-all duration-300 rounded"
               >
                 Book a Room
               </a>
@@ -106,7 +106,7 @@ export default function Layout({ children }: LayoutProps) {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`lg:hidden p-2 ${
-                isScrolled ? "text-[#2D2D2D]" : "text-white"
+                isScrolled ? "text-[#4C5254]" : "text-white"
               }`}
               aria-label="Toggle menu"
             >
@@ -130,8 +130,8 @@ export default function Layout({ children }: LayoutProps) {
                     <span
                       className={`block text-lg font-medium py-2 ${
                         location === link.href
-                          ? "text-[#C4846C]"
-                          : "text-[#2D2D2D]"
+                          ? "text-[#FF8F75]"
+                          : "text-[#4C5254]"
                       }`}
                     >
                       {link.label}
@@ -143,7 +143,7 @@ export default function Layout({ children }: LayoutProps) {
                     href="https://www.opentable.com/the-local-house"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 text-center text-sm font-medium tracking-wide border-2 border-[#C4846C] text-[#C4846C] rounded"
+                    className="w-full py-3 text-center text-sm font-medium tracking-wide border-2 border-[#FF8F75] text-[#FF8F75] rounded"
                   >
                     Book a Table
                   </a>
@@ -151,7 +151,7 @@ export default function Layout({ children }: LayoutProps) {
                     href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 text-center text-sm font-medium tracking-wide bg-[#C4846C] text-white rounded"
+                    className="w-full py-3 text-center text-sm font-medium tracking-wide bg-[#FF8F75] text-white rounded"
                   >
                     Book a Room
                   </a>
@@ -169,7 +169,7 @@ export default function Layout({ children }: LayoutProps) {
       <main className="flex-1">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-[#2D2D2D] text-white">
+      <footer className="bg-[#4C5254] text-white">
         {/* Main Footer */}
         <div className="container py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -202,7 +202,7 @@ export default function Layout({ children }: LayoutProps) {
                   href="https://instagram.com/localhouse"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:border-[#C4846C] hover:text-[#C4846C] transition-colors"
+                  className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:border-[#FF8F75] hover:text-[#FF8F75] transition-colors"
                 >
                   <Instagram size={18} />
                 </a>
@@ -210,7 +210,7 @@ export default function Layout({ children }: LayoutProps) {
                   href="https://facebook.com/localhouse"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:border-[#C4846C] hover:text-[#C4846C] transition-colors"
+                  className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:border-[#FF8F75] hover:text-[#FF8F75] transition-colors"
                 >
                   <Facebook size={18} />
                 </a>
@@ -222,15 +222,15 @@ export default function Layout({ children }: LayoutProps) {
               <h4 className="text-lg font-display font-semibold mb-6">Hours</h4>
               <div className="space-y-4 text-sm">
                 <div>
-                  <p className="text-[#C4846C] font-medium mb-1">Front Desk</p>
+                  <p className="text-[#FF8F75] font-medium mb-1">Front Desk</p>
                   <p className="text-gray-400">8:00 AM – 10:00 PM daily</p>
                 </div>
                 <div>
-                  <p className="text-[#C4846C] font-medium mb-1">Brunch</p>
+                  <p className="text-[#FF8F75] font-medium mb-1">Brunch</p>
                   <p className="text-gray-400">8:00 AM – 4:00 PM daily</p>
                 </div>
                 <div>
-                  <p className="text-[#C4846C] font-medium mb-1">Dinner</p>
+                  <p className="text-[#FF8F75] font-medium mb-1">Dinner</p>
                   <p className="text-gray-400">6:00 PM – 11:00 PM daily</p>
                 </div>
               </div>
@@ -246,21 +246,21 @@ export default function Layout({ children }: LayoutProps) {
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors"
                 >
-                  <MapPin size={18} className="mt-0.5 flex-shrink-0 text-[#C4846C]" />
+                  <MapPin size={18} className="mt-0.5 flex-shrink-0 text-[#FF8F75]" />
                   <span>400 Ocean Dr,<br />Miami Beach, FL 33139</span>
                 </a>
                 <a
                   href="tel:+13055385529"
                   className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
                 >
-                  <Phone size={18} className="flex-shrink-0 text-[#C4846C]" />
+                  <Phone size={18} className="flex-shrink-0 text-[#FF8F75]" />
                   <span>(305) 538-5529</span>
                 </a>
                 <a
                   href="mailto:info@localhouse.com"
                   className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
                 >
-                  <Mail size={18} className="flex-shrink-0 text-[#C4846C]" />
+                  <Mail size={18} className="flex-shrink-0 text-[#FF8F75]" />
                   <span>info@localhouse.com</span>
                 </a>
               </div>

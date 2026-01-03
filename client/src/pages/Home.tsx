@@ -13,7 +13,7 @@ import { SEOSchema } from "@/components/SEOSchema";
 /*
  * Design: Miami Art Deco Revival
  * Homepage with hero carousel, brunch section, testimonials, FAQ
- * Colors: Coral (#C4846C), Seafoam (#7FBFB3), Gold (#D4AF37), Cream (#FAF7F2)
+ * Colors: Coral (#FF8F75), Seafoam (#7FBFB3), Gold (#FF8F75), Cream (white)
  */
 
 // SEO: Set page title
@@ -180,8 +180,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#C4846C]/90 rounded-full text-sm font-medium mb-6">
-              🍳 Home of Miami's #1 Brunch
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/90 rounded-full text-sm font-medium mb-6">
+              🍳 Where Locals Gather, Travelers Belong
             </span>
           </motion.div>
 
@@ -212,7 +212,7 @@ export default function Home() {
               href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded"
+              className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
             >
               Book a Table
             </a>
@@ -220,7 +220,7 @@ export default function Home() {
               href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 border-2 border-white text-white font-medium tracking-wide hover:bg-white hover:text-[#2D2D2D] transition-all duration-300 rounded"
+              className="px-8 py-4 border-2 border-white text-white font-medium tracking-wide hover:bg-white hover:text-[#4C5254] transition-all duration-300 rounded"
             >
               Book a Room
             </a>
@@ -268,15 +268,15 @@ export default function Home() {
       </section>
 
       {/* Brunch Section */}
-      <section className="py-24 bg-[#FAF7F2]">
+      <section className="py-24 bg-[white]">
         <div className="container">
           <div className="text-center mb-16">
-            <div className="w-16 h-px bg-[#D4AF37] mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-4">
-              Miami's Most Famous Brunch
+            <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
+              Where Locals Gather, Travelers Belong
             </h2>
             <p className="text-lg text-[#666] mb-2">Voted Best Brunch in South Beach</p>
-            <p className="text-sm tracking-[0.2em] text-[#C4846C] uppercase">
+            <p className="text-sm tracking-[0.2em] text-[#FF8F75] uppercase">
               Italian-owned & operated since 2012
             </p>
           </div>
@@ -296,7 +296,7 @@ export default function Home() {
                   alt="Famous Brunch at The Local House"
                   className="w-full rounded-lg shadow-2xl"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-[#C4846C] text-white px-6 py-4 rounded shadow-lg">
+                <div className="absolute -bottom-6 -right-6 bg-[#FF8F75] text-white px-6 py-4 rounded shadow-lg">
                   <div className="flex items-center gap-2">
                     <Clock size={20} />
                     <span className="font-medium">Daily 8AM – 4PM</span>
@@ -313,8 +313,8 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="lg:w-1/2"
             >
-              <h3 className="text-3xl font-display font-semibold text-[#2D2D2D] mb-6">
-                A Culinary Journey on Ocean Drive
+              <h3 className="text-3xl font-display font-semibold text-[#4C5254] mb-6">
+                Legendary Brunch, Coastal Cuisine, Italian Heart
               </h3>
               <p className="text-[#666] leading-relaxed mb-8">
                 From legendary brunch to intimate dinners, experience coastal cuisine
@@ -330,8 +330,8 @@ export default function Home() {
                     key={index}
                     className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm"
                   >
-                    <feature.icon className="text-[#C4846C]" size={24} />
-                    <span className="font-medium text-[#2D2D2D]">{feature.label}</span>
+                    <feature.icon className="text-[#FF8F75]" size={24} />
+                    <span className="font-medium text-[#4C5254]">{feature.label}</span>
                   </div>
                 ))}
               </div>
@@ -341,12 +341,12 @@ export default function Home() {
                   href="https://www.opentable.com/the-local-house"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded text-center"
+                  className="px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded text-center"
                 >
                   Reserve for Brunch
                 </a>
                 <Link href="/restaurant">
-                  <span className="px-6 py-3 border-2 border-[#C4846C] text-[#C4846C] font-medium tracking-wide hover:bg-[#C4846C] hover:text-white transition-all duration-300 rounded text-center inline-block">
+                  <span className="px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded text-center inline-block">
                     View Menu
                   </span>
                 </Link>
@@ -357,7 +357,7 @@ export default function Home() {
       </section>
 
       {/* Signature Dish Highlight */}
-      <section className="py-20 bg-gradient-to-r from-[#C4846C] to-[#B07460] text-white">
+      <section className="py-20 bg-gradient-to-r from-[#FF8F75] to-[#e67c63] text-white">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="md:w-2/3">
@@ -377,7 +377,7 @@ export default function Home() {
                   href="https://www.opentable.com/the-local-house"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-white text-[#C4846C] font-bold rounded hover:bg-[#FAF7F2] transition-colors"
+                  className="px-6 py-3 bg-white text-[#FF8F75] font-bold rounded hover:bg-[white] transition-colors"
                 >
                   Reserve for Brunch
                 </a>
@@ -410,10 +410,10 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center p-6 bg-[#FAF7F2] rounded-lg hover:shadow-lg transition-shadow"
+                className="text-center p-6 bg-[white] rounded-lg hover:shadow-lg transition-shadow"
               >
                 <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-3xl md:text-4xl font-display font-bold text-[#C4846C] mb-1">
+                <div className="text-3xl md:text-4xl font-display font-bold text-[#FF8F75] mb-1">
                   {stat.value}
                 </div>
                 <div className="text-sm text-[#666] font-medium">{stat.label}</div>
@@ -428,13 +428,13 @@ export default function Home() {
               <a href="https://www.miamiandbeaches.com/restaurants/best-south-beach-brunches" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">
                 <img src="/images/badges/tripadvisor-travelers-choice-2025.png" alt="TripAdvisor Travelers' Choice" className="h-16 w-auto grayscale hover:grayscale-0 transition-all" />
               </a>
-              <a href="https://miami.eater.com/venue/9241/the-local-house" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#2D2D2D] font-bold text-xl hover:text-[#e4002b] transition-colors">
+              <a href="https://miami.eater.com/venue/9241/the-local-house" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#4C5254] font-bold text-xl hover:text-[#e4002b] transition-colors">
                 <span>EATER</span>
               </a>
               <a href="https://www.opentable.com/the-local-house" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">
                 <img src="/images/badges/opentable-diners-choice-2024.png" alt="OpenTable Diners' Choice" className="h-16 w-auto grayscale hover:grayscale-0 transition-all" />
               </a>
-              <a href="https://www.miamiandbeaches.com/l/hotels/the-local-house/4339" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#2D2D2D] font-semibold hover:text-[#e4145a] transition-colors">
+              <a href="https://www.miamiandbeaches.com/l/hotels/the-local-house/4339" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#4C5254] font-semibold hover:text-[#e4145a] transition-colors">
                 <span className="text-lg">MIAMI & BEACHES</span>
               </a>
             </div>
@@ -463,11 +463,11 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-[#FAF7F2]">
+      <section className="py-24 bg-[white]">
         <div className="container">
           <div className="text-center mb-16">
-            <div className="w-16 h-px bg-[#D4AF37] mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-4">
+            <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
               What Our Guests Say
             </h2>
             <p className="text-lg text-[#666]">
@@ -491,7 +491,7 @@ export default function Home() {
                     <Star
                       key={i}
                       size={18}
-                      className="fill-[#D4AF37] text-[#D4AF37]"
+                      className="fill-[#FF8F75] text-[#FF8F75]"
                     />
                   ))}
                 </div>
@@ -504,12 +504,12 @@ export default function Home() {
                 {/* Author */}
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-semibold text-[#2D2D2D]">
+                    <p className="font-semibold text-[#4C5254]">
                       {testimonial.author}
                     </p>
                     <p className="text-sm text-[#999]">{testimonial.location}</p>
                   </div>
-                  <span className="text-xs text-[#C4846C] font-medium">
+                  <span className="text-xs text-[#FF8F75] font-medium">
                     {testimonial.source}
                   </span>
                 </div>
@@ -523,7 +523,7 @@ export default function Home() {
               href="https://www.tripadvisor.com/Hotel_Review-g34439-d1449858-Reviews-The_Local_House-Miami_Beach_Florida.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#666] hover:text-[#C4846C] transition-colors"
+              className="text-[#666] hover:text-[#FF8F75] transition-colors"
             >
               Read more on TripAdvisor →
             </a>
@@ -531,7 +531,7 @@ export default function Home() {
               href="https://share.google/0H2ptcjor9w7exBb0"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#666] hover:text-[#C4846C] transition-colors"
+              className="text-[#666] hover:text-[#FF8F75] transition-colors"
             >
               Google Reviews →
             </a>
@@ -539,7 +539,7 @@ export default function Home() {
               href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#666] hover:text-[#C4846C] transition-colors"
+              className="text-[#666] hover:text-[#FF8F75] transition-colors"
             >
               Booking.com →
             </a>
@@ -563,10 +563,10 @@ export default function Home() {
                 alt="Italian Heart" 
                 className="w-24 h-24 mx-auto mb-6 object-contain"
               />
-              <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-4">
+              <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
                 Our Story
               </h2>
-              <p className="text-sm tracking-[0.2em] text-[#C4846C] uppercase">
+              <p className="text-sm tracking-[0.2em] text-[#FF8F75] uppercase">
                 A Love Story on Ocean Drive
               </p>
             </motion.div>
@@ -578,7 +578,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="prose prose-lg max-w-none"
             >
-              <div className="bg-[#FAF7F2] p-8 md:p-12 rounded-lg">
+              <div className="bg-[white] p-8 md:p-12 rounded-lg">
                 <p className="text-[#666] leading-relaxed mb-6 text-lg">
                   In the midst of the 2009 financial crisis, when the world seemed uncertain
                   and opportunities scarce, an Italian real estate investor found himself
@@ -588,7 +588,7 @@ export default function Home() {
                 <p className="text-[#666] leading-relaxed mb-6 text-lg">
                   There, at 400 Ocean Drive, stood a weathered Art Deco building with
                   faded coral walls and sun-bleached shutters. Most saw a property in need
-                  of work. He saw something else entirely: <span className="italic text-[#C4846C]">potential,
+                  of work. He saw something else entirely: <span className="italic text-[#FF8F75]">potential,
                   character, and a soul waiting to be awakened.</span>
                 </p>
                 <p className="text-[#666] leading-relaxed mb-6 text-lg">
@@ -609,7 +609,7 @@ export default function Home() {
                   has blossomed into one of South Beach's most cherished destinations.
                 </p>
                 <div className="mt-8 pt-6 border-t border-[#E5DED5] text-center">
-                  <p className="text-[#C4846C] font-display text-xl italic">
+                  <p className="text-[#FF8F75] font-display text-xl italic">
                     "Some places you visit. Others, you fall in love with."
                   </p>
                 </div>
@@ -620,7 +620,7 @@ export default function Home() {
       </section>
 
       {/* Hotel Preview Section */}
-      <section className="py-24 bg-[#FAF7F2]">
+      <section className="py-24 bg-[white]">
         <div className="container">
           <div className="flex flex-col lg:flex-row-reverse gap-12 items-center">
             {/* Image */}
@@ -646,8 +646,8 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="lg:w-1/2"
             >
-              <div className="w-16 h-px bg-[#D4AF37] mb-6" />
-              <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-6">
+              <div className="w-16 h-px bg-[#FF8F75] mb-6" />
+              <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-6">
                 Your Miami Beach Escape
               </h2>
               <p className="text-[#666] leading-relaxed mb-6">
@@ -658,24 +658,24 @@ export default function Home() {
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-[#666]">
-                  <span className="w-2 h-2 bg-[#C4846C] rounded-full" />
+                  <span className="w-2 h-2 bg-[#FF8F75] rounded-full" />
                   Ocean & City View Rooms
                 </li>
                 <li className="flex items-center gap-3 text-[#666]">
-                  <span className="w-2 h-2 bg-[#C4846C] rounded-full" />
+                  <span className="w-2 h-2 bg-[#FF8F75] rounded-full" />
                   Rooftop Pool with Miami Skyline
                 </li>
                 <li className="flex items-center gap-3 text-[#666]">
-                  <span className="w-2 h-2 bg-[#C4846C] rounded-full" />
+                  <span className="w-2 h-2 bg-[#FF8F75] rounded-full" />
                   $35 Daily Amenities Package
                 </li>
                 <li className="flex items-center gap-3 text-[#666]">
-                  <span className="w-2 h-2 bg-[#C4846C] rounded-full" />
+                  <span className="w-2 h-2 bg-[#FF8F75] rounded-full" />
                   Steps from South Beach
                 </li>
               </ul>
               <Link href="/hotel">
-                <span className="px-6 py-3 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded inline-block">
+                <span className="px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded inline-block">
                   Explore Rooms & Suites
                 </span>
               </Link>
@@ -709,7 +709,7 @@ export default function Home() {
               skyline. The perfect spot for sunset cocktails.
             </p>
             <Link href="/hotel">
-              <span className="px-8 py-4 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded inline-block">
+              <span className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded inline-block">
                 Book Your Stay
               </span>
             </Link>
@@ -718,11 +718,11 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-[#FAF7F2]">
+      <section className="py-24 bg-[white]">
         <div className="container max-w-3xl">
           <div className="text-center mb-16">
-            <div className="w-16 h-px bg-[#D4AF37] mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-4">
+            <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
               Frequently Asked Questions
             </h2>
           </div>
@@ -734,7 +734,7 @@ export default function Home() {
                 value={`item-${index}`}
                 className="bg-white rounded-lg px-6 border border-[#E5DED5]"
               >
-                <AccordionTrigger className="text-left font-display text-lg font-semibold text-[#2D2D2D] hover:text-[#C4846C] py-5">
+                <AccordionTrigger className="text-left font-display text-lg font-semibold text-[#4C5254] hover:text-[#FF8F75] py-5">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-[#666] leading-relaxed pb-5">
@@ -747,7 +747,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-24 bg-[#2D2D2D]">
+      <section className="py-24 bg-[#4C5254]">
         <div className="container max-w-2xl text-center">
           <h2 className="text-3xl md:text-4xl font-display font-semibold text-white mb-4">
             Stay Connected
@@ -759,11 +759,11 @@ export default function Home() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded text-white placeholder-gray-500 focus:outline-none focus:border-[#C4846C]"
+              className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded text-white placeholder-gray-500 focus:outline-none focus:border-[#FF8F75]"
             />
             <button
               type="submit"
-              className="px-8 py-4 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded"
+              className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
             >
               Subscribe
             </button>
@@ -789,14 +789,14 @@ export default function Home() {
 
             {/* Content */}
             <div className="lg:w-1/2">
-              <div className="w-16 h-px bg-[#D4AF37] mb-6" />
-              <h2 className="text-4xl font-display font-semibold text-[#2D2D2D] mb-6">
+              <div className="w-16 h-px bg-[#FF8F75] mb-6" />
+              <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-6">
                 Find Us on Ocean Drive
               </h2>
               <div className="flex items-start gap-4 mb-6">
-                <MapPin className="text-[#C4846C] mt-1 flex-shrink-0" size={24} />
+                <MapPin className="text-[#FF8F75] mt-1 flex-shrink-0" size={24} />
                 <div>
-                  <p className="font-semibold text-[#2D2D2D] mb-1">
+                  <p className="font-semibold text-[#4C5254] mb-1">
                     400 Ocean Drive
                   </p>
                   <p className="text-[#666]">
@@ -814,7 +814,7 @@ export default function Home() {
                 href="https://maps.google.com/?q=400+Ocean+Dr,+Miami+Beach,+FL+33139"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 border-2 border-[#C4846C] text-[#C4846C] font-medium tracking-wide hover:bg-[#C4846C] hover:text-white transition-all duration-300 rounded inline-block"
+                className="px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded inline-block"
               >
                 Get Directions
               </a>

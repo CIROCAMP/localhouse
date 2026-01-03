@@ -90,7 +90,7 @@ const blogContent: Record<string, {
 
         <p>
           Ready to experience the best brunch Miami Beach has to offer? 
-          <Link href="/brunch"><span className="text-[#C4846C] hover:underline">View our full brunch menu</span></Link> 
+          <Link href="/brunch"><span className="text-[#FF8F75] hover:underline">View our full brunch menu</span></Link> 
           or make your reservation today.
         </p>
       </>
@@ -177,7 +177,7 @@ const blogContent: Record<string, {
         </p>
 
         <p>
-          <Link href="/hotel"><span className="text-[#C4846C] hover:underline">Explore our rooms and suites</span></Link> 
+          <Link href="/hotel"><span className="text-[#FF8F75] hover:underline">Explore our rooms and suites</span></Link> 
           and discover why South of Fifth is Miami Beach's best-kept secret.
         </p>
       </>
@@ -263,8 +263,8 @@ const blogContent: Record<string, {
         </p>
 
         <p>
-          <Link href="/restaurant"><span className="text-[#C4846C] hover:underline">View our menus</span></Link> 
-          and <Link href="https://www.opentable.com/the-local-house"><span className="text-[#C4846C] hover:underline">make a reservation</span></Link>.
+          <Link href="/restaurant"><span className="text-[#FF8F75] hover:underline">View our menus</span></Link> 
+          and <Link href="https://www.opentable.com/the-local-house"><span className="text-[#FF8F75] hover:underline">make a reservation</span></Link>.
         </p>
       </>
     ),
@@ -350,7 +350,7 @@ const blogContent: Record<string, {
         </p>
 
         <p>
-          <Link href="/hotel"><span className="text-[#C4846C] hover:underline">Discover The Local House</span></Link> 
+          <Link href="/hotel"><span className="text-[#FF8F75] hover:underline">Discover The Local House</span></Link> 
           and see why our guests keep coming back.
         </p>
       </>
@@ -366,11 +366,11 @@ export default function BlogPost() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#FAF7F2]">
         <div className="text-center">
-          <h1 className="text-4xl font-display font-semibold text-[#2D2D2D] mb-4">
+          <h1 className="text-4xl font-display font-semibold text-[#4C5254] mb-4">
             Article Not Found
           </h1>
           <Link href="/blog">
-            <span className="text-[#C4846C] hover:underline">← Back to Blog</span>
+            <span className="text-[#FF8F75] hover:underline">← Back to Blog</span>
           </Link>
         </div>
       </div>
@@ -395,7 +395,7 @@ export default function BlogPost() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-4 py-1 bg-[#C4846C] text-white text-sm font-medium rounded-full mb-6">
+            <span className="inline-block px-4 py-1 bg-[#FF8F75] text-white text-sm font-medium rounded-full mb-6">
               {post.category}
             </span>
             <h1 className="text-4xl md:text-5xl font-display font-semibold mb-4">
@@ -423,7 +423,7 @@ export default function BlogPost() {
                 {post.readTime}
               </span>
             </div>
-            <button className="flex items-center gap-2 text-[#666] hover:text-[#C4846C] transition-colors">
+            <button className="flex items-center gap-2 text-[#666] hover:text-[#FF8F75] transition-colors">
               <Share2 size={16} />
               Share
             </button>
@@ -435,12 +435,12 @@ export default function BlogPost() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="prose prose-lg max-w-none
-              prose-headings:font-display prose-headings:text-[#2D2D2D]
+              prose-headings:font-display prose-headings:text-[#4C5254]
               prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
               prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
               prose-p:text-[#666] prose-p:leading-relaxed prose-p:mb-6
               prose-ul:text-[#666] prose-li:mb-2
-              prose-strong:text-[#2D2D2D]"
+              prose-strong:text-[#4C5254]"
           >
             {post.content}
           </motion.div>
@@ -448,7 +448,7 @@ export default function BlogPost() {
           {/* Back Link */}
           <div className="mt-12 pt-8 border-t border-[#E5DED5]">
             <Link href="/blog">
-              <span className="inline-flex items-center gap-2 text-[#C4846C] hover:gap-3 transition-all">
+              <span className="inline-flex items-center gap-2 text-[#FF8F75] hover:gap-3 transition-all">
                 <ArrowLeft size={16} />
                 Back to Blog
               </span>
@@ -460,7 +460,7 @@ export default function BlogPost() {
       {/* CTA Section */}
       <section className="py-16 bg-[#FAF7F2]">
         <div className="container max-w-2xl text-center">
-          <h2 className="text-3xl font-display font-semibold text-[#2D2D2D] mb-4">
+          <h2 className="text-3xl font-display font-semibold text-[#4C5254] mb-4">
             Experience The Local House
           </h2>
           <p className="text-[#666] mb-8">
@@ -471,7 +471,7 @@ export default function BlogPost() {
               href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded"
+              className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
             >
               Book a Room
             </a>
@@ -479,7 +479,7 @@ export default function BlogPost() {
               href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 border-2 border-[#C4846C] text-[#C4846C] font-medium tracking-wide hover:bg-[#C4846C] hover:text-white transition-all duration-300 rounded"
+              className="px-8 py-4 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded"
             >
               Reserve a Table
             </a>

@@ -56,7 +56,7 @@ export default function Blog() {
       <SEOSchema page="blog" />
       
       {/* Hero Section */}
-      <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#2D2D2D]">
+      <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#4C5254]">
         <div className="relative z-10 text-center text-white px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -94,7 +94,7 @@ export default function Blog() {
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-[#C4846C] text-white text-xs font-medium rounded-full">
+                      <span className="px-3 py-1 bg-[#FF8F75] text-white text-xs font-medium rounded-full">
                         {post.category}
                       </span>
                     </div>
@@ -110,13 +110,13 @@ export default function Blog() {
                         {post.readTime}
                       </span>
                     </div>
-                    <h2 className="text-xl font-display font-semibold text-[#2D2D2D] mb-3 hover:text-[#C4846C] transition-colors">
+                    <h2 className="text-xl font-display font-semibold text-[#4C5254] mb-3 hover:text-[#FF8F75] transition-colors">
                       {post.title}
                     </h2>
                     <p className="text-[#666] leading-relaxed mb-4">
                       {post.excerpt}
                     </p>
-                    <span className="inline-flex items-center gap-2 text-[#C4846C] font-medium hover:gap-3 transition-all">
+                    <span className="inline-flex items-center gap-2 text-[#FF8F75] font-medium hover:gap-3 transition-all">
                       Read More <ArrowRight size={16} />
                     </span>
                   </div>
@@ -130,7 +130,7 @@ export default function Blog() {
       {/* Newsletter CTA */}
       <section className="py-16 bg-white">
         <div className="container max-w-2xl text-center">
-          <h2 className="text-3xl font-display font-semibold text-[#2D2D2D] mb-4">
+          <h2 className="text-3xl font-display font-semibold text-[#4C5254] mb-4">
             Get Local Tips in Your Inbox
           </h2>
           <p className="text-[#666] mb-8">
@@ -140,11 +140,11 @@ export default function Blog() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-6 py-4 bg-[#FAF7F2] border border-[#E5DED5] rounded focus:outline-none focus:border-[#C4846C]"
+              className="flex-1 px-6 py-4 bg-[#FAF7F2] border border-[#E5DED5] rounded focus:outline-none focus:border-[#FF8F75]"
             />
             <button
               type="submit"
-              className="px-8 py-4 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded"
+              className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
             >
               Subscribe
             </button>

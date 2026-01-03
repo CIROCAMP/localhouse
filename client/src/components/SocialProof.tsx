@@ -65,15 +65,15 @@ export function BookingNotification() {
           className="fixed bottom-24 left-4 z-50 bg-white rounded-lg shadow-xl border border-[#E5DED5] p-4 max-w-xs"
         >
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#C4846C]/10 flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-[#FF8F75]/10 flex items-center justify-center flex-shrink-0">
               {booking.type === "room" ? (
-                <MapPin className="w-5 h-5 text-[#C4846C]" />
+                <MapPin className="w-5 h-5 text-[#FF8F75]" />
               ) : (
-                <Star className="w-5 h-5 text-[#D4AF37]" />
+                <Star className="w-5 h-5 text-[#FF8F75]" />
               )}
             </div>
             <div>
-              <p className="text-sm text-[#2D2D2D]">
+              <p className="text-sm text-[#4C5254]">
                 <span className="font-semibold">{booking.name}</span> from{" "}
                 {booking.location}
               </p>
@@ -109,7 +109,7 @@ export function UrgencyBanner() {
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="fixed top-20 left-0 right-0 z-40 bg-gradient-to-r from-[#C4846C] to-[#B07460] text-white py-2 px-4"
+      className="fixed top-20 left-0 right-0 z-40 bg-gradient-to-r from-[#FF8F75] to-[#e67c63] text-white py-2 px-4"
     >
       <div className="container flex flex-wrap justify-center items-center gap-4 md:gap-8 text-sm">
         <div className="flex items-center gap-2">
@@ -166,7 +166,7 @@ export function StickyBookingBar() {
               href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 py-3 bg-[#C4846C] text-white text-center font-medium rounded hover:bg-[#B07460] transition-colors"
+              className="flex-1 py-3 bg-[#FF8F75] text-white text-center font-medium rounded hover:bg-[#e67c63] transition-colors"
             >
               Book Table
             </a>
@@ -174,7 +174,7 @@ export function StickyBookingBar() {
               href="https://www.booking.com/hotel/us/sense-south-beach.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 py-3 bg-[#2D2D2D] text-white text-center font-medium rounded hover:bg-[#3D3D3D] transition-colors"
+              className="flex-1 py-3 bg-[#4C5254] text-white text-center font-medium rounded hover:bg-[#3D3D3D] transition-colors"
             >
               Book Room
             </a>
@@ -202,7 +202,7 @@ export function LiveActivityIndicator() {
 export function BestSellerBadge({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative">
-      <div className="absolute -top-2 -right-2 bg-[#D4AF37] text-white text-xs font-bold px-2 py-1 rounded-full z-10">
+      <div className="absolute -top-2 -right-2 bg-[#FF8F75] text-white text-xs font-bold px-2 py-1 rounded-full z-10">
         #1 BEST SELLER
       </div>
       {children}

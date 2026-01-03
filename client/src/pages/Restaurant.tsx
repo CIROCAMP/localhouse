@@ -88,24 +88,24 @@ export default function Restaurant() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex flex-wrap justify-center gap-8">
               <div className="flex items-center gap-3">
-                <Clock className="text-[#C4846C]" size={20} />
+                <Clock className="text-[#FF8F75]" size={20} />
                 <div>
                   <p className="text-sm text-[#999]">Brunch</p>
-                  <p className="font-medium text-[#2D2D2D]">8AM – 4PM daily</p>
+                  <p className="font-medium text-[#4C5254]">8AM – 4PM daily</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Clock className="text-[#C4846C]" size={20} />
+                <Clock className="text-[#FF8F75]" size={20} />
                 <div>
                   <p className="text-sm text-[#999]">Dinner</p>
-                  <p className="font-medium text-[#2D2D2D]">6PM – 11PM daily</p>
+                  <p className="font-medium text-[#4C5254]">6PM – 11PM daily</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="text-[#C4846C]" size={20} />
+                <Phone className="text-[#FF8F75]" size={20} />
                 <div>
                   <p className="text-sm text-[#999]">Reservations</p>
-                  <a href="tel:+13055385529" className="font-medium text-[#2D2D2D] hover:text-[#C4846C]">
+                  <a href="tel:+13055385529" className="font-medium text-[#4C5254] hover:text-[#FF8F75]">
                     (305) 538-5529
                   </a>
                 </div>
@@ -115,7 +115,7 @@ export default function Restaurant() {
               href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded"
+              className="flex items-center gap-2 px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
             >
               Reserve on OpenTable
               <ExternalLink size={16} />
@@ -128,8 +128,8 @@ export default function Restaurant() {
       <section className="py-24 bg-[#FAF7F2]">
         <div className="container">
           <div className="text-center mb-16">
-            <div className="w-16 h-px bg-[#D4AF37] mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-4">
+            <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
               Our Menu
             </h2>
             <p className="text-lg text-[#666]">
@@ -141,25 +141,25 @@ export default function Restaurant() {
             <TabsList className="w-full justify-center mb-12 bg-transparent gap-4">
               <TabsTrigger
                 value="brunch"
-                className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#C4846C] data-[state=active]:text-white rounded"
+                className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#FF8F75] data-[state=active]:text-white rounded"
               >
                 Brunch
               </TabsTrigger>
               <TabsTrigger
                 value="dinner"
-                className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#C4846C] data-[state=active]:text-white rounded"
+                className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#FF8F75] data-[state=active]:text-white rounded"
               >
                 Dinner
               </TabsTrigger>
               <TabsTrigger
                 value="cocktails"
-                className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#C4846C] data-[state=active]:text-white rounded"
+                className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#FF8F75] data-[state=active]:text-white rounded"
               >
                 Cocktails
               </TabsTrigger>
               <TabsTrigger
                 value="wine"
-                className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#C4846C] data-[state=active]:text-white rounded"
+                className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#FF8F75] data-[state=active]:text-white rounded"
               >
                 Wine
               </TabsTrigger>
@@ -167,7 +167,7 @@ export default function Restaurant() {
 
             <TabsContent value="brunch">
               <div className="bg-white rounded-lg p-8 shadow-sm">
-                <h3 className="text-2xl font-display font-semibold text-[#2D2D2D] mb-8 text-center">
+                <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-8 text-center">
                   Brunch Menu
                   <span className="block text-sm font-body text-[#999] mt-1">Daily 8AM – 4PM</span>
                 </h3>
@@ -181,10 +181,10 @@ export default function Restaurant() {
                       className="flex justify-between items-start border-b border-[#E5DED5] pb-4 last:border-0"
                     >
                       <div>
-                        <h4 className="font-semibold text-[#2D2D2D] mb-1">{item.name}</h4>
+                        <h4 className="font-semibold text-[#4C5254] mb-1">{item.name}</h4>
                         <p className="text-sm text-[#666]">{item.description}</p>
                       </div>
-                      <span className="text-[#C4846C] font-semibold ml-4">${item.price}</span>
+                      <span className="text-[#FF8F75] font-semibold ml-4">${item.price}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -193,7 +193,7 @@ export default function Restaurant() {
 
             <TabsContent value="dinner">
               <div className="bg-white rounded-lg p-8 shadow-sm">
-                <h3 className="text-2xl font-display font-semibold text-[#2D2D2D] mb-8 text-center">
+                <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-8 text-center">
                   Dinner Menu
                   <span className="block text-sm font-body text-[#999] mt-1">Daily 6PM – 11PM</span>
                 </h3>
@@ -207,10 +207,10 @@ export default function Restaurant() {
                       className="flex justify-between items-start border-b border-[#E5DED5] pb-4 last:border-0"
                     >
                       <div>
-                        <h4 className="font-semibold text-[#2D2D2D] mb-1">{item.name}</h4>
+                        <h4 className="font-semibold text-[#4C5254] mb-1">{item.name}</h4>
                         <p className="text-sm text-[#666]">{item.description}</p>
                       </div>
-                      <span className="text-[#C4846C] font-semibold ml-4">${item.price}</span>
+                      <span className="text-[#FF8F75] font-semibold ml-4">${item.price}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -219,7 +219,7 @@ export default function Restaurant() {
 
             <TabsContent value="cocktails">
               <div className="bg-white rounded-lg p-8 shadow-sm">
-                <h3 className="text-2xl font-display font-semibold text-[#2D2D2D] mb-8 text-center">
+                <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-8 text-center">
                   Signature Cocktails
                 </h3>
                 <div className="space-y-6">
@@ -232,10 +232,10 @@ export default function Restaurant() {
                       className="flex justify-between items-start border-b border-[#E5DED5] pb-4 last:border-0"
                     >
                       <div>
-                        <h4 className="font-semibold text-[#2D2D2D] mb-1">{item.name}</h4>
+                        <h4 className="font-semibold text-[#4C5254] mb-1">{item.name}</h4>
                         <p className="text-sm text-[#666]">{item.description}</p>
                       </div>
-                      <span className="text-[#C4846C] font-semibold ml-4">${item.price}</span>
+                      <span className="text-[#FF8F75] font-semibold ml-4">${item.price}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -244,7 +244,7 @@ export default function Restaurant() {
 
             <TabsContent value="wine">
               <div className="bg-white rounded-lg p-8 shadow-sm">
-                <h3 className="text-2xl font-display font-semibold text-[#2D2D2D] mb-8 text-center">
+                <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-8 text-center">
                   Wine Selection
                 </h3>
                 <div className="space-y-6">
@@ -256,16 +256,16 @@ export default function Restaurant() {
                       transition={{ delay: index * 0.05 }}
                       className="flex justify-between items-start border-b border-[#E5DED5] pb-4 last:border-0"
                     >
-                      <h4 className="font-semibold text-[#2D2D2D]">{item.name}</h4>
+                      <h4 className="font-semibold text-[#4C5254]">{item.name}</h4>
                       <div className="text-right">
                         {item.price && (
-                          <span className="text-[#C4846C] font-semibold">
+                          <span className="text-[#FF8F75] font-semibold">
                             Glass ${item.price}
                           </span>
                         )}
                         {item.price && item.priceBottle && <span className="text-[#999] mx-2">|</span>}
                         {item.priceBottle && (
-                          <span className="text-[#C4846C] font-semibold">
+                          <span className="text-[#FF8F75] font-semibold">
                             Bottle ${item.priceBottle}
                           </span>
                         )}
@@ -285,7 +285,7 @@ export default function Restaurant() {
               href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#C4846C] font-medium hover:underline"
+              className="text-[#FF8F75] font-medium hover:underline"
             >
               View Full Menu on OpenTable →
             </a>
@@ -305,8 +305,8 @@ export default function Restaurant() {
               />
             </div>
             <div className="lg:w-1/2">
-              <div className="w-16 h-px bg-[#D4AF37] mb-6" />
-              <h2 className="text-4xl font-display font-semibold text-[#2D2D2D] mb-6">
+              <div className="w-16 h-px bg-[#FF8F75] mb-6" />
+              <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-6">
                 Reserve Your Table
               </h2>
               <p className="text-[#666] leading-relaxed mb-8">
@@ -319,13 +319,13 @@ export default function Restaurant() {
                   href="https://www.opentable.com/the-local-house"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded text-center"
+                  className="px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded text-center"
                 >
                   Book on OpenTable
                 </a>
                 <a
                   href="tel:+13055385529"
-                  className="px-6 py-3 border-2 border-[#C4846C] text-[#C4846C] font-medium tracking-wide hover:bg-[#C4846C] hover:text-white transition-all duration-300 rounded text-center"
+                  className="px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded text-center"
                 >
                   Call (305) 538-5529
                 </a>

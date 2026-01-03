@@ -47,7 +47,7 @@ export default function Gallery() {
       <SEOSchema page="gallery" />
       
       {/* Hero Section */}
-      <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#2D2D2D]">
+      <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#4C5254]">
         <div className="relative z-10 text-center text-white px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -74,7 +74,7 @@ export default function Gallery() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedCategory === category.id
-                    ? "bg-[#C4846C] text-white"
+                    ? "bg-[#FF8F75] text-white"
                     : "bg-[#FAF7F2] text-[#666] hover:bg-[#E5DED5]"
                 }`}
               >
@@ -117,7 +117,7 @@ export default function Gallery() {
           onClick={() => setLightboxImage(null)}
         >
           <button
-            className="absolute top-6 right-6 text-white hover:text-[#C4846C] transition-colors"
+            className="absolute top-6 right-6 text-white hover:text-[#FF8F75] transition-colors"
             onClick={() => setLightboxImage(null)}
           >
             <X size={32} />
@@ -136,7 +136,7 @@ export default function Gallery() {
       {/* CTA Section */}
       <section className="py-24 bg-white">
         <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#2D2D2D] mb-6">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#4C5254] mb-6">
             Experience It In Person
           </h2>
           <p className="text-lg text-[#666] max-w-2xl mx-auto mb-10">
@@ -147,7 +147,7 @@ export default function Gallery() {
               href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded"
+              className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
             >
               Book a Table
             </a>
@@ -155,7 +155,7 @@ export default function Gallery() {
               href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 border-2 border-[#C4846C] text-[#C4846C] font-medium tracking-wide hover:bg-[#C4846C] hover:text-white transition-all duration-300 rounded"
+              className="px-8 py-4 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded"
             >
               Book a Room
             </a>

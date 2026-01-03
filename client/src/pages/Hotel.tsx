@@ -113,13 +113,13 @@ function RoomImageCarousel({ images, name }: { images: string[], name: string })
         onClick={prevImage}
         className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
       >
-        <ChevronLeft className="w-5 h-5 text-[#2D2D2D]" />
+        <ChevronLeft className="w-5 h-5 text-[#4C5254]" />
       </button>
       <button
         onClick={nextImage}
         className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
       >
-        <ChevronRight className="w-5 h-5 text-[#2D2D2D]" />
+        <ChevronRight className="w-5 h-5 text-[#4C5254]" />
       </button>
 
       {/* Dots */}
@@ -194,7 +194,7 @@ export default function Hotel() {
                       name={room.name} 
                     />
                     {room.type && (
-                      <span className="absolute top-4 left-4 px-4 py-2 bg-[#C4846C] text-white text-xs font-medium tracking-wider rounded z-10">
+                      <span className="absolute top-4 left-4 px-4 py-2 bg-[#FF8F75] text-white text-xs font-medium tracking-wider rounded z-10">
                         {room.type}
                       </span>
                     )}
@@ -203,10 +203,10 @@ export default function Hotel() {
 
                 {/* Content */}
                 <div className="lg:w-1/2">
-                  <div className="text-[#C4846C] font-medium mb-2">
+                  <div className="text-[#FF8F75] font-medium mb-2">
                     From <span className="text-3xl font-display">${room.price}</span>/night
                   </div>
-                  <h2 className="text-3xl font-display font-semibold text-[#2D2D2D] mb-4">
+                  <h2 className="text-3xl font-display font-semibold text-[#4C5254] mb-4">
                     {room.name}
                   </h2>
                   <p className="text-[#666] leading-relaxed mb-6">
@@ -238,7 +238,7 @@ export default function Hotel() {
                     href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded inline-block"
+                    className="px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded inline-block"
                   >
                     Book This Room
                   </a>
@@ -256,7 +256,7 @@ export default function Hotel() {
             <span className="inline-block px-4 py-2 bg-[#7FBFB3]/20 text-[#7FBFB3] text-sm font-medium rounded-full mb-4">
               INCLUDED WITH EVERY STAY
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-4">
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
               $35 Daily Amenities Package
             </h2>
             <p className="text-lg text-[#666] max-w-2xl mx-auto">
@@ -275,9 +275,9 @@ export default function Hotel() {
                 className="text-center p-6 bg-[#FAF7F2] rounded-lg"
               >
                 <div className="w-14 h-14 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-sm">
-                  <amenity.icon className="text-[#C4846C]" size={24} />
+                  <amenity.icon className="text-[#FF8F75]" size={24} />
                 </div>
-                <h3 className="font-display font-semibold text-[#2D2D2D] mb-2">
+                <h3 className="font-display font-semibold text-[#4C5254] mb-2">
                   {amenity.name}
                 </h3>
                 <p className="text-sm text-[#666]">{amenity.description}</p>
@@ -287,7 +287,7 @@ export default function Hotel() {
 
           <div className="text-center mt-12">
             <p className="text-[#666] mb-2">
-              <span className="font-semibold text-[#C4846C]">$35/night</span> · Incredible Value
+              <span className="font-semibold text-[#FF8F75]">$35/night</span> · Incredible Value
             </p>
             <p className="text-sm text-[#999]">
               The amenities package is automatically included with your stay. No need to add it separately—just book and enjoy!
@@ -297,7 +297,7 @@ export default function Hotel() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-[#2D2D2D]">
+      <section className="py-24 bg-[#4C5254]">
         <div className="container text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -317,7 +317,7 @@ export default function Hotel() {
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
                 ✓ Best Price Guarantee
               </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#D4AF37]/20 text-[#D4AF37] rounded-full text-sm font-medium">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/20 text-[#FF8F75] rounded-full text-sm font-medium">
                 ✓ Free Cancellation
               </span>
             </div>
@@ -336,13 +336,13 @@ export default function Hotel() {
                 href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-[#C4846C] text-white font-medium tracking-wide hover:bg-[#B07460] transition-all duration-300 rounded"
+                className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
               >
                 Book Your Stay
               </a>
               <a
                 href="tel:+13055385529"
-                className="px-8 py-4 border-2 border-white text-white font-medium tracking-wide hover:bg-white hover:text-[#2D2D2D] transition-all duration-300 rounded"
+                className="px-8 py-4 border-2 border-white text-white font-medium tracking-wide hover:bg-white hover:text-[#4C5254] transition-all duration-300 rounded"
               >
                 Call (305) 538-5529
               </a>

@@ -61,8 +61,8 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="w-16 h-px bg-[#D4AF37] mb-6" />
-              <h2 className="text-4xl font-display font-semibold text-[#2D2D2D] mb-8">
+              <div className="w-16 h-px bg-[#FF8F75] mb-6" />
+              <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-8">
                 Get In Touch
               </h2>
 
@@ -73,11 +73,11 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 p-4 bg-white rounded-lg hover:shadow-md transition-shadow"
                 >
-                  <div className="w-12 h-12 bg-[#C4846C]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-[#C4846C]" size={24} />
+                  <div className="w-12 h-12 bg-[#FF8F75]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="text-[#FF8F75]" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#2D2D2D] mb-1">Address</h3>
+                    <h3 className="font-semibold text-[#4C5254] mb-1">Address</h3>
                     <p className="text-[#666]">
                       400 Ocean Drive<br />
                       Miami Beach, FL 33139<br />
@@ -90,11 +90,11 @@ export default function Contact() {
                   href="tel:+13055385529"
                   className="flex items-start gap-4 p-4 bg-white rounded-lg hover:shadow-md transition-shadow"
                 >
-                  <div className="w-12 h-12 bg-[#C4846C]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-[#C4846C]" size={24} />
+                  <div className="w-12 h-12 bg-[#FF8F75]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="text-[#FF8F75]" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#2D2D2D] mb-1">Phone</h3>
+                    <h3 className="font-semibold text-[#4C5254] mb-1">Phone</h3>
                     <p className="text-[#666]">(305) 538-5529</p>
                   </div>
                 </a>
@@ -103,21 +103,21 @@ export default function Contact() {
                   href="mailto:info@localhouse.com"
                   className="flex items-start gap-4 p-4 bg-white rounded-lg hover:shadow-md transition-shadow"
                 >
-                  <div className="w-12 h-12 bg-[#C4846C]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-[#C4846C]" size={24} />
+                  <div className="w-12 h-12 bg-[#FF8F75]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="text-[#FF8F75]" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#2D2D2D] mb-1">Email</h3>
+                    <h3 className="font-semibold text-[#4C5254] mb-1">Email</h3>
                     <p className="text-[#666]">info@localhouse.com</p>
                   </div>
                 </a>
 
                 <div className="flex items-start gap-4 p-4 bg-white rounded-lg">
-                  <div className="w-12 h-12 bg-[#C4846C]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-[#C4846C]" size={24} />
+                  <div className="w-12 h-12 bg-[#FF8F75]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Clock className="text-[#FF8F75]" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#2D2D2D] mb-1">Hours</h3>
+                    <h3 className="font-semibold text-[#4C5254] mb-1">Hours</h3>
                     <div className="text-[#666] space-y-1">
                       <p><span className="font-medium">Front Desk:</span> 8AM – 10PM daily</p>
                       <p><span className="font-medium">Brunch:</span> 8AM – 4PM daily</p>
@@ -129,13 +129,13 @@ export default function Contact() {
 
               {/* Social Links */}
               <div>
-                <h3 className="font-semibold text-[#2D2D2D] mb-4">Follow Us</h3>
+                <h3 className="font-semibold text-[#4C5254] mb-4">Follow Us</h3>
                 <div className="flex gap-4">
                   <a
                     href="https://instagram.com/localhouse"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#C4846C] hover:text-white transition-colors text-[#2D2D2D]"
+                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#FF8F75] hover:text-white transition-colors text-[#4C5254]"
                   >
                     <Instagram size={20} />
                   </a>
@@ -143,7 +143,7 @@ export default function Contact() {
                     href="https://facebook.com/localhouse"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#C4846C] hover:text-white transition-colors text-[#2D2D2D]"
+                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#FF8F75] hover:text-white transition-colors text-[#4C5254]"
                   >
                     <Facebook size={20} />
                   </a>
@@ -151,7 +151,7 @@ export default function Contact() {
                     href="https://wa.me/13055385529"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#C4846C] hover:text-white transition-colors text-[#2D2D2D]"
+                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#FF8F75] hover:text-white transition-colors text-[#4C5254]"
                   >
                     <MessageCircle size={20} />
                   </a>
@@ -167,13 +167,13 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
             >
               <div className="bg-white p-8 rounded-lg shadow-sm">
-                <h2 className="text-2xl font-display font-semibold text-[#2D2D2D] mb-6">
+                <h2 className="text-2xl font-display font-semibold text-[#4C5254] mb-6">
                   Send Us a Message
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-[#2D2D2D] mb-2">
+                      <label className="block text-sm font-medium text-[#4C5254] mb-2">
                         First Name
                       </label>
                       <Input
@@ -184,7 +184,7 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-[#2D2D2D] mb-2">
+                      <label className="block text-sm font-medium text-[#4C5254] mb-2">
                         Last Name
                       </label>
                       <Input
@@ -197,7 +197,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#2D2D2D] mb-2">
+                    <label className="block text-sm font-medium text-[#4C5254] mb-2">
                       Email
                     </label>
                     <Input
@@ -209,7 +209,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#2D2D2D] mb-2">
+                    <label className="block text-sm font-medium text-[#4C5254] mb-2">
                       Phone (optional)
                     </label>
                     <Input
@@ -220,7 +220,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#2D2D2D] mb-2">
+                    <label className="block text-sm font-medium text-[#4C5254] mb-2">
                       Subject
                     </label>
                     <Input
@@ -232,7 +232,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#2D2D2D] mb-2">
+                    <label className="block text-sm font-medium text-[#4C5254] mb-2">
                       Message
                     </label>
                     <Textarea
@@ -245,7 +245,7 @@ export default function Contact() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-[#C4846C] hover:bg-[#B07460] text-white py-6"
+                    className="w-full bg-[#FF8F75] hover:bg-[#e67c63] text-white py-6"
                   >
                     Send Message
                   </Button>
@@ -280,11 +280,11 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="p-8 bg-[#FAF7F2] rounded-lg text-center hover:shadow-lg transition-shadow"
             >
-              <h3 className="text-xl font-display font-semibold text-[#2D2D2D] mb-2">
+              <h3 className="text-xl font-display font-semibold text-[#4C5254] mb-2">
                 Restaurant Reservations
               </h3>
               <p className="text-[#666] mb-4">Book your table on OpenTable</p>
-              <span className="text-[#C4846C] font-medium">Reserve Now →</span>
+              <span className="text-[#FF8F75] font-medium">Reserve Now →</span>
             </a>
 
             <a
@@ -293,22 +293,22 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="p-8 bg-[#FAF7F2] rounded-lg text-center hover:shadow-lg transition-shadow"
             >
-              <h3 className="text-xl font-display font-semibold text-[#2D2D2D] mb-2">
+              <h3 className="text-xl font-display font-semibold text-[#4C5254] mb-2">
                 Hotel Reservations
               </h3>
               <p className="text-[#666] mb-4">Book your room directly</p>
-              <span className="text-[#C4846C] font-medium">Book Now →</span>
+              <span className="text-[#FF8F75] font-medium">Book Now →</span>
             </a>
 
             <a
               href="tel:+13055385529"
               className="p-8 bg-[#FAF7F2] rounded-lg text-center hover:shadow-lg transition-shadow"
             >
-              <h3 className="text-xl font-display font-semibold text-[#2D2D2D] mb-2">
+              <h3 className="text-xl font-display font-semibold text-[#4C5254] mb-2">
                 Call Us
               </h3>
               <p className="text-[#666] mb-4">Speak with our team directly</p>
-              <span className="text-[#C4846C] font-medium">(305) 538-5529</span>
+              <span className="text-[#FF8F75] font-medium">(305) 538-5529</span>
             </a>
           </div>
         </div>

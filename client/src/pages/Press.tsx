@@ -7,7 +7,7 @@ import { SEOSchema } from "@/components/SEOSchema";
 /*
  * Design: Miami Art Deco Revival
  * Press & Awards page showcasing media mentions and accolades
- * Colors: Coral (#C4846C), Seafoam (#7FBFB3), Gold (#D4AF37), Cream (#FAF7F2)
+ * Colors: Coral (#FF8F75), Seafoam (#7FBFB3), Gold (#FF8F75), Cream (#FAF7F2)
  */
 
 const awards = [
@@ -30,14 +30,14 @@ const awards = [
     title: "Best Brunch in South Beach",
     description: "Voted by locals and visitors as the premier brunch destination in the South of Fifth neighborhood.",
     icon: Award,
-    color: "#D4AF37",
+    color: "#FF8F75",
   },
   {
     year: "2023",
     title: "Miami New Times Best Of",
     description: "Featured in Miami New Times' annual 'Best Of Miami' guide for exceptional brunch offerings.",
     icon: Newspaper,
-    color: "#C4846C",
+    color: "#FF8F75",
   },
 ];
 
@@ -134,10 +134,10 @@ export default function Press() {
 
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2D2D2D] via-[#3D3D3D] to-[#2D2D2D]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#4C5254] via-[#3D3D3D] to-[#4C5254]" />
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-32 h-32 border border-[#D4AF37] rotate-45" />
-          <div className="absolute bottom-20 right-20 w-48 h-48 border border-[#C4846C] rotate-12" />
+          <div className="absolute top-20 left-20 w-32 h-32 border border-[#FF8F75] rotate-45" />
+          <div className="absolute bottom-20 right-20 w-48 h-48 border border-[#FF8F75] rotate-12" />
           <div className="absolute top-1/2 left-1/3 w-24 h-24 border border-[#7FBFB3] -rotate-12" />
         </div>
         <div className="relative z-10 text-center text-white px-4">
@@ -147,9 +147,9 @@ export default function Press() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex justify-center gap-2 mb-6">
-              <Award className="w-8 h-8 text-[#D4AF37]" />
-              <Newspaper className="w-8 h-8 text-[#C4846C]" />
-              <Star className="w-8 h-8 text-[#D4AF37]" />
+              <Award className="w-8 h-8 text-[#FF8F75]" />
+              <Newspaper className="w-8 h-8 text-[#FF8F75]" />
+              <Star className="w-8 h-8 text-[#FF8F75]" />
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold mb-4">
               Press & Awards
@@ -174,10 +174,10 @@ export default function Press() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-display font-bold text-[#C4846C] mb-1">
+                <div className="text-4xl md:text-5xl font-display font-bold text-[#FF8F75] mb-1">
                   {stat.value}
                 </div>
-                <div className="text-[#2D2D2D] font-medium">{stat.label}</div>
+                <div className="text-[#4C5254] font-medium">{stat.label}</div>
                 <div className="text-sm text-[#999]">{stat.sublabel}</div>
               </motion.div>
             ))}
@@ -189,8 +189,8 @@ export default function Press() {
       <section className="py-24 bg-[#FAF7F2]">
         <div className="container">
           <div className="text-center mb-16">
-            <div className="w-16 h-px bg-[#D4AF37] mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-4">
+            <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
               Awards & Recognition
             </h2>
             <p className="text-lg text-[#666] max-w-2xl mx-auto">
@@ -216,8 +216,8 @@ export default function Press() {
                     <award.icon className="w-7 h-7" style={{ color: award.color }} />
                   </div>
                   <div>
-                    <span className="text-sm font-medium text-[#C4846C]">{award.year}</span>
-                    <h3 className="text-xl font-display font-semibold text-[#2D2D2D] mb-2">
+                    <span className="text-sm font-medium text-[#FF8F75]">{award.year}</span>
+                    <h3 className="text-xl font-display font-semibold text-[#4C5254] mb-2">
                       {award.title}
                     </h3>
                     <p className="text-[#666]">{award.description}</p>
@@ -233,7 +233,7 @@ export default function Press() {
       <section className="py-16 bg-white border-b border-[#E5DED5]">
         <div className="container">
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-display font-semibold text-[#2D2D2D] mb-2">
+            <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-2">
               Official Award Badges
             </h3>
             <p className="text-[#666]">
@@ -309,8 +309,8 @@ export default function Press() {
       <section className="py-24 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <div className="w-16 h-px bg-[#D4AF37] mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#2D2D2D] mb-4">
+            <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
               Featured In
             </h2>
             <p className="text-lg text-[#666] max-w-2xl mx-auto">
@@ -331,8 +331,8 @@ export default function Press() {
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="md:w-1/4">
                     <div className="flex items-center gap-3 mb-2">
-                      <Newspaper className="w-5 h-5 text-[#C4846C]" />
-                      <span className="font-display font-semibold text-[#2D2D2D]">
+                      <Newspaper className="w-5 h-5 text-[#FF8F75]" />
+                      <span className="font-display font-semibold text-[#4C5254]">
                         {feature.publication}
                       </span>
                     </div>
@@ -342,7 +342,7 @@ export default function Press() {
                     </div>
                   </div>
                   <div className="md:w-3/4">
-                    <h3 className="text-xl font-display font-semibold text-[#2D2D2D] mb-3">
+                    <h3 className="text-xl font-display font-semibold text-[#4C5254] mb-3">
                       "{feature.title}"
                     </h3>
                     <p className="text-[#666] leading-relaxed mb-4">
@@ -350,7 +350,7 @@ export default function Press() {
                     </p>
                     <a
                       href={feature.link}
-                      className="inline-flex items-center gap-2 text-[#C4846C] hover:text-[#B07460] font-medium transition-colors"
+                      className="inline-flex items-center gap-2 text-[#FF8F75] hover:text-[#e67c63] font-medium transition-colors"
                     >
                       Read Full Article
                       <ExternalLink className="w-4 h-4" />
@@ -364,10 +364,10 @@ export default function Press() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-[#2D2D2D] text-white">
+      <section className="py-24 bg-[#4C5254] text-white">
         <div className="container">
           <div className="text-center mb-16">
-            <div className="w-16 h-px bg-[#D4AF37] mx-auto mb-6" />
+            <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold mb-4">
               Guest Reviews
             </h2>
@@ -386,7 +386,7 @@ export default function Press() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white/5 backdrop-blur-sm p-8 rounded-lg"
               >
-                <Quote className="w-10 h-10 text-[#D4AF37] mb-4" />
+                <Quote className="w-10 h-10 text-[#FF8F75] mb-4" />
                 <p className="text-white/90 leading-relaxed mb-6 italic">
                   "{testimonial.quote}"
                 </p>
@@ -397,7 +397,7 @@ export default function Press() {
                   </div>
                   <div className="flex gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]" />
+                      <Star key={i} className="w-4 h-4 fill-[#FF8F75] text-[#FF8F75]" />
                     ))}
                   </div>
                 </div>
@@ -444,7 +444,7 @@ export default function Press() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#2D2D2D] mb-6">
+            <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#4C5254] mb-6">
               Experience Award-Winning Hospitality
             </h2>
             <p className="text-lg text-[#666] mb-8">
@@ -455,7 +455,7 @@ export default function Press() {
                 href="https://www.opentable.com/the-local-house"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-[#C4846C] text-white font-medium rounded hover:bg-[#B07460] transition-colors"
+                className="px-8 py-4 bg-[#FF8F75] text-white font-medium rounded hover:bg-[#e67c63] transition-colors"
               >
                 Reserve for Brunch
               </a>
@@ -463,7 +463,7 @@ export default function Press() {
                 href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 border-2 border-[#C4846C] text-[#C4846C] font-medium rounded hover:bg-[#C4846C] hover:text-white transition-colors"
+                className="px-8 py-4 border-2 border-[#FF8F75] text-[#FF8F75] font-medium rounded hover:bg-[#FF8F75] hover:text-white transition-colors"
               >
                 Book Your Stay
               </a>
@@ -475,7 +475,7 @@ export default function Press() {
       {/* Press Contact */}
       <section className="py-16 bg-white border-t border-[#E5DED5]">
         <div className="container max-w-2xl text-center">
-          <h3 className="text-2xl font-display font-semibold text-[#2D2D2D] mb-4">
+          <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-4">
             Media Inquiries
           </h3>
           <p className="text-[#666] mb-6">
@@ -483,7 +483,7 @@ export default function Press() {
           </p>
           <a
             href="mailto:press@localhouse.com"
-            className="text-[#C4846C] hover:text-[#B07460] font-medium transition-colors"
+            className="text-[#FF8F75] hover:text-[#e67c63] font-medium transition-colors"
           >
             press@localhouse.com
           </a>
