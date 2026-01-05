@@ -163,11 +163,11 @@ export default function Layout({ children }: LayoutProps) {
         </AnimatePresence>
       </header>
 
-      {/* Urgency Banner */}
-      <UrgencyBanner />
-
       {/* Main Content */}
       <main className="flex-1">{children}</main>
+
+      {/* Urgency Banner */}
+      <UrgencyBanner />
 
       {/* Footer */}
       <footer className="bg-[#4C5254] text-white">
