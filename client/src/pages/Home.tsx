@@ -97,7 +97,7 @@ const faqs = [
   },
   {
     question: "Does The Local House have a rooftop pool?",
-    answer: "Yes! Our rooftop pool offers stunning panoramic views of the Miami skyline and ocean. It's exclusively available to hotel guests and features poolside service, loungers, and cabanas.",
+    answer: "Yes! Our rooftop pool offers stunning panoramic views of the Miami skyline and ocean. It's exclusively available to hotel guests and features poolside service, loungers, and cabanas. Pool hours are 8:00 AM to 8:00 PM daily.",
   },
   // Special Occasions
   {
@@ -106,7 +106,11 @@ const faqs = [
   },
   {
     question: "Is The Local House pet-friendly?",
-    answer: "Yes, we welcome well-behaved pets under 25 lbs with a $50 pet fee per stay. Please notify us in advance so we can prepare pet amenities in your room.",
+    answer: "The hotel does not allow pets. However, our restaurant is pet-friendly! You can bring your furry friends to dine with us on our outdoor patio. Please call ahead to ensure seating availability.",
+  },
+  {
+    question: "What is The Local House cancellation policy?",
+    answer: "We require cancellation at least 72 hours prior to your arrival date for a full refund. Cancellations made within 72 hours of arrival will be charged one night's room rate. Early booking discounts apply for reservations made 30+ days in advance.",
   },
 ];
 

@@ -95,13 +95,21 @@ export function BookingNotification() {
 export function UrgencyBanner() {
   const [roomsLeft, setRoomsLeft] = useState(3);
   const [tablesLeft, setTablesLeft] = useState(4);
+  const [peopleViewing, setPeopleViewing] = useState(127);
 
-  // Simulate availability changes
+  // Update availability every 10 minutes (600000ms)
   useEffect(() => {
-    const interval = setInterval(() => {
-      setRoomsLeft((prev) => Math.max(1, prev - Math.floor(Math.random() * 2)));
-      setTablesLeft((prev) => Math.max(2, prev - Math.floor(Math.random() * 2)));
-    }, 30000);
+    const generateRandomData = () => {
+      setRoomsLeft(Math.floor(Math.random() * 5) + 1); // 1-5 rooms
+      setTablesLeft(Math.floor(Math.random() * 6) + 2); // 2-8 tables
+      setPeopleViewing(Math.floor(Math.random() * 250) + 50); // 50-300 people
+    };
+
+    // Generate initial data
+    generateRandomData();
+
+    // Update every 10 minutes
+    const interval = setInterval(generateRandomData, 600000);
     return () => clearInterval(interval);
   }, []);
 
@@ -129,7 +137,7 @@ export function UrgencyBanner() {
         <div className="flex items-center gap-2">
           <Users className="w-4 h-4" />
           <span>
-            <strong>127 people</strong> viewing now
+            <strong>{peopleViewing} people</strong> viewing now
           </span>
         </div>
       </div>
