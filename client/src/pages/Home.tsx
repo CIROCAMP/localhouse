@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { SEOHead, seoConfigs } from "@/components/SEOHead";
 import { SEOSchema } from "@/components/SEOSchema";
+import MenuSection from "@/components/MenuSection";
 /*
  * Design: Miami Art Deco Revival
  * Homepage with hero carousel, brunch section, testimonials, FAQ
@@ -745,6 +746,9 @@ export default function Home() {
           </Accordion>
         </div>
       </section>
+
+      {/* Menu Section */}
+      <MenuSection />
 
       {/* Newsletter Section */}
       <section className="py-24 bg-[#4C5254]">
