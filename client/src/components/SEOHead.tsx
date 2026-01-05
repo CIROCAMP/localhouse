@@ -9,6 +9,7 @@ interface SEOHeadProps {
   ogType?: "website" | "article" | "restaurant" | "hotel";
   twitterCard?: "summary" | "summary_large_image";
   noindex?: boolean;
+  schema?: Record<string, any>;
 }
 
 export function SEOHead({
@@ -20,6 +21,7 @@ export function SEOHead({
   ogType = "website",
   twitterCard = "summary_large_image",
   noindex = false,
+  schema,
 }: SEOHeadProps) {
   useEffect(() => {
     // Update document title
@@ -101,12 +103,107 @@ export function SEOHead({
     setMetaTag("apple-mobile-web-app-status-bar-style", "default");
     setMetaTag("apple-mobile-web-app-title", "The Local House");
 
-  }, [title, description, keywords, canonicalUrl, ogImage, ogType, twitterCard, noindex]);
+    // Structured Data (Schema.org)
+    if (schema) {
+      let script = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement | null;
+      if (!script) {
+        script = document.createElement('script');
+        script.type = 'application/ld+json';
+        document.head.appendChild(script);
+      }
+      if (script) {
+        script.textContent = JSON.stringify(schema);
+      }
+    }
+
+  }, [title, description, keywords, canonicalUrl, ogImage, ogType, twitterCard, noindex, schema]);
 
   return null;
 }
 
 // Pre-defined SEO configurations for each page
+// Review Schema for Google Rich Results (4.9 stars)
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.9",
+  "ratingCount": "2500",
+  "bestRating": "5",
+  "worstRating": "1",
+};
+
+// FAQ Schema for Google Rich Results
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where is The Local House located in Miami Beach?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We're located at 400 Ocean Drive in the heart of South of Fifth (SoFi), Miami Beach's most exclusive neighborhood. Just steps from the beach, South Pointe Park, and a 15-minute drive from Miami International Airport."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best brunch in South Beach Miami?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Local House has been voted #1 Brunch in South Beach by locals and visitors. Our famous Lobster Eggs Benedict ($28), fluffy buttermilk pancakes, and signature mimosas have earned us a 4.9-star rating from over 2,500 guests."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What time is check-in and check-out at The Local House?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check-in is at 3:00 PM and check-out is at 11:00 AM. Early check-in and late check-out are available upon request, subject to availability. Book directly for complimentary late checkout."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is parking available at The Local House hotel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, valet parking is available for $45/night. We also partner with nearby parking garages for self-parking options starting at $25/day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a hotel reservation to eat at The Local House restaurant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No! Our restaurant is open to everyone. We recommend making reservations through OpenTable, especially for weekend brunch (8AM-4PM daily). Walk-ins are welcome but tables fill up fast."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are The Local House brunch hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Brunch is served daily from 8:00 AM to 4:00 PM. Our dinner service runs from 6:00 PM to 11:00 PM. The bar stays open until midnight on weekends."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is The Local House pet-friendly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The hotel is NOT pet-friendly. However, our restaurant IS pet-friendly on the outdoor patio only. Please call us at +1 305-538-5529 for details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the cancellation policy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We require 72 hours notice prior to arrival for cancellations. Cancellations made within 72 hours of arrival will be charged the full rate."
+      }
+    }
+  ]
+};
+
 export const seoConfigs = {
   home: {
     title: "The Local House | Boutique Hotel & Famous Brunch | Miami Beach",
@@ -115,6 +212,7 @@ export const seoConfigs = {
     canonicalUrl: "https://localhouse.com",
     ogImage: "/images/og-home.jpg",
     ogType: "website" as const,
+    schema: reviewSchema,
   },
   hotel: {
     title: "Boutique Hotel Rooms | Ocean Drive Views | The Local House Miami Beach",
@@ -123,6 +221,7 @@ export const seoConfigs = {
     canonicalUrl: "https://localhouse.com/hotel",
     ogImage: "/images/og-hotel.jpg",
     ogType: "hotel" as const,
+    schema: reviewSchema,
   },
   restaurant: {
     title: "Restaurant & Bar | Ocean Drive Dining | The Local House Miami Beach",
@@ -131,6 +230,7 @@ export const seoConfigs = {
     canonicalUrl: "https://localhouse.com/restaurant",
     ogImage: "/images/og-restaurant.jpg",
     ogType: "restaurant" as const,
+    schema: faqSchema,
   },
   brunch: {
     title: "Best Brunch Miami Beach | Lobster Eggs Benedict | The Local House",
@@ -139,6 +239,7 @@ export const seoConfigs = {
     canonicalUrl: "https://localhouse.com/brunch",
     ogImage: "/images/og-brunch.jpg",
     ogType: "restaurant" as const,
+    schema: faqSchema,
   },
   gallery: {
     title: "Photo Gallery | The Local House | Miami Beach Boutique Hotel",
@@ -147,6 +248,7 @@ export const seoConfigs = {
     canonicalUrl: "https://localhouse.com/gallery",
     ogImage: "/images/og-gallery.jpg",
     ogType: "website" as const,
+    schema: reviewSchema,
   },
   contact: {
     title: "Contact Us | Reservations | The Local House Miami Beach",
@@ -155,6 +257,7 @@ export const seoConfigs = {
     canonicalUrl: "https://localhouse.com/contact",
     ogImage: "/images/og-contact.jpg",
     ogType: "website" as const,
+    schema: faqSchema,
   },
   blog: {
     title: "Miami Beach Travel Blog | Local Tips | The Local House",
@@ -163,6 +266,7 @@ export const seoConfigs = {
     canonicalUrl: "https://localhouse.com/blog",
     ogImage: "/images/og-blog.jpg",
     ogType: "website" as const,
+    schema: reviewSchema,
   },
 };
 
