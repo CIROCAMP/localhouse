@@ -62,8 +62,8 @@ export default function Culture() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/images/culture-hero-bed.jpg"
-            alt="The Local House - Guest Experience"
+            src="/images/culture-hero-dinner.jpg"
+            alt="The Local House - Dining Experience"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40" />
