@@ -53,28 +53,7 @@ export default function Culture() {
     },
   ];
 
-  const team = [
-    {
-      name: "Ciro Campagnoli",
-      role: "Owner & Founder",
-      description: "Italian entrepreneur with a passion for hospitality and real estate. Visionary behind The Local House.",
-    },
-    {
-      name: "Management Team",
-      role: "Hotel & Restaurant Operations",
-      description: "Dedicated professionals committed to delivering exceptional service every single day.",
-    },
-    {
-      name: "Kitchen Team",
-      role: "Culinary Excellence",
-      description: "Talented chefs blending Italian traditions with Miami's fresh, coastal ingredients.",
-    },
-    {
-      name: "Service Team",
-      role: "Guest Experience",
-      description: "Warm, attentive staff who remember your name, your preferences, and your dreams.",
-    },
-  ];
+
 
   return (
     <div className="min-h-screen pt-32">
@@ -206,49 +185,7 @@ export default function Culture() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-24 bg-white">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              Our Team
-            </h2>
-            <p className="text-lg text-[#666]">
-              People dedicated to creating exceptional experiences
-            </p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-8 bg-[#FAF7F2] rounded-lg border-l-4 border-[#FF8F75]"
-              >
-                <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-[#FF8F75] font-medium mb-3">
-                  {member.role}
-                </p>
-                <p className="text-[#666] leading-relaxed">
-                  {member.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Philosophy Section */}
       <section className="py-24 bg-gradient-to-r from-[#FF8F75] to-[#e67c63] text-white">
@@ -259,13 +196,16 @@ export default function Culture() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-display font-semibold mb-6">
-              Our Philosophy
+            <h2 className="text-4xl md:text-5xl font-display font-semibold mb-4">
+              We are People for People
             </h2>
-            <p className="text-xl text-white/90 leading-relaxed mb-8">
+            <p className="text-xl text-white/90 leading-relaxed mb-8 italic">
+              Driven by a genuine passion for Hospitality and good food.
+            </p>
+            <p className="text-lg text-white/90 leading-relaxed mb-8">
               We believe in the simple things in life: a home-cooked meal, a walk on the beach, and a warm tête-à-tête conversation. We express our gratitude in writing and we pride ourselves in remembering names, drink orders, and table preferences.
             </p>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <p className="text-lg text-white/90 leading-relaxed mb-8">
               We are happy you're here and we hope you'll become a fan.
             </p>
             <p className="text-2xl font-display italic mt-8">
