@@ -59,6 +59,15 @@ export default function Culture() {
     <div>
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#4C5254]">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/culture-hero-bed.jpg"
+            alt="The Local House - Guest Experience"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
         <div className="relative z-10 text-center text-white px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
