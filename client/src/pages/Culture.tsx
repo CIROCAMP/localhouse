@@ -56,21 +56,20 @@ export default function Culture() {
 
 
   return (
-    <div className="min-h-screen pt-32">
+    <div>
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#FF8F75]/10 to-transparent">
-        <div className="container max-w-4xl">
+      <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#4C5254]">
+        <div className="relative z-10 text-center text-white px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-display font-semibold text-[#4C5254] mb-6">
+            <h1 className="text-5xl md:text-6xl font-display font-semibold mb-4">
               Our Culture
             </h1>
-            <p className="text-xl text-[#666] leading-relaxed">
-              Where Italian warmth meets Miami vibrancy. A story of passion, hospitality, and genuine human connection.
+            <p className="text-xl text-white/80">
+              Where Italian warmth meets Miami vibrancy
             </p>
           </motion.div>
         </div>
