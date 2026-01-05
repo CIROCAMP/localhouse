@@ -21,6 +21,7 @@ const navLinks = [
   { href: "/brunch", label: "Brunch" },
   { href: "/gallery", label: "Gallery" },
   { href: "/blog", label: "Blog" },
+  { href: "/culture", label: "Culture" },
   { href: "/press", label: "Press" },
   { href: "/contact", label: "Contact" },
 ];
