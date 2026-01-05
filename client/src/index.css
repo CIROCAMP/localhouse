@@ -16,7 +16,7 @@
  */
 
 @theme inline {
-  --font-display: 'BLT Heirloom', 'Acme', Georgia, serif;
+  --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Montserrat', system-ui, sans-serif;
   
   --radius-sm: calc(var(--radius) - 4px);
@@ -145,7 +145,7 @@
     font-family: 'Montserrat', system-ui, sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'BLT Heirloom', 'Acme', Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
   }
   button:not(:disabled),
