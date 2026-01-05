@@ -22,6 +22,7 @@ const galleryImages = [
   { src: "/images/gallery-balcony.jpg", alt: "Balcony View", category: "hotel" },
   { src: "/images/gallery-pasta.jpg", alt: "Fresh Pasta", category: "food" },
   { src: "/images/gallery-seafood.jpg", alt: "Grilled Seafood", category: "food" },
+  { src: "/images/gallery-toast-cocktails.jpg", alt: "Guests Toasting with Cocktails", category: "food" },
 ];
 
 const categories = [
