@@ -16,6 +16,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Culture from "./pages/Culture";
 import Press from "./pages/Press";
+import { AccessibilityToolbar } from "./components/AccessibilityToolbar";
 
 function Router() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <AnalyticsProvider>
           <TooltipProvider>
             <Toaster />
+            <AccessibilityToolbar />
             <Router />
           </TooltipProvider>
         </AnalyticsProvider>
