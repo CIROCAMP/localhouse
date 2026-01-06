@@ -1,6 +1,6 @@
 import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, MessageCircle, Music } from "lucide-react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -211,6 +211,14 @@ export default function Layout({ children }: LayoutProps) {
                   className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:border-[#FF8F75] hover:text-[#FF8F75] transition-colors"
                 >
                   <Facebook size={18} />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@thelocalhouse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:border-[#FF8F75] hover:text-[#FF8F75] transition-colors"
+                >
+                  <Music size={18} />
                 </a>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, MessageCircle, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -154,6 +154,14 @@ export default function Contact() {
                     className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#FF8F75] hover:text-white transition-colors text-[#4C5254]"
                   >
                     <MessageCircle size={20} />
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@thelocalhouse"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#FF8F75] hover:text-white transition-colors text-[#4C5254]"
+                  >
+                    <Music size={20} />
                   </a>
                 </div>
               </div>
