@@ -95,7 +95,7 @@ export function AccessibilityToolbar() {
       {/* Floating Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-40 bg-[#FF8F75] hover:bg-[#FF7A5C] text-white rounded-full p-3 shadow-lg transition-all"
+        className="fixed bottom-24 right-6 z-40 bg-[#FF8F75] hover:bg-[#FF7A5C] text-white rounded-full p-3 shadow-lg transition-all"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         aria-label="Accessibility Options"
