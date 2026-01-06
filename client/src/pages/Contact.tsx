@@ -140,7 +140,7 @@ export default function Contact() {
                     <Instagram size={20} />
                   </a>
                   <a
-                    href="https://facebook.com/localhouse"
+                    href="https://www.facebook.com/localhousemiami/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#FF8F75] hover:text-white transition-colors text-[#4C5254]"

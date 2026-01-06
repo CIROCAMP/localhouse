@@ -205,7 +205,7 @@ export default function Layout({ children }: LayoutProps) {
                   <Instagram size={18} />
                 </a>
                 <a
-                  href="https://facebook.com/localhouse"
+                  href="https://www.facebook.com/localhousemiami/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:border-[#FF8F75] hover:text-[#FF8F75] transition-colors"
