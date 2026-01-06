@@ -67,7 +67,7 @@ export default function Brunch() {
           <img
             src="/images/brunch-hero.jpg"
             alt="Famous Brunch at The Local House"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
         </div>
