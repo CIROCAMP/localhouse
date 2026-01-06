@@ -97,7 +97,7 @@ const faqs = [
   },
   {
     question: "Does The Local House have a rooftop pool?",
-    answer: "Yes! Our rooftop pool offers stunning panoramic views of the Miami skyline and ocean. It's exclusively available to hotel guests and features poolside service, loungers, and cabanas. Pool hours are 8:00 AM to 8:00 PM daily.",
+    answer: "Yes! Our rooftop pool offers stunning panoramic views of the Miami skyline and ocean. It's exclusively available to hotel guests and features poolside service and loungers. Pool hours are 8:00 AM to 8:00 PM daily.",
   },
   // Special Occasions
   {
