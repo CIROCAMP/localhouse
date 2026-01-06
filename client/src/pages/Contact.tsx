@@ -132,7 +132,7 @@ export default function Contact() {
                 <h3 className="font-semibold text-[#4C5254] mb-4">Follow Us</h3>
                 <div className="flex gap-4">
                   <a
-                    href="https://instagram.com/localhouse"
+                    href="https://www.instagram.com/thelocalhouse"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#FF8F75] hover:text-white transition-colors text-[#4C5254]"

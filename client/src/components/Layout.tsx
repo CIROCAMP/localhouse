@@ -197,7 +197,7 @@ export default function Layout({ children }: LayoutProps) {
               </div>
               <div className="flex gap-4">
                 <a
-                  href="https://instagram.com/localhouse"
+                  href="https://www.instagram.com/thelocalhouse"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:border-[#FF8F75] hover:text-[#FF8F75] transition-colors"
