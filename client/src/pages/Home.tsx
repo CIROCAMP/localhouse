@@ -160,19 +160,20 @@ export default function Home() {
       {/* Hero Carousel Section - pt-10 compensates for fixed urgency banner */}
       <section className="relative h-screen min-h-[700px] pt-10 flex items-center justify-center overflow-hidden">
         {/* Background Images */}
+        <div className="absolute inset-0 bg-[#FAF7F2]"></div>
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, scale: 1.02 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.98 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             className="absolute inset-0"
           >
             <img
               src={heroSlides[currentSlide].image}
               alt={heroSlides[currentSlide].title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover will-change-transform"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
           </motion.div>
