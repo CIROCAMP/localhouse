@@ -1,7 +1,7 @@
 import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, MessageCircle } from "lucide-react";
-import { UrgencyBanner } from "@/components/SocialProof";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 /*
@@ -165,9 +165,6 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Main Content */}
       <main className="flex-1">{children}</main>
-
-      {/* Urgency Banner */}
-      <UrgencyBanner />
 
       {/* Footer */}
       <footer className="bg-[#4C5254] text-white">
