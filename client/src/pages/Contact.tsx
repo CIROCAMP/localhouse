@@ -121,7 +121,7 @@ export default function Contact() {
                     <div className="text-[#666] space-y-1">
                       <p><span className="font-medium">Front Desk:</span> 8AM – 10PM daily</p>
                       <p><span className="font-medium">Brunch:</span> 8AM – 4PM daily</p>
-                      <p><span className="font-medium">Dinner:</span> 6PM – 11PM daily</p>
+                      <p><span className="font-medium">Dinner:</span> 6PM – 11PM (Closed Mondays)</p>
                     </div>
                   </div>
                 </div>
