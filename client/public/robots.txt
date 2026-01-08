@@ -15,7 +15,51 @@ Disallow: /api/
 Disallow: /_*
 Disallow: /admin/
 
-# Allow all major search engines
+# ============================================
+# BLOCK TRACKING PARAMETERS (SEO FIX)
+# Added: January 7, 2026
+# Purpose: Prevent Google from indexing URL 
+# variants with tracking parameters
+# This will fix 131+ spam URLs in Search Console
+# ============================================
+
+# Block cm_sp parameter (booking/OTA tracking) - MAIN ISSUE!
+Disallow: /*?cm_sp=
+Disallow: /*&cm_sp=
+
+# Block Google Ads click ID
+Disallow: /*?gclid=
+Disallow: /*&gclid=
+
+# Block UTM tracking parameters
+Disallow: /*?utm_source=
+Disallow: /*&utm_source=
+Disallow: /*?utm_medium=
+Disallow: /*&utm_medium=
+Disallow: /*?utm_campaign=
+Disallow: /*&utm_campaign=
+
+# Block redirect parameter
+Disallow: /*?redirect=
+Disallow: /*&redirect=
+
+# Block Bing Ads click ID
+Disallow: /*?msclkid=
+Disallow: /*&msclkid=
+
+# Block Facebook click ID
+Disallow: /*?fbclid=
+Disallow: /*&fbclid=
+
+# ============================================
+# BLOCK OLD/DUPLICATE PAGES
+# ============================================
+Disallow: /explore-2/
+Disallow: /event/august-3rd-music-brunch/
+
+# ============================================
+# ALLOW ALL MAJOR SEARCH ENGINES
+# ============================================
 User-agent: Googlebot
 Allow: /
 
