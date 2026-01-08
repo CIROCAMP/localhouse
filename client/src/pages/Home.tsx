@@ -88,7 +88,7 @@ const faqs = [
   },
   {
     question: "What are The Local House brunch hours?",
-    answer: "Brunch is served daily from 8:00 AM to 4:00 PM. Our dinner service runs from 6:00 PM to 11:00 PM. The bar stays open until midnight on weekends.",
+    answer: "Brunch is served daily from 8:00 AM to 4:00 PM. Our dinner service runs from 4:00 PM to 10:00 PM. The bar stays open until midnight on weekends.",
   },
   // Pricing & Booking
   {

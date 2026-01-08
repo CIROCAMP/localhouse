@@ -98,7 +98,7 @@ export default function Restaurant() {
                 <Clock className="text-[#FF8F75]" size={20} />
                 <div>
                   <p className="text-sm text-[#999]">Dinner</p>
-                  <p className="font-medium text-[#4C5254]">6PM – 11PM (Closed Mondays)</p>
+                  <p className="font-medium text-[#4C5254]">4PM – 10PM (Closed Mondays)</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -195,7 +195,7 @@ export default function Restaurant() {
               <div className="bg-white rounded-lg p-8 shadow-sm">
                 <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-8 text-center">
                   Dinner Menu
-                  <span className="block text-sm font-body text-[#999] mt-1">6PM – 11PM (Closed Mondays)</span>
+                  <span className="block text-sm font-body text-[#999] mt-1">4PM – 10PM (Closed Mondays)</span>
                 </h3>
                 <div className="space-y-6">
                   {dinnerItems.map((item, index) => (
