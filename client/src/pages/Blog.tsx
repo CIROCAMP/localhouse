@@ -46,6 +46,15 @@ const blogPosts = [
     readTime: "4 min read",
     category: "Travel Tips",
   },
+  {
+    slug: "the-history-of-south-beach-miami",
+    title: "The History of South Beach Miami: From Mangroves to Art Deco Paradise",
+    excerpt: "Discover how a mosquito-infested swamp became America's Riviera. From the Lummus brothers to the Art Deco renaissance, explore the fascinating history of South Beach.",
+    image: "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=800&q=80",
+    date: "January 7, 2026",
+    readTime: "8 min read",
+    category: "History & Culture",
+  },
 ];
 
 export default function Blog() {

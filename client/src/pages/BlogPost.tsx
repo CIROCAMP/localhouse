@@ -352,13 +352,206 @@ const blogContent: Record<string, {
         <p>
           <Link href="/hotel"><span className="text-[#FF8F75] hover:underline">Discover The Local House</span></Link> 
           and see why our guests keep coming back.
+        </p>        </>
+    ),
+  },
+  "the-history-of-south-beach-miami": {
+    title: "The History of South Beach Miami: From Mangroves to Art Deco Paradise",
+    subtitle: "How a Swampy Barrier Island Became America's Riviera",
+    image: "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=1920&q=80",
+    date: "January 7, 2026",
+    readTime: "8 min read",
+    category: "History & Culture",
+    content: (
+      <>
+        <p>
+          Today, <strong>South Beach Miami</strong> is synonymous with glamour, Art Deco architecture, 
+          and world-class nightlife. But just over a century ago, this iconic destination was nothing 
+          more than a mosquito-infested mangrove swamp. The transformation of South Beach from 
+          uninhabitable wetland to international playground is one of America's most remarkable 
+          urban development stories.
+        </p>
+
+        <h2>The Early Days: Before Miami Beach Existed</h2>
+        
+        <p>
+          In the 1800s, the barrier island we now call Miami Beach was completely wild. Dense 
+          mangrove forests lined the shores, and the interior was a tangle of palmetto scrub 
+          and marshland. The only inhabitants were wildlife—and the occasional shipwrecked sailor.
+        </p>
+        
+        <p>
+          The first attempt at development came in <strong>1870</strong>, when Henry and Charles Lum 
+          purchased 165 acres to start a coconut plantation. They planted thousands of coconut palms, 
+          hoping to create a tropical agricultural enterprise. The venture failed—the soil was too 
+          sandy, and hurricanes destroyed their crops—but those coconut palms would later become 
+          iconic symbols of Miami Beach.
+        </p>
+
+        <h2>The Lummus Brothers and the Birth of Miami Beach</h2>
+        
+        <p>
+          The true founders of Miami Beach were <strong>John and James Lummus</strong>, who arrived 
+          in 1912 with a vision. These brothers from Georgia saw potential where others saw swampland. 
+          They purchased land in what is now <strong>South of Fifth</strong>—the very neighborhood 
+          where The Local House stands today—and began the monumental task of transforming it into 
+          a seaside resort community.
+        </p>
+        
+        <p>
+          The Lummus brothers' first subdivision, platted in 1912, was Miami Beach's original 
+          development. They dredged canals, filled in marshland, and built the first wooden 
+          structures. Their dream was to create an "American Riviera"—a playground for the wealthy 
+          that could rival the French Côte d'Azur.
+        </p>
+
+        <h2>Carl Fisher: The Man Who Built Miami Beach</h2>
+        
+        <p>
+          While the Lummus brothers started the development, it was <strong>Carl Fisher</strong> 
+          who truly built Miami Beach. Fisher, a millionaire entrepreneur who had made his fortune 
+          in automobile headlights and the Indianapolis Motor Speedway, arrived in 1913 and 
+          immediately saw the island's potential.
+        </p>
+        
+        <p>
+          Fisher invested millions in dredging Biscayne Bay, using the sand to raise the island's 
+          elevation and create buildable land. He constructed hotels, polo fields, golf courses, 
+          and tennis courts. He even imported gondolas from Venice and elephants for publicity stunts. 
+          By the early 1920s, Miami Beach was the hottest destination in America.
+        </p>
+
+        <h2>The Florida Land Boom of the 1920s</h2>
+        
+        <p>
+          The <strong>1920s</strong> brought unprecedented growth to Miami Beach. The Florida land 
+          boom attracted speculators from across the country, all hoping to get rich in the tropical 
+          real estate market. Property values skyrocketed—some lots sold multiple times in a single 
+          day, each time at a higher price.
+        </p>
+        
+        <p>
+          It was during this era that many of South Beach's iconic buildings were constructed. 
+          Developers built hotels, apartment buildings, and commercial structures at a frantic pace. 
+          The architectural style of choice was <strong>Mediterranean Revival</strong>, with its 
+          red tile roofs, stucco walls, and ornate details.
+        </p>
+        
+        <p>
+          But the boom couldn't last forever. A devastating hurricane in 1926 killed hundreds and 
+          destroyed much of the new construction. The Great Depression followed in 1929, and 
+          Miami Beach's first golden age came to an abrupt end.
+        </p>
+
+        <h2>The Art Deco Era: South Beach's Architectural Renaissance</h2>
+        
+        <p>
+          From the ashes of the Depression rose South Beach's most enduring legacy: its 
+          <strong>Art Deco architecture</strong>. Between 1930 and 1941, developers constructed 
+          hundreds of buildings in the new Art Deco and Streamline Moderne styles that were 
+          sweeping the nation.
+        </p>
+        
+        <p>
+          Architects like <strong>Henry Hohauser</strong>, <strong>L. Murray Dixon</strong>, and 
+          <strong>Albert Anis</strong> designed buildings that were smaller and more affordable 
+          than the grand Mediterranean Revival hotels of the 1920s. These structures featured 
+          geometric patterns, nautical motifs, pastel colors, and the distinctive "eyebrows" 
+          (horizontal ledges above windows) that helped shade interiors from the tropical sun.
+        </p>
+        
+        <p>
+          The result was the largest concentration of Art Deco architecture in the world—over 
+          800 buildings in a roughly one-square-mile area. Today, this <strong>Art Deco Historic 
+          District</strong> is a National Historic Landmark and draws millions of visitors annually.
+        </p>
+
+        <h2>South of Fifth: Miami Beach's First Neighborhood</h2>
+        
+        <p>
+          The area south of Fifth Street—where The Local House is located at <strong>400 Ocean 
+          Drive</strong>—holds special significance in Miami Beach history. This was the Lummus 
+          brothers' original subdivision, the very first piece of Miami Beach to be developed.
+        </p>
+        
+        <p>
+          Before World War II, South of Fifth was one of the few areas in Miami Beach that welcomed 
+          Jewish visitors and residents, who faced discrimination elsewhere. This inclusive heritage 
+          helped shape the neighborhood's character as a welcoming, diverse community.
+        </p>
+        
+        <p>
+          Today, <strong>South of Fifth (SoFi)</strong> is Miami Beach's most exclusive neighborhood, 
+          home to luxury condominiums, world-class restaurants, and the pristine South Pointe Park. 
+          The area has come full circle—from Miami Beach's humble beginning to its most prestigious address.
+        </p>
+
+        <h2>The Decline and Rebirth of South Beach</h2>
+        
+        <p>
+          By the 1970s, South Beach had fallen into decline. The Art Deco buildings that had once 
+          been cutting-edge were now seen as outdated. Many had been converted into low-rent 
+          apartments or retirement homes. Crime was rampant, and developers were eager to demolish 
+          the "old" buildings and replace them with modern high-rises.
+        </p>
+        
+        <p>
+          The savior of South Beach was <strong>Barbara Baer Capitman</strong>, a designer and 
+          preservationist who recognized the architectural significance of the Art Deco district. 
+          In 1976, she founded the Miami Design Preservation League and began a decades-long 
+          campaign to save the buildings from demolition.
+        </p>
+        
+        <p>
+          Her efforts paid off in 1979, when the Art Deco Historic District became the first 
+          20th-century neighborhood to be listed on the National Register of Historic Places. 
+          This protection sparked a renaissance. Investors began restoring the buildings, 
+          painting them in the now-iconic pastel colors, and transforming South Beach into 
+          the glamorous destination it is today.
+        </p>
+
+        <h2>South Beach Today: A Living Museum</h2>
+        
+        <p>
+          Modern South Beach is a unique blend of history and contemporary culture. The Art Deco 
+          buildings that were nearly demolished now house boutique hotels, trendy restaurants, 
+          and exclusive nightclubs. Ocean Drive—the street where The Local House welcomes guests 
+          daily—has become one of the most photographed streets in America.
+        </p>
+        
+        <p>
+          When you walk down Ocean Drive today, you're walking through over a century of history. 
+          The coconut palms planted by the Lum brothers still sway in the ocean breeze. The Art 
+          Deco facades designed by Hohauser and Dixon still gleam in the tropical sun. And the 
+          spirit of the Lummus brothers' dream—an American Riviera where visitors can escape 
+          the ordinary—lives on in every sunset cocktail and oceanfront brunch.
+        </p>
+
+        <h2>Experience the History at The Local House</h2>
+        
+        <p>
+          At The Local House, we're proud to be part of South Beach's continuing story. Our 
+          building on Ocean Drive reflects the Art Deco heritage that makes this neighborhood 
+          special, while our Italian ownership since 2012 adds a new chapter to the area's 
+          tradition of welcoming visitors from around the world.
+        </p>
+        
+        <p>
+          Whether you're enjoying our famous <strong>Lobster Eggs Benedict</strong> at brunch 
+          or watching the sunset from our rooftop, you're experiencing the same magic that has 
+          drawn visitors to South Beach for over a century.
+        </p>
+        
+        <p>
+          <Link href="/brunch"><span className="text-[#FF8F75] hover:underline">Join us for brunch</span></Link> 
+          and taste the history of South Beach for yourself.
         </p>
       </>
     ),
   },
 };
 
-export default function BlogPost() {
+export default function BlogPost(){
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? blogContent[slug] : null;
 
