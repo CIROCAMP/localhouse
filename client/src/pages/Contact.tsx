@@ -1,4 +1,12 @@
 import { motion } from "framer-motion";
+
+// Declare global tracking functions
+declare global {
+  interface Window {
+    trackOpenTableClick?: () => void;
+    trackMewsClick?: () => void;
+  }
+}
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, MessageCircle, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -283,7 +291,7 @@ export default function Contact() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a
-              href="https://www.opentable.com/the-local-house"
+              onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               className="p-8 bg-[#FAF7F2] rounded-lg text-center hover:shadow-lg transition-shadow"

@@ -1,4 +1,12 @@
 import { motion } from "framer-motion";
+
+// Declare global tracking functions
+declare global {
+  interface Window {
+    trackOpenTableClick?: () => void;
+    trackMewsClick?: () => void;
+  }
+}
 import { Clock, Phone, ExternalLink } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEOHead, seoConfigs } from "@/components/SEOHead";
@@ -112,7 +120,7 @@ export default function Restaurant() {
               </div>
             </div>
             <a
-              href="https://www.opentable.com/the-local-house"
+              onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
@@ -282,7 +290,7 @@ export default function Restaurant() {
               Full menu available at the restaurant. Prices subject to change.
             </p>
             <a
-              href="https://www.opentable.com/the-local-house"
+              onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#FF8F75] font-medium hover:underline"
@@ -316,7 +324,7 @@ export default function Restaurant() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://www.opentable.com/the-local-house"
+                  onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded text-center"

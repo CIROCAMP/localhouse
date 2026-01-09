@@ -1,0 +1,26 @@
+{
+  "query": "SELECT source, COUNT(*) as count FROM newsletter_subscribers GROUP BY source ORDER BY count DESC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2SwVK5NjsaUvPbw.root --database dwDnV2Lj8n7Vbu7KdvRPoj --execute SELECT source, COUNT(*) as count FROM newsletter_subscribers GROUP BY source ORDER BY count DESC;",
+  "rows": [
+    {
+      "source": "opentable",
+      "count": "4676"
+    },
+    {
+      "source": "toast_pos",
+      "count": "4038"
+    },
+    {
+      "source": "squarespace",
+      "count": "985"
+    },
+    {
+      "source": "bento_box",
+      "count": "69"
+    }
+  ],
+  "messages": [],
+  "stdout": "source\tcount\nopentable\t4676\ntoast_pos\t4038\nsquarespace\t985\nbento_box\t69\n",
+  "stderr": "",
+  "execution_time_ms": 60
+}

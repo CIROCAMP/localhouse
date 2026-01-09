@@ -10,3 +10,6 @@
 - [x] Import Squarespace subscribers (985 new)
 - [x] Import OpenTable subscribers (4,676 new)
 - [x] Total database: 9,768 subscribers from all sources
+- [x] Install Google Ads conversion tracking on OpenTable button clicks
+- [x] Add UTM parameter tracking for Google Analytics
+- [x] Test conversion tracking is working

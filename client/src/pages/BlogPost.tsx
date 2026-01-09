@@ -1,4 +1,12 @@
 import React from "react";
+
+// Declare global tracking functions
+declare global {
+  interface Window {
+    trackOpenTableClick?: () => void;
+    trackMewsClick?: () => void;
+  }
+}
 import { motion } from "framer-motion";
 import { Link, useParams } from "wouter";
 import { Calendar, Clock, ArrowLeft, Share2 } from "lucide-react";
@@ -264,7 +272,7 @@ const blogContent: Record<string, {
 
         <p>
           <Link href="/restaurant"><span className="text-[#FF8F75] hover:underline">View our menus</span></Link> 
-          and <Link href="https://www.opentable.com/the-local-house"><span className="text-[#FF8F75] hover:underline">make a reservation</span></Link>.
+          and <Link onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"><span className="text-[#FF8F75] hover:underline">make a reservation</span></Link>.
         </p>
       </>
     ),
@@ -669,7 +677,7 @@ export default function BlogPost(){
               Book a Room
             </a>
             <a
-              href="https://www.opentable.com/the-local-house"
+              onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded"

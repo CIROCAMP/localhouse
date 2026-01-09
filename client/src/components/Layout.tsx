@@ -1,5 +1,13 @@
-import { ReactNode, useState, useEffect } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import { Link, useLocation } from "wouter";
+
+// Declare global tracking functions from index.html
+declare global {
+  interface Window {
+    trackOpenTableClick?: () => void;
+    trackMewsClick?: () => void;
+  }
+}
 import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, MessageCircle, Music } from "lucide-react";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -89,6 +97,7 @@ export default function Layout({ children }: LayoutProps) {
                 href="https://www.opentable.com/the-local-house"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => window.trackOpenTableClick?.()}
                 className="px-5 py-2.5 text-sm font-medium tracking-wide border-2 border-[#FF8F75] text-[#FF8F75] hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded"
               >
                 Book a Table
@@ -97,6 +106,7 @@ export default function Layout({ children }: LayoutProps) {
                 href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => window.trackMewsClick?.()}
                 className="px-5 py-2.5 text-sm font-medium tracking-wide bg-[#FF8F75] text-white hover:bg-[#e67c63] transition-all duration-300 rounded"
               >
                 Book a Room
@@ -144,6 +154,7 @@ export default function Layout({ children }: LayoutProps) {
                     href="https://www.opentable.com/the-local-house"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => window.trackOpenTableClick?.()}
                     className="w-full py-3 text-center text-sm font-medium tracking-wide border-2 border-[#FF8F75] text-[#FF8F75] rounded"
                   >
                     Book a Table
@@ -152,6 +163,7 @@ export default function Layout({ children }: LayoutProps) {
                     href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => window.trackMewsClick?.()}
                     className="w-full py-3 text-center text-sm font-medium tracking-wide bg-[#FF8F75] text-white rounded"
                   >
                     Book a Room

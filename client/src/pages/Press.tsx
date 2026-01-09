@@ -1,4 +1,12 @@
 import { motion } from "framer-motion";
+
+// Declare global tracking functions
+declare global {
+  interface Window {
+    trackOpenTableClick?: () => void;
+    trackMewsClick?: () => void;
+  }
+}
 import { Award, Star, Newspaper, ExternalLink, Quote, Calendar } from "lucide-react";
 import { Link } from "wouter";
 import { SEOHead } from "@/components/SEOHead";
@@ -262,7 +270,7 @@ export default function Press() {
               </span>
             </motion.a>
             <motion.a
-              href="https://www.opentable.com/the-local-house"
+              onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -424,7 +432,7 @@ export default function Press() {
               Read on Google
             </a>
             <a
-              href="https://www.opentable.com/the-local-house"
+              onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-[#da3743] text-white rounded-lg hover:bg-[#c42f3a] transition-colors font-medium"
@@ -452,7 +460,7 @@ export default function Press() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://www.opentable.com/the-local-house"
+                onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#FF8F75] text-white font-medium rounded hover:bg-[#e67c63] transition-colors"

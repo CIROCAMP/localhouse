@@ -1,4 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
+
+// Declare global tracking functions
+declare global {
+  interface Window {
+    trackOpenTableClick?: () => void;
+    trackMewsClick?: () => void;
+  }
+}
 import { useState, useEffect } from "react";
 import { Users, Clock, Flame, Star, MapPin } from "lucide-react";
 
@@ -171,7 +179,7 @@ export function StickyBookingBar() {
         >
           <div className="flex gap-2">
             <a
-              href="https://www.opentable.com/the-local-house"
+              onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 py-3 bg-[#FF8F75] text-white text-center font-medium rounded hover:bg-[#e67c63] transition-colors"

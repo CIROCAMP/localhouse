@@ -1,4 +1,12 @@
 import { motion } from "framer-motion";
+
+// Declare global tracking functions
+declare global {
+  interface Window {
+    trackOpenTableClick?: () => void;
+    trackMewsClick?: () => void;
+  }
+}
 import { Heart, Users, Leaf, Utensils } from "lucide-react";
 
 export default function Culture() {
@@ -240,7 +248,7 @@ export default function Culture() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://www.opentable.com/the-local-house"
+                onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
