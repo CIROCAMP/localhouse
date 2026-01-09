@@ -1,3 +1,9 @@
 
 - [x] Update dinner hours from 6PM-11PM to 4PM-10PM across all pages
 - [x] Remove grey area from hero slider image (wood panel column)
+- [x] Import 69 subscribed contacts into LocalHouse database for newsletter
+- [x] Save 66 private dining inquiries separately for follow-up
+- [x] Create backup of all 1,051 Bento Box contacts
+- [x] Import 4,039 TOAST POS subscribed guests
+- [x] Create merged contact list (4,107 total subscribers)
+- [x] Create newsletter_subscribers table and import 4,107 contacts into database

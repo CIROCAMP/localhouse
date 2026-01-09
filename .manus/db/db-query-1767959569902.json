@@ -1,0 +1,20 @@
+{
+  "query": "SELECT source, COUNT(*) as count, SUM(lifetime_spend) as total_spend FROM newsletter_subscribers GROUP BY source;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2SwVK5NjsaUvPbw.root --database dwDnV2Lj8n7Vbu7KdvRPoj --execute SELECT source, COUNT(*) as count, SUM(lifetime_spend) as total_spend FROM newsletter_subscribers GROUP BY source;",
+  "rows": [
+    {
+      "source": "bento_box",
+      "count": "69",
+      "total_spend": "0.00"
+    },
+    {
+      "source": "toast_pos",
+      "count": "4038",
+      "total_spend": "478033.94"
+    }
+  ],
+  "messages": [],
+  "stdout": "source\tcount\ttotal_spend\nbento_box\t69\t0.00\ntoast_pos\t4038\t478033.94\n",
+  "stderr": "",
+  "execution_time_ms": 78
+}
