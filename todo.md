@@ -7,3 +7,6 @@
 - [x] Import 4,039 TOAST POS subscribed guests
 - [x] Create merged contact list (4,107 total subscribers)
 - [x] Create newsletter_subscribers table and import 4,107 contacts into database
+- [x] Import Squarespace subscribers (985 new)
+- [x] Import OpenTable subscribers (4,676 new)
+- [x] Total database: 9,768 subscribers from all sources
