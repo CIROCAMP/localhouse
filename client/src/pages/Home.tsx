@@ -27,7 +27,7 @@ const heroSlides = [
     subtitle: "Boutique Hotel & Famous Brunch in South of Fifth, Miami Beach",
   },
   {
-    image: "/images/brunch-hero.jpg",
+    image: "/images/gallery-tropical-dining.jpg",
     title: "Coastal Dining",
     subtitle: "Fresh, local cuisine in a tropical paradise setting",
   },
