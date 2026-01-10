@@ -247,12 +247,12 @@
       
       // Google Ads Conversion Tracking (replace AW-XXXXXXXXX with your Google Ads ID)
       // To get your ID: Google Ads → Tools → Conversions → + → Website → Copy the ID
-      gtag('config', 'AW-CONVERSION_ID');
+      gtag('config', 'AW-967579743');
       
       // Track OpenTable clicks as conversions
       function trackOpenTableClick() {
         gtag('event', 'conversion', {
-          'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
+          'send_to': 'AW-967579743/book_table',
           'event_category': 'booking',
           'event_label': 'opentable_click'
         });
@@ -267,7 +267,7 @@
       // Track Mews room booking clicks
       function trackMewsClick() {
         gtag('event', 'conversion', {
-          'send_to': 'AW-CONVERSION_ID/MEWS_CONVERSION_LABEL',
+          'send_to': 'AW-967579743/book_room',
           'event_category': 'booking',
           'event_label': 'mews_click'
         });

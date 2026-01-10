@@ -13,3 +13,4 @@
 - [x] Install Google Ads conversion tracking on OpenTable button clicks
 - [x] Add UTM parameter tracking for Google Analytics
 - [x] Test conversion tracking is working
+- [x] Install Google Ads tag AW-967579743 on the site
