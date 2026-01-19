@@ -249,7 +249,7 @@ export default function Layout({ children }: LayoutProps) {
                 </div>
                 <div>
                   <p className="text-[#FF8F75] font-medium mb-1">Dinner</p>
-                  <p className="text-gray-400">4:00 PM – 10:00 PM (Closed Mondays)</p>
+                  <p className="text-gray-400">Wed-Sun 4:00 PM – 10:00 PM</p>
                 </div>
               </div>
             </div>

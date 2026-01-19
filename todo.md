@@ -20,3 +20,11 @@
 - [x] Fix mobile view alignment and cut-off issues
 - [x] Update dinner hours to Wed-Sun
 - [x] Add Happy Hour section Wed-Sun 4-6PM
+- [x] Fix brunch menu: remove Smash Burger, Salmon Bowl, Tuna Melt, BLT, Local Breakfast descriptions
+- [x] Fix dinner menu: remove Rigatoni Pasta, House Salad descriptions
+- [x] Update "full menu available at the restaurant" to "full menu available below"
+- [x] Change "Order Online" button to redirect to Toast instead of OpenTable
+- [x] Update footer hours: Dinner closed Mon & Tues
+- [x] Update FAQ: Private events email to info@localhouse.com
+- [x] Update FAQ: Remove bar hours mention (midnight on weekends)
+- [x] Update FAQ: Remove parking garage partnership mention

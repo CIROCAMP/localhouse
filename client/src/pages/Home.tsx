@@ -87,7 +87,7 @@ const faqs = [
   },
   {
     question: "Is parking available at The Local House hotel?",
-    answer: "Yes, valet parking is available for $45/night. We also partner with nearby parking garages for self-parking options starting at $25/day.",
+    answer: "Yes, valet parking is available for $45/night.",
   },
   // Restaurant & Dining
   {
@@ -96,7 +96,7 @@ const faqs = [
   },
   {
     question: "What are The Local House brunch hours?",
-    answer: "Brunch is served daily from 8:00 AM to 4:00 PM. Our dinner service runs from 4:00 PM to 10:00 PM. The bar stays open until midnight on weekends.",
+    answer: "Brunch is served daily from 8:00 AM to 4:00 PM. Our dinner service runs Wed-Sun from 4:00 PM to 10:00 PM.",
   },
   // Pricing & Booking
   {
@@ -110,7 +110,7 @@ const faqs = [
   // Special Occasions
   {
     question: "Can I host a private event at The Local House?",
-    answer: "Absolutely! We offer private dining and event spaces for birthdays, anniversaries, corporate events, and weddings. Contact us at events@localhouse.com or call (305) 538-5529 for custom packages.",
+    answer: "Absolutely! We offer private dining and event spaces for birthdays, anniversaries, corporate events, and weddings. Contact us at info@localhouse.com or call (305) 538-5529 for custom packages.",
   },
   {
     question: "Is The Local House pet-friendly?",

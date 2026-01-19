@@ -33,13 +33,8 @@ const brunchItems = [
   { name: "Yellowfin Tuna Tartare", price: 21, description: "soy ginger dressing, avocado crema, wonton crisps" },
   { name: "Goat Cheese Croquettes", price: 14, description: "our iconic bites since 2012 | crisp, creamy, served with warm guava dip" },
   { name: "Local Caesar", price: 17, description: "baby gem lettuce, signature caesar, 24 month parm" },
-  { name: "Breakfast Smash Burger", price: 23, description: "homemade marinara, lemon aioli" },
   { name: "Nicoles Maine Event (Lobster Roll)", price: 35, description: "poached maine lobster, tossed in lemon aioli, la provence brioche roll, fries" },
-  { name: "Salmon Bowl", price: 26, description: "charred mango, shrimp, plantain chips, toasted coconut, citrus vinaigrette" },
   { name: "Shrimply Tropical Salad", price: 25, description: "charred mango, shrimp, plantain chips, toasted coconut, citrus vinaigrette, avocado, torn herbs, hazelnuts" },
-  { name: "BLT? Cluck Yeah", price: 22, description: "crispy bacon, lettuce, tomato on toasted bread" },
-  { name: "Tuna Melt", price: 21, description: "seared tuna with melted cheese" },
-  { name: "The Local Breakfast", price: 17, description: "house smoked dip with bright lemon aioli and crispy tostones" },
 ];
 
 const dinnerItems = [
@@ -47,9 +42,7 @@ const dinnerItems = [
   { name: "Smoked Fish Dip", price: 16, description: "house smoked with bright lemon aioli and crispy tostones" },
   { name: "Fried Calamari", price: 19, description: "crispy calamari with marinara sauce" },
   { name: "Nicoles Maine Event (Lobster Roll)", price: 35, description: "poached maine lobster, tossed in lemon aioli, la provence brioche roll, fries" },
-  { name: "Rigatoni Pasta", price: 28, description: "lemon basil pesto, crispy garlic panko" },
   { name: "Shrimply Tropical Salad", price: 25, description: "charred mango, shrimp, plantain chips, toasted coconut, citrus vinaigrette" },
-  { name: "Local House Salad", price: 18, description: "fresh seasonal vegetables with house dressing" },
 ];
 
 const wines = [
@@ -298,7 +291,7 @@ export default function Restaurant() {
 
           <div className="text-center mt-12">
             <p className="text-[#666] mb-6">
-              Full menu available at the restaurant. Prices subject to change.
+              Full menu available below. Prices subject to change.
             </p>
             
             {/* PDF Download Links */}
@@ -331,7 +324,7 @@ export default function Restaurant() {
             
             {/* Online Ordering Link */}
             <a
-              href="https://www.opentable.com/the-local-house"
+              href="https://order.toasttab.com/online/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded mb-4"
@@ -391,7 +384,7 @@ export default function Restaurant() {
                   Call (305) 538-5529
                 </a>
                 <a
-                  href="https://www.opentable.com/the-local-house"
+                  href="https://order.toasttab.com/online/the-local-house"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded text-center flex items-center justify-center gap-2"
