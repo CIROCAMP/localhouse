@@ -14,3 +14,9 @@
 - [x] Add UTM parameter tracking for Google Analytics
 - [x] Test conversion tracking is working
 - [x] Install Google Ads tag AW-967579743 on the site
+- [x] Update restaurant page with correct menu descriptions from PDFs
+- [x] Add online ordering link to restaurant page
+- [x] Add PDF menu downloads (Dinner, Brunch, Happy Hour)
+- [x] Fix mobile view alignment and cut-off issues
+- [x] Update dinner hours to Wed-Sun
+- [x] Add Happy Hour section Wed-Sun 4-6PM

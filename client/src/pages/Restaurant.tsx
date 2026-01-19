@@ -7,7 +7,7 @@ declare global {
     trackMewsClick?: () => void;
   }
 }
-import { Clock, Phone, ExternalLink } from "lucide-react";
+import { Clock, Phone, ExternalLink, Download, ShoppingCart } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEOHead, seoConfigs } from "@/components/SEOHead";
 import { SEOSchema } from "@/components/SEOSchema";
@@ -29,23 +29,27 @@ const cocktails = [
 ];
 
 const brunchItems = [
-  { name: "Lobster Eggs Benedict", price: 32, description: "poached eggs, lobster, hollandaise, english muffin" },
-  { name: "Fluffy Pancakes", price: 18, description: "buttermilk pancakes, fresh berries, maple syrup" },
-  { name: "Avocado Toast", price: 16, description: "sourdough, smashed avocado, poached eggs, microgreens" },
-  { name: "Breakfast Smash Burger", price: 22, description: "wagyu beef, fried egg, bacon, cheese, brioche bun" },
-  { name: "French Toast", price: 19, description: "brioche, vanilla custard, fresh berries, whipped cream" },
-  { name: "Veggie Egg White Omelette", price: 18, description: "egg whites, seasonal vegetables, goat cheese" },
-  { name: "Lobster Roll", price: 38, description: "butter-poached lobster, brioche roll, lemon aioli" },
-  { name: "Goat Cheese Croquettes", price: 14, description: "crispy fried, honey drizzle, arugula" },
+  { name: "Oysters on the Half Shell", price: 25, description: "champagne mignonette, lemon" },
+  { name: "Yellowfin Tuna Tartare", price: 21, description: "soy ginger dressing, avocado crema, wonton crisps" },
+  { name: "Goat Cheese Croquettes", price: 14, description: "our iconic bites since 2012 | crisp, creamy, served with warm guava dip" },
+  { name: "Local Caesar", price: 17, description: "baby gem lettuce, signature caesar, 24 month parm" },
+  { name: "Breakfast Smash Burger", price: 23, description: "homemade marinara, lemon aioli" },
+  { name: "Nicoles Maine Event (Lobster Roll)", price: 35, description: "poached maine lobster, tossed in lemon aioli, la provence brioche roll, fries" },
+  { name: "Salmon Bowl", price: 26, description: "charred mango, shrimp, plantain chips, toasted coconut, citrus vinaigrette" },
+  { name: "Shrimply Tropical Salad", price: 25, description: "charred mango, shrimp, plantain chips, toasted coconut, citrus vinaigrette, avocado, torn herbs, hazelnuts" },
+  { name: "BLT? Cluck Yeah", price: 22, description: "crispy bacon, lettuce, tomato on toasted bread" },
+  { name: "Tuna Melt", price: 21, description: "seared tuna with melted cheese" },
+  { name: "The Local Breakfast", price: 17, description: "house smoked dip with bright lemon aioli and crispy tostones" },
 ];
 
 const dinnerItems = [
-  { name: "Tuna Tartare", price: 24, description: "sushi-grade tuna, avocado, sesame, wonton crisps" },
-  { name: "Grilled Octopus", price: 28, description: "charred octopus, fingerling potatoes, chimichurri" },
-  { name: "Pan-Seared Salmon", price: 36, description: "atlantic salmon, quinoa, roasted vegetables" },
-  { name: "Filet Mignon", price: 52, description: "8oz filet, truffle mashed potatoes, red wine reduction" },
-  { name: "Seafood Linguine", price: 38, description: "shrimp, mussels, clams, white wine garlic sauce" },
-  { name: "Grilled Branzino", price: 42, description: "whole fish, lemon, capers, olive oil" },
+  { name: "Yellowfin Tuna Tartare", price: 21, description: "soy ginger dressing, avocado crema, wonton crisps" },
+  { name: "Smoked Fish Dip", price: 16, description: "house smoked with bright lemon aioli and crispy tostones" },
+  { name: "Fried Calamari", price: 19, description: "crispy calamari with marinara sauce" },
+  { name: "Nicoles Maine Event (Lobster Roll)", price: 35, description: "poached maine lobster, tossed in lemon aioli, la provence brioche roll, fries" },
+  { name: "Rigatoni Pasta", price: 28, description: "lemon basil pesto, crispy garlic panko" },
+  { name: "Shrimply Tropical Salad", price: 25, description: "charred mango, shrimp, plantain chips, toasted coconut, citrus vinaigrette" },
+  { name: "Local House Salad", price: 18, description: "fresh seasonal vegetables with house dressing" },
 ];
 
 const wines = [
@@ -94,7 +98,7 @@ export default function Restaurant() {
       <section className="py-12 bg-white border-b border-[#E5DED5]">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-8 w-full md:w-auto">
               <div className="flex items-center gap-3">
                 <Clock className="text-[#FF8F75]" size={20} />
                 <div>
@@ -106,7 +110,14 @@ export default function Restaurant() {
                 <Clock className="text-[#FF8F75]" size={20} />
                 <div>
                   <p className="text-sm text-[#999]">Dinner</p>
-                  <p className="font-medium text-[#4C5254]">4PM – 10PM (Closed Mondays)</p>
+                  <p className="font-medium text-[#4C5254]">Wed-Sun 4PM – 10PM</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <Clock className="text-[#FF8F75]" size={20} />
+                <div>
+                  <p className="text-sm text-[#999]">Happy Hour</p>
+                  <p className="font-medium text-[#4C5254]">Wed-Sun 4PM – 6PM</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -123,7 +134,7 @@ export default function Restaurant() {
               onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
+              className="flex items-center gap-2 px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded w-full md:w-auto justify-center"
             >
               Reserve on OpenTable
               <ExternalLink size={16} />
@@ -146,7 +157,7 @@ export default function Restaurant() {
           </div>
 
           <Tabs defaultValue="brunch" className="max-w-4xl mx-auto">
-            <TabsList className="w-full justify-center mb-12 bg-transparent gap-4">
+            <TabsList className="w-full justify-center mb-12 bg-transparent gap-2 md:gap-4 flex-wrap">
               <TabsTrigger
                 value="brunch"
                 className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#FF8F75] data-[state=active]:text-white rounded"
@@ -203,7 +214,7 @@ export default function Restaurant() {
               <div className="bg-white rounded-lg p-8 shadow-sm">
                 <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-8 text-center">
                   Dinner Menu
-                  <span className="block text-sm font-body text-[#999] mt-1">4PM – 10PM (Closed Mondays)</span>
+                  <span className="block text-sm font-body text-[#999] mt-1">Wed-Sun 4PM – 10PM</span>
                 </h3>
                 <div className="space-y-6">
                   {dinnerItems.map((item, index) => (
@@ -286,9 +297,51 @@ export default function Restaurant() {
           </Tabs>
 
           <div className="text-center mt-12">
-            <p className="text-[#666] mb-4">
+            <p className="text-[#666] mb-6">
               Full menu available at the restaurant. Prices subject to change.
             </p>
+            
+            {/* PDF Download Links */}
+            <div className="flex flex-col gap-3 md:flex-row md:gap-4 justify-center mb-8">
+              <a
+                href="/menus/BrunchJan2026(2).pdf"
+                download
+                className="flex items-center justify-center gap-2 px-3 md:px-4 py-2 bg-[#F5F5F5] text-[#4C5254] font-medium hover:bg-[#E5DED5] transition-colors rounded text-sm md:text-base w-full md:w-auto"
+              >
+                <Download size={16} />
+                <span>Download Brunch Menu</span>
+              </a>
+              <a
+                href="/menus/DinnerJan2026(2).pdf"
+                download
+                className="flex items-center justify-center gap-2 px-3 md:px-4 py-2 bg-[#F5F5F5] text-[#4C5254] font-medium hover:bg-[#E5DED5] transition-colors rounded text-sm md:text-base w-full md:w-auto"
+              >
+                <Download size={16} />
+                <span>Download Dinner Menu</span>
+              </a>
+              <a
+                href="/menus/HAPPYHOUR_.pdf(2).pdf"
+                download
+                className="flex items-center justify-center gap-2 px-3 md:px-4 py-2 bg-[#F5F5F5] text-[#4C5254] font-medium hover:bg-[#E5DED5] transition-colors rounded text-sm md:text-base w-full md:w-auto"
+              >
+                <Download size={16} />
+                <span>Download Happy Hour Menu</span>
+              </a>
+            </div>
+            
+            {/* Online Ordering Link */}
+            <a
+              href="https://www.opentable.com/the-local-house"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded mb-4"
+            >
+              <ShoppingCart size={18} />
+              Order Online
+            </a>
+            
+            <br />
+            
             <a
               onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
               target="_blank"
@@ -322,7 +375,7 @@ export default function Restaurant() {
                 we recommend making a reservation to ensure the best experience. Walk-ins
                 are welcome but subject to availability.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col gap-3 md:flex-row md:gap-4">
                 <a
                   onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
                   target="_blank"
@@ -336,6 +389,15 @@ export default function Restaurant() {
                   className="px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded text-center"
                 >
                   Call (305) 538-5529
+                </a>
+                <a
+                  href="https://www.opentable.com/the-local-house"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded text-center flex items-center justify-center gap-2"
+                >
+                  <ShoppingCart size={18} />
+                  Order Online
                 </a>
               </div>
             </div>
