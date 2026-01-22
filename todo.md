@@ -71,3 +71,10 @@
 - [x] Update OpenTable links in footer and other locations
 - [x] Test conversion tracking in incognito mode
 - [x] Verify conversions appear in Google Ads dashboard after 24 hours
+
+## Brunch Page Hero Image Update
+
+- [x] Optimize and convert new brunch overhead photo to WebP (181KB)
+- [x] Update Brunch.tsx to use new hero image (brunch-hero-overhead.webp/jpg)
+- [x] Reduce overlay opacity for better image visibility
+- [ ] Publish to production and verify image displays correctly
