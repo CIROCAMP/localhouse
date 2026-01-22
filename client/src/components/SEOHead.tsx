@@ -215,13 +215,49 @@ export const seoConfigs = {
     schema: reviewSchema,
   },
   hotel: {
-    title: "Boutique Hotel Rooms | Ocean Drive Views | The Local House Miami Beach",
-    description: "Unique rooms from $199/night with Ocean Drive views, Art Deco design, rooftop pool. Italian hospitality in South of Fifth. Free WiFi, beach access.",
-    keywords: "Miami Beach hotel, Ocean Drive rooms, boutique hotel, Art Deco, rooftop pool",
+    title: "Luxury Boutique Hotel Rooms in Miami Beach | Ocean View Suites | The Local House",
+    description: "Luxury hotel rooms in Miami Beach with ocean views. Modern boutique suites, free WiFi, rooftop bar. Book directly for best rates. From $199/night.",
+    keywords: "Miami Beach hotel, Ocean Drive rooms, boutique hotel, Art Deco, rooftop pool, luxury hotel Miami Beach",
     canonicalUrl: "https://localhouse.com/hotel",
     ogImage: "/images/og-hotel.jpg",
     ogType: "hotel" as const,
-    schema: reviewSchema,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "The Local House",
+      "url": "https://localhouse.com/hotel",
+      "telephone": "+1-305-538-5529",
+      "email": "info@localhouse.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "400 Ocean Drive",
+        "addressLocality": "Miami Beach",
+        "addressRegion": "FL",
+        "postalCode": "33139",
+        "addressCountry": "US"
+      },
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "4.9",
+        "bestRating": "5"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "2500",
+        "bestRating": "5"
+      },
+      "image": "https://localhouse.com/images/og-hotel.jpg",
+      "priceRange": "$$$",
+      "amenityFeature": [
+        {"@type": "LocationFeatureSpecification", "name": "Rooftop Pool"},
+        {"@type": "LocationFeatureSpecification", "name": "Ocean Views"},
+        {"@type": "LocationFeatureSpecification", "name": "Free WiFi"},
+        {"@type": "LocationFeatureSpecification", "name": "Beach Access"},
+        {"@type": "LocationFeatureSpecification", "name": "Restaurant"},
+        {"@type": "LocationFeatureSpecification", "name": "Bar"}
+      ]
+    },
   },
   restaurant: {
     title: "Restaurant & Bar | Ocean Drive Dining | The Local House Miami Beach",

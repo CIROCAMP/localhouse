@@ -174,10 +174,10 @@ export default function Hotel() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold mb-4">
-              Our Rooms & Suites
+              Luxury Boutique Hotel Rooms in Miami Beach
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Italian-owned since 2012. Each room blends Miami Beach style with European boutique comfort
+              Ocean view suites from $199/night. Art Deco design, rooftop pool, Italian hospitality since 2012
             </p>
           </motion.div>
         </div>

@@ -49,3 +49,14 @@
 - [x] Enable gzip compression (automatic via server)
 - [ ] Test on PageSpeed Insights and validate LCP < 2.5s
 - [ ] Verify mobile performance score > 70/100
+
+## /Hotel/ Page SEO Recovery - CRITICAL (20.7K impressions lost)
+
+- [x] Update SEO title tag: "Luxury Boutique Hotel Rooms in Miami Beach | Ocean View Suites | The Local House"
+- [x] Update meta description: "Luxury hotel rooms in Miami Beach with ocean views. Modern boutique suites, free WiFi, rooftop bar. Book directly for best rates."
+- [x] Update H1 heading to clearly describe rooms/hotel offering
+- [x] Add Hotel schema markup with starRating, address, and URL
+- [x] Verify canonical tag is correct: https://www.localhouse.com/hotel/
+- [x] Optimize Open Graph tags (og:title, og:description, og:image)
+- [ ] Test /hotel/ page on PageSpeed Insights to verify LCP < 2.5s
+- [ ] Submit to Google Search Console for re-crawl
