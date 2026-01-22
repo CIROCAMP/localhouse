@@ -128,7 +128,7 @@ export default function Restaurant() {
               </div>
             </div>
             <a
-              onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
+              onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded w-full md:w-auto justify-center"
@@ -340,7 +340,7 @@ export default function Restaurant() {
             <br />
             
             <a
-              onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
+              onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#FF8F75] font-medium hover:underline"
@@ -374,7 +374,7 @@ export default function Restaurant() {
               </p>
               <div className="flex flex-col gap-3 md:flex-row md:gap-4">
                 <a
-                  onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
+                  onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')} href="https://www.opentable.com/the-local-house"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded text-center"

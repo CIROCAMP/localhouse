@@ -97,7 +97,7 @@ export default function Layout({ children }: LayoutProps) {
                 href="https://www.opentable.com/the-local-house"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => window.trackOpenTableClick?.()}
+                onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')}
                 className="px-5 py-2.5 text-sm font-medium tracking-wide border-2 border-[#FF8F75] text-[#FF8F75] hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded"
               >
                 Book a Table
@@ -154,7 +154,7 @@ export default function Layout({ children }: LayoutProps) {
                     href="https://www.opentable.com/the-local-house"
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => window.trackOpenTableClick?.()}
+                    onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')}
                     className="w-full py-3 text-center text-sm font-medium tracking-wide border-2 border-[#FF8F75] text-[#FF8F75] rounded"
                   >
                     Book a Table

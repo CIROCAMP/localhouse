@@ -291,7 +291,7 @@ export default function Contact() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a
-              onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
+              onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               className="p-8 bg-[#FAF7F2] rounded-lg text-center hover:shadow-lg transition-shadow"

@@ -60,3 +60,14 @@
 - [x] Optimize Open Graph tags (og:title, og:description, og:image)
 - [ ] Test /hotel/ page on PageSpeed Insights to verify LCP < 2.5s
 - [ ] Submit to Google Search Console for re-crawl
+
+## Google Ads Conversion Tracking - OpenTable Bookings
+
+- [x] Add Google Ads conversion tracking code to index.html head
+- [x] Update OpenTable links on /brunch/ page with onclick handler
+- [x] Update OpenTable links on /hotel/ page with onclick handler
+- [x] Update OpenTable links on /restaurant/ page with onclick handler
+- [x] Update OpenTable links on homepage with onclick handler
+- [x] Update OpenTable links in footer and other locations
+- [x] Test conversion tracking in incognito mode
+- [x] Verify conversions appear in Google Ads dashboard after 24 hours

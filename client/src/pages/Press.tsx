@@ -270,7 +270,7 @@ export default function Press() {
               </span>
             </motion.a>
             <motion.a
-              onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
+              onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -432,7 +432,7 @@ export default function Press() {
               Read on Google
             </a>
             <a
-              onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
+              onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-[#da3743] text-white rounded-lg hover:bg-[#c42f3a] transition-colors font-medium"
@@ -460,7 +460,7 @@ export default function Press() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                onClick={() => window.trackOpenTableClick?.()} href="https://www.opentable.com/the-local-house"
+                onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')} href="https://www.opentable.com/the-local-house"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#FF8F75] text-white font-medium rounded hover:bg-[#e67c63] transition-colors"
