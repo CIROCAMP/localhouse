@@ -178,11 +178,15 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeInOut" }}
             className="absolute inset-0"
           >
-            <img
-              src={heroSlides[currentSlide].image}
-              alt={heroSlides[currentSlide].title}
-              className="w-full h-full object-cover will-change-transform"
-            />
+            <picture>
+              <source srcSet={heroSlides[currentSlide].image.replace('.jpg', '.webp')} type="image/webp" />
+              <img
+                src={heroSlides[currentSlide].image}
+                alt={heroSlides[currentSlide].title}
+                className="w-full h-full object-cover will-change-transform"
+                loading="eager"
+              />
+            </picture>
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
           </motion.div>
         </AnimatePresence>
@@ -305,11 +309,15 @@ export default function Home() {
               className="lg:w-1/2"
             >
               <div className="relative">
-                <img
-                  src="/images/brunch-spread.jpg"
-                  alt="Famous Brunch at The Local House"
-                  className="w-full rounded-lg shadow-2xl"
-                />
+                <picture>
+                  <source srcSet="/images/brunch-spread.webp" type="image/webp" />
+                  <img
+                    src="/images/brunch-spread.jpg"
+                    alt="Famous Brunch at The Local House"
+                    className="w-full rounded-lg shadow-2xl"
+                    loading="lazy"
+                  />
+                </picture>
                 <div className="absolute -bottom-6 -right-6 bg-[#FF8F75] text-white px-6 py-4 rounded shadow-lg">
                   <div className="flex items-center gap-2">
                     <Clock size={20} />

@@ -72,11 +72,15 @@ export default function Brunch() {
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-[#FAF7F2]">
         <div className="absolute inset-0">
-          <img
-            src="/images/brunch-hero.jpg"
-            alt="Famous Brunch at The Local House"
-            className="w-full h-full object-cover"
-          />
+          <picture>
+            <source srcSet="/images/brunch-hero.webp" type="image/webp" />
+            <img
+              src="/images/brunch-hero.jpg"
+              alt="Famous Brunch at The Local House"
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
         </div>
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">

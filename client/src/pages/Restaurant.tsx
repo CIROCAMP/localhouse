@@ -64,11 +64,15 @@ export default function Restaurant() {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="/images/outside-terrace.jpg"
-            alt="The Local House Restaurant"
-            className="w-full h-full object-cover"
-          />
+          <picture>
+            <source srcSet="/images/outside-terrace.webp" type="image/webp" />
+            <img
+              src="/images/outside-terrace.jpg"
+              alt="The Local House Restaurant"
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
         </div>
         <div className="relative z-10 text-center text-white px-4">

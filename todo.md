@@ -37,3 +37,15 @@
 - [x] Verify robots.txt is accessible at /robots.txt
 - [x] Verify sitemap.xml exists and is accessible
 - [x] Test robots.txt with Google Search Console
+
+## Mobile Page Speed Optimization - CRITICAL
+
+- [x] Audit all images in public folder and identify optimization candidates
+- [x] Optimize and convert hero images to WebP format (target: <100KB each)
+- [x] Implement responsive images with picture tags for mobile/desktop
+- [x] Add lazy loading to below-the-fold images
+- [x] Defer non-critical JavaScript (analytics, tracking)
+- [x] Minify CSS and JavaScript files (automatic via Vite)
+- [x] Enable gzip compression (automatic via server)
+- [ ] Test on PageSpeed Insights and validate LCP < 2.5s
+- [ ] Verify mobile performance score > 70/100

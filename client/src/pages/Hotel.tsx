@@ -92,21 +92,29 @@ function RoomImageCarousel({ images, name }: { images: string[], name: string })
 
   if (images.length === 1) {
     return (
-      <img
-        src={images[0]}
-        alt={name}
-        className="w-full h-full object-cover rounded-lg"
-      />
+      <picture>
+        <source srcSet={images[0].replace('.jpg', '.webp')} type="image/webp" />
+        <img
+          src={images[0]}
+          alt={name}
+          className="w-full h-full object-cover rounded-lg"
+          loading="lazy"
+        />
+      </picture>
     );
   }
 
   return (
     <div className="relative w-full h-full group">
-      <img
-        src={images[currentIndex]}
-        alt={`${name} - Photo ${currentIndex + 1}`}
-        className="w-full h-full object-cover rounded-lg transition-opacity duration-300"
-      />
+      <picture>
+        <source srcSet={images[currentIndex].replace('.jpg', '.webp')} type="image/webp" />
+        <img
+          src={images[currentIndex]}
+          alt={`${name} - Photo ${currentIndex + 1}`}
+          className="w-full h-full object-cover rounded-lg transition-opacity duration-300"
+          loading="lazy"
+        />
+      </picture>
       
       {/* Navigation Arrows */}
       <button
@@ -148,11 +156,15 @@ export default function Hotel() {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="/images/hotel-hero.jpg"
-            alt="The Local House Hotel"
-            className="w-full h-full object-cover"
-          />
+          <picture>
+            <source srcSet="/images/hotel-hero.webp" type="image/webp" />
+            <img
+              src="/images/hotel-hero.jpg"
+              alt="The Local House Hotel"
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
         </div>
         <div className="relative z-10 text-center text-white px-4">
