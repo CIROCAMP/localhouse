@@ -28,3 +28,12 @@
 - [x] Update FAQ: Private events email to info@localhouse.com
 - [x] Update FAQ: Remove bar hours mention (midnight on weekends)
 - [x] Update FAQ: Remove parking garage partnership mention
+
+## SEO Fixes - Phase 1
+
+- [x] Create robots.txt file with proper disallow rules
+- [x] Remove noindex meta tags from pages (not actively used)
+- [x] Fix 4xx errors and broken links (301 redirects in place)
+- [x] Verify robots.txt is accessible at /robots.txt
+- [x] Verify sitemap.xml exists and is accessible
+- [x] Test robots.txt with Google Search Console

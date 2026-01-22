@@ -1,29 +1,42 @@
 # Robots.txt for The Local House
 # https://localhouse.com
+# Updated: January 2026
+# Purpose: Optimize Google crawl budget and improve indexing
 
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://localhouse.com/sitemap.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-
-# Block unnecessary paths
+# ============================================
+# DISALLOW ADMIN & INTERNAL PAGES
+# ============================================
 Disallow: /api/
-Disallow: /_*
 Disallow: /admin/
+Disallow: /account/
+Disallow: /auth/
+Disallow: /reset-password
+Disallow: /login
+Disallow: /register
+Disallow: /search
+Disallow: /s
+Disallow: /cart
+Disallow: /checkout
+Disallow: /store/
+Disallow: /private-events-venue/private-events/
+Disallow: /menu/
+Disallow: /sleep
+
+# ============================================
+# DISALLOW PDF FILES
+# ============================================
+Disallow: /*.pdf$
 
 # ============================================
 # BLOCK TRACKING PARAMETERS (SEO FIX)
-# Added: January 7, 2026
-# Purpose: Prevent Google from indexing URL 
-# variants with tracking parameters
-# This will fix 131+ spam URLs in Search Console
+# Purpose: Prevent Google from indexing URL variants
+# with tracking parameters (fixes duplicate content)
 # ============================================
 
-# Block cm_sp parameter (booking/OTA tracking) - MAIN ISSUE!
+# Block cm_sp parameter (booking/OTA tracking)
 Disallow: /*?cm_sp=
 Disallow: /*&cm_sp=
 
@@ -56,6 +69,17 @@ Disallow: /*&fbclid=
 # ============================================
 Disallow: /explore-2/
 Disallow: /event/august-3rd-music-brunch/
+
+# ============================================
+# CRAWL DELAY & RATE LIMITING
+# ============================================
+Crawl-delay: 1
+Request-rate: 1/1s
+
+# ============================================
+# SITEMAP
+# ============================================
+Sitemap: https://www.localhouse.com/sitemap.xml
 
 # ============================================
 # ALLOW ALL MAJOR SEARCH ENGINES
