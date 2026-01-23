@@ -206,13 +206,36 @@ const faqSchema = {
 
 export const seoConfigs = {
   home: {
-    title: "The Local House | Boutique Hotel & Famous Brunch | Miami Beach",
-    description: "Boutique hotel on Ocean Drive with legendary Lobster Eggs Benedict brunch. Rooftop pool, Art Deco design, Italian hospitality. Book direct for best rates.",
-    keywords: "Miami Beach hotel, best brunch, Ocean Drive, boutique hotel, Lobster Eggs Benedict",
+    title: "The Local House | #1 Brunch Miami Beach & Boutique Hotel",
+    description: "Voted best brunch in South Beach. Famous Lobster Eggs Benedict, boutique hotel on Ocean Drive. Italian-owned since 2012. Reserve your table today!",
+    keywords: "best brunch miami beach, restaurants near me miami beach, south beach brunch, ocean drive dining, boutique hotel miami beach, lobster eggs benedict, sofi miami beach, miami beach restaurants",
     canonicalUrl: "https://localhouse.com",
     ogImage: "/images/og-home.jpg",
     ogType: "website" as const,
-    schema: reviewSchema,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "The Local House",
+      "image": "https://localhouse.com/images/og-home.jpg",
+      "description": "Voted best brunch in South Beach. Famous Lobster Eggs Benedict, boutique hotel on Ocean Drive. Italian-owned since 2012.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "400 Ocean Drive",
+        "addressLocality": "Miami Beach",
+        "addressRegion": "FL",
+        "postalCode": "33139",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-305-538-5529",
+      "url": "https://localhouse.com",
+      "priceRange": "$$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "2500",
+        "bestRating": "5"
+      }
+    }
   },
   hotel: {
     title: "Luxury Boutique Hotel Rooms in Miami Beach | Ocean View Suites | The Local House",

@@ -285,6 +285,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Near Me Section - SEO Optimization */}
+      <section className="py-24 bg-[#f9f9f9]">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-6">
+              Best Restaurant Near You in Miami Beach
+            </h2>
+            <p className="text-lg text-[#666] max-w-2xl mx-auto mb-8">
+              Looking for a restaurant near you in Miami Beach? Welcome to The Local House, located at 400 Ocean Drive in the heart of South of Fifth (SoFi). We are just steps from South Beach, Lincoln Road, and all major Miami Beach attractions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <span className="text-4xl mb-4 block">📍</span>
+              <p className="font-bold text-[#4C5254] mb-2">400 Ocean Drive</p>
+              <p className="text-sm text-[#666]">Miami Beach, FL 33139</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <span className="text-4xl mb-4 block">🚶</span>
+              <p className="font-bold text-[#4C5254] mb-2">2-Min Walk</p>
+              <p className="text-sm text-[#666]">From South Beach</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <span className="text-4xl mb-4 block">🍳</span>
+              <p className="font-bold text-[#4C5254] mb-2">Famous Brunch</p>
+              <p className="text-sm text-[#666]">Daily 8AM – 4PM</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <span className="text-4xl mb-4 block">⭐</span>
+              <p className="font-bold text-[#4C5254] mb-2">4.9 Rating</p>
+              <p className="text-sm text-[#666]">2,500+ Reviews</p>
+            </div>
+          </div>
+
+          <p className="text-center text-lg text-[#666] max-w-3xl mx-auto mb-12 leading-relaxed">
+            Whether you are a local looking for the best brunch spot or a traveler searching for authentic Miami Beach dining, The Local House welcomes you with Italian hospitality and fresh, coastal cuisine. Our oceanfront location on Ocean Drive makes us the perfect choice when you search restaurants near me or best brunch near me in Miami Beach.
+          </p>
+
+          <div className="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-[#4C5254] mb-6 text-center">Easy to Find From Anywhere in Miami Beach</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex items-center gap-2">✓ South Beach: 2-minute walk</div>
+              <div className="flex items-center gap-2">✓ Lincoln Road: 5-minute drive</div>
+              <div className="flex items-center gap-2">✓ Downtown Miami: 10-minute drive</div>
+              <div className="flex items-center gap-2">✓ Miami Beach Convention Center: 8 minutes</div>
+              <div className="flex items-center gap-2">✓ Art Deco District: Walking distance</div>
+              <div className="flex items-center gap-2">✓ Bayside Marketplace: 12-minute drive</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Brunch Section */}
       <section className="py-24 bg-[white]">
         <div className="container">

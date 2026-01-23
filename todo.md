@@ -78,3 +78,14 @@
 - [x] Update Brunch.tsx to use new hero image (brunch-hero-overhead.webp/jpg)
 - [x] Reduce overlay opacity for better image visibility
 - [ ] Publish to production and verify image displays correctly
+
+## "Near Me" SEO Landing Pages - CRITICAL (High Priority)
+
+- [x] Add "Near Me" section to homepage (after hero, before "Where Locals Gather")
+- [x] Update homepage meta title: "The Local House | #1 Brunch Miami Beach & Boutique Hotel"
+- [x] Update homepage meta description: "Voted best brunch in South Beach. Famous Lobster Eggs Benedict, boutique hotel on Ocean Drive. Italian-owned since 2012. Reserve your table today!"
+- [x] Create /brunch-near-me-miami-beach landing page with hero, "Why Choose Us", location, menu preview
+- [x] Create /restaurants-near-me-miami-beach landing page with location highlights, reviews, nearby attractions
+- [x] Add LocalBusiness schema markup to homepage
+- [x] Add FAQ schema markup to landing pages
+- [x] Test both landing pages on mobile and desktop

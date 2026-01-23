@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import Hotel from "./pages/Hotel";
 import Restaurant from "./pages/Restaurant";
 import Brunch from "./pages/Brunch";
+import BrunchNearMe from "./pages/BrunchNearMe";
+import RestaurantsNearMe from "./pages/RestaurantsNearMe";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Layout from "./components/Layout";
@@ -30,6 +32,8 @@ function Router() {
         <Route path="/hotel" component={Hotel} />
         <Route path="/restaurant" component={Restaurant} />
         <Route path="/brunch" component={Brunch} />
+        <Route path="/brunch-near-me-miami-beach" component={BrunchNearMe} />
+        <Route path="/restaurants-near-me-miami-beach" component={RestaurantsNearMe} />
         <Route path="/gallery" component={Gallery} />
         <Route path="/contact" component={Contact} />
         <Route path="/blog" component={Blog} />
