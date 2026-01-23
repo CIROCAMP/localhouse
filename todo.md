@@ -89,3 +89,14 @@
 - [x] Add LocalBusiness schema markup to homepage
 - [x] Add FAQ schema markup to landing pages
 - [x] Test both landing pages on mobile and desktop
+
+## Blog Posts for Internal Linking & Topical Authority
+
+- [x] Create blog post: "10 Best Brunch Spots in Miami Beach 2026 (Local's Guide)" - 2,500-3,000 words
+- [x] Create blog post: "The Complete Guide to South of Fifth (SoFi) Miami Beach" - 2,000-2,500 words
+- [x] Create blog post: "The Story Behind Our Famous Lobster Eggs Benedict" - 1,500 words
+- [x] Create blog post: "Where to Brunch in Miami Beach: Complete 2026 Guide" - 2,000 words
+- [x] Create blog post: "Miami Beach Brunch Hours: When is Brunch Served?" - 1,200 words
+- [x] Add all blog posts to blog system with proper metadata
+- [x] Test internal links to landing pages and menu pages
+- [x] Verify blog posts appear in sitemap.xml
