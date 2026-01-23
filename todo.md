@@ -111,3 +111,12 @@
 - [x] Add contextual links to all 5 blog posts linking to landing pages
 - [x] Test all internal links are working correctly
 - [x] Verify link anchor text uses target keywords for SEO
+
+## Review Generation System & Blog Post Updates
+
+- [x] Create /leave-review page with Google Review CTA and social media links
+- [x] Generate QR code linking to /leave-review page
+- [x] Update best-brunch-spots blog post with new content and competitor analysis
+- [x] Add internal links to /brunch-near-me-miami-beach and /restaurants-near-me-miami-beach
+- [x] Test QR code functionality and review page
+- [x] Provide QR code for printing on table tents, receipts, menus

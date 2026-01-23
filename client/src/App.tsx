@@ -20,6 +20,7 @@ import Culture from "./pages/Culture";
 import Press from "./pages/Press";
 import PrivateEvents from "./pages/PrivateEvents";
 import LocalSpots from "./pages/LocalSpots";
+import LeaveReview from "./pages/LeaveReview";
 import { AccessibilityToolbar } from "./components/AccessibilityToolbar";
 import { Redirect } from "./components/Redirect";
 
@@ -42,6 +43,7 @@ function Router() {
         <Route path="/press" component={Press} />
         <Route path="/private-events" component={PrivateEvents} />
         <Route path="/local-spots" component={LocalSpots} />
+        <Route path="/leave-review" component={LeaveReview} />
         
         {/* ============================================ */}
         {/* SEO REDIRECTS - Old URLs from previous site */}
