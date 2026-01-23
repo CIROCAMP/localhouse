@@ -120,3 +120,5 @@
 - [x] Add internal links to /brunch-near-me-miami-beach and /restaurants-near-me-miami-beach
 - [x] Test QR code functionality and review page
 - [x] Provide QR code for printing on table tents, receipts, menus
+
+## Hero Section CTA Optimization -

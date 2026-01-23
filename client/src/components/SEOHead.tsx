@@ -207,7 +207,7 @@ const faqSchema = {
 export const seoConfigs = {
   home: {
     title: "The Local House | #1 Brunch Miami Beach & Boutique Hotel",
-    description: "Voted best brunch in South Beach. Famous Lobster Eggs Benedict, boutique hotel on Ocean Drive. Italian-owned since 2012. Reserve your table today!",
+    description: "Best brunch near you in Miami Beach. Famous Lobster Eggs Benedict, boutique hotel on Ocean Drive. Voted #1 by locals. Italian-owned since 2012. Book your table today!",
     keywords: "best brunch miami beach, restaurants near me miami beach, south beach brunch, ocean drive dining, boutique hotel miami beach, lobster eggs benedict, sofi miami beach, miami beach restaurants",
     canonicalUrl: "https://localhouse.com",
     ogImage: "/images/og-home.jpg",

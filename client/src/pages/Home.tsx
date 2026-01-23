@@ -212,7 +212,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-semibold mb-6 tracking-wide">
-                {heroSlides[currentSlide].title}
+                {currentSlide === 0 ? "The Local House - Best Brunch in Miami Beach" : heroSlides[currentSlide].title}
               </h1>
               <p className="text-xl md:text-2xl font-light mb-10 text-white/90">
                 {heroSlides[currentSlide].subtitle}
@@ -242,21 +242,7 @@ export default function Home() {
             >
               Book a Room
             </a>
-            <Link href="/brunch">
-              <span className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium tracking-wide hover:bg-white/20 transition-all duration-300 rounded inline-block">
-                Famous Brunch →
-              </span>
-            </Link>
-            <Link href="/brunch-near-me-miami-beach">
-              <span className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium tracking-wide hover:bg-white/20 transition-all duration-300 rounded inline-block">
-                Looking for brunch near you?
-              </span>
-            </Link>
-            <Link href="/restaurants-near-me-miami-beach">
-              <span className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium tracking-wide hover:bg-white/20 transition-all duration-300 rounded inline-block">
-                Restaurants near me
-              </span>
-            </Link>
+
           </motion.div>
         </div>
 
