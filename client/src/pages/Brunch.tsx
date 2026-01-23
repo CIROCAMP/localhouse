@@ -241,6 +241,19 @@ export default function Brunch() {
               </span>
             </Link>
           </div>
+
+          {/* Brunch Nearby Link */}
+          <div className="mt-12 bg-[#FAF7F2] p-8 rounded-lg text-center">
+            <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-4">
+              Looking for brunch nearby?
+            </h3>
+            <p className="text-[#666] mb-6 max-w-2xl mx-auto">
+              The Local House is your destination for the best brunch in Miami Beach. Located in South of Fifth, just steps from South Beach.
+            </p>
+            <Link href="/brunch-near-me-miami-beach" className="inline-block px-6 py-3 bg-[#FF8F75] text-white font-medium rounded hover:bg-[#e67c63] transition-colors">
+              Find Brunch Near You
+            </Link>
+          </div>
         </div>
       </section>
 

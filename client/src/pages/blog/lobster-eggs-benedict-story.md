@@ -101,6 +101,8 @@ The Lobster Eggs Benedict has a reputation for a reason. It's an exceptional dis
 
 [Reserve your table](/brunch) and experience the dish that's made us legendary. Arrive early or book ahead—this is one dish that's worth the wait.
 
+Looking for [the best brunch in Miami Beach](/brunch-near-me-miami-beach)? The Lobster Eggs Benedict is the signature dish you shouldn't miss. Or explore [restaurants near you](/restaurants-near-me-miami-beach) in South of Fifth for more dining options.
+
 ---
 
 **Author:** Manus AI  

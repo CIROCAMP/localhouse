@@ -135,6 +135,8 @@ South of Fifth represents the best of Miami Beach—beautiful architecture, exce
 
 Start with a visit to [The Local House](/restaurants-near-me-miami-beach) to experience the neighborhood's dining excellence, then explore everything else SoFi has to offer.
 
+For more information about [restaurants near you in South of Fifth](/restaurants-near-me-miami-beach) or [brunch near you in Miami Beach](/brunch-near-me-miami-beach), check out our dedicated guides.
+
 ---
 
 **Author:** Manus AI  

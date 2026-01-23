@@ -247,6 +247,16 @@ export default function Home() {
                 Famous Brunch →
               </span>
             </Link>
+            <Link href="/brunch-near-me-miami-beach">
+              <span className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium tracking-wide hover:bg-white/20 transition-all duration-300 rounded inline-block">
+                Looking for brunch near you?
+              </span>
+            </Link>
+            <Link href="/restaurants-near-me-miami-beach">
+              <span className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium tracking-wide hover:bg-white/20 transition-all duration-300 rounded inline-block">
+                Restaurants near me
+              </span>
+            </Link>
           </motion.div>
         </div>
 
@@ -324,7 +334,7 @@ export default function Home() {
           </div>
 
           <p className="text-center text-lg text-[#666] max-w-3xl mx-auto mb-12 leading-relaxed">
-            Whether you are a local looking for the best brunch spot or a traveler searching for authentic Miami Beach dining, The Local House welcomes you with Italian hospitality and fresh, coastal cuisine. Our oceanfront location on Ocean Drive makes us the perfect choice when you search restaurants near me or best brunch near me in Miami Beach.
+            Whether you are a local looking for the best brunch spot or a traveler searching for authentic Miami Beach dining, The Local House welcomes you with Italian hospitality and fresh, coastal cuisine. Our oceanfront location on Ocean Drive makes us the perfect choice when you search <Link href="/restaurants-near-me-miami-beach" className="text-[#FF8F75] hover:underline font-semibold">restaurants near me</Link> or <Link href="/brunch-near-me-miami-beach" className="text-[#FF8F75] hover:underline font-semibold">best brunch near me</Link> in Miami Beach.
           </p>
 
           <div className="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto">

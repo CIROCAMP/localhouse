@@ -124,6 +124,8 @@ Miami Beach brunch has evolved beyond eggs and toast. Today's brunch scene featu
 
 Whether you're looking for a casual weekend meal or a special occasion celebration, Miami Beach has a brunch spot for you. Start with [The Local House's famous Lobster Eggs Benedict](/brunch), then explore the other options to find your personal favorite.
 
+For more information about [brunch near you in Miami Beach](/brunch-near-me-miami-beach), check out our dedicated guide. Or explore [restaurants near you](/restaurants-near-me-miami-beach) for dining options beyond brunch.
+
 ---
 
 **Author:** Manus AI  

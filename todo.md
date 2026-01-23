@@ -100,3 +100,14 @@
 - [x] Add all blog posts to blog system with proper metadata
 - [x] Test internal links to landing pages and menu pages
 - [x] Verify blog posts appear in sitemap.xml
+
+## Internal Linking Strategy for SEO
+
+- [x] Add "Looking for brunch near you?" link to Homepage → /brunch-near-me-miami-beach
+- [x] Add "Best brunch in Miami Beach" link to Homepage → /brunch
+- [x] Add "Restaurants near me" link to Homepage → /restaurants-near-me-miami-beach
+- [x] Add "Searching for restaurants near you?" section to Restaurant page → /restaurants-near-me-miami-beach
+- [x] Add "Looking for brunch nearby?" link to Brunch page → /brunch-near-me-miami-beach
+- [x] Add contextual links to all 5 blog posts linking to landing pages
+- [x] Test all internal links are working correctly
+- [x] Verify link anchor text uses target keywords for SEO

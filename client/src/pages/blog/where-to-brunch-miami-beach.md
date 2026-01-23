@@ -186,7 +186,7 @@ Brunch in Miami Beach is about more than just eating. It's about:
 
 If you're new to Miami Beach brunch, start with [The Local House](/brunch). The legendary Lobster Eggs Benedict, oceanfront location, and Italian hospitality provide an excellent introduction to what makes Miami Beach brunch special.
 
-From there, explore other neighborhoods and restaurants to find your personal favorites.
+From there, explore other neighborhoods and restaurants to find your personal favorites. For more information about [brunch near you in Miami Beach](/brunch-near-me-miami-beach) or [restaurants near you](/restaurants-near-me-miami-beach), check out our dedicated guides.
 
 ---
 
