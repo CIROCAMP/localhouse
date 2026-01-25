@@ -206,9 +206,9 @@ const faqSchema = {
 
 export const seoConfigs = {
   home: {
-    title: "The Local House | #1 Brunch Miami Beach & Boutique Hotel",
-    description: "Best brunch near you in Miami Beach. Famous Lobster Eggs Benedict, boutique hotel on Ocean Drive. Voted #1 by locals. Italian-owned since 2012. Book your table today!",
-    keywords: "best brunch miami beach, restaurants near me miami beach, south beach brunch, ocean drive dining, boutique hotel miami beach, lobster eggs benedict, sofi miami beach, miami beach restaurants",
+    title: "The Local House | Boutique Hotel & Best Breakfast Brunch in South Beach Miami",
+    description: "Boutique hotel & best breakfast brunch in South Beach Miami Beach. Famous Lobster Eggs Benedict, bottomless mimosas, rooftop pool, Ocean Drive rooms. Voted #1 brunch by locals. Italian-owned since 2012. Book hotel or table now!",
+    keywords: "boutique hotel miami beach, best breakfast south beach, best brunch miami beach, breakfast near me, brunch near me, ocean drive hotel, south beach hotel, lobster eggs benedict, rooftop pool miami beach",
     canonicalUrl: "https://localhouse.com",
     ogImage: "/images/og-home.jpg",
     ogType: "website" as const,
@@ -217,7 +217,7 @@ export const seoConfigs = {
       "@type": "LocalBusiness",
       "name": "The Local House",
       "image": "https://localhouse.com/images/og-home.jpg",
-      "description": "Voted best brunch in South Beach. Famous Lobster Eggs Benedict, boutique hotel on Ocean Drive. Italian-owned since 2012.",
+      "description": "Voted best breakfast & brunch in South Beach. Famous Lobster Eggs Benedict, boutique hotel on Ocean Drive. Italian-owned since 2012. Rooftop pool, ocean views, Mediterranean cuisine.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "400 Ocean Drive",
@@ -229,6 +229,8 @@ export const seoConfigs = {
       "telephone": "+1-305-538-5529",
       "url": "https://localhouse.com",
       "priceRange": "$$$",
+      "servesCuisine": ["Mediterranean", "Italian", "American", "Seafood", "Brunch"],
+      "mealServed": ["breakfast", "brunch", "lunch", "dinner"],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
@@ -283,18 +285,18 @@ export const seoConfigs = {
     },
   },
   restaurant: {
-    title: "Restaurant & Bar | Ocean Drive Dining | The Local House Miami Beach",
-    description: "Award-winning Ocean Drive restaurant with fresh seafood, craft cocktails, Mediterranean cuisine. Open breakfast, lunch & dinner. Book via OpenTable.",
-    keywords: "Ocean Drive restaurant, Miami Beach dining, seafood, craft cocktails, Mediterranean",
+    title: "Best Breakfast Brunch Restaurant & Bar | Boutique Hotel | Ocean Drive | The Local House",
+    description: "Award-winning breakfast brunch restaurant on Ocean Drive with fresh seafood, craft cocktails, Mediterranean cuisine. Stay at our boutique hotel. Famous Lobster Eggs Benedict. Open 8AM-10PM. Book via OpenTable.",
+    keywords: "breakfast restaurant miami beach, best brunch restaurant south beach, ocean drive restaurant, boutique hotel miami beach, seafood, craft cocktails, lobster eggs benedict",
     canonicalUrl: "https://localhouse.com/restaurant",
     ogImage: "/images/og-restaurant.jpg",
     ogType: "restaurant" as const,
     schema: faqSchema,
   },
   brunch: {
-    title: "Best Brunch Miami Beach | Lobster Eggs Benedict | The Local House",
-    description: "Voted #1 brunch in South of Fifth. Legendary Lobster Eggs Benedict, bottomless mimosas, Ocean Drive views. Weekend reservations recommended.",
-    keywords: "best brunch Miami Beach, Lobster Eggs Benedict, bottomless mimosas, brunch South Beach, weekend brunch",
+    title: "Best Breakfast & Brunch in South Beach | Boutique Hotel | Lobster Eggs Benedict | The Local House",
+    description: "Voted #1 breakfast & brunch in South Beach. Legendary Lobster Eggs Benedict, bottomless mimosas, fresh pastries, Ocean Drive views. Stay at our boutique hotel. Open 8AM-4PM daily. Weekend reservations recommended.",
+    keywords: "best breakfast south beach, best brunch south beach, breakfast near me miami, boutique hotel south beach, lobster eggs benedict, bottomless mimosas, brunch south beach, weekend brunch miami beach",
     canonicalUrl: "https://localhouse.com/brunch",
     ogImage: "/images/og-brunch.jpg",
     ogType: "restaurant" as const,

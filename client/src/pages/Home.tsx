@@ -26,7 +26,7 @@ import MenuSection from "@/components/MenuSection";
  */
 
 // SEO: Set page title
-const SEO_TITLE = "The Local House | Boutique Hotel & Best Brunch Miami Beach";
+const SEO_TITLE = "The Local House | Best Breakfast & Brunch in South Beach Miami Beach";
 
 const heroSlides = [
   {
@@ -212,7 +212,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-semibold mb-6 tracking-wide">
-                {currentSlide === 0 ? "The Local House - Best Brunch in Miami Beach" : heroSlides[currentSlide].title}
+                {heroSlides[currentSlide].title}
               </h1>
               <p className="text-xl md:text-2xl font-light mb-10 text-white/90">
                 {heroSlides[currentSlide].subtitle}
