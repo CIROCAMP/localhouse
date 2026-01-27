@@ -38,7 +38,7 @@ export default function RestaurantsNearMe() {
   ];
 
   const menuHighlights = [
-    { name: "Lobster Eggs Benedict", price: "$28", description: "Our signature brunch dish" },
+    { name: "Lobster Eggs Benedict", price: "$33", description: "Our signature brunch dish" },
     { name: "Yellowfin Tuna Tartare", price: "$21", description: "Fresh and perfectly seasoned" },
     { name: "Fried Calamari", price: "$19", description: "Crispy and delicious" },
     { name: "Goat Cheese Croquettes", price: "$14", description: "Warm and creamy" }

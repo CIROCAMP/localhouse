@@ -78,7 +78,7 @@ const faqs = [
   },
   {
     question: "What is the best brunch in South Beach Miami?",
-    answer: "The Local House has been voted #1 Brunch in South Beach by locals and visitors. Our famous Lobster Eggs Benedict ($28), fluffy buttermilk pancakes, and signature mimosas have earned us a 4.9-star rating from over 2,500 guests.",
+    answer: "The Local House has been voted #1 Brunch in South Beach by locals and visitors. Our famous Lobster Eggs Benedict ($33), fluffy buttermilk pancakes, and signature mimosas have earned us a 4.9-star rating from over 2,500 guests.",
   },
   // Hotel Operations
   {
@@ -466,7 +466,7 @@ export default function Home() {
             <div className="md:w-1/3 text-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
                 <div className="text-6xl mb-4">🥚🦞</div>
-                <div className="text-4xl font-display font-bold">$28</div>
+                <div className="text-4xl font-display font-bold">$33</div>
                 <div className="text-white/80">Worth Every Penny</div>
               </div>
             </div>

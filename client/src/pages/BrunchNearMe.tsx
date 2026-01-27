@@ -9,7 +9,7 @@ export default function BrunchNearMe() {
       icon: "🦞",
       title: "Famous Lobster Eggs Benedict",
       description: "Our signature dish that put us on the map. Fresh Maine lobster, perfectly poached eggs, house-made hollandaise on a toasted English muffin. This is what locals come back for again and again.",
-      price: "$28"
+      price: "$33"
     },
     {
       icon: "📍",

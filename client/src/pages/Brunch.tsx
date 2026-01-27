@@ -20,7 +20,7 @@ import { SEOSchema } from "@/components/SEOSchema";
 const brunchHighlights = [
   {
     name: "Lobster Eggs Benedict",
-    price: 32,
+    price: 33,
     description: "Our signature dish - butter-poached lobster, perfectly poached eggs, silky hollandaise on a toasted english muffin",
     tag: "SIGNATURE",
   },
