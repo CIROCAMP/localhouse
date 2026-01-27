@@ -71,7 +71,7 @@ const amenities = [
   { icon: Waves, name: "Rooftop Pool", description: "Stunning pool with Miami skyline views" },
   { icon: Sun, name: "Beach Access", description: "Beach chairs & umbrella setup daily" },
   { icon: Wifi, name: "High-Speed Wi-Fi", description: "Complimentary throughout property" },
-  { icon: Coffee, name: "Welcome Drink", description: "Signature cocktail upon arrival" },
+
   { icon: Dumbbell, name: "Daily Yoga", description: "Complimentary classes at State of Yoga" },
   { icon: Car, name: "Valet Parking", description: "Available for an additional fee" },
   { icon: Users, name: "Concierge", description: "24/7 personalized service" },
@@ -338,7 +338,7 @@ export default function Hotel() {
               Book Direct & Save 15%
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-4">
-              Skip the booking fees. Get the best rate, free breakfast, and late checkout when you book directly.
+              Skip the booking fees. Get the best rate when you book directly.
             </p>
             <p className="text-lg text-gray-500 max-w-xl mx-auto mb-10">
               Rated 4.9★ by 2,500+ guests • TripAdvisor Travelers' Choice 2025
