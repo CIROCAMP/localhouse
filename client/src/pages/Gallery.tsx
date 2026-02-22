@@ -18,19 +18,19 @@ import { SEOSchema } from "@/components/SEOSchema";
  */
 
 const galleryImages = [
-  { src: "/images/gallery-cocktail.jpg", alt: "Signature Cocktail", category: "food" },
-  { src: "/images/gallery-brunch-spread.jpg", alt: "Brunch Spread", category: "food" },
-  { src: "/images/gallery-room.jpg", alt: "Boutique Room", category: "hotel" },
-  { src: "/images/gallery-outdoor-seating.jpg", alt: "Outdoor Seating", category: "restaurant" },
-  { src: "/images/gallery-restaurant.jpg", alt: "Restaurant Interior", category: "restaurant" },
-  { src: "/images/gallery-bathroom.jpg", alt: "Modern Bathroom", category: "hotel" },
-  { src: "/images/gallery-entrance.jpg", alt: "Hotel Entrance", category: "location" },
-  { src: "/images/gallery-tropical-dining.jpg", alt: "Tropical Dining Area", category: "restaurant" },
-  { src: "/images/gallery-lobby.jpg", alt: "Hotel Lobby", category: "hotel" },
-  { src: "/images/gallery-balcony.jpg", alt: "Balcony View", category: "hotel" },
-  { src: "/images/gallery-pasta.jpg", alt: "Fresh Pasta", category: "food" },
-  { src: "/images/gallery-seafood.jpg", alt: "Grilled Seafood", category: "food" },
-  { src: "/images/gallery-toast-cocktails.jpg", alt: "Guests Toasting with Cocktails", category: "food" },
+  { src: "/images/gallery-cocktail.jpg", alt: "Signature cocktail at The Local House, Ocean Drive Miami Beach", category: "food" },
+  { src: "/images/gallery-brunch-spread.jpg", alt: "Brunch spread at The Local House, Miami Beach", category: "food" },
+  { src: "/images/gallery-room.jpg", alt: "Boutique hotel room at The Local House, Ocean Drive Miami Beach", category: "hotel" },
+  { src: "/images/gallery-outdoor-seating.jpg", alt: "Outdoor oceanfront seating at The Local House, Miami Beach", category: "restaurant" },
+  { src: "/images/gallery-restaurant.jpg", alt: "Restaurant interior at The Local House, Ocean Drive Miami Beach", category: "restaurant" },
+  { src: "/images/gallery-bathroom.jpg", alt: "Modern bathroom in boutique hotel room, The Local House Miami Beach", category: "hotel" },
+  { src: "/images/gallery-entrance.jpg", alt: "Art Deco hotel entrance, The Local House on Ocean Drive Miami Beach", category: "location" },
+  { src: "/images/gallery-tropical-dining.jpg", alt: "Tropical dining area at The Local House, Miami Beach", category: "restaurant" },
+  { src: "/images/gallery-lobby.jpg", alt: "Boutique hotel lobby at The Local House, Ocean Drive Miami Beach", category: "hotel" },
+  { src: "/images/gallery-balcony.jpg", alt: "Ocean view from balcony at The Local House hotel, Miami Beach", category: "hotel" },
+  { src: "/images/gallery-pasta.jpg", alt: "Fresh pasta at The Local House restaurant, Ocean Drive Miami Beach", category: "food" },
+  { src: "/images/gallery-seafood.jpg", alt: "Grilled seafood at The Local House restaurant, Miami Beach", category: "food" },
+  { src: "/images/gallery-toast-cocktails.jpg", alt: "Guests toasting with cocktails at The Local House, Miami Beach", category: "food" },
 ];
 
 const categories = [
@@ -64,7 +64,7 @@ export default function Gallery() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-display font-semibold mb-4">
-              Gallery
+              The Local House Miami Beach Photos
             </h1>
             <p className="text-xl text-white/80">
               Explore The Local House through our lens
@@ -135,7 +135,7 @@ export default function Gallery() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             src={lightboxImage}
-            alt="Gallery image"
+            alt={galleryImages.find(img => img.src === lightboxImage)?.alt || "The Local House Miami Beach"}
             className="max-w-full max-h-[90vh] object-contain rounded-lg"
             onClick={(e) => e.stopPropagation()}
           />

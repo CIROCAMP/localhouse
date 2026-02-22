@@ -57,7 +57,7 @@ function getSchemas(page: string) {
       "https://www.tripadvisor.com/Hotel_Review-g34439-d1449858-Reviews-The_Local_House-Miami_Beach_Florida.html",
       "https://www.opentable.com/the-local-house",
       "https://www.instagram.com/thelocalhouse",
-      "https://www.facebook.com/thelocalhouse"
+      "https://www.facebook.com/localhousemiami"
     ],
     "foundingDate": "2012",
     "founder": {
@@ -92,7 +92,7 @@ function getSchemas(page: string) {
       "longitude": "-80.1300"
     },
     "telephone": "+1-305-538-5529",
-    "priceRange": "$199 - $329",
+    "priceRange": "$$$",
     "starRating": {
       "@type": "Rating",
       "ratingValue": "4"
@@ -125,7 +125,7 @@ function getSchemas(page: string) {
   const restaurantSchema = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    "name": "The Local House Restaurant",
+    "name": "The Local House",
     "description": "Famous brunch destination in South of Fifth, Miami Beach. Home of the legendary Lobster Eggs Benedict. Italian-owned since 2012.",
     "url": `${baseUrl}/restaurant`,
     "image": [
@@ -159,7 +159,14 @@ function getSchemas(page: string) {
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "dayOfWeek": ["Monday", "Tuesday"],
+        "opens": "08:00",
+        "closes": "16:00",
+        "description": "Brunch only"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Wednesday", "Thursday"],
         "opens": "08:00",
         "closes": "22:00"
       },
@@ -170,7 +177,7 @@ function getSchemas(page: string) {
         "closes": "23:00"
       }
     ],
-    "acceptsReservations": "True",
+    "acceptsReservations": true,
     "hasMenu": {
       "@type": "Menu",
       "name": "The Local House Menu",
@@ -185,7 +192,7 @@ function getSchemas(page: string) {
               "description": "Fresh Maine lobster, poached eggs, house-made hollandaise on toasted brioche",
               "offers": {
                 "@type": "Offer",
-                "price": "28",
+                "price": "33",
                 "priceCurrency": "USD"
               }
             },
@@ -331,7 +338,19 @@ function getSchemas(page: string) {
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "dayOfWeek": ["Monday", "Tuesday"],
+        "opens": "08:00",
+        "closes": "16:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Wednesday", "Thursday"],
+        "opens": "08:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday", "Sunday"],
         "opens": "08:00",
         "closes": "23:00"
       }

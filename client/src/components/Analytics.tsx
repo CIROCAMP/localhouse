@@ -9,7 +9,7 @@ import { useLocation } from "wouter";
  */
 
 // Replace with your actual GA4 Measurement ID
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+const GA_MEASUREMENT_ID = "G-BP0ZN45DWG";
 
 // Declare gtag on window
 declare global {

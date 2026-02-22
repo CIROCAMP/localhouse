@@ -1,10 +1,17 @@
 import { motion } from "framer-motion";
 import { Star, Instagram, Facebook, Music } from "lucide-react";
 import { Link } from "wouter";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function LeaveReview() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FF8F75]/10 to-white">
+      <SEOHead
+        title="Leave a Review | The Local House Miami Beach"
+        description="Share your experience at The Local House. Leave a Google review or tag us on social media."
+        canonicalUrl="https://localhouse.com/leave-review"
+        noindex={true}
+      />
       {/* Hero Section */}
       <section className="pt-20 pb-12 px-4">
         <motion.div
@@ -84,7 +91,7 @@ export default function LeaveReview() {
             </h3>
             
             <p className="text-[#666] text-center mb-6">
-              Tag us and use #TheLoca lHouse to be featured on our page
+              Tag us and use #TheLocalHouse to be featured on our page
             </p>
             
             <div className="grid grid-cols-3 gap-4">

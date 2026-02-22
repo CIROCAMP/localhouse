@@ -22,8 +22,9 @@ Disallow: /cart
 Disallow: /checkout
 Disallow: /store/
 Disallow: /private-events-venue/private-events/
-Disallow: /menu/
-Disallow: /sleep
+# /menu/ and /sleep redirect to /restaurant and /hotel - allow crawling for link equity
+# Disallow: /menu/
+# Disallow: /sleep
 
 # ============================================
 # DISALLOW PDF FILES
@@ -73,13 +74,12 @@ Disallow: /event/august-3rd-music-brunch/
 # ============================================
 # CRAWL DELAY & RATE LIMITING
 # ============================================
-Crawl-delay: 1
-Request-rate: 1/1s
+# Crawl-delay and Request-rate removed - unnecessary for a small site
 
 # ============================================
 # SITEMAP
 # ============================================
-Sitemap: https://www.localhouse.com/sitemap.xml
+Sitemap: https://localhouse.com/sitemap.xml
 
 # ============================================
 # ALLOW ALL MAJOR SEARCH ENGINES

@@ -187,7 +187,7 @@ export function StickyBookingBar() {
               Book Table
             </a>
             <a
-              href="https://www.booking.com/hotel/us/sense-south-beach.html"
+              href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 py-3 bg-[#4C5254] text-white text-center font-medium rounded hover:bg-[#3D3D3D] transition-colors"

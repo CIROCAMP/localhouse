@@ -2,10 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Calendar, Users, Utensils, Wine, Music, Camera } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function PrivateEvents() {
   return (
     <div className="min-h-screen bg-cream">
+      <SEOHead
+        title="Private Events & Private Dining Miami Beach | Weddings, Corporate | The Local House"
+        description="Host your private event at The Local House on Ocean Drive, Miami Beach. Birthday celebrations, corporate events, rehearsal dinners, private brunch. Up to 60 guests. Call (305) 538-5529."
+        keywords="private events miami beach, private dining ocean drive, wedding venue south beach, corporate events miami, rehearsal dinner miami beach, birthday brunch miami"
+        canonicalUrl="https://localhouse.com/private-events"
+      />
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div 
@@ -22,7 +29,7 @@ export default function PrivateEvents() {
             🎉 Celebrate With Us
           </span>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl mb-6">
-            Private Events
+            Private Events & Dining on Ocean Drive, Miami Beach
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
             Host your special occasion at The Local House. From intimate gatherings to grand celebrations.
