@@ -17,7 +17,7 @@ export function SEOHead({
   description,
   keywords,
   canonicalUrl,
-  ogImage = "/images/og-default.jpg",
+  ogImage = "/images/restaurant-interior.jpg",
   ogType = "website",
   twitterCard = "summary_large_image",
   noindex = false,
@@ -150,7 +150,7 @@ const faqSchema = {
       "name": "What is the best brunch in South Beach Miami?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Local House has been voted #1 Brunch in South Beach by locals and visitors. Our famous Lobster Eggs Benedict ($28), fluffy buttermilk pancakes, and signature mimosas have earned us a 4.9-star rating from over 2,500 guests."
+        "text": "The Local House has been voted #1 Brunch in South Beach by locals and visitors. Our famous Lobster Eggs Benedict ($33), fluffy buttermilk pancakes, and signature mimosas have earned us a 4.9-star rating from over 2,500 guests."
       }
     },
     {
@@ -210,7 +210,7 @@ export const seoConfigs = {
     description: "Boutique hotel & best breakfast brunch in South Beach Miami Beach. Famous Lobster Eggs Benedict, bottomless mimosas, rooftop pool, Ocean Drive rooms. Voted #1 brunch by locals. Italian-owned since 2012. Book hotel or table now!",
     keywords: "boutique hotel miami beach, best breakfast south beach, best brunch miami beach, breakfast near me, brunch near me, ocean drive hotel, south beach hotel, lobster eggs benedict, rooftop pool miami beach",
     canonicalUrl: "https://localhouse.com",
-    ogImage: "/images/og-home.jpg",
+    ogImage: "/images/restaurant-interior.jpg",
     ogType: "website" as const,
     schema: {
       "@context": "https://schema.org",
@@ -244,7 +244,7 @@ export const seoConfigs = {
     description: "Luxury hotel rooms in Miami Beach with ocean views. Modern boutique suites, free WiFi, rooftop bar. Book directly for best rates. From $199/night.",
     keywords: "Miami Beach hotel, Ocean Drive rooms, boutique hotel, Art Deco, rooftop pool, luxury hotel Miami Beach",
     canonicalUrl: "https://localhouse.com/hotel",
-    ogImage: "/images/og-hotel.jpg",
+    ogImage: "/images/hotel-hero.jpg",
     ogType: "hotel" as const,
     schema: {
       "@context": "https://schema.org",
@@ -289,7 +289,7 @@ export const seoConfigs = {
     description: "Award-winning breakfast brunch restaurant on Ocean Drive with fresh seafood, craft cocktails, Mediterranean cuisine. Stay at our boutique hotel. Famous Lobster Eggs Benedict. Open 8AM-10PM. Book via OpenTable.",
     keywords: "breakfast restaurant miami beach, best brunch restaurant south beach, ocean drive restaurant, boutique hotel miami beach, seafood, craft cocktails, lobster eggs benedict",
     canonicalUrl: "https://localhouse.com/restaurant",
-    ogImage: "/images/og-restaurant.jpg",
+    ogImage: "/images/outside-terrace.jpg",
     ogType: "restaurant" as const,
     schema: faqSchema,
   },
@@ -298,7 +298,7 @@ export const seoConfigs = {
     description: "Voted #1 breakfast & brunch in South Beach. Legendary Lobster Eggs Benedict, bottomless mimosas, fresh pastries, Ocean Drive views. Stay at our boutique hotel. Open 8AM-4PM daily. Weekend reservations recommended.",
     keywords: "best breakfast south beach, best brunch south beach, breakfast near me miami, boutique hotel south beach, lobster eggs benedict, bottomless mimosas, brunch south beach, weekend brunch miami beach",
     canonicalUrl: "https://localhouse.com/brunch",
-    ogImage: "/images/og-brunch.jpg",
+    ogImage: "/images/brunch-spread.jpg",
     ogType: "restaurant" as const,
     schema: faqSchema,
   },
@@ -307,7 +307,7 @@ export const seoConfigs = {
     description: "Explore The Local House: Art Deco rooms, rooftop pool, famous brunch dishes, Ocean Drive views. Italian elegance meets Miami vibes.",
     keywords: "hotel photos, Miami Beach gallery, Ocean Drive, boutique hotel images, brunch photos",
     canonicalUrl: "https://localhouse.com/gallery",
-    ogImage: "/images/og-gallery.jpg",
+    ogImage: "/images/gallery-restaurant.jpg",
     ogType: "website" as const,
     schema: reviewSchema,
   },
@@ -316,7 +316,7 @@ export const seoConfigs = {
     description: "Contact The Local House at 400 Ocean Drive, Miami Beach. Call +1 305-538-5529 or WhatsApp for reservations and inquiries.",
     keywords: "contact, reservations, Miami Beach hotel, book brunch, Ocean Drive",
     canonicalUrl: "https://localhouse.com/contact",
-    ogImage: "/images/og-contact.jpg",
+    ogImage: "/images/ocean-drive.jpg",
     ogType: "website" as const,
     schema: faqSchema,
   },
@@ -325,7 +325,7 @@ export const seoConfigs = {
     description: "Insider tips for Miami Beach: best restaurants, beaches, nightlife, hidden gems in South of Fifth. Your guide to the perfect Miami vacation.",
     keywords: "Miami Beach blog, travel tips, restaurants, South Beach, Ocean Drive guide",
     canonicalUrl: "https://localhouse.com/blog",
-    ogImage: "/images/og-blog.jpg",
+    ogImage: "/images/gallery-tropical-dining.jpg",
     ogType: "website" as const,
     schema: reviewSchema,
   },

@@ -100,7 +100,7 @@ export default function Brunch() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold mb-6"
           >
-            Miami's Most Famous Brunch
+            Best Brunch in Miami Beach
           </motion.h1>
 
           <motion.p

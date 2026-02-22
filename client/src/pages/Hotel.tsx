@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Wifi, Waves, Coffee, Sun, Dumbbell, Car, Users, Bath, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { Link } from "wouter";
 import { SEOHead, seoConfigs } from "@/components/SEOHead";
 import { SEOSchema } from "@/components/SEOSchema";
 
@@ -304,6 +305,38 @@ export default function Hotel() {
             <p className="text-sm text-[#999]">
               The amenities package is automatically included with your stay. No need to add it separately—just book and enjoy!
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-sell: Restaurant & Brunch */}
+      <section className="py-16 bg-[#FAF7F2]">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#4C5254] mb-6">
+              Wake Up to Miami Beach's Best Brunch
+            </h2>
+            <p className="text-lg text-[#666] mb-8">
+              Start your morning with our famous Lobster Eggs Benedict, served daily from 8AM to 4PM.
+              Our oceanfront restaurant is just steps from your room — no reservation needed for hotel guests.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/brunch">
+                <span className="px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded inline-block">
+                  See Brunch Menu
+                </span>
+              </Link>
+              <Link href="/restaurant">
+                <span className="px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded inline-block">
+                  Full Restaurant Menu
+                </span>
+              </Link>
+              <Link href="/gallery">
+                <span className="px-6 py-3 border-2 border-[#4C5254] text-[#4C5254] font-medium tracking-wide hover:bg-[#4C5254] hover:text-white transition-all duration-300 rounded inline-block">
+                  Photo Gallery
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

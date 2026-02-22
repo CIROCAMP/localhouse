@@ -182,7 +182,7 @@ export default function Home() {
               <source srcSet={heroSlides[currentSlide].image.replace('.jpg', '.webp')} type="image/webp" />
               <img
                 src={heroSlides[currentSlide].image}
-                alt={heroSlides[currentSlide].title}
+                alt="The Local House boutique hotel and brunch restaurant on Ocean Drive, Miami Beach"
                 className="w-full h-full object-cover will-change-transform"
                 loading="eager"
               />
@@ -212,8 +212,11 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-semibold mb-6 tracking-wide">
-                {heroSlides[currentSlide].title}
+                The Local House
               </h1>
+              <p className="text-2xl md:text-3xl font-display font-light mb-2 text-white/90" aria-hidden="true">
+                {heroSlides[currentSlide].title === "The Local House" ? "" : heroSlides[currentSlide].title}
+              </p>
               <p className="text-xl md:text-2xl font-light mb-10 text-white/90">
                 {heroSlides[currentSlide].subtitle}
               </p>
@@ -616,7 +619,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="text-[#666] hover:text-[#FF8F75] transition-colors"
             >
-              Booking.com →
+              Book a Room →
             </a>
           </div>
         </div>
@@ -635,11 +638,11 @@ export default function Home() {
             >
               <img 
                 src="/images/italian-heart-watercolor.png" 
-                alt="Italian Heart" 
+                alt="Italian heritage illustration - The Local House, family-owned since 2012" 
                 className="w-24 h-24 mx-auto mb-6 object-contain"
               />
               <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-                Our Story
+                Our Story: Italian Hospitality on Ocean Drive Since 2012
               </h2>
               <p className="text-sm tracking-[0.2em] text-[#FF8F75] uppercase">
                 A Love Story on Ocean Drive
@@ -708,7 +711,7 @@ export default function Home() {
             >
               <img
                 src="/images/deluxe-king-room.jpg"
-                alt="Boutique Hotel Room"
+                alt="Boutique hotel room at The Local House, Ocean Drive Miami Beach"
                 className="w-full rounded-lg shadow-2xl"
               />
             </motion.div>
@@ -723,7 +726,7 @@ export default function Home() {
             >
               <div className="w-16 h-px bg-[#FF8F75] mb-6" />
               <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-6">
-                Your Miami Beach Escape
+                Boutique Hotel Rooms on Ocean Drive
               </h2>
               <p className="text-[#666] leading-relaxed mb-6">
                 Founded by an Italian owner in 2012, each room is thoughtfully designed
@@ -764,7 +767,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <img
             src="/images/rooftop-pool.jpg"
-            alt="Rooftop Pool"
+            alt="Rooftop pool with panoramic Miami Beach skyline views at The Local House"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -777,7 +780,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-display font-semibold mb-6">
-              Rooftop Paradise
+              Rooftop Pool with Miami Beach Skyline Views
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
               Unwind at our stunning rooftop pool with panoramic views of the Miami

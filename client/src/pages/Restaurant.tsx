@@ -8,6 +8,7 @@ declare global {
   }
 }
 import { Clock, Phone, ExternalLink, Download, ShoppingCart } from "lucide-react";
+import { Link } from "wouter";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEOHead, seoConfigs } from "@/components/SEOHead";
 import { SEOSchema } from "@/components/SEOSchema";
@@ -82,7 +83,7 @@ export default function Restaurant() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold mb-4">
-              Restaurant & Bar
+              Ocean Drive Restaurant & Bar
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
               Coastal cuisine crafted with fresh, local ingredients on Ocean Drive
@@ -146,7 +147,7 @@ export default function Restaurant() {
           <div className="text-center mb-16">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              Our Menu
+              Oceanfront Dining Menu
             </h2>
             <p className="text-lg text-[#666]">
               Fresh seafood, craft cocktails, and Miami's most famous brunch
@@ -347,6 +348,35 @@ export default function Restaurant() {
             >
               View Full Menu on OpenTable →
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-Links */}
+      <section className="py-16 bg-white border-t border-[#E5DED5]">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
+            <Link href="/brunch" className="group">
+              <div className="p-6 rounded-lg hover:shadow-lg transition-shadow">
+                <span className="text-3xl mb-3 block">🍳</span>
+                <h3 className="font-display font-semibold text-[#4C5254] mb-2 group-hover:text-[#FF8F75] transition-colors">Famous Brunch</h3>
+                <p className="text-sm text-[#666]">Daily 8AM–4PM. Home of the Lobster Eggs Benedict.</p>
+              </div>
+            </Link>
+            <Link href="/hotel" className="group">
+              <div className="p-6 rounded-lg hover:shadow-lg transition-shadow">
+                <span className="text-3xl mb-3 block">🏨</span>
+                <h3 className="font-display font-semibold text-[#4C5254] mb-2 group-hover:text-[#FF8F75] transition-colors">Stay the Night</h3>
+                <p className="text-sm text-[#666]">Boutique rooms from $199/night with rooftop pool.</p>
+              </div>
+            </Link>
+            <Link href="/private-events" className="group">
+              <div className="p-6 rounded-lg hover:shadow-lg transition-shadow">
+                <span className="text-3xl mb-3 block">🎉</span>
+                <h3 className="font-display font-semibold text-[#4C5254] mb-2 group-hover:text-[#FF8F75] transition-colors">Private Events</h3>
+                <p className="text-sm text-[#666]">Host your celebration at our Ocean Drive venue.</p>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

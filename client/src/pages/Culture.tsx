@@ -8,6 +8,7 @@ declare global {
   }
 }
 import { Heart, Users, Leaf, Utensils } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function Culture() {
   const values = [
@@ -65,6 +66,12 @@ export default function Culture() {
 
   return (
     <div>
+      <SEOHead
+        title="Our Story & Culture | The Local House | Italian Hospitality Since 2012"
+        description="Discover the story behind The Local House. Italian-owned boutique hotel and restaurant on Ocean Drive, Miami Beach since 2012. Our values, history, and passion for hospitality."
+        keywords="the local house story, italian restaurant miami beach, boutique hotel culture, ocean drive history, south of fifth miami"
+        canonicalUrl="https://localhouse.com/culture"
+      />
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#4C5254]">
         {/* Background Image */}

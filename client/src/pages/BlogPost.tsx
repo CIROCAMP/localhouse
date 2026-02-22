@@ -55,7 +55,7 @@ const blogContent: Record<string, {
           Our signature dish—and the reason many guests return week after week—is the 
           <strong>Lobster Eggs Benedict</strong>. Butter-poached Maine lobster sits atop a 
           perfectly toasted English muffin, crowned with two flawlessly poached eggs and 
-          draped in silky hollandaise. At $32, it's an indulgence worth every penny.
+          draped in silky hollandaise. At $33, it's an indulgence worth every penny.
         </p>
 
         <h3>Bottomless Mimosas & Craft Cocktails</h3>

@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { MapPin, Coffee, Waves, ShoppingBag, Utensils, Camera } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 const spots = [
   {
@@ -54,6 +55,12 @@ const spots = [
 export default function LocalSpots() {
   return (
     <div className="min-h-screen bg-cream">
+      <SEOHead
+        title="Things to Do Near The Local House | South of Fifth Miami Beach Guide"
+        description="Discover the best things to do in South of Fifth (SoFi), Miami Beach. Beaches, restaurants, shopping, and attractions within walking distance of The Local House on Ocean Drive."
+        keywords="things to do miami beach, south of fifth guide, sofi miami beach, near ocean drive, miami beach attractions, south beach activities"
+        canonicalUrl="https://localhouse.com/local-spots"
+      />
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div 
@@ -70,7 +77,7 @@ export default function LocalSpots() {
             📍 Explore the Neighborhood
           </span>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl mb-6">
-            Local Spots
+            Things to Do Near The Local House, Miami Beach
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
             Discover the best of South of Fifth, Miami Beach. Our favorite places within walking distance.
