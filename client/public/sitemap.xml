@@ -5,21 +5,21 @@
   <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://localhouse.com/</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://localhouse.com/images/restaurant-interior.jpg</image:loc>
-      <image:title>The Local House - Boutique Hotel &amp; Best Brunch on Ocean Drive, Miami Beach</image:title>
+      <image:loc>https://localhouse.com/images/brunch-hero-overhead.jpg</image:loc>
+      <image:title>Best Brunch in Miami Beach - The Local House on Ocean Drive</image:title>
     </image:image>
   </url>
 
   <!-- Hotel Page -->
   <url>
     <loc>https://localhouse.com/hotel</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://localhouse.com/images/deluxe-king-room.jpg</image:loc>
       <image:title>Boutique Hotel Room on Ocean Drive - The Local House Miami Beach</image:title>
@@ -29,7 +29,7 @@
   <!-- Restaurant Page -->
   <url>
     <loc>https://localhouse.com/restaurant</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -41,7 +41,7 @@
   <!-- Brunch Page - High Priority (Signature Offering) -->
   <url>
     <loc>https://localhouse.com/brunch</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -53,7 +53,7 @@
   <!-- Gallery Page -->
   <url>
     <loc>https://localhouse.com/gallery</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -61,7 +61,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://localhouse.com/contact</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -69,7 +69,7 @@
   <!-- Blog Main Page -->
   <url>
     <loc>https://localhouse.com/blog</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -77,35 +77,35 @@
   <!-- Blog Posts -->
   <url>
     <loc>https://localhouse.com/blog/best-brunch-miami-beach-2025</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://localhouse.com/blog/south-of-fifth-neighborhood-guide</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://localhouse.com/blog/ocean-drive-restaurants-guide</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://localhouse.com/blog/boutique-hotels-miami-beach</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://localhouse.com/blog/the-history-of-south-beach-miami</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -113,7 +113,7 @@
   <!-- Brunch Near Me - SEO Landing Page -->
   <url>
     <loc>https://localhouse.com/brunch-near-me-miami-beach</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -121,7 +121,7 @@
   <!-- Restaurants Near Me - SEO Landing Page -->
   <url>
     <loc>https://localhouse.com/restaurants-near-me-miami-beach</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -129,7 +129,7 @@
   <!-- Private Events Page -->
   <url>
     <loc>https://localhouse.com/private-events</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -137,7 +137,7 @@
   <!-- Local Spots Page -->
   <url>
     <loc>https://localhouse.com/local-spots</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -145,7 +145,7 @@
   <!-- Culture Page -->
   <url>
     <loc>https://localhouse.com/culture</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -153,7 +153,7 @@
   <!-- Press Page -->
   <url>
     <loc>https://localhouse.com/press</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
