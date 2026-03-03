@@ -350,25 +350,17 @@ export default function Hotel() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            {/* Urgency + Value Props */}
             <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/20 text-red-400 rounded-full text-sm font-medium">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-                </span>
-                Only 3 rooms left this weekend
-              </span>
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
-                ✓ Best Price Guarantee
+                Best Price Guarantee
               </span>
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/20 text-[#FF8F75] rounded-full text-sm font-medium">
-                ✓ Free Cancellation
+                Free Cancellation
               </span>
             </div>
-            
+
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6">
-              Book Direct & Save 15%
+              Book Direct for the Best Rate
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-4">
               Skip the booking fees. Get the best rate when you book directly.
