@@ -9,7 +9,7 @@ export default function LeaveReview() {
       <SEOHead
         title="Leave a Review | The Local House Miami Beach"
         description="Share your experience at The Local House. Leave a Google review or tag us on social media."
-        canonicalUrl="https://localhouse.com/leave-review"
+        canonicalUrl="https://www.localhouse.com/leave-review"
         noindex={true}
       />
       {/* Hero Section */}

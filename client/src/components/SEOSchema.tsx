@@ -29,7 +29,7 @@ export function SEOSchema({ page }: SEOSchemaProps) {
 }
 
 function getSchemas(page: string) {
-  const baseUrl = "https://localhouse.com";
+  const baseUrl = "https://www.localhouse.com";
   
   // Organization Schema (appears on all pages)
   const organizationSchema = {

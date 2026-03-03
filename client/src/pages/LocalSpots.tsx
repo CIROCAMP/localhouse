@@ -59,7 +59,7 @@ export default function LocalSpots() {
         title="Things to Do Near The Local House | South of Fifth Miami Beach Guide"
         description="Discover the best things to do in South of Fifth (SoFi), Miami Beach. Beaches, restaurants, shopping, and attractions within walking distance of The Local House on Ocean Drive."
         keywords="things to do miami beach, south of fifth guide, sofi miami beach, near ocean drive, miami beach attractions, south beach activities"
-        canonicalUrl="https://localhouse.com/local-spots"
+        canonicalUrl="https://www.localhouse.com/local-spots"
       />
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">

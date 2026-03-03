@@ -395,6 +395,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== BRUNCH QUICK LINKS (SEO internal linking) ===== */}
+      <section className="py-6 bg-white border-b border-[#E5DED5]">
+        <div className="container">
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <Link href="/brunch" className="text-[#FF8F75] hover:underline font-medium">
+              Best Brunch in Miami Beach
+            </Link>
+            <span className="text-[#E5DED5]">|</span>
+            <Link href="/restaurant" className="text-[#FF8F75] hover:underline font-medium">
+              Ocean Drive Restaurant
+            </Link>
+            <span className="text-[#E5DED5]">|</span>
+            <Link href="/brunch-near-me-miami-beach" className="text-[#FF8F75] hover:underline font-medium">
+              Brunch Near Me
+            </Link>
+            <span className="text-[#E5DED5]">|</span>
+            <Link href="/hotel" className="text-[#FF8F75] hover:underline font-medium">
+              Boutique Hotel Rooms
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ===== LOBSTER BENEDICT SPOTLIGHT ===== */}
       <section className="py-20 bg-gradient-to-r from-[#FF8F75] to-[#e67c63] text-white">
         <div className="container">

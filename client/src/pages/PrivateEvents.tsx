@@ -11,7 +11,7 @@ export default function PrivateEvents() {
         title="Private Events & Private Dining Miami Beach | Weddings, Corporate | The Local House"
         description="Host your private event at The Local House on Ocean Drive, Miami Beach. Birthday celebrations, corporate events, rehearsal dinners, private brunch. Up to 60 guests. Call (305) 538-5529."
         keywords="private events miami beach, private dining ocean drive, wedding venue south beach, corporate events miami, rehearsal dinner miami beach, birthday brunch miami"
-        canonicalUrl="https://localhouse.com/private-events"
+        canonicalUrl="https://www.localhouse.com/private-events"
       />
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">

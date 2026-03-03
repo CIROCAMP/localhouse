@@ -1,6 +1,14 @@
 {
   "buildCommand": "npx vite build",
   "outputDirectory": "dist/public",
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "localhouse.com" }],
+      "destination": "https://www.localhouse.com/:path",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
