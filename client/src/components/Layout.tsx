@@ -24,13 +24,12 @@ interface LayoutProps {
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/hotel", label: "Hotel" },
-  { href: "/restaurant", label: "Restaurant" },
   { href: "/brunch", label: "Brunch" },
+  { href: "/restaurant", label: "Restaurant" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/hotel", label: "Hotel" },
   { href: "/blog", label: "Blog" },
   { href: "/culture", label: "Culture" },
-  { href: "/press", label: "Press" },
   { href: "/contact", label: "Contact" },
 ];
 
