@@ -134,7 +134,7 @@ const faqs = [
   },
   {
     question: "Does The Local House have a hotel?",
-    answer: "Yes! We're a boutique hotel with 18 beautifully designed rooms, a rooftop pool with Miami skyline views, and rates starting from $199/night. Hotel guests get priority brunch seating.",
+    answer: "Yes! We're a boutique hotel with 18 beautifully designed rooms, a rooftop pool with Miami skyline views, reserved beach chairs & umbrella right in front of the hotel, Apple TV in every room, and rates starting from $199/night. Hotel guests get priority brunch seating.",
   },
   {
     question: "Is The Local House pet-friendly?",

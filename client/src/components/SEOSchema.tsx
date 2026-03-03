@@ -108,7 +108,7 @@ function getSchemas(page: string) {
       { "@type": "LocationFeatureSpecification", "name": "Rooftop Pool", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "On-site Restaurant", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Beach Access", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Reserved Beach Chairs & Umbrella", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "24-Hour Front Desk", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Apple TV in Every Room", "value": true }

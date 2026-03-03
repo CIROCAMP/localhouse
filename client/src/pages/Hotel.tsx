@@ -70,7 +70,7 @@ const rooms = [
 
 const amenities = [
   { icon: Waves, name: "Rooftop Pool", description: "Stunning pool with Miami skyline views" },
-  { icon: Sun, name: "Beach Access", description: "Beach chairs & umbrella setup daily" },
+  { icon: Sun, name: "Reserved Beach Spot", description: "Private chairs & umbrella right in front of the hotel — included daily" },
   { icon: Wifi, name: "High-Speed Wi-Fi", description: "Complimentary throughout property" },
 
   { icon: Dumbbell, name: "Daily Yoga", description: "Complimentary classes at State of Yoga" },
@@ -179,7 +179,7 @@ export default function Hotel() {
               Luxury Boutique Hotel Rooms in Miami Beach
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Ocean view suites from $199/night. Art Deco design, rooftop pool, Italian hospitality since 2012
+              Ocean view suites from $199/night. Reserved beach chairs & umbrella included. Rooftop pool, Art Deco design, Italian hospitality since 2012
             </p>
           </motion.div>
         </div>

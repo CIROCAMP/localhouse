@@ -241,8 +241,8 @@ export const seoConfigs = {
   },
   hotel: {
     title: "Luxury Boutique Hotel Rooms in Miami Beach | Ocean View Suites | The Local House",
-    description: "Luxury hotel rooms in Miami Beach with ocean views. Modern boutique suites, free WiFi, rooftop bar. Book directly for best rates. From $199/night.",
-    keywords: "Miami Beach hotel, Ocean Drive rooms, boutique hotel, Art Deco, rooftop pool, luxury hotel Miami Beach",
+    description: "Luxury hotel rooms in Miami Beach with ocean views. Reserved beach chairs & umbrella included, rooftop pool, Apple TV, free WiFi. Book directly for best rates. From $199/night.",
+    keywords: "Miami Beach hotel, Ocean Drive rooms, boutique hotel, Art Deco, rooftop pool, luxury hotel Miami Beach, beach chairs included Miami Beach hotel",
     canonicalUrl: "https://www.localhouse.com/hotel",
     ogImage: "/images/hotel-hero.jpg",
     ogType: "hotel" as const,
@@ -278,7 +278,7 @@ export const seoConfigs = {
         {"@type": "LocationFeatureSpecification", "name": "Rooftop Pool"},
         {"@type": "LocationFeatureSpecification", "name": "Ocean Views"},
         {"@type": "LocationFeatureSpecification", "name": "Free WiFi"},
-        {"@type": "LocationFeatureSpecification", "name": "Beach Access"},
+        {"@type": "LocationFeatureSpecification", "name": "Reserved Beach Chairs & Umbrella"},
         {"@type": "LocationFeatureSpecification", "name": "Restaurant"},
         {"@type": "LocationFeatureSpecification", "name": "Bar"},
         {"@type": "LocationFeatureSpecification", "name": "Apple TV in Every Room"}
