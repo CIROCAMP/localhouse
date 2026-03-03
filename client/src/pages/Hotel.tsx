@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Wifi, Waves, Coffee, Sun, Dumbbell, Car, Users, Bath, ChevronLeft, ChevronRight } from "lucide-react";
+import { Wifi, Waves, Coffee, Sun, Dumbbell, Car, Users, Bath, Tv, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 import { SEOHead, seoConfigs } from "@/components/SEOHead";
@@ -19,7 +19,7 @@ const rooms = [
     size: "450 sq ft",
     bed: "1 King Bed",
     view: "Ocean & City Views",
-    features: ["Ocean View", "Private Terrace", "Free Wi-Fi", "Mini Bar"],
+    features: ["Ocean View", "Private Terrace", "Free Wi-Fi", "Mini Bar", "Apple TV"],
     images: ["/images/grand-ocean-king-1.jpg", "/images/grand-ocean-king-balcony.jpg", "/images/grand-ocean-king-bathroom.jpg"],
   },
   {
@@ -30,7 +30,7 @@ const rooms = [
     size: "380 sq ft",
     bed: "2 Double Beds",
     view: "Partial Ocean View",
-    features: ["Ocean View", "Sleeps 4", "Free Wi-Fi", "Balcony"],
+    features: ["Ocean View", "Sleeps 4", "Free Wi-Fi", "Balcony", "Apple TV"],
     images: ["/images/partial-ocean-view-king.jpg", "/images/partial-ocean-view-double-2.jpg", "/images/partial-ocean-view-double-3.jpg"],
   },
   {
@@ -41,7 +41,7 @@ const rooms = [
     size: "350 sq ft",
     bed: "1 King Bed",
     view: "Partial Ocean View",
-    features: ["Ocean View", "Balcony", "Free Wi-Fi", "Smart TV"],
+    features: ["Ocean View", "Balcony", "Free Wi-Fi", "Apple TV"],
     images: ["/images/deluxe-king.jpg", "/images/deluxe-king-2.jpg", "/images/deluxe-king-bathroom.jpg"],
   },
   {
@@ -52,7 +52,7 @@ const rooms = [
     size: "360 sq ft",
     bed: "2 Double Beds",
     view: "Partial Ocean View",
-    features: ["Ocean View", "Sleeps 4", "Free Wi-Fi", "Balcony"],
+    features: ["Ocean View", "Sleeps 4", "Free Wi-Fi", "Balcony", "Apple TV"],
     images: ["/images/deluxe-double.jpg"],
   },
   {
@@ -63,7 +63,7 @@ const rooms = [
     size: "300 sq ft",
     bed: "1 King Bed",
     view: "City View",
-    features: ["City View", "Free Wi-Fi", "Mini Bar", "Rain Shower"],
+    features: ["City View", "Free Wi-Fi", "Mini Bar", "Rain Shower", "Apple TV"],
     images: ["/images/standard-king.jpg"],
   },
 ];
@@ -77,6 +77,7 @@ const amenities = [
   { icon: Car, name: "Valet Parking", description: "Available for an additional fee" },
   { icon: Users, name: "Concierge", description: "24/7 personalized service" },
   { icon: Bath, name: "Luxury Bath", description: "Premium toiletries & rain shower" },
+  { icon: Tv, name: "Apple TV", description: "In every room for streaming" },
 ];
 
 // Room Image Carousel Component

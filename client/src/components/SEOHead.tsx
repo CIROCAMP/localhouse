@@ -280,7 +280,8 @@ export const seoConfigs = {
         {"@type": "LocationFeatureSpecification", "name": "Free WiFi"},
         {"@type": "LocationFeatureSpecification", "name": "Beach Access"},
         {"@type": "LocationFeatureSpecification", "name": "Restaurant"},
-        {"@type": "LocationFeatureSpecification", "name": "Bar"}
+        {"@type": "LocationFeatureSpecification", "name": "Bar"},
+        {"@type": "LocationFeatureSpecification", "name": "Apple TV in Every Room"}
       ]
     },
   },
