@@ -1,6 +1,6 @@
 # Robots.txt for The Local House
-# https://localhouse.com
-# Updated: January 2026
+# https://www.localhouse.com
+# Updated: March 2026
 # Purpose: Optimize Google crawl budget and improve indexing
 
 User-agent: *
@@ -66,10 +66,25 @@ Disallow: /*?fbclid=
 Disallow: /*&fbclid=
 
 # ============================================
-# BLOCK OLD/DUPLICATE PAGES
+# BLOCK OLD/DUPLICATE PAGES (legacy Squarespace paths)
+# These all 301 redirect via vercel.json but blocking
+# saves crawl budget while Google processes the redirects
 # ============================================
 Disallow: /explore-2/
-Disallow: /event/august-3rd-music-brunch/
+Disallow: /explore/
+Disallow: /event/
+Disallow: /sleep/
+Disallow: /about/
+Disallow: /menu/
+Disallow: /menus/
+Disallow: /offers/
+Disallow: /offers-gallery/
+Disallow: /the-local-house-team/
+Disallow: /location/
+Disallow: /terms-and-conditions/
+Disallow: /advanced/
+Disallow: /private-events-venue/
+Disallow: /local-spots/
 
 # ============================================
 # CRAWL DELAY & RATE LIMITING
@@ -79,7 +94,7 @@ Disallow: /event/august-3rd-music-brunch/
 # ============================================
 # SITEMAP
 # ============================================
-Sitemap: https://localhouse.com/sitemap.xml
+Sitemap: https://www.localhouse.com/sitemap.xml
 
 # ============================================
 # ALLOW ALL MAJOR SEARCH ENGINES

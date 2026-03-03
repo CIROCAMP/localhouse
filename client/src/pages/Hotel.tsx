@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Wifi, Waves, Coffee, Sun, Dumbbell, Car, Users, Bath, ChevronLeft, ChevronRight } from "lucide-react";
+import { Wifi, Waves, Coffee, Sun, Dumbbell, Car, Users, Bath, Tv, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 import { SEOHead, seoConfigs } from "@/components/SEOHead";
@@ -19,7 +19,7 @@ const rooms = [
     size: "450 sq ft",
     bed: "1 King Bed",
     view: "Ocean & City Views",
-    features: ["Ocean View", "Private Terrace", "Free Wi-Fi", "Mini Bar"],
+    features: ["Ocean View", "Private Terrace", "Free Wi-Fi", "Mini Bar", "Apple TV"],
     images: ["/images/grand-ocean-king-1.jpg", "/images/grand-ocean-king-balcony.jpg", "/images/grand-ocean-king-bathroom.jpg"],
   },
   {
@@ -30,7 +30,7 @@ const rooms = [
     size: "380 sq ft",
     bed: "2 Double Beds",
     view: "Partial Ocean View",
-    features: ["Ocean View", "Sleeps 4", "Free Wi-Fi", "Balcony"],
+    features: ["Ocean View", "Sleeps 4", "Free Wi-Fi", "Balcony", "Apple TV"],
     images: ["/images/partial-ocean-view-king.jpg", "/images/partial-ocean-view-double-2.jpg", "/images/partial-ocean-view-double-3.jpg"],
   },
   {
@@ -41,7 +41,7 @@ const rooms = [
     size: "350 sq ft",
     bed: "1 King Bed",
     view: "Partial Ocean View",
-    features: ["Ocean View", "Balcony", "Free Wi-Fi", "Smart TV"],
+    features: ["Ocean View", "Balcony", "Free Wi-Fi", "Apple TV"],
     images: ["/images/deluxe-king.jpg", "/images/deluxe-king-2.jpg", "/images/deluxe-king-bathroom.jpg"],
   },
   {
@@ -52,7 +52,7 @@ const rooms = [
     size: "360 sq ft",
     bed: "2 Double Beds",
     view: "Partial Ocean View",
-    features: ["Ocean View", "Sleeps 4", "Free Wi-Fi", "Balcony"],
+    features: ["Ocean View", "Sleeps 4", "Free Wi-Fi", "Balcony", "Apple TV"],
     images: ["/images/deluxe-double.jpg"],
   },
   {
@@ -63,20 +63,21 @@ const rooms = [
     size: "300 sq ft",
     bed: "1 King Bed",
     view: "City View",
-    features: ["City View", "Free Wi-Fi", "Mini Bar", "Rain Shower"],
+    features: ["City View", "Free Wi-Fi", "Mini Bar", "Rain Shower", "Apple TV"],
     images: ["/images/standard-king.jpg"],
   },
 ];
 
 const amenities = [
   { icon: Waves, name: "Rooftop Pool", description: "Stunning pool with Miami skyline views" },
-  { icon: Sun, name: "Beach Access", description: "Beach chairs & umbrella setup daily" },
+  { icon: Sun, name: "Reserved Beach Spot", description: "Private chairs & umbrella right in front of the hotel — included daily" },
   { icon: Wifi, name: "High-Speed Wi-Fi", description: "Complimentary throughout property" },
 
   { icon: Dumbbell, name: "Daily Yoga", description: "Complimentary classes at State of Yoga" },
   { icon: Car, name: "Valet Parking", description: "Available for an additional fee" },
   { icon: Users, name: "Concierge", description: "24/7 personalized service" },
   { icon: Bath, name: "Luxury Bath", description: "Premium toiletries & rain shower" },
+  { icon: Tv, name: "Apple TV", description: "In every room for streaming" },
 ];
 
 // Room Image Carousel Component
@@ -178,7 +179,7 @@ export default function Hotel() {
               Luxury Boutique Hotel Rooms in Miami Beach
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Ocean view suites from $199/night. Art Deco design, rooftop pool, Italian hospitality since 2012
+              Ocean view suites from $199/night. Reserved beach chairs & umbrella included. Rooftop pool, Art Deco design, Italian hospitality since 2012
             </p>
           </motion.div>
         </div>

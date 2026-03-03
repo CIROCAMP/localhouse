@@ -57,14 +57,14 @@ export default function RestaurantsNearMe() {
     title: "Best Restaurant Near Me Miami Beach | The Local House Ocean Drive",
     description: "Looking for restaurants near me in Miami Beach? The Local House on Ocean Drive offers award-winning brunch, fresh seafood, and Italian hospitality. Open daily. Reserve now!",
     keywords: "restaurants near me, restaurants near me miami beach, ocean drive restaurant, miami beach dining, seafood restaurant, best restaurant miami beach",
-    canonicalUrl: "https://localhouse.com/restaurants-near-me-miami-beach",
+    canonicalUrl: "https://www.localhouse.com/restaurants-near-me-miami-beach",
     ogImage: "/images/og-restaurant.jpg",
     ogType: "restaurant" as const,
     schema: {
       "@context": "https://schema.org",
       "@type": "Restaurant",
       "name": "The Local House",
-      "image": "https://localhouse.com/images/og-restaurant.jpg",
+      "image": "https://www.localhouse.com/images/og-restaurant.jpg",
       "description": "Award-winning restaurant on Ocean Drive with fresh seafood, Mediterranean cuisine, and Italian hospitality. Open daily for breakfast, brunch, and dinner.",
       "address": {
         "@type": "PostalAddress",
@@ -75,7 +75,7 @@ export default function RestaurantsNearMe() {
         "addressCountry": "US"
       },
       "telephone": "+1-305-538-5529",
-      "url": "https://localhouse.com/restaurants-near-me-miami-beach",
+      "url": "https://www.localhouse.com/restaurants-near-me-miami-beach",
       "servesCuisine": ["Italian", "Mediterranean", "Seafood"],
       "priceRange": "$$$",
       "openingHoursSpecification": [

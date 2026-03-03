@@ -294,6 +294,11 @@ export default function Layout({ children }: LayoutProps) {
                     </span>
                   </Link>
                 ))}
+                <Link href="/leave-review">
+                  <span className="block text-gray-400 hover:text-white transition-colors">
+                    Leave a Review
+                  </span>
+                </Link>
               </nav>
             </div>
           </div>

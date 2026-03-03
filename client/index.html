@@ -21,15 +21,16 @@
     <meta name="keywords" content="best brunch Miami Beach, boutique hotel Miami Beach, Ocean Drive restaurant, South of Fifth hotel, lobster eggs benedict Miami, rooftop pool Miami Beach, Italian restaurant Miami, brunch South Beach, Miami Beach hotel, SoFi Miami, oceanfront dining Miami, bottomless mimosas Miami" />
     <meta name="author" content="The Local House" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://localhouse.com/" />
-    
+    <!-- Canonical URL is set dynamically by SEOHead component per page route -->
+    <!-- DO NOT add a static canonical here - it causes all SPA routes to canonicalize to homepage -->
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://localhouse.com/" />
+    <meta property="og:url" content="https://www.localhouse.com/" />
     <meta property="og:title" content="The Local House | Best Brunch & Boutique Hotel Miami Beach" />
     <meta property="og:description" content="Italian-owned boutique hotel & famous brunch on Ocean Drive. Home of the legendary Lobster Eggs Benedict. Book your table or room today!" />
-    <meta property="og:image" content="https://localhouse.com/images/restaurant-interior.jpg" />
-    <meta property="og:image:secure_url" content="https://localhouse.com/images/restaurant-interior.jpg" />
+    <meta property="og:image" content="https://www.localhouse.com/images/restaurant-interior.jpg" />
+    <meta property="og:image:secure_url" content="https://www.localhouse.com/images/restaurant-interior.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -38,10 +39,10 @@
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://localhouse.com/" />
+    <meta name="twitter:url" content="https://www.localhouse.com/" />
     <meta name="twitter:title" content="The Local House | Best Brunch & Boutique Hotel Miami Beach" />
     <meta name="twitter:description" content="Italian-owned boutique hotel & famous brunch on Ocean Drive. Home of the legendary Lobster Eggs Benedict." />
-    <meta name="twitter:image" content="https://localhouse.com/images/restaurant-interior.jpg" />
+    <meta name="twitter:image" content="https://www.localhouse.com/images/restaurant-interior.jpg" />
     <meta name="twitter:image:alt" content="The Local House - Best Brunch in Miami Beach" />
     
     <!-- Geo Tags for Local SEO -->
@@ -64,7 +65,7 @@
       "@type": "Hotel",
       "name": "The Local House",
       "description": "Italian-owned boutique hotel and famous brunch restaurant on Ocean Drive in South of Fifth, Miami Beach. Established in 2012.",
-      "url": "https://localhouse.com",
+      "url": "https://www.localhouse.com/",
       "telephone": "+1-305-538-5529",
       "email": "info@localhouse.com",
       "address": {
@@ -80,7 +81,7 @@
         "latitude": 25.7682,
         "longitude": -80.1300
       },
-      "image": "https://localhouse.com/images/restaurant-interior.jpg",
+      "image": "https://www.localhouse.com/images/restaurant-interior.jpg",
       "priceRange": "$$$",
       "starRating": {
         "@type": "Rating",
@@ -89,9 +90,11 @@
       "amenityFeature": [
         {"@type": "LocationFeatureSpecification", "name": "Rooftop Pool"},
         {"@type": "LocationFeatureSpecification", "name": "Ocean Views"},
+        {"@type": "LocationFeatureSpecification", "name": "Reserved Beach Chairs & Umbrella"},
         {"@type": "LocationFeatureSpecification", "name": "Restaurant"},
         {"@type": "LocationFeatureSpecification", "name": "Bar"},
-        {"@type": "LocationFeatureSpecification", "name": "Free WiFi"}
+        {"@type": "LocationFeatureSpecification", "name": "Free WiFi"},
+        {"@type": "LocationFeatureSpecification", "name": "Apple TV in Every Room"}
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -115,7 +118,7 @@
       "@type": "Restaurant",
       "name": "The Local House Restaurant",
       "description": "Famous brunch restaurant on Ocean Drive, Miami Beach. Home of the legendary Lobster Eggs Benedict. Italian-owned since 2012.",
-      "url": "https://localhouse.com/restaurant",
+      "url": "https://www.localhouse.com/restaurant",
       "telephone": "+1-305-538-5529",
       "address": {
         "@type": "PostalAddress",
@@ -130,7 +133,7 @@
         "latitude": 25.7682,
         "longitude": -80.1300
       },
-      "image": "https://localhouse.com/images/brunch-spread.jpg",
+      "image": "https://www.localhouse.com/images/brunch-spread.jpg",
       "servesCuisine": ["American", "Italian", "Brunch", "Seafood"],
       "priceRange": "$$$",
       "openingHoursSpecification": [
@@ -141,7 +144,7 @@
           "closes": "22:00"
         }
       ],
-      "menu": "https://localhouse.com/restaurant#menu",
+      "menu": "https://www.localhouse.com/restaurant#menu",
       "acceptsReservations": "True",
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -218,33 +221,33 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://localhouse.com/"
+          "item": "https://www.localhouse.com/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Hotel",
-          "item": "https://localhouse.com/hotel"
+          "item": "https://www.localhouse.com/hotel"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Restaurant",
-          "item": "https://localhouse.com/restaurant"
+          "item": "https://www.localhouse.com/restaurant"
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "Brunch",
-          "item": "https://localhouse.com/brunch"
+          "item": "https://www.localhouse.com/brunch"
         }
       ]
     }
     </script>
     
     <!-- Preload critical images for faster LCP -->
-    <link rel="preload" as="image" href="/images/restaurant-interior.webp" type="image/webp" />
-    <link rel="preload" as="image" href="/images/restaurant-interior.jpg" type="image/jpeg" />
+    <link rel="preload" as="image" href="/images/brunch-hero-overhead.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/images/brunch-hero-overhead.jpg" type="image/jpeg" />
     
     <!-- Google Analytics 4 + Google Ads Conversion Tracking (deferred) -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-BP0ZN45DWG"></script>

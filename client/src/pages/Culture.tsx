@@ -70,7 +70,7 @@ export default function Culture() {
         title="Our Story & Culture | The Local House | Italian Hospitality Since 2012"
         description="Discover the story behind The Local House. Italian-owned boutique hotel and restaurant on Ocean Drive, Miami Beach since 2012. Our values, history, and passion for hospitality."
         keywords="the local house story, italian restaurant miami beach, boutique hotel culture, ocean drive history, south of fifth miami"
-        canonicalUrl="https://localhouse.com/culture"
+        canonicalUrl="https://www.localhouse.com/culture"
       />
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#4C5254]">

@@ -56,14 +56,14 @@ export default function BrunchNearMe() {
     title: "Best Brunch Near Me Miami Beach | The Local House SoFi",
     description: "Searching for brunch near me in Miami Beach? The Local House on Ocean Drive serves the #1 rated brunch daily 8AM-4PM. Reserve your table now!",
     keywords: "brunch near me, brunch near me miami beach, best brunch miami beach, brunch sofi, ocean drive brunch, miami beach breakfast",
-    canonicalUrl: "https://localhouse.com/brunch-near-me-miami-beach",
+    canonicalUrl: "https://www.localhouse.com/brunch-near-me-miami-beach",
     ogImage: "/images/og-brunch.jpg",
     ogType: "restaurant" as const,
     schema: {
       "@context": "https://schema.org",
       "@type": "Restaurant",
       "name": "The Local House",
-      "image": "https://localhouse.com/images/og-brunch.jpg",
+      "image": "https://www.localhouse.com/images/og-brunch.jpg",
       "description": "Best brunch near Miami Beach. Voted #1 rated brunch with famous Lobster Eggs Benedict, bottomless mimosas, and ocean views.",
       "address": {
         "@type": "PostalAddress",
@@ -74,7 +74,7 @@ export default function BrunchNearMe() {
         "addressCountry": "US"
       },
       "telephone": "+1-305-538-5529",
-      "url": "https://localhouse.com/brunch-near-me-miami-beach",
+      "url": "https://www.localhouse.com/brunch-near-me-miami-beach",
       "servesCuisine": "Italian, Mediterranean, Coastal",
       "priceRange": "$$",
       "openingHoursSpecification": {

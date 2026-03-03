@@ -134,7 +134,7 @@ const faqs = [
   },
   {
     question: "Does The Local House have a hotel?",
-    answer: "Yes! We're a boutique hotel with 18 beautifully designed rooms, a rooftop pool with Miami skyline views, and rates starting from $199/night. Hotel guests get priority brunch seating.",
+    answer: "Yes! We're a boutique hotel with 18 beautifully designed rooms, a rooftop pool with Miami skyline views, reserved beach chairs & umbrella right in front of the hotel, Apple TV in every room, and rates starting from $199/night. Hotel guests get priority brunch seating.",
   },
   {
     question: "Is The Local House pet-friendly?",
@@ -391,6 +391,29 @@ export default function Home() {
                 </span>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== BRUNCH QUICK LINKS (SEO internal linking) ===== */}
+      <section className="py-6 bg-white border-b border-[#E5DED5]">
+        <div className="container">
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <Link href="/brunch" className="text-[#FF8F75] hover:underline font-medium">
+              Best Brunch in Miami Beach
+            </Link>
+            <span className="text-[#E5DED5]">|</span>
+            <Link href="/restaurant" className="text-[#FF8F75] hover:underline font-medium">
+              Ocean Drive Restaurant
+            </Link>
+            <span className="text-[#E5DED5]">|</span>
+            <Link href="/brunch-near-me-miami-beach" className="text-[#FF8F75] hover:underline font-medium">
+              Brunch Near Me
+            </Link>
+            <span className="text-[#E5DED5]">|</span>
+            <Link href="/hotel" className="text-[#FF8F75] hover:underline font-medium">
+              Boutique Hotel Rooms
+            </Link>
           </div>
         </div>
       </section>

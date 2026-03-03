@@ -136,7 +136,7 @@ export default function Press() {
         title="Press & Awards | The Local House Miami Beach"
         description="Discover why The Local House has been featured in Miami New Times, Eater Miami, Travel + Leisure, and more. Award-winning boutique hotel and famous brunch on Ocean Drive."
         keywords="The Local House press, Miami Beach hotel awards, best brunch Miami awards, Ocean Drive restaurant reviews, TripAdvisor Travelers Choice Miami"
-        canonicalUrl="https://localhouse.com/press"
+        canonicalUrl="https://www.localhouse.com/press"
       />
       <SEOSchema page="home" />
 
