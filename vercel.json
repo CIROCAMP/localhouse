@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npx vite build",
+  "buildCommand": "npx vite build && node scripts/prerender.mjs",
   "outputDirectory": "dist/public",
   "redirects": [
     { "source": "/menu/dinner/:path*", "destination": "/restaurant", "permanent": true },
