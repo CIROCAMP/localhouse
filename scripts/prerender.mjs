@@ -509,11 +509,22 @@ function generateHtml(template, route) {
     );
   }
 
-  // Replace canonical URL
-  html = html.replace(
-    /<link rel="canonical" href="[^"]*" \/>/,
-    `<link rel="canonical" href="${route.canonicalUrl}" />`
-  );
+  // Insert or replace canonical URL
+  if (html.match(/<link rel="canonical" href="[^"]*" \/>/)) {
+    html = html.replace(
+      /<link rel="canonical" href="[^"]*" \/>/,
+      `<link rel="canonical" href="${route.canonicalUrl}" />`
+    );
+  } else {
+    // Canonical was removed from template — insert it before robots meta or before </head>
+    const insertPoint = html.match(/<meta name="robots"/)
+      ? /<meta name="robots"/
+      : /<\/head>/;
+    html = html.replace(
+      insertPoint,
+      `<link rel="canonical" href="${route.canonicalUrl}" />\n    ${html.match(insertPoint)[0]}`
+    );
+  }
 
   // Replace Open Graph tags
   html = html.replace(
