@@ -294,6 +294,21 @@ export default function Layout({ children }: LayoutProps) {
                     </span>
                   </Link>
                 ))}
+                <Link href="/private-events">
+                  <span className="block text-gray-400 hover:text-white transition-colors">
+                    Private Events
+                  </span>
+                </Link>
+                <Link href="/press">
+                  <span className="block text-gray-400 hover:text-white transition-colors">
+                    Press & Awards
+                  </span>
+                </Link>
+                <Link href="/local-spots">
+                  <span className="block text-gray-400 hover:text-white transition-colors">
+                    Things to Do Nearby
+                  </span>
+                </Link>
                 <Link href="/leave-review">
                   <span className="block text-gray-400 hover:text-white transition-colors">
                     Leave a Review

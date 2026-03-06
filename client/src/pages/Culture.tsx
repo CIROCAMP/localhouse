@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 // Declare global tracking functions
 declare global {
@@ -254,7 +255,7 @@ export default function Culture() {
             <p className="text-lg text-[#666] mb-8 max-w-2xl mx-auto">
               Join us for brunch, dinner, or a stay at our boutique hotel. Become part of our story.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a
                 onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')} href="https://www.opentable.com/the-local-house"
                 target="_blank"
@@ -271,6 +272,15 @@ export default function Culture() {
               >
                 Book a Room
               </a>
+            </div>
+            <div className="flex flex-wrap gap-4 justify-center text-sm">
+              <Link href="/brunch" className="text-[#FF8F75] hover:underline">Famous Brunch Menu</Link>
+              <span className="text-[#ccc]">|</span>
+              <Link href="/restaurant" className="text-[#FF8F75] hover:underline">Restaurant & Bar</Link>
+              <span className="text-[#ccc]">|</span>
+              <Link href="/hotel" className="text-[#FF8F75] hover:underline">Boutique Hotel</Link>
+              <span className="text-[#ccc]">|</span>
+              <Link href="/gallery" className="text-[#FF8F75] hover:underline">Photo Gallery</Link>
             </div>
           </motion.div>
         </div>

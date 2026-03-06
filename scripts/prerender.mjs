@@ -133,24 +133,35 @@ const routes = [
   },
   {
     path: "/hotel",
-    title: "Luxury Boutique Hotel Rooms in Miami Beach | Ocean View Suites | The Local House",
-    description: "Luxury hotel rooms in Miami Beach with ocean views. Modern boutique suites, free WiFi, rooftop bar. Book directly for best rates. From $199/night.",
-    keywords: "Miami Beach hotel, Ocean Drive rooms, boutique hotel, Art Deco, rooftop pool, luxury hotel Miami Beach",
+    title: "The Local House Hotel | Boutique Ocean Drive Hotel Miami Beach | From $199",
+    description: "Boutique Art Deco hotel at 400 Ocean Drive, South of Fifth Miami Beach. Ocean view rooms from $199, rooftop pool, reserved beach chairs & umbrella, famous on-site brunch. Italian-owned since 2012. Book direct for best rates.",
+    keywords: "local house hotel, local house hotel miami, the local house hotel, boutique hotel miami beach, ocean drive hotel, south of fifth hotel, miami beach hotel rooftop pool, art deco hotel miami beach",
     canonicalUrl: `${BASE_URL}/hotel`,
     ogImage: `${BASE_URL}/images/hotel-hero.jpg`,
     ogType: "hotel",
     noscriptContent: `
-      <h1>Boutique Hotel on Ocean Drive, Miami Beach</h1>
-      <p>Luxury boutique hotel rooms with ocean views in the heart of South of Fifth, Miami Beach. Modern Art Deco suites, rooftop pool, free WiFi. Italian-owned since 2012.</p>
-      <h2>Room Types</h2>
+      <h1>The Local House Hotel — Boutique Hotel on Ocean Drive, Miami Beach</h1>
+      <p>Italian-owned boutique Art Deco hotel at 400 Ocean Drive in South of Fifth, Miami Beach. Rooftop pool, ocean views, reserved beach chairs & umbrella, and our famous on-site brunch restaurant. Since 2012.</p>
+      <h2>Room Types & Rates</h2>
       <ul>
-        <li>Cozy Queen - From $199/night</li>
-        <li>Deluxe King - From $249/night</li>
-        <li>Ocean View Suite - From $329/night</li>
+        <li>Grand Partial Ocean View King (Signature Suite) — From $329/night — 450 sq ft, private terrace, ocean & city views</li>
+        <li>Partial Ocean View Double — From $279/night — 380 sq ft, sleeps 4, balcony</li>
+        <li>Deluxe King, Ocean Views — From $259/night — 350 sq ft, balcony</li>
+        <li>Deluxe Double — From $239/night — 360 sq ft, sleeps 4, balcony</li>
+        <li>Standard King, City Views — From $199/night — 300 sq ft</li>
+        <li>Cozy Queen — From $199/night — 250 sq ft, perfect for solo travelers</li>
       </ul>
       <h2>Hotel Amenities</h2>
-      <p>Rooftop Pool, Ocean Views, Free WiFi, Beach Access, On-site Restaurant & Bar, 24-Hour Front Desk</p>
-      <p>Check-in: 3:00 PM | Check-out: 11:00 AM</p>
+      <ul>
+        <li>Rooftop Pool with skyline views</li>
+        <li>Reserved Beach Chairs & Umbrella (included)</li>
+        <li>Famous on-site brunch restaurant</li>
+        <li>Apple TV in every room</li>
+        <li>Free high-speed WiFi</li>
+        <li>24-hour front desk</li>
+      </ul>
+      <p>Check-in: 3:00 PM | Check-out: 11:00 AM | Valet parking: $45/night</p>
+      <p><a href="/brunch">Famous Brunch</a> | <a href="/restaurant">Restaurant & Bar</a> | <a href="/gallery">Photo Gallery</a> | <a href="/contact">Contact & Directions</a></p>
       <p>The Local House, 400 Ocean Drive, Miami Beach, FL 33139. Call (305) 538-5529.</p>
     `,
     schema: {
@@ -177,9 +188,9 @@ const routes = [
   },
   {
     path: "/gallery",
-    title: "Photo Gallery | The Local House | Miami Beach Boutique Hotel",
-    description: "Explore The Local House: Art Deco rooms, rooftop pool, famous brunch dishes, Ocean Drive views. Italian elegance meets Miami vibes.",
-    keywords: "hotel photos, Miami Beach gallery, Ocean Drive, boutique hotel images, brunch photos",
+    title: "Photos | The Local House Miami Beach | Rooms, Brunch, Rooftop Pool & Ocean Drive",
+    description: "See The Local House: Art Deco hotel rooms, famous Lobster Eggs Benedict brunch, rooftop pool, Ocean Drive terrace dining. 400 Ocean Drive, South of Fifth Miami Beach.",
+    keywords: "the local house photos, local house miami beach gallery, ocean drive hotel photos, miami beach brunch photos, rooftop pool miami beach",
     canonicalUrl: `${BASE_URL}/gallery`,
     ogImage: `${BASE_URL}/images/gallery-restaurant.jpg`,
     ogType: "website",
@@ -191,26 +202,35 @@ const routes = [
   },
   {
     path: "/contact",
-    title: "Contact Us | Reservations | The Local House Miami Beach",
-    description: "Contact The Local House at 400 Ocean Drive, Miami Beach. Call +1 305-538-5529 or WhatsApp for reservations and inquiries.",
-    keywords: "contact, reservations, Miami Beach hotel, book brunch, Ocean Drive",
+    title: "Contact & Hours | The Local House | 400 Ocean Drive Miami Beach",
+    description: "The Local House — 400 Ocean Drive, Miami Beach FL 33139. Brunch daily 8AM-4PM, Dinner Wed-Sun. Call (305) 538-5529, WhatsApp, or book on OpenTable. Hotel reservations & private events.",
+    keywords: "the local house contact, local house miami beach phone, 400 ocean drive miami beach, local house hours, local house reservations, miami beach restaurant hours, local house hotel reservations",
     canonicalUrl: `${BASE_URL}/contact`,
     ogImage: `${BASE_URL}/images/ocean-drive.jpg`,
     ogType: "website",
     noscriptContent: `
-      <h1>Contact The Local House</h1>
-      <p>Address: 400 Ocean Drive, Miami Beach, FL 33139</p>
-      <p>Phone: (305) 538-5529</p>
-      <p>Email: info@localhouse.com</p>
-      <p>Brunch: Daily 8AM - 4PM | Dinner: Wed-Sun 4PM - 10PM</p>
-      <p>Make a reservation on OpenTable or call us directly.</p>
+      <h1>Contact & Hours — The Local House</h1>
+      <h2>Address</h2>
+      <p>400 Ocean Drive, Miami Beach, FL 33139 (South of Fifth / SoFi)</p>
+      <h2>Phone & Email</h2>
+      <p>Phone: (305) 538-5529 | WhatsApp: +1 305-538-5529 | Email: info@localhouse.com</p>
+      <h2>Restaurant Hours</h2>
+      <p>Brunch: Daily 8:00 AM – 4:00 PM</p>
+      <p>Dinner: Wednesday – Sunday 4:00 PM – 10:00 PM</p>
+      <p>Happy Hour: Wednesday – Sunday 4:00 PM – 6:00 PM</p>
+      <h2>Hotel Front Desk</h2>
+      <p>8:00 AM – 10:00 PM daily | Check-in: 3:00 PM | Check-out: 11:00 AM</p>
+      <h2>Reservations</h2>
+      <p>Restaurant: <a href="https://www.opentable.com/the-local-house">Book on OpenTable</a></p>
+      <p>Hotel: <a href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016">Book a Room</a></p>
+      <p><a href="/brunch">Brunch Menu</a> | <a href="/restaurant">Dinner Menu</a> | <a href="/hotel">Hotel Rooms</a> | <a href="/private-events">Private Events</a></p>
     `
   },
   {
     path: "/blog",
-    title: "Miami Beach Travel Blog | Local Tips | The Local House",
-    description: "Insider tips for Miami Beach: best restaurants, beaches, nightlife, hidden gems in South of Fifth. Your guide to the perfect Miami vacation.",
-    keywords: "Miami Beach blog, travel tips, restaurants, South Beach, Ocean Drive guide",
+    title: "Best Brunch South Beach, Ocean Drive Restaurants & Miami Beach Travel Tips | The Local House Blog",
+    description: "Local guides to Miami Beach: best brunch spots, Ocean Drive dining, South of Fifth neighborhood secrets, boutique hotel tips & South Beach history. Written by The Local House team.",
+    keywords: "best brunch south beach, miami beach breakfast spots, ocean drive restaurants, south of fifth guide, miami beach travel blog, south beach dining guide",
     canonicalUrl: `${BASE_URL}/blog`,
     ogImage: `${BASE_URL}/images/gallery-tropical-dining.jpg`,
     ogType: "website",
@@ -228,16 +248,26 @@ const routes = [
   },
   {
     path: "/culture",
-    title: "Our Story & Culture | The Local House | Italian Hospitality Since 2012",
-    description: "Discover the story behind The Local House. Italian-owned boutique hotel and restaurant on Ocean Drive, Miami Beach since 2012. Our values, history, and passion for hospitality.",
-    keywords: "the local house story, italian restaurant miami beach, boutique hotel culture, ocean drive history, south of fifth miami",
+    title: "The Local House Miami Beach | Italian-Owned Hotel & Restaurant Since 2012",
+    description: "Meet The Local House — Italian-owned boutique hotel & restaurant at 400 Ocean Drive, Miami Beach. Famous brunch, rooftop pool, Art Deco rooms. Discover our story, values, and 13 years of unconditional hospitality in South of Fifth.",
+    keywords: "the local house miami, the local house miami beach, italian restaurant miami beach, boutique hotel ocean drive, south of fifth hotel, the local house story, ocean drive restaurant",
     canonicalUrl: `${BASE_URL}/culture`,
-    ogImage: `${BASE_URL}/images/restaurant-interior.jpg`,
+    ogImage: `${BASE_URL}/images/culture-hero-dinner.jpg`,
     ogType: "website",
     noscriptContent: `
-      <h1>Our Story & Culture</h1>
-      <p>The Local House has been Italian-owned and operated since 2012. An Italian real estate investor fell in love with this Ocean Drive property and dedicated years of passion to create a space where authentic European hospitality meets Miami Beach vibes.</p>
-      <p>400 Ocean Drive, South of Fifth, Miami Beach, FL 33139.</p>
+      <h1>The Local House — Our Story & Culture</h1>
+      <p>Italian-owned boutique hotel and restaurant at 400 Ocean Drive, Miami Beach since 2012. An Italian real estate investor fell in love with this Ocean Drive property and dedicated years of passion to create a space where authentic European hospitality meets Miami Beach vibes.</p>
+      <h2>Our Values</h2>
+      <ul>
+        <li>Unconditional Hospitality — We treat every guest like family</li>
+        <li>People for People — Creating meaningful connections and memorable experiences</li>
+        <li>Authentic Italian Heart — Mediterranean warmth meets Miami vibrancy</li>
+        <li>Fresh & Local — Coastal cuisine with local ingredients and Italian techniques</li>
+      </ul>
+      <h2>Our History</h2>
+      <p>2009: Italian investor discovers 400 Ocean Drive. 2012: The Local House opens. 2015: Lobster Eggs Benedict becomes legendary. 2025: 13 years, 4.9-star rating, 2,500+ happy guests.</p>
+      <p><a href="/brunch">Famous Brunch</a> | <a href="/hotel">Boutique Hotel</a> | <a href="/restaurant">Restaurant & Bar</a></p>
+      <p>The Local House, 400 Ocean Drive, Miami Beach, FL 33139. Call (305) 538-5529.</p>
     `
   },
   {
