@@ -313,9 +313,9 @@ export const seoConfigs = {
     schema: reviewSchema,
   },
   contact: {
-    title: "Contact Us | Reservations | The Local House Miami Beach",
-    description: "Contact The Local House at 400 Ocean Drive, Miami Beach. Call +1 305-538-5529 or WhatsApp for reservations and inquiries.",
-    keywords: "contact, reservations, Miami Beach hotel, book brunch, Ocean Drive",
+    title: "Contact & Hours | The Local House | 400 Ocean Drive Miami Beach",
+    description: "The Local House — 400 Ocean Drive, Miami Beach FL 33139. Brunch daily 8AM-4PM, Dinner Wed-Sun. Call (305) 538-5529, WhatsApp, or book on OpenTable. Hotel reservations & private events.",
+    keywords: "the local house contact, local house miami beach phone, 400 ocean drive miami beach, local house hours, local house reservations, miami beach restaurant hours, local house hotel reservations",
     canonicalUrl: "https://www.localhouse.com/contact",
     ogImage: "/images/ocean-drive.jpg",
     ogType: "website" as const,

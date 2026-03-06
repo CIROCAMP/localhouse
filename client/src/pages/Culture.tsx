@@ -67,10 +67,11 @@ export default function Culture() {
   return (
     <div>
       <SEOHead
-        title="Our Story & Culture | The Local House | Italian Hospitality Since 2012"
-        description="Discover the story behind The Local House. Italian-owned boutique hotel and restaurant on Ocean Drive, Miami Beach since 2012. Our values, history, and passion for hospitality."
-        keywords="the local house story, italian restaurant miami beach, boutique hotel culture, ocean drive history, south of fifth miami"
+        title="The Local House Miami Beach | Italian-Owned Hotel & Restaurant Since 2012"
+        description="Meet The Local House — Italian-owned boutique hotel & restaurant at 400 Ocean Drive, Miami Beach. Famous brunch, rooftop pool, Art Deco rooms. Discover our story, values, and 13 years of unconditional hospitality in South of Fifth."
+        keywords="the local house miami, the local house miami beach, italian restaurant miami beach, boutique hotel ocean drive, south of fifth hotel, the local house story, ocean drive restaurant"
         canonicalUrl="https://www.localhouse.com/culture"
+        ogImage="/images/culture-hero-dinner.jpg"
       />
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#4C5254]">
