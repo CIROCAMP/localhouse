@@ -7,7 +7,7 @@ declare global {
     trackMewsClick?: () => void;
   }
 }
-import { Star, Clock, MapPin, ChefHat, Waves, Wine, Calendar, ChevronLeft, ChevronRight, UtensilsCrossed } from "lucide-react";
+import { Star, Clock, MapPin, ChefHat, Waves, Wine, Calendar, ChevronLeft, ChevronRight, UtensilsCrossed, Mail, Pizza, GlassWater, Flame } from "lucide-react";
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import {
@@ -159,6 +159,83 @@ const features = [
   { icon: Waves, label: "Ocean Drive Views" },
   { icon: Calendar, label: "Since 2012" },
 ];
+
+const SUPABASE_URL = "https://kzqvdwibtuoronyphiuq.supabase.co";
+
+
+function NewsletterInlineFormDark() {
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setStatus("loading");
+    try {
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/subscribe`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, first_name: firstName }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+        setFirstName("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  if (status === "success") {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="bg-[#FF8F75]/10 border border-[#FF8F75]/30 rounded-lg p-8"
+      >
+        <p className="text-[#FF8F75] text-xl font-display font-semibold mb-2">You're on the list!</p>
+        <p className="text-gray-400">Check your inbox — we'll notify you before the next event.</p>
+      </motion.div>
+    );
+  }
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+        <input
+          type="text"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          placeholder="First name"
+          className="px-5 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[#FF8F75] sm:w-36"
+        />
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Your email address"
+          required
+          className="flex-1 px-5 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[#FF8F75]"
+        />
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="px-8 py-4 bg-[#FF8F75] text-white font-semibold text-sm rounded-lg hover:bg-[#e67c63] transition-all duration-300 disabled:opacity-50 whitespace-nowrap"
+        >
+          {status === "loading" ? "Joining..." : "Get Invited"}
+        </button>
+      </form>
+      {status === "error" && (
+        <p className="text-red-400 text-sm mt-3">Something went wrong. Please try again.</p>
+      )}
+      <p className="text-gray-600 text-xs mt-4">Limited seats per event. Subscribers get priority access.</p>
+    </div>
+  );
+}
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -594,6 +671,90 @@ export default function Home() {
               <span className="font-medium">Italian-Owned Since 2012</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ===== MONTHLY EVENTS — EMAIL SIGNUP ===== */}
+      <section className="py-20 bg-[#2c2c2c] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute top-10 left-10 w-40 h-40 border border-[#FF8F75] rounded-full" />
+          <div className="absolute bottom-10 right-10 w-60 h-60 border border-[#FF8F75] rounded-full" />
+        </div>
+
+        <div className="container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/20 border border-[#FF8F75]/30 rounded-full text-[#FF8F75] text-sm font-medium mb-6">
+              <Calendar size={16} />
+              Monthly Exclusive Events
+            </span>
+
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
+              Not Your Typical Restaurant Night
+            </h2>
+            <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+              Every month we host exclusive, limited-seat events. Subscribe to get first access — they sell out fast.
+            </p>
+
+            {/* Events Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-[#FF8F75]/40 transition-colors"
+              >
+                <Pizza className="text-[#FF8F75] mx-auto mb-3" size={32} />
+                <h3 className="text-white font-semibold text-sm mb-1">Pizza Pop-Up</h3>
+                <p className="text-gray-500 text-xs">Neapolitan pizza nights with guest pizzaiolos</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-[#FF8F75]/40 transition-colors"
+              >
+                <Wine className="text-[#FF8F75] mx-auto mb-3" size={32} />
+                <h3 className="text-white font-semibold text-sm mb-1">Wine Club</h3>
+                <p className="text-gray-500 text-xs">Curated tastings from Italian & French vineyards</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-[#FF8F75]/40 transition-colors"
+              >
+                <GlassWater className="text-[#FF8F75] mx-auto mb-3" size={32} />
+                <h3 className="text-white font-semibold text-sm mb-1">Scotch Tasting</h3>
+                <p className="text-gray-500 text-xs">Premium single malt degustation evenings</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-[#FF8F75]/40 transition-colors"
+              >
+                <ChefHat className="text-[#FF8F75] mx-auto mb-3" size={32} />
+                <h3 className="text-white font-semibold text-sm mb-1">Chef's Table</h3>
+                <p className="text-gray-500 text-xs">Michelin-star guest chef special dinners</p>
+              </motion.div>
+            </div>
+
+            {/* Signup Form */}
+            <NewsletterInlineFormDark />
+          </motion.div>
         </div>
       </section>
 
