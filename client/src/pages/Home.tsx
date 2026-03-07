@@ -7,9 +7,9 @@ declare global {
     trackMewsClick?: () => void;
   }
 }
-import { Star, Clock, MapPin, ChefHat, Waves, Wine, Calendar, ChevronLeft, ChevronRight, UtensilsCrossed } from "lucide-react";
+import { Star, Clock, MapPin, ChefHat, Waves, Wine, Calendar, ChevronLeft, ChevronRight, UtensilsCrossed, Mail, Pizza, GlassWater, Flame } from "lucide-react";
 import { Link } from "wouter";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -159,6 +159,155 @@ const features = [
   { icon: Waves, label: "Ocean Drive Views" },
   { icon: Calendar, label: "Since 2012" },
 ];
+
+const SUPABASE_URL = "https://kzqvdwibtuoronyphiuq.supabase.co";
+
+const exclusiveEvents = [
+  { icon: Pizza, title: "Pizza Pop-Ups", desc: "Neapolitan pizza nights with guest pizzaiolos" },
+  { icon: Star, title: "Michelin Star Dinners", desc: "Exclusive Italian chef collaborations" },
+  { icon: Wine, title: "Wine Degustation", desc: "Curated Italian wine tasting evenings" },
+  { icon: GlassWater, title: "Scotch Club", desc: "Members-only rare whisky tastings" },
+  { icon: Flame, title: "Chef's Table", desc: "Intimate multi-course culinary experiences" },
+];
+
+function ExclusiveEventsBanner() {
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setStatus("loading");
+    try {
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/subscribe`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, first_name: firstName }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+        setFirstName("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  return (
+    <section className="py-24 bg-[#2c2c2c] relative overflow-hidden">
+      {/* Decorative background */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 w-40 h-40 border border-[#FF8F75] rounded-full" />
+        <div className="absolute bottom-10 right-10 w-60 h-60 border border-[#FF8F75] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-[#FF8F75] rounded-full" />
+      </div>
+
+      <div className="container relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/20 border border-[#FF8F75]/30 rounded-full text-[#FF8F75] text-sm font-medium mb-6">
+              <Mail size={16} />
+              Members Only
+            </span>
+
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+              Exclusive Events for Our Inner Circle
+            </h2>
+            <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+              Join our list and get first access to events you won't find anywhere else.
+              Limited seats, unforgettable nights.
+            </p>
+          </motion.div>
+
+          {/* Events Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
+            {exclusiveEvents.map((event, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-4 hover:border-[#FF8F75]/40 transition-colors"
+              >
+                <event.icon className="text-[#FF8F75] mx-auto mb-2" size={28} />
+                <h3 className="text-white font-semibold text-sm mb-1">{event.title}</h3>
+                <p className="text-gray-500 text-xs">{event.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Signup Form */}
+          {status === "success" ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-[#FF8F75]/10 border border-[#FF8F75]/30 rounded-lg p-8"
+            >
+              <p className="text-[#FF8F75] text-xl font-display font-semibold mb-2">
+                You're on the list!
+              </p>
+              <p className="text-gray-400">
+                Check your inbox for a welcome email. We'll notify you about upcoming exclusive events.
+              </p>
+            </motion.div>
+          ) : (
+            <motion.form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
+            >
+              <input
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="First name"
+                className="px-5 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[#FF8F75] sm:w-36"
+              />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email address"
+                required
+                className="flex-1 px-5 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[#FF8F75]"
+              />
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="px-8 py-4 bg-[#FF8F75] text-white font-semibold text-sm rounded-lg hover:bg-[#e67c63] transition-all duration-300 disabled:opacity-50 whitespace-nowrap"
+              >
+                {status === "loading" ? "Joining..." : "Join the List"}
+              </button>
+            </motion.form>
+          )}
+
+          {status === "error" && (
+            <p className="text-red-400 text-sm mt-3">Something went wrong. Please try again.</p>
+          )}
+
+          <p className="text-gray-600 text-xs mt-4">
+            No spam, ever. Only exclusive event invitations and special offers. Unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -721,6 +870,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ===== EXCLUSIVE EVENTS — NEWSLETTER SIGNUP ===== */}
+      <ExclusiveEventsBanner />
 
       {/* ===== OUR STORY (Condensed) ===== */}
       <section className="py-24 bg-[#FAF7F2]">
