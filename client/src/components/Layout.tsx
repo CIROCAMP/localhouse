@@ -9,6 +9,7 @@ declare global {
   }
 }
 import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, MessageCircle, Music } from "lucide-react";
+import NewsletterSignup from "./NewsletterSignup";
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -318,6 +319,9 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </div>
         </div>
+
+        {/* Newsletter Signup */}
+        <NewsletterSignup />
 
         {/* Review Platforms Bar */}
         <div className="border-t border-gray-800 bg-[#252525]">
