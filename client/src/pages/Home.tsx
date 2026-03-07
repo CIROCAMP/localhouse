@@ -309,6 +309,76 @@ function ExclusiveEventsBanner() {
   );
 }
 
+function NewsletterInlineForm() {
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setStatus("loading");
+    try {
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/subscribe`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, first_name: firstName }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+        setFirstName("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  if (status === "success") {
+    return (
+      <div className="bg-[#FF8F75]/10 border border-[#FF8F75]/30 rounded-lg p-6">
+        <p className="text-[#FF8F75] text-lg font-display font-semibold">You're in!</p>
+        <p className="text-[#666] text-sm mt-1">Check your inbox for a welcome email.</p>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+        <input
+          type="text"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          placeholder="First name"
+          className="px-4 py-3 bg-white border border-[#E5DED5] rounded-lg text-[#4C5254] placeholder-gray-400 text-sm focus:outline-none focus:border-[#FF8F75] sm:w-32"
+        />
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Your email address"
+          required
+          className="flex-1 px-4 py-3 bg-white border border-[#E5DED5] rounded-lg text-[#4C5254] placeholder-gray-400 text-sm focus:outline-none focus:border-[#FF8F75]"
+        />
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="px-6 py-3 bg-[#FF8F75] text-white font-semibold text-sm rounded-lg hover:bg-[#e67c63] transition-all duration-300 disabled:opacity-50 whitespace-nowrap"
+        >
+          {status === "loading" ? "Subscribing..." : "Subscribe"}
+        </button>
+      </form>
+      {status === "error" && (
+        <p className="text-red-500 text-sm mt-3">Something went wrong. Please try again.</p>
+      )}
+      <p className="text-[#999] text-xs mt-4">No spam, ever. Unsubscribe anytime.</p>
+    </div>
+  );
+}
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -743,6 +813,32 @@ export default function Home() {
               <span className="font-medium">Italian-Owned Since 2012</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ===== NEWSLETTER SIGNUP — ABOVE THE FOLD ===== */}
+      <section className="py-16 bg-[#FAF7F2]">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl mx-auto text-center"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/10 rounded-full text-[#FF8F75] text-sm font-medium mb-4">
+              <Mail size={16} />
+              Stay in the Know
+            </div>
+            <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#4C5254] mb-3">
+              Get Exclusive Updates
+            </h2>
+            <p className="text-[#666] mb-8">
+              Be the first to know about seasonal menus, special events, and insider offers. No spam — just good vibes from Ocean Drive.
+            </p>
+
+            <NewsletterInlineForm />
+          </motion.div>
         </div>
       </section>
 
