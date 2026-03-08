@@ -752,6 +752,14 @@ export default function Home() {
               </motion.div>
             </div>
 
+            {/* Why sign up */}
+            <p className="text-white text-base md:text-lg font-medium mb-2">
+              Leave your email to get priority access when we organize these events.
+            </p>
+            <p className="text-gray-400 text-sm mb-8 max-w-xl mx-auto">
+              Pizza pop-ups, scotch club nights, Italian wine tastings with producers, intimate dinners with Michelin-star chefs — spots are limited and our subscribers always get first dibs.
+            </p>
+
             {/* Signup Form */}
             <NewsletterInlineFormDark />
           </motion.div>

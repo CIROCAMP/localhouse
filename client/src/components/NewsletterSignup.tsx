@@ -48,7 +48,7 @@ export default function NewsletterSignup() {
             </h3>
           </div>
           <p className="text-gray-400 text-sm mb-6">
-            Get exclusive updates on events, seasonal menus, and special offers. No spam, just good vibes.
+            Get first access to our exclusive monthly events: pizza pop-ups with guest pizzaiolos, wine club tastings, scotch evenings, and Michelin-star chef dinners. Limited seats—subscribers get priority.
           </p>
 
           {status === "success" ? (
@@ -60,7 +60,7 @@ export default function NewsletterSignup() {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 placeholder="First name"
-                className="px-4 py-3 bg-white/10 border border-gray-600 rounded text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[#FF8F75] sm:w-32"
+                className="px-4 py-3 bg-white/20 border border-gray-500 rounded text-white placeholder-gray-400 text-sm focus:outline-none focus:border-[#FF8F75] sm:w-32"
               />
               <input
                 type="email"
@@ -68,7 +68,7 @@ export default function NewsletterSignup() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
                 required
-                className="flex-1 px-4 py-3 bg-white/10 border border-gray-600 rounded text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[#FF8F75]"
+                className="flex-1 px-4 py-3 bg-white/20 border border-gray-500 rounded text-white placeholder-gray-400 text-sm focus:outline-none focus:border-[#FF8F75]"
               />
               <button
                 type="submit"
@@ -85,7 +85,7 @@ export default function NewsletterSignup() {
           )}
 
           <p className="text-gray-600 text-xs mt-4">
-            By subscribing you agree to receive marketing emails. Unsubscribe anytime.
+            You'll receive invites to our exclusive events and special updates. Unsubscribe anytime.
           </p>
         </div>
       </div>
