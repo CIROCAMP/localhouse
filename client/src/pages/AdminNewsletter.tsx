@@ -647,29 +647,25 @@ export default function AdminNewsletter() {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col gap-3">
-                  {campaignStatus !== "approved" && (
-                    <>
-                      {(campaignStatus === "idle" || campaignStatus === "error") && (
-                        <button
-                          onClick={handleSaveDraft}
-                          disabled={campaignStatus === "saving"}
-                          className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-[#9EB8BD] text-[#4C5254] font-medium font-body text-sm rounded-lg hover:bg-[#9EB8BD]/10 transition-all"
-                        >
-                          <FileText size={16} />
-                          1. Save as Draft
-                        </button>
-                      )}
-                      {campaignStatus === "saved" && (
-                        <button
-                          onClick={handleApprove}
-                          disabled={campaignStatus === "approving"}
-                          className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium font-body text-sm rounded-lg hover:bg-[#FF8F75]/10 transition-all"
-                        >
-                          {campaignStatus === "approving" ? <Loader2 size={16} className="animate-spin" /> : <CheckCircle size={16} />}
-                          2. Approve Campaign
-                        </button>
-                      )}
-                    </>
+                  {(campaignStatus === "idle" || campaignStatus === "error" || campaignStatus === "saving") && (
+                    <button
+                      onClick={handleSaveDraft}
+                      disabled={campaignStatus === "saving"}
+                      className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-[#9EB8BD] text-[#4C5254] font-medium font-body text-sm rounded-lg hover:bg-[#9EB8BD]/10 transition-all disabled:opacity-50"
+                    >
+                      {campaignStatus === "saving" ? <Loader2 size={16} className="animate-spin" /> : <FileText size={16} />}
+                      1. Save as Draft
+                    </button>
+                  )}
+                  {(campaignStatus === "saved" || campaignStatus === "approving") && (
+                    <button
+                      onClick={handleApprove}
+                      disabled={campaignStatus === "approving"}
+                      className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium font-body text-sm rounded-lg hover:bg-[#FF8F75]/10 transition-all disabled:opacity-50"
+                    >
+                      {campaignStatus === "approving" ? <Loader2 size={16} className="animate-spin" /> : <CheckCircle size={16} />}
+                      2. Approve Campaign
+                    </button>
                   )}
                   {campaignStatus === "approved" && (
                     <button
