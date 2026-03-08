@@ -472,6 +472,98 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== MONTHLY EVENTS — EMAIL SIGNUP ===== */}
+      <section className="py-20 bg-[#2c2c2c] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute top-10 left-10 w-40 h-40 border border-[#FF8F75] rounded-full" />
+          <div className="absolute bottom-10 right-10 w-60 h-60 border border-[#FF8F75] rounded-full" />
+        </div>
+
+        <div className="container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/20 border border-[#FF8F75]/30 rounded-full text-[#FF8F75] text-sm font-medium mb-6">
+              <Calendar size={16} />
+              Monthly Exclusive Events
+            </span>
+
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
+              Not Your Typical Restaurant Night
+            </h2>
+            <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+              Every month we host exclusive, limited-seat events. Subscribe to get first access — they sell out fast.
+            </p>
+
+            {/* Events Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-[#FF8F75]/40 transition-colors"
+              >
+                <Pizza className="text-[#FF8F75] mx-auto mb-3" size={32} />
+                <h3 className="text-white font-semibold text-sm mb-1">Pizza Pop-Up</h3>
+                <p className="text-gray-500 text-xs">Neapolitan pizza nights with guest pizzaiolos</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-[#FF8F75]/40 transition-colors"
+              >
+                <Wine className="text-[#FF8F75] mx-auto mb-3" size={32} />
+                <h3 className="text-white font-semibold text-sm mb-1">Wine Club</h3>
+                <p className="text-gray-500 text-xs">Curated tastings from Italian & French vineyards</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-[#FF8F75]/40 transition-colors"
+              >
+                <GlassWater className="text-[#FF8F75] mx-auto mb-3" size={32} />
+                <h3 className="text-white font-semibold text-sm mb-1">Scotch Tasting</h3>
+                <p className="text-gray-500 text-xs">Premium single malt degustation evenings</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-[#FF8F75]/40 transition-colors"
+              >
+                <ChefHat className="text-[#FF8F75] mx-auto mb-3" size={32} />
+                <h3 className="text-white font-semibold text-sm mb-1">Chef's Table</h3>
+                <p className="text-gray-500 text-xs">Michelin-star guest chef special dinners</p>
+              </motion.div>
+            </div>
+
+            {/* Why sign up */}
+            <p className="text-white text-base md:text-lg font-medium mb-2">
+              Leave your email to get priority access when we organize these events.
+            </p>
+            <p className="text-gray-400 text-sm mb-8 max-w-xl mx-auto">
+              Pizza pop-ups, scotch club nights, Italian wine tastings with producers, intimate dinners with Michelin-star chefs — spots are limited and our subscribers always get first dibs.
+            </p>
+
+            {/* Signup Form */}
+            <NewsletterInlineFormDark />
+          </motion.div>
+        </div>
+      </section>
+
       {/* ===== BRUNCH QUICK LINKS (SEO internal linking) ===== */}
       <section className="py-6 bg-white border-b border-[#E5DED5]">
         <div className="container">
@@ -674,97 +766,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== MONTHLY EVENTS — EMAIL SIGNUP ===== */}
-      <section className="py-20 bg-[#2c2c2c] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div className="absolute top-10 left-10 w-40 h-40 border border-[#FF8F75] rounded-full" />
-          <div className="absolute bottom-10 right-10 w-60 h-60 border border-[#FF8F75] rounded-full" />
-        </div>
-
-        <div className="container relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/20 border border-[#FF8F75]/30 rounded-full text-[#FF8F75] text-sm font-medium mb-6">
-              <Calendar size={16} />
-              Monthly Exclusive Events
-            </span>
-
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
-              Not Your Typical Restaurant Night
-            </h2>
-            <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
-              Every month we host exclusive, limited-seat events. Subscribe to get first access — they sell out fast.
-            </p>
-
-            {/* Events Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-[#FF8F75]/40 transition-colors"
-              >
-                <Pizza className="text-[#FF8F75] mx-auto mb-3" size={32} />
-                <h3 className="text-white font-semibold text-sm mb-1">Pizza Pop-Up</h3>
-                <p className="text-gray-500 text-xs">Neapolitan pizza nights with guest pizzaiolos</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-[#FF8F75]/40 transition-colors"
-              >
-                <Wine className="text-[#FF8F75] mx-auto mb-3" size={32} />
-                <h3 className="text-white font-semibold text-sm mb-1">Wine Club</h3>
-                <p className="text-gray-500 text-xs">Curated tastings from Italian & French vineyards</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-[#FF8F75]/40 transition-colors"
-              >
-                <GlassWater className="text-[#FF8F75] mx-auto mb-3" size={32} />
-                <h3 className="text-white font-semibold text-sm mb-1">Scotch Tasting</h3>
-                <p className="text-gray-500 text-xs">Premium single malt degustation evenings</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-[#FF8F75]/40 transition-colors"
-              >
-                <ChefHat className="text-[#FF8F75] mx-auto mb-3" size={32} />
-                <h3 className="text-white font-semibold text-sm mb-1">Chef's Table</h3>
-                <p className="text-gray-500 text-xs">Michelin-star guest chef special dinners</p>
-              </motion.div>
-            </div>
-
-            {/* Why sign up */}
-            <p className="text-white text-base md:text-lg font-medium mb-2">
-              Leave your email to get priority access when we organize these events.
-            </p>
-            <p className="text-gray-400 text-sm mb-8 max-w-xl mx-auto">
-              Pizza pop-ups, scotch club nights, Italian wine tastings with producers, intimate dinners with Michelin-star chefs — spots are limited and our subscribers always get first dibs.
-            </p>
-
-            {/* Signup Form */}
-            <NewsletterInlineFormDark />
-          </motion.div>
-        </div>
-      </section>
 
       {/* ===== INSTAGRAM-STYLE FOOD GALLERY ===== */}
       <section className="py-24 bg-[#FAF7F2]">
