@@ -6,7 +6,7 @@ const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
 const BATCH_SIZE = 50;
-const FROM_EMAIL = "Local House <newsletter@send.localhouse.com>";
+const FROM_EMAIL = "Local House <newsletter@localhouse.com>";
 
 async function sendEmail(to: string, subject: string, html: string) {
   const res = await fetch("https://api.resend.com/emails", {

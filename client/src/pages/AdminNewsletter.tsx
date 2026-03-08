@@ -477,7 +477,7 @@ export default function AdminNewsletter() {
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-2 text-sm font-body">
                     <span className="text-gray-400 w-16">From:</span>
-                    <span className="text-[#4C5254]">Local House &lt;newsletter@send.localhouse.com&gt;</span>
+                    <span className="text-[#4C5254]">Local House &lt;newsletter@localhouse.com&gt;</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm font-body">
                     <span className="text-gray-400 w-16">Subject:</span>

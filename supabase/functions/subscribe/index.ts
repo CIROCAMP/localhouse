@@ -4,7 +4,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY")!;
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-const FROM_EMAIL = "Local House <newsletter@send.localhouse.com>";
+const FROM_EMAIL = "Local House <newsletter@localhouse.com>";
 
 const WELCOME_HTML = `
 <!DOCTYPE html>
