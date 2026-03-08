@@ -22,6 +22,7 @@ import Press from "./pages/Press";
 import PrivateEvents from "./pages/PrivateEvents";
 import LocalSpots from "./pages/LocalSpots";
 import LeaveReview from "./pages/LeaveReview";
+import AdminNewsletter from "./pages/AdminNewsletter";
 import { AccessibilityToolbar } from "./components/AccessibilityToolbar";
 import { Redirect } from "./components/Redirect";
 
@@ -45,7 +46,8 @@ function Router() {
         <Route path="/private-events" component={PrivateEvents} />
         <Route path="/local-spots" component={LocalSpots} />
         <Route path="/leave-review" component={LeaveReview} />
-        
+        <Route path="/admin/newsletter" component={AdminNewsletter} />
+
         {/* ============================================ */}
         {/* SEO REDIRECTS - Old URLs from previous site */}
         {/* Added: January 7, 2026                      */}
