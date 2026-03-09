@@ -59,7 +59,9 @@ export default function AdminNewsletter() {
   });
 
   const previewRef = useRef<HTMLIFrameElement>(null);
+  const sendPreviewRef = useRef<HTMLIFrameElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [showSendPreview, setShowSendPreview] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [uploadPreview, setUploadPreview] = useState<string | null>(null);
 
@@ -126,6 +128,18 @@ export default function AdminNewsletter() {
       }
     }
   }, [step, selectedTemplate, formData]);
+
+  // Update send step preview
+  useEffect(() => {
+    if (step === "send" && showSendPreview && sendPreviewRef.current) {
+      const doc = sendPreviewRef.current.contentDocument;
+      if (doc) {
+        doc.open();
+        doc.write(generatePreview().replace(/{{first_name}}/g, "Guest"));
+        doc.close();
+      }
+    }
+  }, [step, showSendPreview, selectedTemplate, formData]);
 
   const handleSaveDraft = async () => {
     if (!formData.subject || !formData.headline || !formData.body) {
@@ -221,6 +235,7 @@ export default function AdminNewsletter() {
     setCampaignStatus("idle");
     setStatusMessage("");
     setSendResult(null);
+    setShowSendPreview(false);
     setStep("compose");
   };
 
@@ -640,7 +655,7 @@ export default function AdminNewsletter() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-2xl mx-auto"
+            className="max-w-3xl mx-auto"
           >
             {campaignStatus === "sent" ? (
               /* Success Screen */
@@ -724,6 +739,47 @@ export default function AdminNewsletter() {
                       {campaignStatus === "approved" ? "Approved" : campaignStatus === "saved" ? "Draft Saved" : "Pending"}
                     </span>
                   </div>
+                </div>
+
+                {/* Email Preview Toggle */}
+                <div className="mb-6">
+                  <button
+                    type="button"
+                    onClick={() => setShowSendPreview(!showSendPreview)}
+                    className="flex items-center gap-2 text-sm font-body font-medium text-[#FF8F75] hover:text-[#e67c63] transition-colors"
+                  >
+                    <Eye size={16} />
+                    {showSendPreview ? "Hide Email Preview" : "Show Final Email Preview"}
+                  </button>
+
+                  {showSendPreview && (
+                    <div className="mt-4 rounded-xl overflow-hidden border border-[#E5DED5] shadow-sm">
+                      {/* Mini email header */}
+                      <div className="bg-gray-50 border-b border-[#E5DED5] px-4 py-3">
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                          <span className="ml-2 text-xs text-gray-400 font-body">Final Preview</span>
+                        </div>
+                        <p className="text-xs font-body text-gray-500">
+                          <span className="text-gray-400">From:</span> Local House &lt;newsletter@localhouse.com&gt;
+                        </p>
+                        <p className="text-xs font-body text-gray-500">
+                          <span className="text-gray-400">Subject:</span> <span className="font-medium text-[#4C5254]">{formData.subject}</span>
+                        </p>
+                      </div>
+                      {/* Email iframe */}
+                      <div className="flex justify-center bg-[#e8e4df] p-3">
+                        <iframe
+                          ref={sendPreviewRef}
+                          title="Final Email Preview"
+                          className="w-full max-w-[600px] bg-white shadow rounded"
+                          style={{ minHeight: "500px", border: "none" }}
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Status Messages */}
