@@ -65,23 +65,32 @@ Disallow: /*&msclkid=
 Disallow: /*?fbclid=
 Disallow: /*&fbclid=
 
+# Block referral tracking parameter
+Disallow: /*?ref=
+Disallow: /*&ref=
+
+# Block old Squarespace page ID parameter
+Disallow: /*?p=
+Disallow: /*&p=
+
 # ============================================
 # BLOCK OLD/DUPLICATE PAGES (legacy Squarespace paths)
 # These all 301 redirect via vercel.json but blocking
 # saves crawl budget while Google processes the redirects
 # ============================================
-Disallow: /explore-2/
-Disallow: /explore/
+Disallow: /explore-2
+Disallow: /explore
 Disallow: /event/
-Disallow: /sleep/
+Disallow: /sleep
+Disallow: /gallery-1
 Disallow: /about/
 Disallow: /menu/
 Disallow: /menus/
-Disallow: /offers/
+Disallow: /offers
 Disallow: /offers-gallery/
 Disallow: /the-local-house-team/
 Disallow: /location/
-Disallow: /terms-and-conditions/
+Disallow: /terms-and-conditions
 Disallow: /advanced/
 Disallow: /private-events-venue/
 # /local-spots is an active page — do NOT block
