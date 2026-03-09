@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 // Declare global tracking functions
@@ -7,10 +8,12 @@ declare global {
     trackMewsClick?: () => void;
   }
 }
-import { Clock, Star, Award, Users } from "lucide-react";
+import { Clock, Star, Award, Users, Mail } from "lucide-react";
 import { Link } from "wouter";
 import { SEOHead, seoConfigs } from "@/components/SEOHead";
 import { SEOSchema } from "@/components/SEOSchema";
+
+const SUPABASE_URL = "https://kzqvdwibtuoronyphiuq.supabase.co";
 
 /*
  * Design: Miami Art Deco Revival
@@ -61,6 +64,100 @@ const stats = [
   { icon: Users, value: "2,500+", label: "Happy Guests" },
   { icon: Award, value: "#1", label: "Brunch in SoBe" },
 ];
+
+function BrunchNewsletter() {
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setStatus("loading");
+    try {
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/subscribe`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, first_name: firstName, source: "website" }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+        setFirstName("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  return (
+    <section className="py-20 bg-[#FAF7F2]">
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-2xl mx-auto text-center"
+        >
+          <div className="w-12 h-12 bg-[#FF8F75]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Mail className="text-[#FF8F75]" size={24} />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#4C5254] mb-4">
+            Never Miss a Brunch Special
+          </h2>
+          <p className="text-[#666] mb-8">
+            Get exclusive updates on seasonal menus, chef's specials, and VIP brunch events delivered to your inbox.
+          </p>
+
+          {status === "success" ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-[#FF8F75]/10 border border-[#FF8F75]/30 rounded-lg p-8"
+            >
+              <p className="text-[#FF8F75] text-xl font-display font-semibold mb-2">You're on the list!</p>
+              <p className="text-[#666]">Check your inbox for a welcome from The Local House.</p>
+            </motion.div>
+          ) : (
+            <div>
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+                <input
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder="First name"
+                  className="px-5 py-4 bg-white border border-[#E5DED5] rounded-lg text-[#4C5254] placeholder-[#999] text-sm focus:outline-none focus:border-[#FF8F75] sm:w-36"
+                />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your email address"
+                  required
+                  className="flex-1 px-5 py-4 bg-white border border-[#E5DED5] rounded-lg text-[#4C5254] placeholder-[#999] text-sm focus:outline-none focus:border-[#FF8F75]"
+                />
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="px-8 py-4 bg-[#FF8F75] text-white font-semibold text-sm rounded-lg hover:bg-[#e67c63] transition-all duration-300 disabled:opacity-50 whitespace-nowrap"
+                >
+                  {status === "loading" ? "Joining..." : "Subscribe"}
+                </button>
+              </form>
+              {status === "error" && (
+                <p className="text-red-500 text-sm mt-3">Something went wrong. Please try again.</p>
+              )}
+              <p className="text-[#999] text-xs mt-4">No spam, just brunch. Unsubscribe anytime.</p>
+            </div>
+          )}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 export default function Brunch() {
   return (
@@ -311,6 +408,9 @@ export default function Brunch() {
           </div>
         </div>
       </section>
+
+      {/* Newsletter Signup Section */}
+      <BrunchNewsletter />
 
       {/* CTA Section */}
       <section className="py-24 bg-[#FAF7F2]">
