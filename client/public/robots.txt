@@ -84,7 +84,8 @@ Disallow: /location/
 Disallow: /terms-and-conditions/
 Disallow: /advanced/
 Disallow: /private-events-venue/
-Disallow: /local-spots/
+# /local-spots is an active page — do NOT block
+# Disallow: /local-spots/
 
 # ============================================
 # CRAWL DELAY & RATE LIMITING
