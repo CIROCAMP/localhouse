@@ -16,6 +16,8 @@ import {
   Sparkles,
   Loader2,
   RefreshCw,
+  Upload,
+  X,
 } from "lucide-react";
 import {
   templates,
@@ -24,6 +26,7 @@ import {
 } from "@/lib/email-templates";
 
 const SUPABASE_URL = "https://kzqvdwibtuoronyphiuq.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt6cXZkd2lidHVvcm9ueXBoaXVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI4OTA5NDMsImV4cCI6MjA4ODQ2Njk0M30.ZYAA5GNjKXtSRkY2cFWcKgsew5K80eMA47as_5W77fk";
 
 type Step = "compose" | "preview" | "send";
 type CampaignStatus = "idle" | "saving" | "saved" | "approving" | "approved" | "sending" | "sent" | "error";
@@ -56,6 +59,55 @@ export default function AdminNewsletter() {
   });
 
   const previewRef = useRef<HTMLIFrameElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [uploading, setUploading] = useState(false);
+  const [uploadPreview, setUploadPreview] = useState<string | null>(null);
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Show local preview immediately
+    setUploadPreview(URL.createObjectURL(file));
+    setUploading(true);
+
+    try {
+      const ext = file.name.split(".").pop() || "jpg";
+      const fileName = `newsletter-${Date.now()}.${ext}`;
+
+      const res = await fetch(
+        `${SUPABASE_URL}/storage/v1/object/newsletter-images/${fileName}`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+            "Content-Type": file.type,
+            "x-upsert": "true",
+          },
+          body: file,
+        }
+      );
+
+      if (res.ok) {
+        const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/newsletter-images/${fileName}`;
+        setFormData((prev) => ({ ...prev, image_url: publicUrl }));
+      } else {
+        setUploadPreview(null);
+        alert("Upload failed. Try again.");
+      }
+    } catch {
+      setUploadPreview(null);
+      alert("Upload error. Check your connection.");
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const removeImage = () => {
+    setFormData((prev) => ({ ...prev, image_url: "" }));
+    setUploadPreview(null);
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  };
 
   // Generate preview HTML
   const generatePreview = () => {
@@ -355,17 +407,66 @@ export default function AdminNewsletter() {
                     <label className="block text-sm font-medium font-body text-[#4C5254] mb-1.5">
                       <span className="flex items-center gap-1.5">
                         <Image size={14} />
-                        Hero Image URL
+                        Hero Image
                         <span className="text-gray-400 font-normal">(optional)</span>
                       </span>
                     </label>
+
+                    {/* Upload area or preview */}
+                    {formData.image_url || uploadPreview ? (
+                      <div className="relative rounded-lg overflow-hidden border border-[#E5DED5]">
+                        <img
+                          src={formData.image_url || uploadPreview || ""}
+                          alt="Hero preview"
+                          className="w-full h-48 object-cover"
+                        />
+                        {uploading && (
+                          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <Loader2 size={28} className="animate-spin text-white" />
+                          </div>
+                        )}
+                        <button
+                          type="button"
+                          onClick={removeImage}
+                          className="absolute top-2 right-2 w-8 h-8 bg-black/60 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-colors"
+                        >
+                          <X size={16} />
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => fileInputRef.current?.click()}
+                        className="w-full border-2 border-dashed border-[#E5DED5] hover:border-[#FF8F75] rounded-lg py-8 flex flex-col items-center gap-2 transition-colors cursor-pointer group"
+                      >
+                        <Upload size={24} className="text-gray-400 group-hover:text-[#FF8F75] transition-colors" />
+                        <span className="text-sm font-body text-gray-500 group-hover:text-[#4C5254]">
+                          Click to upload an image
+                        </span>
+                        <span className="text-xs font-body text-gray-400">
+                          JPG, PNG, WebP or GIF — max 5MB
+                        </span>
+                      </button>
+                    )}
+
                     <input
-                      type="url"
-                      value={formData.image_url}
-                      onChange={(e) => setFormData({ ...formData, image_url: e.target.value })}
-                      placeholder="https://example.com/your-image.jpg"
-                      className="w-full px-4 py-3 border border-[#E5DED5] rounded-lg text-sm font-body text-[#4C5254] placeholder-gray-400 focus:outline-none focus:border-[#FF8F75] focus:ring-2 focus:ring-[#FF8F75]/20"
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/jpeg,image/png,image/webp,image/gif"
+                      onChange={handleImageUpload}
+                      className="hidden"
                     />
+
+                    {/* Fallback: paste URL */}
+                    {!formData.image_url && !uploadPreview && (
+                      <input
+                        type="url"
+                        value={formData.image_url}
+                        onChange={(e) => setFormData({ ...formData, image_url: e.target.value })}
+                        placeholder="Or paste an image URL here"
+                        className="w-full mt-2 px-4 py-2.5 border border-[#E5DED5] rounded-lg text-sm font-body text-[#4C5254] placeholder-gray-400 focus:outline-none focus:border-[#FF8F75] focus:ring-2 focus:ring-[#FF8F75]/20"
+                      />
+                    )}
                   </div>
 
                   {/* CTA */}
