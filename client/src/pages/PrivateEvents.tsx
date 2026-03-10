@@ -29,7 +29,7 @@ export default function PrivateEvents() {
 
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <span className="inline-block px-4 py-2 bg-coral/90 rounded-full text-sm font-medium mb-6">
-            {t("privateEvents.celebrateWithUs")}
+            {"🎉 "}{t("privateEvents.celebrateWithUs")}
           </span>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl mb-6">
             {t("privateEvents.title")}
