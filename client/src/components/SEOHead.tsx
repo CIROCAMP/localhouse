@@ -207,7 +207,7 @@ const faqSchema = {
 export const seoConfigs = {
   home: {
     title: "The Local House | Boutique Hotel & Best Breakfast Brunch in South Beach Miami",
-    description: "Boutique hotel & best breakfast brunch in South Beach Miami Beach. Famous Lobster Eggs Benedict, bottomless mimosas, rooftop pool, Ocean Drive rooms. Voted #1 brunch by locals. Italian-owned since 2012. Book hotel or table now!",
+    description: "Boutique hotel & best breakfast brunch in South Beach Miami Beach. Famous Lobster Eggs Benedict, craft cocktails, rooftop pool, Ocean Drive rooms. Voted #1 brunch by locals. Italian-owned since 2012. Book hotel or table now!",
     keywords: "boutique hotel miami beach, best breakfast south beach, best brunch miami beach, breakfast near me, brunch near me, ocean drive hotel, south beach hotel, lobster eggs benedict, rooftop pool miami beach",
     canonicalUrl: "https://www.localhouse.com/",
     ogImage: "/images/restaurant-interior.jpg",
@@ -296,8 +296,8 @@ export const seoConfigs = {
   },
   brunch: {
     title: "Best Brunch Miami Beach | #1 South Beach Brunch | The Local House",
-    description: "Voted best brunch in Miami Beach & South Beach. Famous Lobster Eggs Benedict ($33), bottomless mimosas, Ocean Drive views. Open 8AM-4PM daily. Reserve on OpenTable.",
-    keywords: "best brunch miami beach, brunch miami beach, best brunch south beach, brunch south beach, south beach brunch, breakfast near me miami, lobster eggs benedict, bottomless mimosas, weekend brunch miami beach, sunday brunch miami beach, bottomless brunch miami beach, brunch ocean drive, brunch near me miami beach, brunch reservations miami beach",
+    description: "Voted best brunch in Miami Beach & South Beach. Famous Lobster Eggs Benedict ($33), craft cocktails, Ocean Drive views. Open 8AM-4PM daily. Reserve on OpenTable.",
+    keywords: "best brunch miami beach, brunch miami beach, best brunch south beach, brunch south beach, south beach brunch, breakfast near me miami, lobster eggs benedict, mimosas, weekend brunch miami beach, sunday brunch miami beach, brunch ocean drive, brunch near me miami beach, brunch reservations miami beach",
     canonicalUrl: "https://www.localhouse.com/brunch",
     ogImage: "/images/brunch-spread.jpg",
     ogType: "restaurant" as const,

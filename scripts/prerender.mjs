@@ -35,9 +35,9 @@ const BASE_URL = "https://www.localhouse.com";
 const routes = [
   {
     path: "/brunch",
-    title: "Best Brunch Miami Beach | #1 South Beach Brunch | Lobster Eggs Benedict | The Local House",
-    description: "Voted best brunch in Miami Beach & South Beach. Famous Lobster Eggs Benedict ($33), bottomless mimosas, Ocean Drive views. Open 8AM-4PM daily. Reserve on OpenTable.",
-    keywords: "best brunch miami beach, brunch miami beach, best brunch south beach, brunch south beach, south beach brunch, breakfast near me miami, lobster eggs benedict, bottomless mimosas, weekend brunch miami beach",
+    title: "Best Brunch Miami Beach | #1 South Beach Brunch | The Local House",
+    description: "Voted best brunch in Miami Beach & South Beach. Famous Lobster Eggs Benedict ($33), craft cocktails, Ocean Drive views. Open 8AM-4PM daily. Reserve on OpenTable.",
+    keywords: "best brunch miami beach, brunch miami beach, best brunch south beach, brunch south beach, south beach brunch, breakfast near me miami, lobster eggs benedict, mimosas, weekend brunch miami beach",
     canonicalUrl: `${BASE_URL}/brunch`,
     ogImage: `${BASE_URL}/images/brunch-spread.jpg`,
     ogType: "restaurant",
@@ -351,7 +351,7 @@ const routes = [
       "@type": "Restaurant",
       "name": "The Local House",
       "image": `${BASE_URL}/images/og-brunch.jpg`,
-      "description": "Best brunch near Miami Beach. Voted #1 rated brunch with famous Lobster Eggs Benedict, bottomless mimosas, and ocean views.",
+      "description": "Best brunch near Miami Beach. Voted #1 rated brunch with famous Lobster Eggs Benedict, craft cocktails, and ocean views.",
       "address": { "@type": "PostalAddress", "streetAddress": "400 Ocean Drive", "addressLocality": "Miami Beach", "addressRegion": "FL", "postalCode": "33139", "addressCountry": "US" },
       "telephone": "+1-305-538-5529",
       "url": `${BASE_URL}/brunch-near-me-miami-beach`,
