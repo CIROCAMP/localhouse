@@ -370,8 +370,8 @@ export default function Brunch() {
                   Signature Brunch Cocktails
                 </h2>
                 <p className="text-gray-400 leading-relaxed mb-8">
-                  No brunch is complete without our craft cocktails. From bottomless mimosas
-                  to our famous Bloody Mary, we've got the perfect pairing for your meal.
+                  No brunch is complete without our craft cocktails. From our famous Bloody Mary
+                  to refreshing mimosas, we've got the perfect pairing for your meal.
                 </p>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center border-b border-gray-700 pb-3">
@@ -415,11 +415,11 @@ export default function Brunch() {
           <div className="max-w-3xl mx-auto">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-8 text-center">
-              Bottomless Brunch on Ocean Drive
+              Brunch on Ocean Drive
             </h2>
             <div className="prose prose-lg text-[#666] leading-relaxed space-y-6">
               <p>
-                Looking for the perfect <strong>bottomless brunch in Miami Beach</strong>? The Local House
+                Looking for the perfect <strong>brunch in Miami Beach</strong>? The Local House
                 offers an unmatched brunch experience right on Ocean Drive, in the heart of the exclusive
                 South of Fifth neighborhood. Since 2012, our Italian-owned restaurant has been serving
                 Miami Beach's most talked-about brunch — combining fresh, locally-sourced ingredients
@@ -430,7 +430,7 @@ export default function Brunch() {
                 visitors alike. Every Saturday and Sunday, guests fill our sun-drenched patio and cozy
                 dining room to enjoy dishes like our legendary <strong>Lobster Eggs Benedict</strong> —
                 butter-poached Maine lobster over perfectly poached eggs with silky hollandaise on a
-                toasted English muffin. Paired with a bottle of prosecco mimosas, it's the ultimate
+                toasted English muffin. Paired with a glass of prosecco or a craft cocktail, it's the ultimate
                 South Beach brunch experience.
               </p>
 
@@ -447,9 +447,8 @@ export default function Brunch() {
               <p>
                 Our menu goes beyond the classics. From fluffy buttermilk pancakes topped with seasonal
                 berries to our indulgent Breakfast Smash Burger with Wagyu beef and a fried egg, there's
-                something for every craving. Add a craft Bloody Mary, an espresso martini, or go all-in
-                with our <strong>bottomless mimosas</strong> — the perfect way to start your day in
-                Miami Beach.
+                something for every craving. Add a craft Bloody Mary, an espresso martini, or a classic
+                mimosa — the perfect way to start your day in Miami Beach.
               </p>
 
               <h2 className="text-3xl font-display font-semibold text-[#4C5254] !mt-12 !mb-6">
@@ -493,11 +492,11 @@ export default function Brunch() {
               {[
                 {
                   q: "Is Local House the best brunch in Miami Beach?",
-                  a: "Yes — The Local House has been voted #1 Brunch in South Beach and Miami Beach, with a 4.9-star rating from over 2,500 guests. Our famous Lobster Eggs Benedict, bottomless mimosas, and Ocean Drive patio dining have made us the go-to brunch destination since 2012. We've been featured in Eater Miami, Miami New Times, and recommended by thousands of locals and visitors."
+                  a: "Yes — The Local House has been voted #1 Brunch in South Beach and Miami Beach, with a 4.9-star rating from over 2,500 guests. Our famous Lobster Eggs Benedict, craft cocktails, and Ocean Drive patio dining have made us the go-to brunch destination since 2012. We've been featured in Eater Miami, Miami New Times, and recommended by thousands of locals and visitors."
                 },
                 {
-                  q: "Do you offer bottomless mimosas?",
-                  a: "Yes! We offer bottomless prosecco mimosas with freshly squeezed orange juice during brunch hours (8AM–4PM daily). You can also enjoy our full cocktail menu, including craft Bloody Marys, espresso martinis, and seasonal cocktails. A bottle of prosecco for mimosas is $45."
+                  q: "What cocktails do you serve at brunch?",
+                  a: "We offer a curated brunch cocktail menu including classic mimosas ($14 or $45 for a bottle of prosecco), our famous homemade Bloody Mary ($16), and the Wake Me Up espresso cocktail ($18). You can also enjoy our full cocktail menu with craft creations and seasonal specials."
                 },
                 {
                   q: "What time does brunch start at The Local House?",

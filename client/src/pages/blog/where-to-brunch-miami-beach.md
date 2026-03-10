@@ -21,7 +21,7 @@ Brunch in Miami Beach is different from brunch in other cities. It's not just a 
 
 Miami Beach brunch typically includes:
 
-**Craft Cocktails:** Bottomless mimosas, Bloody Marys, and creative cocktails are standard. Many restaurants offer bottomless drink packages.
+**Craft Cocktails:** Mimosas, Bloody Marys, and creative cocktails are standard. Many restaurants offer drink specials and packages.
 
 **Fresh Seafood:** Being a coastal city, Miami Beach brunch features fresh fish, shrimp, lobster, and other seafood preparations.
 
@@ -91,7 +91,7 @@ Lincoln Road is Miami Beach's main shopping street and features numerous brunch 
 
 ### Drinks to Order
 
-**Mimosas:** The classic brunch drink. Many restaurants offer bottomless mimosas.
+**Mimosas:** The classic brunch drink. A must-order at any Miami Beach brunch.
 
 **Bloody Mary:** Often made with fresh ingredients and creative garnishes.
 
@@ -152,7 +152,7 @@ Most Miami Beach brunch spots are casual. Beachwear is acceptable at casual spot
 - [ ] Plan your arrival time (early for less wait, mid-day for atmosphere)
 - [ ] Check parking options
 - [ ] Review the menu in advance
-- [ ] Decide on drinks (bottomless, cocktails, non-alcoholic)
+- [ ] Decide on drinks (cocktails, mimosas, non-alcoholic)
 - [ ] Invite your friends or family
 - [ ] Plan what to do after brunch (beach, shopping, exploring)
 

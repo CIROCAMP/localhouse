@@ -33,7 +33,7 @@ export default function RestaurantsNearMe() {
     {
       icon: "🍾",
       title: "Craft Cocktails",
-      description: "Signature cocktails, bottomless mimosas, and an extensive wine selection"
+      description: "Signature cocktails, mimosas, and an extensive wine selection"
     }
   ];
 

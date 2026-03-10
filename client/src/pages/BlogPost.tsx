@@ -58,12 +58,12 @@ const blogContent: Record<string, {
           draped in silky hollandaise. At $33, it's an indulgence worth every penny.
         </p>
 
-        <h3>Bottomless Mimosas & Craft Cocktails</h3>
-        
+        <h3>Signature Mimosas & Craft Cocktails</h3>
+
         <p>
-          No Miami Beach brunch is complete without cocktails. Our <strong>bottomless mimosas</strong> 
-          feature cold-pressed orange juice and premium prosecco. For something different, try our 
-          house-made Bloody Mary with bacon and olives, or the Wake Me Up—a perfect blend of 
+          No Miami Beach brunch is complete without cocktails. Our <strong>signature mimosas</strong>
+          feature cold-pressed orange juice and premium prosecco. For something different, try our
+          house-made Bloody Mary with bacon and olives, or the Wake Me Up—a perfect blend of
           vodka, Baileys, and espresso.
         </p>
 
@@ -92,7 +92,7 @@ const blogContent: Record<string, {
           <li>Italian-owned with authentic hospitality since 2012</li>
           <li>Prime Ocean Drive location in exclusive South of Fifth</li>
           <li>Fresh, locally-sourced ingredients</li>
-          <li>Craft cocktails and bottomless mimosa options</li>
+          <li>Craft cocktails and signature mimosas</li>
           <li>Both indoor and outdoor seating available</li>
         </ul>
 

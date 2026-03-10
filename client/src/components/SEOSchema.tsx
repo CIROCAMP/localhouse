@@ -401,15 +401,15 @@ function getSchemas(page: string) {
             "name": "Is Local House the best brunch in Miami Beach?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes — The Local House has been voted #1 Brunch in South Beach and Miami Beach, with a 4.9-star rating from over 2,500 guests. Our famous Lobster Eggs Benedict, bottomless mimosas, and Ocean Drive patio dining have made us the go-to brunch destination since 2012."
+              "text": "Yes — The Local House has been voted #1 Brunch in South Beach and Miami Beach, with a 4.9-star rating from over 2,500 guests. Our famous Lobster Eggs Benedict, craft cocktails, and Ocean Drive patio dining have made us the go-to brunch destination since 2012."
             }
           },
           {
             "@type": "Question",
-            "name": "Do you offer bottomless mimosas?",
+            "name": "What cocktails do you serve at brunch?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! We offer bottomless prosecco mimosas with freshly squeezed orange juice during brunch hours (8AM–4PM daily). A bottle of prosecco for mimosas is $45."
+              "text": "We offer a curated brunch cocktail menu including classic mimosas ($14 or $45 for a bottle of prosecco), our famous homemade Bloody Mary ($16), and the Wake Me Up espresso cocktail ($18)."
             }
           },
           {

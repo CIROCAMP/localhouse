@@ -37,8 +37,8 @@ export default function BrunchNearMe() {
     },
     {
       icon: "🍾",
-      title: "Bottomless Mimosas Available",
-      description: "Upgrade your brunch experience with bottomless mimosas and a selection of craft cocktails. Perfect for celebrations, catch-ups, or just because.",
+      title: "Craft Cocktails & Mimosas",
+      description: "Upgrade your brunch experience with our signature mimosas, Bloody Marys, and a selection of craft cocktails. Perfect for celebrations, catch-ups, or just because.",
       highlight: "Because brunch without bubbles is just breakfast"
     }
   ];
@@ -64,7 +64,7 @@ export default function BrunchNearMe() {
       "@type": "Restaurant",
       "name": "The Local House",
       "image": "https://www.localhouse.com/images/og-brunch.jpg",
-      "description": "Best brunch near Miami Beach. Voted #1 rated brunch with famous Lobster Eggs Benedict, bottomless mimosas, and ocean views.",
+      "description": "Best brunch near Miami Beach. Voted #1 rated brunch with famous Lobster Eggs Benedict, craft cocktails, and ocean views.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "400 Ocean Drive",
@@ -235,7 +235,7 @@ export default function BrunchNearMe() {
           Stop Searching "Brunch Near Me" - We're Here
         </h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto">
-          The Local House is Miami Beach's #1 rated brunch destination. Open daily 8AM-4PM with famous Lobster Eggs Benedict, bottomless mimosas, and ocean views.
+          The Local House is Miami Beach's #1 rated brunch destination. Open daily 8AM-4PM with famous Lobster Eggs Benedict, craft cocktails, and ocean views.
         </p>
         <a
           href="https://order.toasttab.com/online/the-local-house"

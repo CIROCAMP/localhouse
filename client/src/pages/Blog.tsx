@@ -13,7 +13,7 @@ const blogPosts = [
   {
     slug: "best-brunch-miami-beach-2025",
     title: "The Ultimate Guide to the Best Brunch in Miami Beach (2025)",
-    excerpt: "Discover why The Local House has been voted the best brunch spot in South Beach. From our famous Lobster Eggs Benedict to bottomless mimosas, here's what makes our brunch unforgettable.",
+    excerpt: "Discover why The Local House has been voted the best brunch spot in South Beach. From our famous Lobster Eggs Benedict to signature mimosas, here's what makes our brunch unforgettable.",
     image: "/images/brunch-spread.jpg",
     date: "December 28, 2025",
     readTime: "5 min read",
