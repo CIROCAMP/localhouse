@@ -8,6 +8,7 @@ declare global {
   }
 }
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { X } from "lucide-react";
 import { SEOHead, seoConfigs } from "@/components/SEOHead";
 import { SEOSchema } from "@/components/SEOSchema";
@@ -33,17 +34,18 @@ const galleryImages = [
   { src: "/images/gallery-toast-cocktails.jpg", alt: "Guests toasting with cocktails at The Local House, Miami Beach", category: "food" },
 ];
 
-const categories = [
-  { id: "all", label: "All" },
-  { id: "hotel", label: "Hotel" },
-  { id: "restaurant", label: "Restaurant" },
-  { id: "food", label: "Food & Drinks" },
-  { id: "location", label: "Location" },
-];
-
 export default function Gallery() {
+  const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+
+  const categories = [
+    { id: "all", label: t("gallery.all") },
+    { id: "hotel", label: t("gallery.hotelCat") },
+    { id: "restaurant", label: t("gallery.restaurantCat") },
+    { id: "food", label: t("gallery.foodDrinks") },
+    { id: "location", label: t("gallery.location") },
+  ];
 
   const filteredImages = selectedCategory === "all"
     ? galleryImages
@@ -54,7 +56,7 @@ export default function Gallery() {
       {/* SEO Components */}
       <SEOHead {...seoConfigs.gallery} />
       <SEOSchema page="gallery" />
-      
+
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#4C5254]">
         <div className="relative z-10 text-center text-white px-4">
@@ -64,10 +66,10 @@ export default function Gallery() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-display font-semibold mb-4">
-              The Local House Miami Beach Photos
+              {t("gallery.title")}
             </h1>
             <p className="text-xl text-white/80">
-              Explore The Local House through our lens
+              {t("gallery.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -112,7 +114,7 @@ export default function Gallery() {
                   alt={image.alt}
                   className="w-full h-full object-cover"
                 />
-                
+
               </motion.div>
             ))}
           </div>
@@ -146,10 +148,10 @@ export default function Gallery() {
       <section className="py-24 bg-white">
         <div className="container text-center">
           <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#4C5254] mb-6">
-            Experience It In Person
+            {t("gallery.experienceInPerson")}
           </h2>
           <p className="text-lg text-[#666] max-w-2xl mx-auto mb-10">
-            Photos can only capture so much. Visit The Local House and create your own memories.
+            {t("gallery.photosCapture")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -158,7 +160,7 @@ export default function Gallery() {
               rel="noopener noreferrer"
               className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
             >
-              Book a Table
+              {t("common.bookTable")}
             </a>
             <a
               href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
@@ -166,7 +168,7 @@ export default function Gallery() {
               rel="noopener noreferrer"
               className="px-8 py-4 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded"
             >
-              Book a Room
+              {t("common.bookRoom")}
             </a>
           </div>
         </div>

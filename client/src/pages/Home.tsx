@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Declare global tracking functions
@@ -146,11 +147,11 @@ const faqs = [
   },
 ];
 
-const stats = [
-  { value: "4.9", label: "Average Rating", icon: Star },
-  { value: "#1", label: "Brunch in SoFi", icon: UtensilsCrossed },
-  { value: "2,500+", label: "Happy Guests", icon: ChefHat },
-  { value: "Daily", label: "8AM – 4PM", icon: Clock },
+const statsConfig = [
+  { value: "4.9", labelKey: "brunch.avgRating", icon: Star },
+  { value: "#1", labelKey: "brunch.brunchInSoBe", icon: UtensilsCrossed },
+  { valueKey: "brunch.happyGuestsCount", labelKey: "brunch.happyGuests", icon: ChefHat },
+  { value: "Daily", labelKey: "brunch.daily8am", icon: Clock },
 ];
 
 const features = [
@@ -164,6 +165,7 @@ const SUPABASE_URL = "https://kzqvdwibtuoronyphiuq.supabase.co";
 
 
 function NewsletterInlineFormDark() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -197,8 +199,8 @@ function NewsletterInlineFormDark() {
         animate={{ opacity: 1, scale: 1 }}
         className="bg-[#FF8F75]/10 border border-[#FF8F75]/30 rounded-lg p-8"
       >
-        <p className="text-[#FF8F75] text-xl font-display font-semibold mb-2">You're on the list!</p>
-        <p className="text-gray-400">Check your inbox — we'll notify you before the next event.</p>
+        <p className="text-[#FF8F75] text-xl font-display font-semibold mb-2">{t("newsletter.youreOnTheList")}</p>
+        <p className="text-gray-400">{t("newsletter.checkInbox")}</p>
       </motion.div>
     );
   }
@@ -210,14 +212,14 @@ function NewsletterInlineFormDark() {
           type="text"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
-          placeholder="First name"
+          placeholder={t("newsletter.firstName")}
           className="px-5 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[#FF8F75] sm:w-36"
         />
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Your email address"
+          placeholder={t("newsletter.emailAddress")}
           required
           className="flex-1 px-5 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[#FF8F75]"
         />
@@ -226,18 +228,19 @@ function NewsletterInlineFormDark() {
           disabled={status === "loading"}
           className="px-8 py-4 bg-[#FF8F75] text-white font-semibold text-sm rounded-lg hover:bg-[#e67c63] transition-all duration-300 disabled:opacity-50 whitespace-nowrap"
         >
-          {status === "loading" ? "Joining..." : "Get Invited"}
+          {status === "loading" ? t("newsletter.joining") : t("newsletter.subscribe")}
         </button>
       </form>
       {status === "error" && (
-        <p className="text-red-400 text-sm mt-3">Something went wrong. Please try again.</p>
+        <p className="text-red-400 text-sm mt-3">{t("newsletter.errorMessage")}</p>
       )}
-      <p className="text-gray-600 text-xs mt-4">Limited seats per event. Subscribers get priority access.</p>
+      <p className="text-gray-600 text-xs mt-4">{t("newsletter.noSpam")}</p>
     </div>
   );
 }
 
 export default function Home() {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -297,7 +300,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/90 rounded-full text-sm font-medium mb-6">
-              Voted Best Brunch in South Beach
+              {t("brunch.votedBest")}
             </span>
           </motion.div>
 
@@ -310,10 +313,10 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-semibold mb-6 tracking-wide">
-                {heroSlides[currentSlide].title}
+                {currentSlide === 0 ? t("home.bestBrunch") : currentSlide === 1 ? t("home.whereLocals") : t("home.oceanfrontDining")}
               </h1>
               <p className="text-xl md:text-2xl font-light mb-10 text-white/90">
-                {heroSlides[currentSlide].subtitle}
+                {currentSlide === 0 ? t("home.legendaryLobster") : currentSlide === 1 ? t("home.freshCoastal") : t("home.sofFavorite")}
               </p>
             </motion.div>
           </AnimatePresence>
@@ -331,7 +334,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded text-lg"
             >
-              Reserve for Brunch
+              {t("brunch.reserveForBrunch")}
             </a>
             <Link href="/restaurant">
               <span className="px-8 py-4 border-2 border-white text-white font-medium tracking-wide hover:bg-white hover:text-[#4C5254] transition-all duration-300 rounded inline-block text-lg">
@@ -378,7 +381,7 @@ export default function Home() {
       <section className="py-8 bg-white border-b border-[#E5DED5]">
         <div className="container">
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-            {stats.map((stat, index) => (
+            {statsConfig.map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -392,9 +395,9 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-2xl font-display font-bold text-[#FF8F75]">
-                    {stat.value}
+                    {stat.valueKey ? t(stat.valueKey) : stat.value}
                   </div>
-                  <div className="text-xs text-[#666] font-medium uppercase tracking-wide">{stat.label}</div>
+                  <div className="text-xs text-[#666] font-medium uppercase tracking-wide">{t(stat.labelKey)}</div>
                 </div>
               </motion.div>
             ))}
@@ -408,10 +411,10 @@ export default function Home() {
           <div className="text-center mb-16">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              The Brunch That Made Us Famous
+              {t("brunch.whereBrunchBecomes")}
             </h2>
             <p className="text-lg text-[#666] max-w-2xl mx-auto">
-              Fresh, local ingredients crafted into unforgettable dishes on Ocean Drive. Italian-owned & operated since 2012.
+              {t("brunch.freshLocal")}
             </p>
           </div>
 
@@ -460,7 +463,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
               >
-                Reserve for Brunch
+                {t("brunch.reserveForBrunch")}
               </a>
               <Link href="/brunch">
                 <span className="px-8 py-4 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded inline-block">
@@ -493,10 +496,10 @@ export default function Home() {
             </span>
 
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">
-              Not Your Typical Restaurant Night
+              {t("newsletter.neverMiss")}
             </h2>
             <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
-              Every month we host exclusive, limited-seat events. Subscribe to get first access — they sell out fast.
+              {t("newsletter.exclusiveUpdates")}
             </p>
 
             {/* Events Grid */}
@@ -599,15 +602,13 @@ export default function Home() {
                 transition={{ duration: 0.8 }}
               >
                 <span className="inline-block px-4 py-1 bg-white/20 rounded-full text-sm font-medium mb-4">
-                  #1 Most Ordered Dish
+                  {t("home.signature")}
                 </span>
                 <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
-                  Lobster Eggs Benedict
+                  {t("home.lobsterBenedict")}
                 </h2>
                 <p className="text-white/90 text-lg mb-6 leading-relaxed">
-                  Our signature dish that put us on the map. Fresh Maine lobster, perfectly poached eggs,
-                  house-made hollandaise on toasted brioche. Featured in Miami New Times, Eater Miami,
-                  and countless food blogs.
+                  {t("home.lobsterDesc")}
                 </p>
                 <p className="text-white/70 text-base mb-8">
                   The reason locals and tourists line up every weekend. Once you try it, you'll understand.
@@ -620,7 +621,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="px-6 py-3 bg-white text-[#FF8F75] font-bold rounded hover:bg-white/90 transition-colors"
                   >
-                    Reserve for Brunch
+                    {t("brunch.reserveForBrunch")}
                   </a>
                   <Link href="/brunch">
                     <span className="px-6 py-3 border-2 border-white text-white font-medium rounded hover:bg-white/10 transition-colors inline-block">
@@ -681,7 +682,7 @@ export default function Home() {
                 <div className="absolute -bottom-6 -right-6 bg-[#FF8F75] text-white px-6 py-4 rounded shadow-lg">
                   <div className="flex items-center gap-2">
                     <Clock size={20} />
-                    <span className="font-medium">Daily 8AM – 4PM</span>
+                    <span className="font-medium">{t("brunch.daily8am")}</span>
                   </div>
                 </div>
               </div>
@@ -728,11 +729,11 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded text-center"
                 >
-                  Reserve for Brunch
+                  {t("brunch.reserveForBrunch")}
                 </a>
                 <Link href="/restaurant">
                   <span className="px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded text-center inline-block">
-                    View Full Menu
+                    {t("brunch.viewFullMenu")}
                   </span>
                 </Link>
               </div>
@@ -827,7 +828,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              Why Guests Love Our Brunch
+              {t("home.whatGuestsSay")}
             </h2>
             <p className="text-lg text-[#666]">
               Hear from the thousands who've made us their favorite brunch spot
@@ -1011,7 +1012,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              Frequently Asked Questions
+              {t("brunch.brunchFAQ")}
             </h2>
           </div>
 
@@ -1081,7 +1082,7 @@ export default function Home() {
                   href="tel:+13055385529"
                   className="px-6 py-3 border-2 border-[#4C5254] text-[#4C5254] font-medium tracking-wide hover:bg-[#4C5254] hover:text-white transition-all duration-300 rounded inline-block text-center"
                 >
-                  Call (305) 538-5529
+                  {t("common.callPhone")}
                 </a>
               </div>
             </div>
@@ -1106,7 +1107,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
             >
-              Reserve for Brunch
+              {t("brunch.reserveForBrunch")}
             </a>
             <a
               href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
@@ -1114,7 +1115,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="px-8 py-4 border-2 border-white text-white font-medium tracking-wide hover:bg-white hover:text-[#4C5254] transition-all duration-300 rounded"
             >
-              Book a Room
+              {t("common.bookRoom")}
             </a>
           </div>
         </div>

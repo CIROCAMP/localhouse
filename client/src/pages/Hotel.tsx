@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Wifi, Waves, Coffee, Sun, Dumbbell, Car, Users, Bath, Tv, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 import { SEOHead, seoConfigs } from "@/components/SEOHead";
 import { SEOSchema } from "@/components/SEOSchema";
@@ -68,16 +69,15 @@ const rooms = [
   },
 ];
 
-const amenities = [
-  { icon: Waves, name: "Rooftop Pool", description: "Stunning pool with Miami skyline views" },
-  { icon: Sun, name: "Reserved Beach Spot", description: "Private chairs & umbrella right in front of the hotel — included daily" },
-  { icon: Wifi, name: "High-Speed Wi-Fi", description: "Complimentary throughout property" },
-
-  { icon: Dumbbell, name: "Daily Yoga", description: "Complimentary classes at State of Yoga" },
-  { icon: Car, name: "Valet Parking", description: "Available for an additional fee" },
-  { icon: Users, name: "Concierge", description: "24/7 personalized service" },
-  { icon: Bath, name: "Luxury Bath", description: "Premium toiletries & rain shower" },
-  { icon: Tv, name: "Apple TV", description: "In every room for streaming" },
+const amenityIcons = [
+  { icon: Waves, nameKey: "hotel.rooftopPool", descKey: "hotel.rooftopPoolDesc" },
+  { icon: Sun, nameKey: "hotel.beachSpot", descKey: "hotel.beachSpotDesc" },
+  { icon: Wifi, nameKey: "hotel.wifi", descKey: "hotel.wifiDesc" },
+  { icon: Dumbbell, nameKey: "hotel.yoga", descKey: "hotel.yogaDesc" },
+  { icon: Car, nameKey: "hotel.valet", descKey: "hotel.valetDesc" },
+  { icon: Users, nameKey: "hotel.concierge", descKey: "hotel.conciergeDesc" },
+  { icon: Bath, nameKey: "hotel.bath", descKey: "hotel.bathDesc" },
+  { icon: Tv, nameKey: "hotel.appleTv", descKey: "hotel.appleTvDesc" },
 ];
 
 // Room Image Carousel Component
@@ -149,6 +149,7 @@ function RoomImageCarousel({ images, name }: { images: string[], name: string })
 }
 
 export default function Hotel() {
+  const { t } = useTranslation();
   return (
     <div>
       {/* SEO Components */}
@@ -176,10 +177,10 @@ export default function Hotel() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold mb-4">
-              Luxury Boutique Hotel Rooms in Miami Beach
+              {t("hotel.luxuryBoutique")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Ocean view suites from $199/night. Reserved beach chairs & umbrella included. Rooftop pool, Art Deco design, Italian hospitality since 2012
+              {t("hotel.oceanViewSuites")}
             </p>
           </motion.div>
         </div>
@@ -218,7 +219,7 @@ export default function Hotel() {
                 {/* Content */}
                 <div className="lg:w-1/2">
                   <div className="text-[#FF8F75] font-medium mb-2">
-                    From <span className="text-3xl font-display">${room.price}</span>/night
+                    {t("hotel.from")} <span className="text-3xl font-display">${room.price}</span>{t("hotel.perNight")}
                   </div>
                   <h2 className="text-3xl font-display font-semibold text-[#4C5254] mb-4">
                     {room.name}
@@ -254,7 +255,7 @@ export default function Hotel() {
                     rel="noopener noreferrer"
                     className="px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded inline-block"
                   >
-                    Book This Room
+                    {t("hotel.bookThisRoom")}
                   </a>
                 </div>
               </motion.div>
@@ -268,18 +269,18 @@ export default function Hotel() {
         <div className="container">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-[#7FBFB3]/20 text-[#7FBFB3] text-sm font-medium rounded-full mb-4">
-              INCLUDED WITH EVERY STAY
+              {t("hotel.includedEveryStay")}
             </span>
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              $35 Daily Amenities Package
+              {t("hotel.amenitiesPackage")}
             </h2>
             <p className="text-lg text-[#666] max-w-2xl mx-auto">
-              Everything you need for the perfect Miami Beach experience, included with every reservation
+              {t("hotel.amenitiesDesc")}
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {amenities.map((amenity, index) => (
+            {amenityIcons.map((amenity, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -292,19 +293,19 @@ export default function Hotel() {
                   <amenity.icon className="text-[#FF8F75]" size={24} />
                 </div>
                 <h3 className="font-display font-semibold text-[#4C5254] mb-2">
-                  {amenity.name}
+                  {t(amenity.nameKey)}
                 </h3>
-                <p className="text-sm text-[#666]">{amenity.description}</p>
+                <p className="text-sm text-[#666]">{t(amenity.descKey)}</p>
               </motion.div>
             ))}
           </div>
 
           <div className="text-center mt-12">
             <p className="text-[#666] mb-2">
-              <span className="font-semibold text-[#FF8F75]">$35/night</span> · Incredible Value
+              <span className="font-semibold text-[#FF8F75]">{t("hotel.perNightValue")}</span> · {t("hotel.incredibleValue")}
             </p>
             <p className="text-sm text-[#999]">
-              The amenities package is automatically included with your stay. No need to add it separately—just book and enjoy!
+              {t("hotel.amenitiesAutoIncluded")}
             </p>
           </div>
         </div>
@@ -315,26 +316,26 @@ export default function Hotel() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#4C5254] mb-6">
-              Wake Up to Miami Beach's Best Brunch
+              {t("hotel.wakeUpBrunch")}
             </h2>
             <p className="text-lg text-[#666] mb-8">
-              Start your morning with our famous Lobster Eggs Benedict, served daily from 8AM to 4PM.
-              Our oceanfront restaurant is just steps from your room — no reservation needed for hotel guests.
+              {t("hotel.brunchDesc")}
+              {" "}{t("hotel.brunchSteps")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/brunch">
                 <span className="px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded inline-block">
-                  See Brunch Menu
+                  {t("hotel.seeBrunchMenu")}
                 </span>
               </Link>
               <Link href="/restaurant">
                 <span className="px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded inline-block">
-                  Full Restaurant Menu
+                  {t("hotel.fullRestaurantMenu")}
                 </span>
               </Link>
               <Link href="/gallery">
                 <span className="px-6 py-3 border-2 border-[#4C5254] text-[#4C5254] font-medium tracking-wide hover:bg-[#4C5254] hover:text-white transition-all duration-300 rounded inline-block">
-                  Photo Gallery
+                  {t("hotel.photoGallery")}
                 </span>
               </Link>
             </div>
@@ -353,21 +354,21 @@ export default function Hotel() {
           >
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
-                Best Price Guarantee
+                {t("hotel.bestPriceGuarantee")}
               </span>
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/20 text-[#FF8F75] rounded-full text-sm font-medium">
-                Free Cancellation
+                {t("hotel.freeCancellation")}
               </span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6">
-              Book Direct for the Best Rate
+              {t("hotel.bookDirect")}
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-4">
-              Skip the booking fees. Get the best rate when you book directly.
+              {t("hotel.skipFees")}
             </p>
             <p className="text-lg text-gray-500 max-w-xl mx-auto mb-10">
-              Rated 4.9★ by 2,500+ guests • TripAdvisor Travelers' Choice 2025
+              {t("hotel.rated")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -376,13 +377,13 @@ export default function Hotel() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
               >
-                Book Your Stay
+                {t("hotel.bookYourStay")}
               </a>
               <a
                 href="tel:+13055385529"
                 className="px-8 py-4 border-2 border-white text-white font-medium tracking-wide hover:bg-white hover:text-[#4C5254] transition-all duration-300 rounded"
               >
-                Call (305) 538-5529
+                {t("common.callPhone")}
               </a>
             </div>
           </motion.div>

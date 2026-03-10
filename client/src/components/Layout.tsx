@@ -1,5 +1,6 @@
 import { useState, useEffect, ReactNode } from "react";
 import { Link, useLocation } from "wouter";
+import { useTranslation } from "react-i18next";
 
 // Declare global tracking functions from index.html
 declare global {
@@ -10,6 +11,7 @@ declare global {
 }
 import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, MessageCircle, Music } from "lucide-react";
 import NewsletterSignup from "./NewsletterSignup";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -23,21 +25,22 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/brunch", label: "Brunch" },
-  { href: "/restaurant", label: "Restaurant" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/hotel", label: "Hotel" },
-  { href: "/blog", label: "Blog" },
-  { href: "/culture", label: "Culture" },
-  { href: "/contact", label: "Contact" },
-];
-
 export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();
+  const { t } = useTranslation();
+
+  const navLinks = [
+    { href: "/", label: t("nav.home") },
+    { href: "/brunch", label: t("nav.brunch") },
+    { href: "/restaurant", label: t("nav.restaurant") },
+    { href: "/gallery", label: t("nav.gallery") },
+    { href: "/hotel", label: t("nav.hotel") },
+    { href: "/blog", label: t("nav.blog") },
+    { href: "/culture", label: t("nav.culture") },
+    { href: "/contact", label: t("nav.contact") },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,8 +94,9 @@ export default function Layout({ children }: LayoutProps) {
               ))}
             </nav>
 
-            {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center gap-4">
+            {/* CTA Buttons + Language Switcher */}
+            <div className="hidden lg:flex items-center gap-3">
+              <LanguageSwitcher variant={isScrolled ? "light" : "dark"} />
               <a
                 href="https://www.opentable.com/the-local-house"
                 target="_blank"
@@ -100,7 +104,7 @@ export default function Layout({ children }: LayoutProps) {
                 onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')}
                 className="px-5 py-2.5 text-sm font-medium tracking-wide border-2 border-[#FF8F75] text-[#FF8F75] hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded"
               >
-                Book a Table
+                {t("header.bookTable")}
               </a>
               <a
                 href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
@@ -109,7 +113,7 @@ export default function Layout({ children }: LayoutProps) {
                 onClick={() => window.trackMewsClick?.()}
                 className="px-5 py-2.5 text-sm font-medium tracking-wide bg-[#FF8F75] text-white hover:bg-[#e67c63] transition-all duration-300 rounded"
               >
-                Book a Room
+                {t("header.bookRoom")}
               </a>
             </div>
 
@@ -119,7 +123,7 @@ export default function Layout({ children }: LayoutProps) {
               className={`lg:hidden p-2 ${
                 isScrolled ? "text-[#4C5254]" : "text-white"
               }`}
-              aria-label="Toggle menu"
+              aria-label={t("header.toggleMenu")}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -149,7 +153,10 @@ export default function Layout({ children }: LayoutProps) {
                     </span>
                   </Link>
                 ))}
-                <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-[#E5DED5]">
+                <div className="flex items-center justify-between pt-4 border-t border-[#E5DED5]">
+                  <LanguageSwitcher variant="light" />
+                </div>
+                <div className="flex flex-col gap-3 mt-2">
                   <a
                     href="https://www.opentable.com/the-local-house"
                     target="_blank"
@@ -157,7 +164,7 @@ export default function Layout({ children }: LayoutProps) {
                     onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')}
                     className="w-full py-3 text-center text-sm font-medium tracking-wide border-2 border-[#FF8F75] text-[#FF8F75] rounded"
                   >
-                    Book a Table
+                    {t("header.bookTable")}
                   </a>
                   <a
                     href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
@@ -166,7 +173,7 @@ export default function Layout({ children }: LayoutProps) {
                     onClick={() => window.trackMewsClick?.()}
                     className="w-full py-3 text-center text-sm font-medium tracking-wide bg-[#FF8F75] text-white rounded"
                   >
-                    Book a Room
+                    {t("header.bookRoom")}
                   </a>
                 </div>
               </nav>
@@ -191,20 +198,19 @@ export default function Layout({ children }: LayoutProps) {
                 className="h-20 w-auto mb-6"
               />
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                A boutique hotel and restaurant on Ocean Drive, Miami Beach.
-                Unconditional hospitality since 2012.
+                {t("footer.brand")}
               </p>
-              
+
               {/* Trust Badges */}
               <div className="flex flex-wrap gap-3 mb-6">
                 <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/10 rounded-full text-xs">
-                  <span className="text-yellow-400">★</span> 4.9 Rating
+                  <span className="text-yellow-400">★</span> {t("footer.rating")}
                 </span>
                 <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/10 rounded-full text-xs">
-                  🇮🇹 Italian-Owned
+                  🇮🇹 {t("footer.italianOwned")}
                 </span>
                 <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/10 rounded-full text-xs">
-                  🏆 2025 Choice
+                  🏆 {t("footer.choice2025")}
                 </span>
               </div>
               <div className="flex gap-4">
@@ -237,26 +243,26 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Hours */}
             <div>
-              <h4 className="text-lg font-display font-semibold mb-6">Hours</h4>
+              <h4 className="text-lg font-display font-semibold mb-6">{t("footer.hours")}</h4>
               <div className="space-y-4 text-sm">
                 <div>
-                  <p className="text-[#FF8F75] font-medium mb-1">Front Desk</p>
-                  <p className="text-gray-400">8:00 AM – 10:00 PM daily</p>
+                  <p className="text-[#FF8F75] font-medium mb-1">{t("footer.frontDesk")}</p>
+                  <p className="text-gray-400">{t("footer.frontDeskHours")}</p>
                 </div>
                 <div>
-                  <p className="text-[#FF8F75] font-medium mb-1">Brunch</p>
-                  <p className="text-gray-400">8:00 AM – 4:00 PM daily</p>
+                  <p className="text-[#FF8F75] font-medium mb-1">{t("footer.brunch")}</p>
+                  <p className="text-gray-400">{t("footer.brunchHours")}</p>
                 </div>
                 <div>
-                  <p className="text-[#FF8F75] font-medium mb-1">Dinner</p>
-                  <p className="text-gray-400">Wed-Sun 4:00 PM – 10:00 PM</p>
+                  <p className="text-[#FF8F75] font-medium mb-1">{t("footer.dinner")}</p>
+                  <p className="text-gray-400">{t("footer.dinnerHours")}</p>
                 </div>
               </div>
             </div>
 
             {/* Contact */}
             <div>
-              <h4 className="text-lg font-display font-semibold mb-6">Contact</h4>
+              <h4 className="text-lg font-display font-semibold mb-6">{t("footer.contact")}</h4>
               <div className="space-y-4 text-sm">
                 <a
                   href="https://maps.google.com/?q=400+Ocean+Dr,+Miami+Beach,+FL+33139"
@@ -286,7 +292,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-display font-semibold mb-6">Explore</h4>
+              <h4 className="text-lg font-display font-semibold mb-6">{t("footer.explore")}</h4>
               <nav className="space-y-3 text-sm">
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href}>
@@ -297,22 +303,22 @@ export default function Layout({ children }: LayoutProps) {
                 ))}
                 <Link href="/private-events">
                   <span className="block text-gray-400 hover:text-white transition-colors">
-                    Private Events
+                    {t("footer.privateEvents")}
                   </span>
                 </Link>
                 <Link href="/press">
                   <span className="block text-gray-400 hover:text-white transition-colors">
-                    Press & Awards
+                    {t("footer.pressAwards")}
                   </span>
                 </Link>
                 <Link href="/local-spots">
                   <span className="block text-gray-400 hover:text-white transition-colors">
-                    Things to Do Nearby
+                    {t("footer.thingsToDo")}
                   </span>
                 </Link>
                 <Link href="/leave-review">
                   <span className="block text-gray-400 hover:text-white transition-colors">
-                    Leave a Review
+                    {t("footer.leaveReview")}
                   </span>
                 </Link>
               </nav>
@@ -342,7 +348,7 @@ export default function Layout({ children }: LayoutProps) {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-400 hover:text-[#4285f4] transition-colors text-sm"
               >
-                <span className="font-medium">Google Reviews</span>
+                <span className="font-medium">{t("footer.googleReviews")}</span>
                 <span className="text-yellow-400">★ 4.8</span>
               </a>
               <a
@@ -362,17 +368,17 @@ export default function Layout({ children }: LayoutProps) {
         <div className="border-t border-gray-800">
           <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} The Local House. All rights reserved.
+              © {new Date().getFullYear()} The Local House. {t("footer.allRights")}
             </p>
             <div className="flex gap-6 text-sm">
               <Link href="/contact">
                 <span className="text-gray-500 hover:text-white transition-colors">
-                  Privacy Policy
+                  {t("footer.privacyPolicy")}
                 </span>
               </Link>
               <Link href="/contact">
                 <span className="text-gray-500 hover:text-white transition-colors">
-                  Terms of Service
+                  {t("footer.termsOfService")}
                 </span>
               </Link>
             </div>
@@ -386,7 +392,7 @@ export default function Layout({ children }: LayoutProps) {
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:bg-[#20BA5C] transition-all duration-300 hover:scale-110"
-        aria-label="Chat on WhatsApp"
+        aria-label={t("footer.chatWhatsApp")}
       >
         <MessageCircle className="text-white" size={28} fill="white" />
       </a>
