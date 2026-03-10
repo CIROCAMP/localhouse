@@ -295,9 +295,9 @@ export const seoConfigs = {
     schema: faqSchema,
   },
   brunch: {
-    title: "Best Brunch Miami Beach | #1 South Beach Brunch | Lobster Eggs Benedict | The Local House",
+    title: "Best Brunch Miami Beach | #1 South Beach Brunch | The Local House",
     description: "Voted best brunch in Miami Beach & South Beach. Famous Lobster Eggs Benedict ($33), bottomless mimosas, Ocean Drive views. Open 8AM-4PM daily. Reserve on OpenTable.",
-    keywords: "best brunch miami beach, brunch miami beach, best brunch south beach, brunch south beach, south beach brunch, breakfast near me miami, lobster eggs benedict, bottomless mimosas, weekend brunch miami beach",
+    keywords: "best brunch miami beach, brunch miami beach, best brunch south beach, brunch south beach, south beach brunch, breakfast near me miami, lobster eggs benedict, bottomless mimosas, weekend brunch miami beach, sunday brunch miami beach, bottomless brunch miami beach, brunch ocean drive, brunch near me miami beach, brunch reservations miami beach",
     canonicalUrl: "https://www.localhouse.com/brunch",
     ogImage: "/images/brunch-spread.jpg",
     ogType: "restaurant" as const,
