@@ -210,7 +210,7 @@ export default function Layout({ children }: LayoutProps) {
                   🇮🇹 {t("footer.italianOwned")}
                 </span>
                 <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/10 rounded-full text-xs">
-                  🏆 {t("footer.choice2025")}
+                  🏆 {t("footer.choice2026")}
                 </span>
               </div>
               <div className="flex gap-4">
@@ -371,12 +371,12 @@ export default function Layout({ children }: LayoutProps) {
               © {new Date().getFullYear()} The Local House. {t("footer.allRights")}
             </p>
             <div className="flex gap-6 text-sm">
-              <Link href="/contact">
+              <Link href="/privacy-policy">
                 <span className="text-gray-500 hover:text-white transition-colors">
                   {t("footer.privacyPolicy")}
                 </span>
               </Link>
-              <Link href="/contact">
+              <Link href="/terms-of-service">
                 <span className="text-gray-500 hover:text-white transition-colors">
                   {t("footer.termsOfService")}
                 </span>

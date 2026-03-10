@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 // Declare global tracking functions
 declare global {
@@ -59,16 +60,17 @@ const brunchHighlights = [
   },
 ];
 
-const stats = [
-  { icon: Star, value: "4.9", label: "Average Rating" },
-  { icon: Users, value: "2,500+", label: "Happy Guests" },
-  { icon: Award, value: "#1", label: "Brunch in SoBe" },
+const getStats = (t: (key: string) => string) => [
+  { icon: Star, value: "4.9", label: t("brunch.avgRating") },
+  { icon: Users, value: t("brunch.happyGuestsCount"), label: t("brunch.happyGuests") },
+  { icon: Award, value: t("brunch.number1"), label: t("brunch.brunchInSoBe") },
 ];
 
 function BrunchNewsletter() {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -106,10 +108,10 @@ function BrunchNewsletter() {
             <Mail className="text-[#FF8F75]" size={24} />
           </div>
           <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#4C5254] mb-4">
-            Never Miss a Brunch Special
+            {t("newsletter.neverMiss")}
           </h2>
           <p className="text-[#666] mb-8">
-            Get exclusive updates on seasonal menus, chef's specials, and VIP brunch events delivered to your inbox.
+            {t("newsletter.exclusiveUpdates")}
           </p>
 
           {status === "success" ? (
@@ -118,8 +120,8 @@ function BrunchNewsletter() {
               animate={{ opacity: 1, scale: 1 }}
               className="bg-[#FF8F75]/10 border border-[#FF8F75]/30 rounded-lg p-8"
             >
-              <p className="text-[#FF8F75] text-xl font-display font-semibold mb-2">You're on the list!</p>
-              <p className="text-[#666]">Check your inbox for a welcome from The Local House.</p>
+              <p className="text-[#FF8F75] text-xl font-display font-semibold mb-2">{t("newsletter.youreOnTheList")}</p>
+              <p className="text-[#666]">{t("newsletter.checkInbox")}</p>
             </motion.div>
           ) : (
             <div>
@@ -128,14 +130,14 @@ function BrunchNewsletter() {
                   type="text"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  placeholder="First name"
+                  placeholder={t("newsletter.firstName")}
                   className="px-5 py-4 bg-white border border-[#E5DED5] rounded-lg text-[#4C5254] placeholder-[#999] text-sm focus:outline-none focus:border-[#FF8F75] sm:w-36"
                 />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email address"
+                  placeholder={t("newsletter.emailAddress")}
                   required
                   className="flex-1 px-5 py-4 bg-white border border-[#E5DED5] rounded-lg text-[#4C5254] placeholder-[#999] text-sm focus:outline-none focus:border-[#FF8F75]"
                 />
@@ -144,13 +146,13 @@ function BrunchNewsletter() {
                   disabled={status === "loading"}
                   className="px-8 py-4 bg-[#FF8F75] text-white font-semibold text-sm rounded-lg hover:bg-[#e67c63] transition-all duration-300 disabled:opacity-50 whitespace-nowrap"
                 >
-                  {status === "loading" ? "Joining..." : "Subscribe"}
+                  {status === "loading" ? t("newsletter.joining") : t("newsletter.subscribe")}
                 </button>
               </form>
               {status === "error" && (
-                <p className="text-red-500 text-sm mt-3">Something went wrong. Please try again.</p>
+                <p className="text-red-500 text-sm mt-3">{t("newsletter.errorMessage")}</p>
               )}
-              <p className="text-[#999] text-xs mt-4">No spam, just brunch. Unsubscribe anytime.</p>
+              <p className="text-[#999] text-xs mt-4">{t("newsletter.noSpam")}</p>
             </div>
           )}
         </motion.div>
@@ -160,12 +162,14 @@ function BrunchNewsletter() {
 }
 
 export default function Brunch() {
+  const { t } = useTranslation();
+  const stats = getStats(t);
   return (
     <div>
       {/* SEO Components */}
       <SEOHead {...seoConfigs.brunch} />
       <SEOSchema page="brunch" />
-      
+
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-[#FAF7F2]">
         <div className="absolute inset-0">
@@ -187,7 +191,7 @@ export default function Brunch() {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/90 rounded-full text-sm font-medium mb-6">
-              🍳 Voted Best Brunch in South Beach
+              🍳 {t("brunch.votedBest")}
             </span>
           </motion.div>
 
@@ -197,7 +201,7 @@ export default function Brunch() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold mb-6"
           >
-            Best Brunch in Miami Beach
+            {t("brunch.bestBrunchMiami")}
           </motion.h1>
 
           <motion.p
@@ -206,7 +210,7 @@ export default function Brunch() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-white/90 mb-4"
           >
-            An Ocean Drive Tradition Since 2012
+            {t("brunch.oceanDriveTradition")}
           </motion.p>
 
           <motion.div
@@ -216,7 +220,7 @@ export default function Brunch() {
             className="flex items-center justify-center gap-3 mb-10"
           >
             <Clock className="text-[#FF8F75]" size={24} />
-            <span className="text-xl font-medium">Daily 8AM – 4PM</span>
+            <span className="text-xl font-medium">{t("brunch.daily8am")}</span>
           </motion.div>
 
           <motion.div
@@ -231,7 +235,7 @@ export default function Brunch() {
               rel="noopener noreferrer"
               className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded inline-block"
             >
-              Reserve for Brunch
+              {t("brunch.reserveForBrunch")}
             </a>
           </motion.div>
         </div>
@@ -271,7 +275,7 @@ export default function Brunch() {
           <div className="max-w-3xl mx-auto text-center">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-6">
-              Where Brunch Becomes an Experience
+              {t("brunch.whereBrunchBecomes")}
             </h2>
             <p className="text-lg text-[#666] leading-relaxed mb-6">
               At The Local House, brunch isn't just a meal—it's our way of welcoming you in.
@@ -296,10 +300,10 @@ export default function Brunch() {
           <div className="text-center mb-16">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              Brunch Favorites
+              {t("brunch.brunchFavorites")}
             </h2>
             <p className="text-lg text-[#666]">
-              Fresh, local ingredients crafted into unforgettable dishes
+              {t("brunch.freshLocal")}
             </p>
           </div>
 
@@ -334,7 +338,7 @@ export default function Brunch() {
           <div className="text-center mt-12">
             <Link href="/restaurant">
               <span className="text-[#FF8F75] font-medium hover:underline">
-                View Full Menu →
+                {t("brunch.viewFullMenu")}
               </span>
             </Link>
           </div>
@@ -342,13 +346,13 @@ export default function Brunch() {
           {/* Brunch Nearby Link */}
           <div className="mt-12 bg-[#FAF7F2] p-8 rounded-lg text-center">
             <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-4">
-              Looking for brunch nearby?
+              {t("brunch.lookingForBrunch")}
             </h3>
             <p className="text-[#666] mb-6 max-w-2xl mx-auto">
-              The Local House is your destination for the best brunch in Miami Beach. Located in South of Fifth, just steps from South Beach.
+              {t("brunch.localHouseDestination")}
             </p>
             <Link href="/brunch-near-me-miami-beach" className="inline-block px-6 py-3 bg-[#FF8F75] text-white font-medium rounded hover:bg-[#e67c63] transition-colors">
-              Find Brunch Near You
+              {t("brunch.findBrunchNear")}
             </Link>
           </div>
         </div>
@@ -367,7 +371,7 @@ export default function Brunch() {
               >
                 <div className="w-16 h-px bg-[#FF8F75] mb-6" />
                 <h2 className="text-4xl font-display font-semibold text-white mb-6">
-                  Signature Brunch Cocktails
+                  {t("brunch.signatureCocktails")}
                 </h2>
                 <p className="text-gray-400 leading-relaxed mb-8">
                   No brunch is complete without our craft cocktails. From our famous Bloody Mary
@@ -415,7 +419,7 @@ export default function Brunch() {
           <div className="max-w-3xl mx-auto">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-8 text-center">
-              Brunch on Ocean Drive
+              {t("brunch.brunchOnOceanDrive")}
             </h2>
             <div className="prose prose-lg text-[#666] leading-relaxed space-y-6">
               <p>
@@ -482,10 +486,10 @@ export default function Brunch() {
           <div className="max-w-3xl mx-auto">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-4 text-center">
-              Brunch FAQ
+              {t("brunch.brunchFAQ")}
             </h2>
             <p className="text-lg text-[#666] text-center mb-12">
-              Everything you need to know about brunch at The Local House
+              {t("brunch.faqSubtitle")}
             </p>
 
             <div className="space-y-4">
@@ -558,13 +562,13 @@ export default function Brunch() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-6">
-              Join Us for Miami's #1 Brunch
+              {t("brunch.joinUs")}
             </h2>
             <p className="text-xl text-[#666] max-w-2xl mx-auto mb-4">
-              Thousands of happy guests have made us their favorite brunch spot on Ocean Drive.
+              {t("brunch.thousandsHappy")}
             </p>
             <p className="text-lg text-[#999] max-w-xl mx-auto mb-10">
-              Daily 8AM – 4PM · Walk-ins welcome, reservations recommended
+              {t("brunch.walkIns")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -573,13 +577,13 @@ export default function Brunch() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
               >
-                Reserve on OpenTable
+                {t("brunch.reserveOpenTable")}
               </a>
               <a
                 href="tel:+13055385529"
                 className="px-8 py-4 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded"
               >
-                Call (305) 538-5529
+                {t("brunch.callUs")}
               </a>
             </div>
           </motion.div>

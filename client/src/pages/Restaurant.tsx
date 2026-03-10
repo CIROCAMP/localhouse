@@ -400,9 +400,7 @@ export default function Restaurant() {
                 {t("restaurant.reserveYourTable")}
               </h2>
               <p className="text-[#666] leading-relaxed mb-8">
-                Whether you're joining us for our legendary brunch or an intimate dinner,
-                we recommend making a reservation to ensure the best experience. Walk-ins
-                are welcome but subject to availability.
+                {t("restaurant.reserveDesc")}
               </p>
               <div className="flex flex-col gap-3 md:flex-row md:gap-4">
                 <a
