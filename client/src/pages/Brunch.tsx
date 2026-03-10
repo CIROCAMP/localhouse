@@ -278,17 +278,10 @@ export default function Brunch() {
               {t("brunch.whereBrunchBecomes")}
             </h2>
             <p className="text-lg text-[#666] leading-relaxed mb-6">
-              At The Local House, brunch isn't just a meal—it's our way of welcoming you in.
-              Tucked into the South of Fifth neighborhood, just steps from the beach, we're
-              known for creating a relaxed, coastal setting where good food and genuine
-              hospitality come first.
+              {t("brunch.storyP1")}
             </p>
             <p className="text-lg text-[#666] leading-relaxed">
-              Our menu highlights comforting favorites with fresh, local touches—from our
-              legendary lobster eggs benedict and fluffy pancakes to lighter, seasonal plates
-              that feel right at home by the ocean. Whether you join us on the patio with a
-              mimosa in hand or settle into our cozy dining room, our team is here to make
-              you feel cared for.
+              {t("brunch.storyP2")}
             </p>
           </div>
         </div>
@@ -374,8 +367,7 @@ export default function Brunch() {
                   {t("brunch.signatureCocktails")}
                 </h2>
                 <p className="text-gray-400 leading-relaxed mb-8">
-                  No brunch is complete without our craft cocktails. From our famous Bloody Mary
-                  to refreshing mimosas, we've got the perfect pairing for your meal.
+                  {t("brunch.cocktailsIntro")}
                 </p>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center border-b border-gray-700 pb-3">
@@ -422,59 +414,21 @@ export default function Brunch() {
               {t("brunch.brunchOnOceanDrive")}
             </h2>
             <div className="prose prose-lg text-[#666] leading-relaxed space-y-6">
-              <p>
-                Looking for the perfect <strong>brunch in Miami Beach</strong>? The Local House
-                offers an unmatched brunch experience right on Ocean Drive, in the heart of the exclusive
-                South of Fifth neighborhood. Since 2012, our Italian-owned restaurant has been serving
-                Miami Beach's most talked-about brunch — combining fresh, locally-sourced ingredients
-                with Mediterranean flair and genuine hospitality.
-              </p>
-              <p>
-                Our <strong>weekend brunch in Miami Beach</strong> has become a tradition for locals and
-                visitors alike. Every Saturday and Sunday, guests fill our sun-drenched patio and cozy
-                dining room to enjoy dishes like our legendary <strong>Lobster Eggs Benedict</strong> —
-                butter-poached Maine lobster over perfectly poached eggs with silky hollandaise on a
-                toasted English muffin. Paired with a glass of prosecco or a craft cocktail, it's the ultimate
-                South Beach brunch experience.
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: t("brunch.seoP1") }} />
+              <p dangerouslySetInnerHTML={{ __html: t("brunch.seoP2") }} />
 
               <h2 className="text-3xl font-display font-semibold text-[#4C5254] !mt-12 !mb-6">
-                Sunday Brunch Miami Beach — A Local Tradition
+                {t("brunch.sundayBrunchTitle")}
               </h2>
-              <p>
-                <strong>Sunday brunch at The Local House</strong> is more than a meal — it's a Miami Beach
-                ritual. Whether you're celebrating a birthday, catching up with friends, or enjoying a
-                lazy morning after a night on South Beach, our team makes every visit feel special.
-                We serve brunch <strong>daily from 8AM to 4PM</strong>, so you never have to miss out —
-                even on a Tuesday.
-              </p>
-              <p>
-                Our menu goes beyond the classics. From fluffy buttermilk pancakes topped with seasonal
-                berries to our indulgent Breakfast Smash Burger with Wagyu beef and a fried egg, there's
-                something for every craving. Add a craft Bloody Mary, an espresso martini, or a classic
-                mimosa — the perfect way to start your day in Miami Beach.
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: t("brunch.seoP3") }} />
+              <p>{t("brunch.seoP4")}</p>
 
               <h2 className="text-3xl font-display font-semibold text-[#4C5254] !mt-12 !mb-6">
-                Brunch with Ocean Drive Views
+                {t("brunch.oceanDriveViewsTitle")}
               </h2>
-              <p>
-                What sets The Local House apart from every other <strong>brunch spot in Miami Beach</strong>?
-                Location, food, and soul. Sitting at 400 Ocean Drive, you're steps from the sand,
-                surrounded by Art Deco architecture and tropical palms. Our patio offers prime people-watching
-                while you sip your morning coffee or afternoon cocktail.
-              </p>
-              <p>
-                We've been rated <strong>#1 Brunch in South Beach</strong> with a 4.9-star average across
-                over 2,500 reviews. Guests consistently praise our warm service, generous portions, and
-                the unmistakable quality of every plate that leaves our kitchen. Whether you're a first-time
-                visitor or a regular, the Local House team treats you like family.
-              </p>
-              <p>
-                Ready to taste why thousands choose us every week? <strong>Reserve your brunch table
-                on OpenTable</strong> — especially for weekends, when our tables fill up fast. Walk-ins
-                are always welcome, but a reservation guarantees your spot at Miami Beach's best brunch.
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: t("brunch.seoP5") }} />
+              <p dangerouslySetInnerHTML={{ __html: t("brunch.seoP6") }} />
+              <p dangerouslySetInnerHTML={{ __html: t("brunch.seoP7") }} />
             </div>
           </div>
         </div>
@@ -494,38 +448,14 @@ export default function Brunch() {
 
             <div className="space-y-4">
               {[
-                {
-                  q: "Is Local House the best brunch in Miami Beach?",
-                  a: "Yes — The Local House has been voted #1 Brunch in South Beach and Miami Beach, with a 4.9-star rating from over 2,500 guests. Our famous Lobster Eggs Benedict, craft cocktails, and Ocean Drive patio dining have made us the go-to brunch destination since 2012. We've been featured in Eater Miami, Miami New Times, and recommended by thousands of locals and visitors."
-                },
-                {
-                  q: "What cocktails do you serve at brunch?",
-                  a: "We offer a curated brunch cocktail menu including classic mimosas ($14 or $45 for a bottle of prosecco), our famous homemade Bloody Mary ($16), and the Wake Me Up espresso cocktail ($18). You can also enjoy our full cocktail menu with craft creations and seasonal specials."
-                },
-                {
-                  q: "What time does brunch start at The Local House?",
-                  a: "Brunch is served daily from 8:00 AM to 4:00 PM — seven days a week, including weekdays. Whether you're an early riser or prefer a late morning, we've got you covered. Our kitchen serves the full brunch menu during all hours."
-                },
-                {
-                  q: "Do I need a reservation for weekend brunch?",
-                  a: "We highly recommend making a reservation through OpenTable for weekend brunch (Saturday and Sunday), as tables fill up quickly — especially between 10AM and 1PM. Walk-ins are always welcome, but wait times during peak hours can be 20–40 minutes. Weekday brunch is more relaxed and walk-ins are easily accommodated."
-                },
-                {
-                  q: "Where is The Local House located?",
-                  a: "The Local House is located at 400 Ocean Drive, in the South of Fifth (SoFi) neighborhood of Miami Beach, FL 33139. We're just steps from the beach, South Pointe Park, and Lummus Park. The restaurant is on the ground floor of our boutique hotel, with both indoor dining and a beautiful outdoor patio on Ocean Drive."
-                },
-                {
-                  q: "What are the most popular brunch dishes?",
-                  a: "Our most ordered brunch dishes are the Lobster Eggs Benedict ($33) — butter-poached Maine lobster with perfectly poached eggs and silky hollandaise — followed by the Fluffy Buttermilk Pancakes ($18), the Avocado Toast ($16), and the Breakfast Smash Burger ($22) with Wagyu beef and a fried egg. The Lobster Roll ($38) is also a guest favorite."
-                },
-                {
-                  q: "Is the brunch patio pet-friendly?",
-                  a: "Yes! Our outdoor patio on Ocean Drive is pet-friendly. Bring your furry friend and enjoy brunch al fresco. We provide water bowls for four-legged guests. Please note that pets are only allowed on the outdoor patio, not inside the restaurant."
-                },
-                {
-                  q: "Can I host a private brunch event at The Local House?",
-                  a: "Absolutely! We host private brunch events including birthdays, bridal showers, corporate brunches, and celebrations. We can accommodate groups of up to 40 guests with customized menus and beverage packages. Contact us at (305) 538-5529 or visit our private events page for more information."
-                }
+                { q: t("brunch.faq1Q"), a: t("brunch.faq1A") },
+                { q: t("brunch.faq2Q"), a: t("brunch.faq2A") },
+                { q: t("brunch.faq3Q"), a: t("brunch.faq3A") },
+                { q: t("brunch.faq4Q"), a: t("brunch.faq4A") },
+                { q: t("brunch.faq5Q"), a: t("brunch.faq5A") },
+                { q: t("brunch.faq6Q"), a: t("brunch.faq6A") },
+                { q: t("brunch.faq7Q"), a: t("brunch.faq7A") },
+                { q: t("brunch.faq8Q"), a: t("brunch.faq8A") }
               ].map((faq, index) => (
                 <motion.details
                   key={index}
