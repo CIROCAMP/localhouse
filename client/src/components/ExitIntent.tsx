@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { X, Gift, Clock, Star } from "lucide-react";
 
 /*
@@ -9,6 +10,7 @@ import { X, Gift, Clock, Star } from "lucide-react";
  */
 
 export function ExitIntentPopup() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
 
@@ -86,7 +88,7 @@ export function ExitIntentPopup() {
                   <div className="text-center text-white">
                     <Gift className="w-16 h-16 mx-auto mb-4 opacity-90" />
                     <h3 className="text-2xl font-display font-semibold">
-                      Wait! Don't Leave Yet
+                      {t("exitIntent.waitDontLeave")}
                     </h3>
                   </div>
                 </div>
@@ -101,21 +103,21 @@ export function ExitIntentPopup() {
               {/* Content */}
               <div className="p-8 text-center">
                 <h4 className="text-2xl font-display font-semibold text-[#4C5254] mb-3">
-                  Get 10% Off Your First Stay
+                  {t("exitIntent.get10Off")}
                 </h4>
                 <p className="text-[#666] mb-6">
-                  Book directly and enjoy exclusive perks: free breakfast, late checkout, and the best rate guaranteed.
+                  {t("exitIntent.bookDirectly")}
                 </p>
 
                 {/* Trust Signals */}
                 <div className="flex justify-center gap-6 mb-6 text-sm text-[#999]">
                   <div className="flex items-center gap-1">
                     <Star className="w-4 h-4 text-[#FF8F75]" />
-                    <span>4.9 Rating</span>
+                    <span>{t("exitIntent.rating")}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Clock className="w-4 h-4 text-[#FF8F75]" />
-                    <span>Free Cancellation</span>
+                    <span>{t("exitIntent.freeCancellation")}</span>
                   </div>
                 </div>
 
@@ -127,19 +129,19 @@ export function ExitIntentPopup() {
                     rel="noopener noreferrer"
                     className="block w-full py-4 bg-[#FF8F75] text-white font-medium rounded-lg hover:bg-[#e67c63] transition-colors"
                   >
-                    Claim My 10% Discount
+                    {t("exitIntent.claimDiscount")}
                   </a>
                   <button
                     onClick={handleClose}
                     className="block w-full py-3 text-[#999] hover:text-[#666] transition-colors text-sm"
                   >
-                    No thanks, I'll pay full price
+                    {t("exitIntent.noThanks")}
                   </button>
                 </div>
 
                 {/* Urgency */}
                 <p className="mt-4 text-xs text-[#FF8F75]">
-                  ⏰ Offer expires in 24 hours
+                  ⏰ {t("exitIntent.offerExpires")}
                 </p>
               </div>
             </div>
@@ -152,6 +154,7 @@ export function ExitIntentPopup() {
 
 // Newsletter signup popup (alternative version)
 export function NewsletterPopup() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState("");
 
@@ -191,17 +194,17 @@ export function NewsletterPopup() {
         <X className="w-5 h-5" />
       </button>
       <h4 className="text-lg font-display font-semibold text-[#4C5254] mb-2">
-        Stay in the Loop
+        {t("newsletter.stayInTheLoop")}
       </h4>
       <p className="text-sm text-[#666] mb-4">
-        Get exclusive offers, event invites, and Miami Beach insider tips.
+        {t("newsletter.exclusiveOffers")}
       </p>
       <form onSubmit={handleSubmit} className="space-y-3">
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
+          placeholder={t("newsletter.enterEmail")}
           className="w-full px-4 py-2 border border-[#E5DED5] rounded focus:outline-none focus:border-[#FF8F75]"
           required
         />
@@ -209,7 +212,7 @@ export function NewsletterPopup() {
           type="submit"
           className="w-full py-2 bg-[#FF8F75] text-white font-medium rounded hover:bg-[#e67c63] transition-colors"
         >
-          Subscribe
+          {t("newsletter.subscribe")}
         </button>
       </form>
     </motion.div>

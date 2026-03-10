@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const SUPABASE_URL = "https://kzqvdwibtuoronyphiuq.supabase.co";
 
@@ -8,6 +9,7 @@ export default function NewsletterSignup() {
   const [firstName, setFirstName] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,16 +26,16 @@ export default function NewsletterSignup() {
       const data = await res.json();
       if (res.ok) {
         setStatus("success");
-        setMessage("You're in! Check your inbox for a welcome email.");
+        setMessage(t("newsletter.successMessage"));
         setEmail("");
         setFirstName("");
       } else {
         setStatus("error");
-        setMessage(data.error || "Something went wrong. Please try again.");
+        setMessage(data.error || t("newsletter.errorMessage"));
       }
     } catch {
       setStatus("error");
-      setMessage("Something went wrong. Please try again.");
+      setMessage(t("newsletter.errorMessage"));
     }
   };
 
@@ -44,11 +46,11 @@ export default function NewsletterSignup() {
           <div className="flex items-center justify-center gap-2 mb-4">
             <Mail className="text-[#FF8F75]" size={24} />
             <h3 className="text-xl font-display font-semibold text-white">
-              Stay in the Know
+              {t("newsletter.stayInTheKnow")}
             </h3>
           </div>
           <p className="text-gray-400 text-sm mb-6">
-            Get first access to our exclusive monthly events: pizza pop-ups with guest pizzaiolos, wine club tastings, scotch evenings, and Michelin-star chef dinners. Limited seats—subscribers get priority.
+            {t("newsletter.description")}
           </p>
 
           {status === "success" ? (
@@ -59,14 +61,14 @@ export default function NewsletterSignup() {
                 type="text"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                placeholder="First name"
+                placeholder={t("newsletter.firstName")}
                 className="px-4 py-3 bg-white/20 border border-gray-500 rounded text-white placeholder-gray-400 text-sm focus:outline-none focus:border-[#FF8F75] sm:w-32"
               />
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
+                placeholder={t("newsletter.emailAddress")}
                 required
                 className="flex-1 px-4 py-3 bg-white/20 border border-gray-500 rounded text-white placeholder-gray-400 text-sm focus:outline-none focus:border-[#FF8F75]"
               />
@@ -75,7 +77,7 @@ export default function NewsletterSignup() {
                 disabled={status === "loading"}
                 className="px-6 py-3 bg-[#FF8F75] text-white font-medium text-sm rounded hover:bg-[#e67c63] transition-colors disabled:opacity-50"
               >
-                {status === "loading" ? "Subscribing..." : "Subscribe"}
+                {status === "loading" ? t("newsletter.subscribing") : t("newsletter.subscribe")}
               </button>
             </form>
           )}
@@ -85,7 +87,7 @@ export default function NewsletterSignup() {
           )}
 
           <p className="text-gray-600 text-xs mt-4">
-            You'll receive invites to our exclusive events and special updates. Unsubscribe anytime.
+            {t("newsletter.privacyNote")}
           </p>
         </div>
       </div>

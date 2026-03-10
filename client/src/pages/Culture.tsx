@@ -8,58 +8,61 @@ declare global {
     trackMewsClick?: () => void;
   }
 }
+import { useTranslation } from "react-i18next";
 import { Heart, Users, Leaf, Utensils } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 
 export default function Culture() {
+  const { t } = useTranslation();
+
   const values = [
     {
       icon: Heart,
-      title: "Unconditional Hospitality",
-      description: "We treat every guest like family. Your comfort and happiness are our priority.",
+      title: t("culture.unconditionalHospitality"),
+      description: t("culture.unconditionalDesc"),
     },
     {
       icon: Users,
-      title: "People for People",
-      description: "Our team is passionate about creating meaningful connections and memorable experiences.",
+      title: t("culture.peopleForPeople"),
+      description: t("culture.peopleDesc"),
     },
     {
       icon: Leaf,
-      title: "Authentic Italian Heart",
-      description: "Founded by an Italian owner in 2012, we blend Mediterranean warmth with Miami's vibrant energy.",
+      title: t("culture.authenticItalian"),
+      description: t("culture.authenticDesc"),
     },
     {
       icon: Utensils,
-      title: "Fresh & Local",
-      description: "We celebrate coastal cuisine with fresh, local ingredients and traditional Italian techniques.",
+      title: t("culture.freshLocal"),
+      description: t("culture.freshLocalDesc"),
     },
   ];
 
   const timeline = [
     {
       year: "2009",
-      title: "The Vision",
-      description: "An Italian real estate investor discovers 400 Ocean Drive and falls in love with its potential.",
+      title: t("culture.timelineVision"),
+      description: t("culture.timelineVisionDesc"),
     },
     {
       year: "2012",
-      title: "The Beginning",
-      description: "The Local House opens its doors. 18 boutique rooms and a restaurant dedicated to authentic hospitality.",
+      title: t("culture.timelineBeginning"),
+      description: t("culture.timelineBeginningDesc"),
     },
     {
       year: "2015",
-      title: "The Recognition",
-      description: "Our famous Lobster Eggs Benedict becomes legendary. Brunch becomes our signature experience.",
+      title: t("culture.timelineRecognition"),
+      description: t("culture.timelineRecognitionDesc"),
     },
     {
       year: "2020",
-      title: "The Challenge",
-      description: "We adapt and thrive, maintaining our commitment to our guests and community during difficult times.",
+      title: t("culture.timelineChallenge"),
+      description: t("culture.timelineChallengeDesc"),
     },
     {
       year: "2025",
-      title: "The Legacy",
-      description: "13 years of unconditional hospitality. 4.9-star rating. 2,500+ happy guests. Still growing.",
+      title: t("culture.timelineLegacy"),
+      description: t("culture.timelineLegacyDesc"),
     },
   ];
 
@@ -92,10 +95,10 @@ export default function Culture() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-display font-semibold mb-4">
-              Our Culture
+              {t("culture.title")}
             </h1>
             <p className="text-xl text-white/80">
-              Where Italian warmth meets Miami vibrancy
+              {t("culture.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -113,10 +116,10 @@ export default function Culture() {
           >
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              Our Core Values
+              {t("culture.coreValues")}
             </h2>
             <p className="text-lg text-[#666]">
-              The principles that guide everything we do
+              {t("culture.coreValuesSubtitle")}
             </p>
           </motion.div>
 
@@ -155,7 +158,7 @@ export default function Culture() {
           >
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              Our Story
+              {t("culture.ourStory")}
             </h2>
           </motion.div>
 
@@ -167,16 +170,16 @@ export default function Culture() {
             className="bg-white p-8 md:p-12 rounded-lg mb-12"
           >
             <p className="text-[#666] leading-relaxed mb-6 text-lg">
-              In 2009, during uncertain times when many saw obstacles, an Italian entrepreneur saw opportunity. Walking down Ocean Drive in Miami Beach, he discovered 400 Ocean Drive—a weathered Art Deco building with faded coral walls and sun-bleached shutters. While others saw a property needing work, he saw something different: <span className="italic text-[#FF8F75]">potential, character, and a soul waiting to be awakened.</span>
+              {t("culture.storyP1_1")}<span className="italic text-[#FF8F75]">{t("culture.storyP1_highlight")}</span>
             </p>
             <p className="text-[#666] leading-relaxed mb-6 text-lg">
-              It was love at first sight.
+              {t("culture.storyP2")}
             </p>
             <p className="text-[#666] leading-relaxed mb-6 text-lg">
-              What followed was a labor of love spanning years. Every detail was considered with the passion of an Italian craftsman—from carefully restored architectural elements to the warm hospitality that would become the hotel's signature. He didn't just renovate a building; he breathed life into it.
+              {t("culture.storyP3")}
             </p>
             <p className="text-[#666] leading-relaxed text-lg">
-              Today, The Local House stands as a testament to that vision: a boutique hotel where Italian warmth meets Miami vibrancy, where every guest is treated like family, and where the famous brunch has become a beloved tradition for locals and travelers alike.
+              {t("culture.storyP4")}
             </p>
           </motion.div>
 
@@ -222,19 +225,19 @@ export default function Culture() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-display font-semibold mb-4">
-              We are People for People
+              {t("culture.weArePeople")}
             </h2>
             <p className="text-xl text-white/90 leading-relaxed mb-8 italic">
-              Driven by a genuine passion for Hospitality and good food.
+              {t("culture.drivenByPassion")}
             </p>
             <p className="text-lg text-white/90 leading-relaxed mb-8">
-              We believe in the simple things in life: a home-cooked meal, a walk on the beach, and a warm tête-à-tête conversation. We express our gratitude in writing and we pride ourselves in remembering names, drink orders, and table preferences.
+              {t("culture.philosophyP1")}
             </p>
             <p className="text-lg text-white/90 leading-relaxed mb-8">
-              We are happy you're here and we hope you'll become a fan.
+              {t("culture.philosophyP2")}
             </p>
             <p className="text-2xl font-display italic mt-8">
-              With love,<br />The Local House
+              {t("culture.withLove")}<br />{t("culture.theLocalHouse")}
             </p>
           </motion.div>
         </div>
@@ -250,10 +253,10 @@ export default function Culture() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#4C5254] mb-6">
-              Experience Our Culture
+              {t("culture.experienceCulture")}
             </h2>
             <p className="text-lg text-[#666] mb-8 max-w-2xl mx-auto">
-              Join us for brunch, dinner, or a stay at our boutique hotel. Become part of our story.
+              {t("culture.joinUsText")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a
@@ -262,7 +265,7 @@ export default function Culture() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
               >
-                Reserve for Brunch
+                {t("culture.reserveForBrunch")}
               </a>
               <a
                 href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
@@ -270,17 +273,17 @@ export default function Culture() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded"
               >
-                Book a Room
+                {t("common.bookRoom")}
               </a>
             </div>
             <div className="flex flex-wrap gap-4 justify-center text-sm">
-              <Link href="/brunch" className="text-[#FF8F75] hover:underline">Famous Brunch Menu</Link>
+              <Link href="/brunch" className="text-[#FF8F75] hover:underline">{t("culture.famousBrunchMenu")}</Link>
               <span className="text-[#ccc]">|</span>
-              <Link href="/restaurant" className="text-[#FF8F75] hover:underline">Restaurant & Bar</Link>
+              <Link href="/restaurant" className="text-[#FF8F75] hover:underline">{t("culture.restaurantBar")}</Link>
               <span className="text-[#ccc]">|</span>
-              <Link href="/hotel" className="text-[#FF8F75] hover:underline">Boutique Hotel</Link>
+              <Link href="/hotel" className="text-[#FF8F75] hover:underline">{t("culture.boutiqueHotel")}</Link>
               <span className="text-[#ccc]">|</span>
-              <Link href="/gallery" className="text-[#FF8F75] hover:underline">Photo Gallery</Link>
+              <Link href="/gallery" className="text-[#FF8F75] hover:underline">{t("common.photoGallery")}</Link>
             </div>
           </motion.div>
         </div>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { SEOHead, seoConfigs } from "@/components/SEOHead";
 import { SEOSchema } from "@/components/SEOSchema";
@@ -58,12 +59,14 @@ const blogPosts = [
 ];
 
 export default function Blog() {
+  const { t } = useTranslation();
+
   return (
     <div>
       {/* SEO Components */}
       <SEOHead {...seoConfigs.blog} />
       <SEOSchema page="blog" />
-      
+
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-[#4C5254]">
         <div className="relative z-10 text-center text-white px-4">
@@ -73,10 +76,10 @@ export default function Blog() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-display font-semibold mb-4">
-              The Local Journal
+              {t("blog.title")}
             </h1>
             <p className="text-xl text-white/80">
-              Stories, guides, and insider tips from Ocean Drive
+              {t("blog.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -126,7 +129,7 @@ export default function Blog() {
                       {post.excerpt}
                     </p>
                     <span className="inline-flex items-center gap-2 text-[#FF8F75] font-medium hover:gap-3 transition-all">
-                      Read More <ArrowRight size={16} />
+                      {t("blog.readMore")} <ArrowRight size={16} />
                     </span>
                   </div>
                 </Link>
@@ -140,22 +143,22 @@ export default function Blog() {
       <section className="py-16 bg-white">
         <div className="container max-w-2xl text-center">
           <h2 className="text-3xl font-display font-semibold text-[#4C5254] mb-4">
-            Get Local Tips in Your Inbox
+            {t("newsletter.getLocalTips")}
           </h2>
           <p className="text-[#666] mb-8">
-            Subscribe to receive insider guides, exclusive offers, and the latest from The Local House.
+            {t("newsletter.subscribeGuides")}
           </p>
           <form className="flex flex-col sm:flex-row gap-4">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder={t("newsletter.enterEmail")}
               className="flex-1 px-6 py-4 bg-[#FAF7F2] border border-[#E5DED5] rounded focus:outline-none focus:border-[#FF8F75]"
             />
             <button
               type="submit"
               className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
             >
-              Subscribe
+              {t("newsletter.subscribe")}
             </button>
           </form>
         </div>

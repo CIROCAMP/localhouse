@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
 // Declare global tracking functions
@@ -56,6 +57,7 @@ const wines = [
 ];
 
 export default function Restaurant() {
+  const { t } = useTranslation();
   return (
     <div>
       {/* SEO Components */}
@@ -83,10 +85,10 @@ export default function Restaurant() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold mb-4">
-              Ocean Drive Restaurant & Bar
+              {t("restaurant.oceanDriveTitle")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Coastal cuisine crafted with fresh, local ingredients on Ocean Drive
+              {t("restaurant.coastalCuisine")}
             </p>
           </motion.div>
         </div>
@@ -100,28 +102,28 @@ export default function Restaurant() {
               <div className="flex items-center gap-3">
                 <Clock className="text-[#FF8F75]" size={20} />
                 <div>
-                  <p className="text-sm text-[#999]">Brunch</p>
-                  <p className="font-medium text-[#4C5254]">8AM – 4PM daily</p>
+                  <p className="text-sm text-[#999]">{t("restaurant.brunch")}</p>
+                  <p className="font-medium text-[#4C5254]">{t("restaurant.brunchHours")}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="text-[#FF8F75]" size={20} />
                 <div>
-                  <p className="text-sm text-[#999]">Dinner</p>
-                  <p className="font-medium text-[#4C5254]">Wed-Sun 4PM – 10PM</p>
+                  <p className="text-sm text-[#999]">{t("restaurant.dinner")}</p>
+                  <p className="font-medium text-[#4C5254]">{t("restaurant.dinnerHours")}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="text-[#FF8F75]" size={20} />
                 <div>
-                  <p className="text-sm text-[#999]">Happy Hour</p>
-                  <p className="font-medium text-[#4C5254]">Wed-Sun 4PM – 6PM</p>
+                  <p className="text-sm text-[#999]">{t("restaurant.happyHour")}</p>
+                  <p className="font-medium text-[#4C5254]">{t("restaurant.happyHourHours")}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="text-[#FF8F75]" size={20} />
                 <div>
-                  <p className="text-sm text-[#999]">Reservations</p>
+                  <p className="text-sm text-[#999]">{t("restaurant.reservations")}</p>
                   <a href="tel:+13055385529" className="font-medium text-[#4C5254] hover:text-[#FF8F75]">
                     (305) 538-5529
                   </a>
@@ -134,7 +136,7 @@ export default function Restaurant() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded w-full md:w-auto justify-center"
             >
-              Reserve on OpenTable
+              {t("restaurant.reserveOpenTable")}
               <ExternalLink size={16} />
             </a>
           </div>
@@ -147,10 +149,10 @@ export default function Restaurant() {
           <div className="text-center mb-16">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              Oceanfront Dining Menu
+              {t("restaurant.oceanfrontMenu")}
             </h2>
             <p className="text-lg text-[#666]">
-              Fresh seafood, craft cocktails, and Miami's most famous brunch
+              {t("restaurant.menuSubtitle")}
             </p>
           </div>
 
@@ -160,33 +162,33 @@ export default function Restaurant() {
                 value="brunch"
                 className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#FF8F75] data-[state=active]:text-white rounded"
               >
-                Brunch
+                {t("restaurant.brunch")}
               </TabsTrigger>
               <TabsTrigger
                 value="dinner"
                 className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#FF8F75] data-[state=active]:text-white rounded"
               >
-                Dinner
+                {t("restaurant.dinner")}
               </TabsTrigger>
               <TabsTrigger
                 value="cocktails"
                 className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#FF8F75] data-[state=active]:text-white rounded"
               >
-                Cocktails
+                {t("restaurant.cocktails")}
               </TabsTrigger>
               <TabsTrigger
                 value="wine"
                 className="px-8 py-3 text-lg font-display data-[state=active]:bg-[#FF8F75] data-[state=active]:text-white rounded"
               >
-                Wine
+                {t("restaurant.wine")}
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="brunch">
               <div className="bg-white rounded-lg p-8 shadow-sm">
                 <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-8 text-center">
-                  Brunch Menu
-                  <span className="block text-sm font-body text-[#999] mt-1">Daily 8AM – 4PM</span>
+                  {t("restaurant.brunchMenu")}
+                  <span className="block text-sm font-body text-[#999] mt-1">{t("restaurant.brunchHours")}</span>
                 </h3>
                 <div className="space-y-6">
                   {brunchItems.map((item, index) => (
@@ -211,8 +213,8 @@ export default function Restaurant() {
             <TabsContent value="dinner">
               <div className="bg-white rounded-lg p-8 shadow-sm">
                 <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-8 text-center">
-                  Dinner Menu
-                  <span className="block text-sm font-body text-[#999] mt-1">Wed-Sun 4PM – 10PM</span>
+                  {t("restaurant.dinnerMenu")}
+                  <span className="block text-sm font-body text-[#999] mt-1">{t("restaurant.dinnerHours")}</span>
                 </h3>
                 <div className="space-y-6">
                   {dinnerItems.map((item, index) => (
@@ -237,7 +239,7 @@ export default function Restaurant() {
             <TabsContent value="cocktails">
               <div className="bg-white rounded-lg p-8 shadow-sm">
                 <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-8 text-center">
-                  Signature Cocktails
+                  {t("restaurant.signatureCocktails")}
                 </h3>
                 <div className="space-y-6">
                   {cocktails.map((item, index) => (
@@ -262,7 +264,7 @@ export default function Restaurant() {
             <TabsContent value="wine">
               <div className="bg-white rounded-lg p-8 shadow-sm">
                 <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-8 text-center">
-                  Wine Selection
+                  {t("restaurant.wineSelection")}
                 </h3>
                 <div className="space-y-6">
                   {wines.map((item, index) => (
@@ -296,7 +298,7 @@ export default function Restaurant() {
 
           <div className="text-center mt-12">
             <p className="text-[#666] mb-6">
-              Full menu available below. Prices subject to change.
+              {t("restaurant.fullMenuNote")}
             </p>
             
             {/* PDF Download Links */}
@@ -307,7 +309,7 @@ export default function Restaurant() {
                 className="flex items-center justify-center gap-2 px-3 md:px-4 py-2 bg-[#F5F5F5] text-[#4C5254] font-medium hover:bg-[#E5DED5] transition-colors rounded text-sm md:text-base w-full md:w-auto"
               >
                 <Download size={16} />
-                <span>Download Brunch Menu</span>
+                <span>{t("restaurant.downloadBrunch")}</span>
               </a>
               <a
                 href="/menus/DinnerJan2026(2).pdf"
@@ -315,7 +317,7 @@ export default function Restaurant() {
                 className="flex items-center justify-center gap-2 px-3 md:px-4 py-2 bg-[#F5F5F5] text-[#4C5254] font-medium hover:bg-[#E5DED5] transition-colors rounded text-sm md:text-base w-full md:w-auto"
               >
                 <Download size={16} />
-                <span>Download Dinner Menu</span>
+                <span>{t("restaurant.downloadDinner")}</span>
               </a>
               <a
                 href="/menus/HAPPYHOUR_.pdf(2).pdf"
@@ -323,7 +325,7 @@ export default function Restaurant() {
                 className="flex items-center justify-center gap-2 px-3 md:px-4 py-2 bg-[#F5F5F5] text-[#4C5254] font-medium hover:bg-[#E5DED5] transition-colors rounded text-sm md:text-base w-full md:w-auto"
               >
                 <Download size={16} />
-                <span>Download Happy Hour Menu</span>
+                <span>{t("restaurant.downloadHappyHour")}</span>
               </a>
             </div>
             
@@ -335,18 +337,18 @@ export default function Restaurant() {
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded mb-4"
             >
               <ShoppingCart size={18} />
-              Order Online
+              {t("restaurant.orderOnline")}
             </a>
-            
+
             <br />
-            
+
             <a
               onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')} href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#FF8F75] font-medium hover:underline"
             >
-              View Full Menu on OpenTable →
+              {t("restaurant.viewMenuOpenTable")}
             </a>
           </div>
         </div>
@@ -359,22 +361,22 @@ export default function Restaurant() {
             <Link href="/brunch" className="group">
               <div className="p-6 rounded-lg hover:shadow-lg transition-shadow">
                 <span className="text-3xl mb-3 block">🍳</span>
-                <h3 className="font-display font-semibold text-[#4C5254] mb-2 group-hover:text-[#FF8F75] transition-colors">Famous Brunch</h3>
-                <p className="text-sm text-[#666]">Daily 8AM–4PM. Home of the Lobster Eggs Benedict.</p>
+                <h3 className="font-display font-semibold text-[#4C5254] mb-2 group-hover:text-[#FF8F75] transition-colors">{t("restaurant.famousBrunch")}</h3>
+                <p className="text-sm text-[#666]">{t("restaurant.famousBrunchDesc")}</p>
               </div>
             </Link>
             <Link href="/hotel" className="group">
               <div className="p-6 rounded-lg hover:shadow-lg transition-shadow">
                 <span className="text-3xl mb-3 block">🏨</span>
-                <h3 className="font-display font-semibold text-[#4C5254] mb-2 group-hover:text-[#FF8F75] transition-colors">Stay the Night</h3>
-                <p className="text-sm text-[#666]">Boutique rooms from $199/night with rooftop pool.</p>
+                <h3 className="font-display font-semibold text-[#4C5254] mb-2 group-hover:text-[#FF8F75] transition-colors">{t("restaurant.stayTheNight")}</h3>
+                <p className="text-sm text-[#666]">{t("restaurant.stayTheNightDesc")}</p>
               </div>
             </Link>
             <Link href="/private-events" className="group">
               <div className="p-6 rounded-lg hover:shadow-lg transition-shadow">
                 <span className="text-3xl mb-3 block">🎉</span>
-                <h3 className="font-display font-semibold text-[#4C5254] mb-2 group-hover:text-[#FF8F75] transition-colors">Private Events</h3>
-                <p className="text-sm text-[#666]">Host your celebration at our Ocean Drive venue.</p>
+                <h3 className="font-display font-semibold text-[#4C5254] mb-2 group-hover:text-[#FF8F75] transition-colors">{t("restaurant.privateEvents")}</h3>
+                <p className="text-sm text-[#666]">{t("restaurant.privateEventsDesc")}</p>
               </div>
             </Link>
           </div>
@@ -395,7 +397,7 @@ export default function Restaurant() {
             <div className="lg:w-1/2">
               <div className="w-16 h-px bg-[#FF8F75] mb-6" />
               <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-6">
-                Reserve Your Table
+                {t("restaurant.reserveYourTable")}
               </h2>
               <p className="text-[#666] leading-relaxed mb-8">
                 Whether you're joining us for our legendary brunch or an intimate dinner,
@@ -409,13 +411,13 @@ export default function Restaurant() {
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded text-center"
                 >
-                  Book on OpenTable
+                  {t("restaurant.bookOpenTable")}
                 </a>
                 <a
                   href="tel:+13055385529"
                   className="px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded text-center"
                 >
-                  Call (305) 538-5529
+                  {t("common.callPhone")}
                 </a>
                 <a
                   href="https://order.toasttab.com/online/the-local-house"
@@ -424,7 +426,7 @@ export default function Restaurant() {
                   className="px-6 py-3 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded text-center flex items-center justify-center gap-2"
                 >
                   <ShoppingCart size={18} />
-                  Order Online
+                  {t("restaurant.orderOnline")}
                 </a>
               </div>
             </div>

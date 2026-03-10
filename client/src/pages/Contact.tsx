@@ -7,6 +7,7 @@ declare global {
     trackMewsClick?: () => void;
   }
 }
+import { useTranslation } from "react-i18next";
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, MessageCircle, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,6 +22,8 @@ import { SEOSchema } from "@/components/SEOSchema";
  */
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("Message sent! We'll get back to you soon.");
@@ -31,7 +34,7 @@ export default function Contact() {
       {/* SEO Components */}
       <SEOHead {...seoConfigs.contact} />
       <SEOSchema page="contact" />
-      
+
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -49,10 +52,10 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-display font-semibold mb-4">
-              Contact Us
+              {t("contact.title")}
             </h1>
             <p className="text-xl text-white/80">
-              We'd love to hear from you
+              {t("contact.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -71,7 +74,7 @@ export default function Contact() {
             >
               <div className="w-16 h-px bg-[#FF8F75] mb-6" />
               <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-8">
-                Get In Touch
+                {t("contact.getInTouch")}
               </h2>
 
               <div className="space-y-6 mb-10">
@@ -85,7 +88,7 @@ export default function Contact() {
                     <MapPin className="text-[#FF8F75]" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#4C5254] mb-1">Address</h3>
+                    <h3 className="font-semibold text-[#4C5254] mb-1">{t("contact.address")}</h3>
                     <p className="text-[#666]">
                       400 Ocean Drive<br />
                       Miami Beach, FL 33139<br />
@@ -102,7 +105,7 @@ export default function Contact() {
                     <Phone className="text-[#FF8F75]" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#4C5254] mb-1">Phone</h3>
+                    <h3 className="font-semibold text-[#4C5254] mb-1">{t("contact.phone")}</h3>
                     <p className="text-[#666]">(305) 538-5529</p>
                   </div>
                 </a>
@@ -115,7 +118,7 @@ export default function Contact() {
                     <Mail className="text-[#FF8F75]" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#4C5254] mb-1">Email</h3>
+                    <h3 className="font-semibold text-[#4C5254] mb-1">{t("contact.email")}</h3>
                     <p className="text-[#666]">info@localhouse.com</p>
                   </div>
                 </a>
@@ -125,11 +128,11 @@ export default function Contact() {
                     <Clock className="text-[#FF8F75]" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#4C5254] mb-1">Hours</h3>
+                    <h3 className="font-semibold text-[#4C5254] mb-1">{t("contact.hours")}</h3>
                     <div className="text-[#666] space-y-1">
-                      <p><span className="font-medium">Front Desk:</span> 8AM – 10PM daily</p>
-                      <p><span className="font-medium">Brunch:</span> 8AM – 4PM daily</p>
-                      <p><span className="font-medium">Dinner:</span> 4PM – 10PM (Closed Mondays)</p>
+                      <p>{t("contact.frontDeskHours")}</p>
+                      <p>{t("contact.brunchHours")}</p>
+                      <p>{t("contact.dinnerHours")}</p>
                     </div>
                   </div>
                 </div>
@@ -137,7 +140,7 @@ export default function Contact() {
 
               {/* Social Links */}
               <div>
-                <h3 className="font-semibold text-[#4C5254] mb-4">Follow Us</h3>
+                <h3 className="font-semibold text-[#4C5254] mb-4">{t("contact.followUs")}</h3>
                 <div className="flex gap-4">
                   <a
                     href="https://www.instagram.com/thelocalhouse"
@@ -184,13 +187,13 @@ export default function Contact() {
             >
               <div className="bg-white p-8 rounded-lg shadow-sm">
                 <h2 className="text-2xl font-display font-semibold text-[#4C5254] mb-6">
-                  Send Us a Message
+                  {t("contact.sendMessage")}
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-[#4C5254] mb-2">
-                        First Name
+                        {t("contact.firstNameLabel")}
                       </label>
                       <Input
                         type="text"
@@ -201,7 +204,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-[#4C5254] mb-2">
-                        Last Name
+                        {t("contact.lastNameLabel")}
                       </label>
                       <Input
                         type="text"
@@ -214,7 +217,7 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-sm font-medium text-[#4C5254] mb-2">
-                      Email
+                      {t("contact.emailLabel")}
                     </label>
                     <Input
                       type="email"
@@ -226,7 +229,7 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-sm font-medium text-[#4C5254] mb-2">
-                      Phone (optional)
+                      {t("contact.phoneLabel")}
                     </label>
                     <Input
                       type="tel"
@@ -237,11 +240,11 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-sm font-medium text-[#4C5254] mb-2">
-                      Subject
+                      {t("contact.subjectLabel")}
                     </label>
                     <Input
                       type="text"
-                      placeholder="How can we help?"
+                      placeholder={t("contact.subjectPlaceholder")}
                       className="bg-[#FAF7F2] border-[#E5DED5]"
                       required
                     />
@@ -249,10 +252,10 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-sm font-medium text-[#4C5254] mb-2">
-                      Message
+                      {t("contact.messageLabel")}
                     </label>
                     <Textarea
-                      placeholder="Tell us more..."
+                      placeholder={t("contact.messagePlaceholder")}
                       rows={5}
                       className="bg-[#FAF7F2] border-[#E5DED5] resize-none"
                       required
@@ -263,7 +266,7 @@ export default function Contact() {
                     type="submit"
                     className="w-full bg-[#FF8F75] hover:bg-[#e67c63] text-white py-6"
                   >
-                    Send Message
+                    {t("contact.sendButton")}
                   </Button>
                 </form>
               </div>
@@ -297,10 +300,10 @@ export default function Contact() {
               className="p-8 bg-[#FAF7F2] rounded-lg text-center hover:shadow-lg transition-shadow"
             >
               <h3 className="text-xl font-display font-semibold text-[#4C5254] mb-2">
-                Restaurant Reservations
+                {t("contact.restaurantRes")}
               </h3>
-              <p className="text-[#666] mb-4">Book your table on OpenTable</p>
-              <span className="text-[#FF8F75] font-medium">Reserve Now →</span>
+              <p className="text-[#666] mb-4">{t("contact.bookTableOpenTable")}</p>
+              <span className="text-[#FF8F75] font-medium">{t("contact.reserveNow")}</span>
             </a>
 
             <a
@@ -310,10 +313,10 @@ export default function Contact() {
               className="p-8 bg-[#FAF7F2] rounded-lg text-center hover:shadow-lg transition-shadow"
             >
               <h3 className="text-xl font-display font-semibold text-[#4C5254] mb-2">
-                Hotel Reservations
+                {t("contact.hotelRes")}
               </h3>
-              <p className="text-[#666] mb-4">Book your room directly</p>
-              <span className="text-[#FF8F75] font-medium">Book Now →</span>
+              <p className="text-[#666] mb-4">{t("contact.bookRoomDirectly")}</p>
+              <span className="text-[#FF8F75] font-medium">{t("contact.bookNow")}</span>
             </a>
 
             <a
@@ -321,9 +324,9 @@ export default function Contact() {
               className="p-8 bg-[#FAF7F2] rounded-lg text-center hover:shadow-lg transition-shadow"
             >
               <h3 className="text-xl font-display font-semibold text-[#4C5254] mb-2">
-                Call Us
+                {t("contact.callUsTitle")}
               </h3>
-              <p className="text-[#666] mb-4">Speak with our team directly</p>
+              <p className="text-[#666] mb-4">{t("contact.speakTeam")}</p>
               <span className="text-[#FF8F75] font-medium">(305) 538-5529</span>
             </a>
           </div>

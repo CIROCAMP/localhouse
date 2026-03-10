@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
 import { MapPin, Coffee, Waves, ShoppingBag, Utensils, Camera } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 
@@ -53,6 +54,8 @@ const spots = [
 ];
 
 export default function LocalSpots() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-cream">
       <SEOHead
@@ -63,7 +66,7 @@ export default function LocalSpots() {
       />
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1535498730771-e735b998cd64?w=1920&q=80')`,
@@ -71,16 +74,16 @@ export default function LocalSpots() {
         >
           <div className="absolute inset-0 bg-charcoal/50" />
         </div>
-        
+
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <span className="inline-block px-4 py-2 bg-coral/90 rounded-full text-sm font-medium mb-6">
-            📍 Explore the Neighborhood
+            {t("localSpots.exploreNeighborhood")}
           </span>
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl mb-6">
-            Things to Do Near The Local House, Miami Beach
+            {t("localSpots.title")}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
-            Discover the best of South of Fifth, Miami Beach. Our favorite places within walking distance.
+            {t("localSpots.subtitle")}
           </p>
         </div>
       </section>
@@ -90,14 +93,13 @@ export default function LocalSpots() {
         <div className="container max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 text-coral mb-4">
             <MapPin className="w-5 h-5" />
-            <span className="font-medium">400 Ocean Drive, Miami Beach</span>
+            <span className="font-medium">{t("localSpots.address")}</span>
           </div>
           <h2 className="font-display text-3xl text-charcoal mb-4">
-            In the Heart of South of Fifth
+            {t("localSpots.heartOfSoFi")}
           </h2>
           <p className="text-charcoal/70 max-w-2xl mx-auto">
-            South of Fifth (SoFi) is Miami Beach's most exclusive neighborhood. Known for its quieter beaches, 
-            upscale dining, and stunning Art Deco architecture, it's the perfect base for exploring Miami.
+            {t("localSpots.sofiDesc")}
           </p>
         </div>
       </section>
@@ -113,7 +115,7 @@ export default function LocalSpots() {
                 </div>
                 <h2 className="font-display text-3xl text-charcoal">{category.category}</h2>
               </div>
-              
+
               <div className="grid md:grid-cols-3 gap-6">
                 {category.places.map((place, placeIndex) => (
                   <Card key={placeIndex} className="bg-white border-none shadow-md hover:shadow-lg transition-shadow">
@@ -133,20 +135,19 @@ export default function LocalSpots() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-charcoal text-white">
         <div className="container max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-4xl mb-6">Stay With Us</h2>
+          <h2 className="font-display text-4xl mb-6">{t("localSpots.stayWithUs")}</h2>
           <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-            Experience the best of South Beach from our boutique hotel. Start your day with our famous brunch, 
-            then explore all these amazing spots just steps away.
+            {t("localSpots.stayDesc")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/hotel">
               <Button size="lg" className="bg-coral hover:bg-coral/90 text-white">
-                View Rooms
+                {t("localSpots.viewRooms")}
               </Button>
             </Link>
             <Link href="/brunch">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-charcoal">
-                Famous Brunch
+                {t("localSpots.famousBrunch")}
               </Button>
             </Link>
           </div>

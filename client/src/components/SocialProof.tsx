@@ -8,6 +8,7 @@ declare global {
   }
 }
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Users, Clock, Flame, Star, MapPin } from "lucide-react";
 
 /*
@@ -30,6 +31,7 @@ const recentBookings = [
 
 // Live notification popup
 export function BookingNotification() {
+  const { t } = useTranslation();
   const [currentBooking, setCurrentBooking] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -87,8 +89,8 @@ export function BookingNotification() {
               </p>
               <p className="text-xs text-[#666]">
                 {booking.type === "room"
-                  ? "just booked a room"
-                  : "reserved a table for brunch"}
+                  ? t("socialProof.justBookedRoom")
+                  : t("socialProof.reservedTable")}
               </p>
               <p className="text-xs text-[#999] mt-1">{booking.time}</p>
             </div>
@@ -101,6 +103,7 @@ export function BookingNotification() {
 
 // Urgency banner for limited availability
 export function UrgencyBanner() {
+  const { t } = useTranslation();
   const [roomsLeft, setRoomsLeft] = useState(3);
   const [tablesLeft, setTablesLeft] = useState(4);
   const [peopleViewing, setPeopleViewing] = useState(127);
@@ -131,21 +134,21 @@ export function UrgencyBanner() {
         <div className="flex items-center gap-2">
           <Flame className="w-4 h-4 text-yellow-300 animate-pulse" />
           <span>
-            <strong>Only {roomsLeft} rooms left</strong> for this weekend
+            {t("socialProof.onlyRoomsLeft", { count: roomsLeft })}
           </span>
         </div>
         <div className="hidden md:block w-px h-4 bg-white/30" />
         <div className="flex items-center gap-2">
           <Clock className="w-4 h-4" />
           <span>
-            <strong>{tablesLeft} brunch tables</strong> available tomorrow
+            {t("socialProof.tablesAvailable", { count: tablesLeft })}
           </span>
         </div>
         <div className="hidden md:block w-px h-4 bg-white/30" />
         <div className="flex items-center gap-2">
           <Users className="w-4 h-4" />
           <span>
-            <strong>{peopleViewing} people</strong> viewing now
+            {t("socialProof.peopleViewing", { count: peopleViewing })}
           </span>
         </div>
       </div>
@@ -155,6 +158,7 @@ export function UrgencyBanner() {
 
 // Sticky booking bar for mobile
 export function StickyBookingBar() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -184,7 +188,7 @@ export function StickyBookingBar() {
               rel="noopener noreferrer"
               className="flex-1 py-3 bg-[#FF8F75] text-white text-center font-medium rounded hover:bg-[#e67c63] transition-colors"
             >
-              Book Table
+              {t("socialProof.bookTable")}
             </a>
             <a
               href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
@@ -192,7 +196,7 @@ export function StickyBookingBar() {
               rel="noopener noreferrer"
               className="flex-1 py-3 bg-[#4C5254] text-white text-center font-medium rounded hover:bg-[#3D3D3D] transition-colors"
             >
-              Book Room
+              {t("socialProof.bookRoom")}
             </a>
           </div>
         </motion.div>
@@ -203,23 +207,25 @@ export function StickyBookingBar() {
 
 // Live activity indicator
 export function LiveActivityIndicator() {
+  const { t } = useTranslation();
   return (
     <div className="flex items-center gap-2 text-sm text-[#666]">
       <span className="relative flex h-2 w-2">
         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
         <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
       </span>
-      <span>127 people viewing</span>
+      <span>{t("socialProof.peopleViewing", { count: 127 })}</span>
     </div>
   );
 }
 
 // Best seller badge
 export function BestSellerBadge({ children }: { children: React.ReactNode }) {
+  const { t } = useTranslation();
   return (
     <div className="relative">
       <div className="absolute -top-2 -right-2 bg-[#FF8F75] text-white text-xs font-bold px-2 py-1 rounded-full z-10">
-        #1 BEST SELLER
+        {t("socialProof.bestSeller")}
       </div>
       {children}
     </div>
