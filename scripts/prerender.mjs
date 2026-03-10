@@ -342,7 +342,7 @@ const routes = [
         <li>Daily Brunch Service - 7 days a week, 8AM-4PM</li>
         <li>4.9 Rating from 2,500+ guests</li>
         <li>Italian-Owned Since 2012</li>
-        <li>Bottomless Mimosas Available</li>
+        <li>Craft Cocktails & Mimosas</li>
       </ul>
       <p>The Local House, 400 Ocean Drive, Miami Beach, FL 33139. Call (305) 538-5529.</p>
     `,

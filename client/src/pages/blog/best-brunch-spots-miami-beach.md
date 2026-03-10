@@ -136,7 +136,7 @@ This Italian spot offers pasta-focused brunch items alongside traditional breakf
 
 ## The Brunch Culture in Miami Beach
 
-Miami Beach brunch has evolved beyond eggs and toast. Today's brunch scene features craft cocktails (bottomless mimosas are standard), fresh seafood, international cuisines, and Instagram-worthy presentations. The combination of year-round warm weather, ocean views, and diverse culinary influences has created a brunch culture that rivals any major city.
+Miami Beach brunch has evolved beyond eggs and toast. Today's brunch scene features craft cocktails, fresh seafood, international cuisines, and Instagram-worthy presentations. The combination of year-round warm weather, ocean views, and diverse culinary influences has created a brunch culture that rivals any major city.
 
 Whether you're looking for a casual weekend meal or a special occasion celebration, Miami Beach has a brunch spot for you. Start with [The Local House's famous Lobster Eggs Benedict](/brunch), then explore the other options to find your personal favorite.
 
