@@ -316,17 +316,19 @@
       // To get your ID: Google Ads → Tools → Conversions → + → Website → Copy the ID
       gtag('config', 'AW-967579743');
       
-      // Google Ads Conversion Tracking for OpenTable Bookings
+      // Google Ads + GA4 Conversion Tracking for OpenTable Bookings
       function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') {
-            window.location = url;
-          }
-        };
+        // Send to Google Ads
         gtag('event', 'conversion', {
-          'send_to': 'AW-967579743/gaSMCotgSoakEB-wst05',
-          'event_callback': callback
+          'send_to': 'AW-967579743/gaSMCotgSoakEB-wst05'
         });
+        // Send to GA4 as book_table_click event
+        gtag('event', 'book_table_click', {
+          'event_category': 'conversion',
+          'event_label': 'OpenTable Reservation',
+          'page_location': window.location.href
+        });
+        // Don't redirect — links already use target="_blank"
         return false;
       }
       
