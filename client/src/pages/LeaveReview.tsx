@@ -70,7 +70,7 @@ export default function LeaveReview() {
               rel="noopener noreferrer"
               className="inline-block w-full py-4 bg-[#FF8F75] text-white font-bold text-lg rounded-lg hover:bg-[#e67c63] transition-colors duration-300"
             >
-              {t("leaveReview.leaveGoogleBtn")}
+              {"⭐ "}{t("leaveReview.leaveGoogleBtn")}
             </a>
 
             <p className="text-sm text-[#999] mt-4">
