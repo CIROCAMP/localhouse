@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Star, Instagram, Facebook, Music } from "lucide-react";
 import { Link } from "wouter";
 import { SEOHead } from "@/components/SEOHead";
 
 export default function LeaveReview() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FF8F75]/10 to-white">
       <SEOHead
@@ -23,13 +26,13 @@ export default function LeaveReview() {
           <div className="mb-6 flex justify-center">
             <div className="text-6xl">🙏</div>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold text-[#4C5254] mb-6">
-            Thank You for Dining With Us!
+            {t("leaveReview.thankYou")}
           </h1>
-          
+
           <p className="text-xl text-[#666] mb-8">
-            We'd love to hear about your brunch experience at The Local House. Your feedback helps other brunch lovers find us and helps us continue serving you better.
+            {t("leaveReview.feedback")}
           </p>
         </motion.div>
       </section>
@@ -52,26 +55,26 @@ export default function LeaveReview() {
                 />
               ))}
             </div>
-            
+
             <h2 className="text-2xl font-bold text-[#4C5254] mb-4">
-              Leave a Google Review
+              {t("leaveReview.leaveGoogle")}
             </h2>
-            
+
             <p className="text-[#666] mb-6">
-              Share your brunch experience and help other diners discover The Local House
+              {t("leaveReview.shareExperience")}
             </p>
-            
+
             <a
               href="https://share.google/0H2ptcjor9w7exBb0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block w-full py-4 bg-[#FF8F75] text-white font-bold text-lg rounded-lg hover:bg-[#e67c63] transition-colors duration-300"
             >
-              ⭐ Leave a Google Review
+              {t("leaveReview.leaveGoogleBtn")}
             </a>
-            
+
             <p className="text-sm text-[#999] mt-4">
-              Takes less than 2 minutes. Your review matters!
+              {t("leaveReview.takesLess")}
             </p>
           </div>
         </motion.div>
@@ -87,13 +90,13 @@ export default function LeaveReview() {
         >
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-xl font-bold text-[#4C5254] mb-6 text-center">
-              Share on Social Media
+              {t("leaveReview.shareSocial")}
             </h3>
-            
+
             <p className="text-[#666] text-center mb-6">
-              Tag us and use #TheLocalHouse to be featured on our page
+              {t("leaveReview.tagUs")}
             </p>
-            
+
             <div className="grid grid-cols-3 gap-4">
               <a
                 href="https://www.instagram.com/thelocalhouse"
@@ -104,7 +107,7 @@ export default function LeaveReview() {
                 <Instagram size={24} />
                 <span className="text-sm font-medium">Instagram</span>
               </a>
-              
+
               <a
                 href="https://www.facebook.com/localhousemiami/"
                 target="_blank"
@@ -114,7 +117,7 @@ export default function LeaveReview() {
                 <Facebook size={24} />
                 <span className="text-sm font-medium">Facebook</span>
               </a>
-              
+
               <a
                 href="https://www.tiktok.com/@thelocalhouse"
                 target="_blank"
@@ -138,18 +141,18 @@ export default function LeaveReview() {
           className="max-w-md mx-auto text-center"
         >
           <p className="text-[#666] mb-6">
-            Ready to book your next brunch?
+            {t("leaveReview.readyToBook")}
           </p>
-          
+
           <Link href="/brunch">
             <span className="inline-block px-8 py-3 bg-[#FF8F75] text-white font-medium rounded-lg hover:bg-[#e67c63] transition-colors cursor-pointer">
-              Reserve Your Table
+              {t("leaveReview.reserveYourTable")}
             </span>
           </Link>
-          
+
           <p className="text-sm text-[#999] mt-8">
             The Local House • 400 Ocean Drive, Miami Beach, FL 33139<br />
-            Open Daily 8AM-4PM (Brunch) • Wed-Sun 4PM-10PM (Dinner)
+            {t("leaveReview.openDaily")}
           </p>
         </motion.div>
       </section>

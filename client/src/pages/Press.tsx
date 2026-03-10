@@ -7,6 +7,7 @@ declare global {
     trackMewsClick?: () => void;
   }
 }
+import { useTranslation } from "react-i18next";
 import { Award, Star, Newspaper, ExternalLink, Quote, Calendar } from "lucide-react";
 import { Link } from "wouter";
 import { SEOHead } from "@/components/SEOHead";
@@ -121,14 +122,16 @@ const testimonialQuotes = [
   },
 ];
 
-const stats = [
-  { value: "4.9", label: "Average Rating", sublabel: "across all platforms" },
-  { value: "2,500+", label: "Guest Reviews", sublabel: "and counting" },
-  { value: "13+", label: "Years of Excellence", sublabel: "since 2012" },
-  { value: "#1", label: "Brunch in SoFi", sublabel: "voted by locals" },
-];
-
 export default function Press() {
+  const { t } = useTranslation();
+
+  const stats = [
+    { value: "4.9", label: t("press.avgRating"), sublabel: t("press.acrossAllPlatforms") },
+    { value: "2,500+", label: t("press.guestReviewsStat"), sublabel: t("press.andCounting") },
+    { value: "13+", label: t("press.yearsExcellence"), sublabel: t("press.since2012") },
+    { value: "#1", label: t("press.brunchInSoFi"), sublabel: t("press.votedByLocals") },
+  ];
+
   return (
     <div>
       {/* SEO */}
@@ -160,10 +163,10 @@ export default function Press() {
               <Star className="w-8 h-8 text-[#FF8F75]" />
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold mb-4">
-              Press & Awards
+              {t("press.title")}
             </h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Recognized by the world's leading travel and food publications
+              {t("press.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -199,10 +202,10 @@ export default function Press() {
           <div className="text-center mb-16">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              Awards & Recognition
+              {t("press.awards")}
             </h2>
             <p className="text-lg text-[#666] max-w-2xl mx-auto">
-              Honored by travelers and industry experts for exceptional hospitality
+              {t("press.awardsSubtitle")}
             </p>
           </div>
 
@@ -242,10 +245,10 @@ export default function Press() {
         <div className="container">
           <div className="text-center mb-12">
             <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-2">
-              Official Award Badges
+              {t("press.officialBadges")}
             </h3>
             <p className="text-[#666]">
-              Proudly displaying our verified awards and certifications
+              {t("press.badgesSubtitle")}
             </p>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
@@ -266,7 +269,7 @@ export default function Press() {
                 className="w-28 h-28 md:w-36 md:h-36 object-contain transition-transform"
               />
               <span className="mt-2 text-sm text-[#666] group-hover:text-[#00aa6c] transition-colors">
-                View on TripAdvisor
+                {t("press.viewTripAdvisor")}
               </span>
             </motion.a>
             <motion.a
@@ -286,7 +289,7 @@ export default function Press() {
                 className="w-28 h-28 md:w-36 md:h-36 object-contain transition-transform"
               />
               <span className="mt-2 text-sm text-[#666] group-hover:text-[#da3743] transition-colors">
-                View on OpenTable
+                {t("press.viewOpenTable")}
               </span>
             </motion.a>
             <motion.a
@@ -306,7 +309,7 @@ export default function Press() {
                 className="w-28 h-28 md:w-36 md:h-36 object-contain transition-transform"
               />
               <span className="mt-2 text-sm text-[#666] group-hover:text-[#00aa6c] transition-colors">
-                Certificate of Excellence
+                {t("press.certificateExcellence")}
               </span>
             </motion.a>
           </div>
@@ -319,10 +322,10 @@ export default function Press() {
           <div className="text-center mb-16">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              Featured In
+              {t("press.featuredIn")}
             </h2>
             <p className="text-lg text-[#666] max-w-2xl mx-auto">
-              What the world's top publications are saying about The Local House
+              {t("press.featuredSubtitle")}
             </p>
           </div>
 
@@ -360,7 +363,7 @@ export default function Press() {
                       href={feature.link}
                       className="inline-flex items-center gap-2 text-[#FF8F75] hover:text-[#e67c63] font-medium transition-colors"
                     >
-                      Read Full Article
+                      {t("press.readFullArticle")}
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   </div>
@@ -377,10 +380,10 @@ export default function Press() {
           <div className="text-center mb-16">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold mb-4">
-              Guest Reviews
+              {t("press.guestReviews")}
             </h2>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
-              Real experiences from our valued guests
+              {t("press.guestReviewsSubtitle")}
             </p>
           </div>
 
@@ -421,7 +424,7 @@ export default function Press() {
               rel="noopener noreferrer"
               className="px-6 py-3 bg-[#00aa6c] text-white rounded-lg hover:bg-[#009960] transition-colors font-medium"
             >
-              Read on TripAdvisor
+              {t("press.readTripAdvisor")}
             </a>
             <a
               href="https://share.google/0H2ptcjor9w7exBb0"
@@ -429,7 +432,7 @@ export default function Press() {
               rel="noopener noreferrer"
               className="px-6 py-3 bg-[#4285f4] text-white rounded-lg hover:bg-[#3574e0] transition-colors font-medium"
             >
-              Read on Google
+              {t("press.readGoogle")}
             </a>
             <a
               onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')} href="https://www.opentable.com/the-local-house"
@@ -437,7 +440,7 @@ export default function Press() {
               rel="noopener noreferrer"
               className="px-6 py-3 bg-[#da3743] text-white rounded-lg hover:bg-[#c42f3a] transition-colors font-medium"
             >
-              Read on OpenTable
+              {t("press.readOpenTable")}
             </a>
           </div>
         </div>
@@ -453,10 +456,10 @@ export default function Press() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#4C5254] mb-6">
-              Experience Award-Winning Hospitality
+              {t("press.experienceAward")}
             </h2>
             <p className="text-lg text-[#666] mb-8">
-              Join the thousands of guests who have discovered why The Local House is Miami Beach's favorite boutique hotel and brunch destination.
+              {t("press.experienceAwardDesc")}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
@@ -465,7 +468,7 @@ export default function Press() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#FF8F75] text-white font-medium rounded hover:bg-[#e67c63] transition-colors"
               >
-                Reserve for Brunch
+                {t("press.reserveForBrunch")}
               </a>
               <a
                 href="https://api.mews.com/distributor/5851368a-5f95-4538-9882-ae8a00f9d016"
@@ -473,7 +476,7 @@ export default function Press() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 border-2 border-[#FF8F75] text-[#FF8F75] font-medium rounded hover:bg-[#FF8F75] hover:text-white transition-colors"
               >
-                Book Your Stay
+                {t("press.bookYourStay")}
               </a>
             </div>
           </motion.div>
@@ -484,10 +487,10 @@ export default function Press() {
       <section className="py-16 bg-white border-t border-[#E5DED5]">
         <div className="container max-w-2xl text-center">
           <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-4">
-            Media Inquiries
+            {t("press.mediaInquiries")}
           </h3>
           <p className="text-[#666] mb-6">
-            For press inquiries, interview requests, or media partnerships, please contact our team.
+            {t("press.mediaDesc")}
           </p>
           <a
             href="mailto:press@localhouse.com"
