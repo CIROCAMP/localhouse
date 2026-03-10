@@ -172,7 +172,10 @@
     "bath": "Baño de Lujo",
     "bathDesc": "Artículos de tocador premium y ducha de lluvia",
     "appleTv": "Apple TV",
-    "appleTvDesc": "En cada habitación para streaming"
+    "appleTvDesc": "En cada habitación para streaming",
+    "bookThisRoom": "Reservar Esta Habitación",
+    "bestPriceGuarantee": "Mejor Precio Garantizado",
+    "freeCancellation": "Cancelación Gratuita"
   },
   "gallery": {
     "title": "Fotos de The Local House Miami Beach",

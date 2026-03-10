@@ -172,7 +172,10 @@
     "bath": "Luxury Bath",
     "bathDesc": "Premium toiletries & rain shower",
     "appleTv": "Apple TV",
-    "appleTvDesc": "In every room for streaming"
+    "appleTvDesc": "In every room for streaming",
+    "bookThisRoom": "Book This Room",
+    "bestPriceGuarantee": "Best Price Guarantee",
+    "freeCancellation": "Free Cancellation"
   },
   "gallery": {
     "title": "The Local House Miami Beach Photos",
