@@ -391,8 +391,79 @@ function getSchemas(page: string) {
       return [organizationSchema, hotelSchema, getBreadcrumbSchema("Hotel", "/hotel")];
     case "restaurant":
       return [organizationSchema, restaurantSchema, getBreadcrumbSchema("Restaurant", "/restaurant")];
-    case "brunch":
-      return [organizationSchema, restaurantSchema, getBreadcrumbSchema("Brunch", "/brunch")];
+    case "brunch": {
+      const brunchFaqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Local House the best brunch in Miami Beach?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — The Local House has been voted #1 Brunch in South Beach and Miami Beach, with a 4.9-star rating from over 2,500 guests. Our famous Lobster Eggs Benedict, bottomless mimosas, and Ocean Drive patio dining have made us the go-to brunch destination since 2012."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer bottomless mimosas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! We offer bottomless prosecco mimosas with freshly squeezed orange juice during brunch hours (8AM–4PM daily). A bottle of prosecco for mimosas is $45."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What time does brunch start at The Local House?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Brunch is served daily from 8:00 AM to 4:00 PM — seven days a week, including weekdays."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need a reservation for weekend brunch?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We highly recommend making a reservation through OpenTable for weekend brunch (Saturday and Sunday), as tables fill up quickly — especially between 10AM and 1PM. Walk-ins are welcome but wait times during peak hours can be 20–40 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is The Local House located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Local House is located at 400 Ocean Drive, in the South of Fifth (SoFi) neighborhood of Miami Beach, FL 33139. Just steps from the beach, South Pointe Park, and Lummus Park."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the most popular brunch dishes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our most ordered dishes are the Lobster Eggs Benedict ($33), Fluffy Buttermilk Pancakes ($18), Avocado Toast ($16), Breakfast Smash Burger ($22), and Lobster Roll ($38)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the brunch patio pet-friendly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Our outdoor patio on Ocean Drive is pet-friendly. Pets are only allowed on the outdoor patio, not inside the restaurant."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I host a private brunch event at The Local House?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely! We host private brunch events including birthdays, bridal showers, and corporate brunches for groups of up to 40 guests with customized menus and beverage packages. Contact us at (305) 538-5529."
+            }
+          }
+        ]
+      };
+      return [organizationSchema, restaurantSchema, brunchFaqSchema, getBreadcrumbSchema("Brunch", "/brunch")];
+    }
     case "gallery":
       return [organizationSchema, getBreadcrumbSchema("Gallery", "/gallery")];
     case "contact":
