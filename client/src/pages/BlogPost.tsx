@@ -26,11 +26,11 @@ const blogContent: Record<string, {
   category: string;
   content: React.ReactNode;
 }> = {
-  "best-brunch-miami-beach-2025": {
-    title: "The Ultimate Guide to the Best Brunch in Miami Beach (2025)",
+  "best-brunch-miami-beach-2026": {
+    title: "The Ultimate Guide to the Best Brunch in Miami Beach (2026)",
     subtitle: "Why The Local House Has Been Voted South Beach's Favorite Brunch Destination",
     image: "/images/brunch-spread.jpg",
-    date: "December 28, 2025",
+    date: "March 1, 2026",
     readTime: "5 min read",
     category: "Food & Dining",
     content: (
@@ -109,7 +109,7 @@ const blogContent: Record<string, {
     title: "South of Fifth (SoFi): Miami Beach's Most Exclusive Neighborhood",
     subtitle: "Your Complete Guide to Miami's Best-Kept Secret",
     image: "/images/ocean-drive.jpg",
-    date: "December 20, 2025",
+    date: "February 20, 2026",
     readTime: "7 min read",
     category: "Travel Guide",
     content: (
@@ -196,7 +196,7 @@ const blogContent: Record<string, {
     title: "Ocean Drive Dining: Where to Eat on Miami's Most Famous Street",
     subtitle: "A Local's Guide to the Best Restaurants on Ocean Drive",
     image: "/images/restaurant-outdoor.jpg",
-    date: "December 15, 2025",
+    date: "February 15, 2026",
     readTime: "6 min read",
     category: "Food & Dining",
     content: (
@@ -282,7 +282,7 @@ const blogContent: Record<string, {
     title: "Why Boutique Hotels Offer the Best Miami Beach Experience",
     subtitle: "Large Resorts vs. Intimate Properties: Making the Right Choice",
     image: "/images/deluxe-king-room.jpg",
-    date: "December 10, 2025",
+    date: "February 10, 2026",
     readTime: "4 min read",
     category: "Travel Tips",
     content: (

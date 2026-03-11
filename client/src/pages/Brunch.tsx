@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 // Declare global tracking functions
 declare global {
@@ -59,16 +60,17 @@ const brunchHighlights = [
   },
 ];
 
-const stats = [
-  { icon: Star, value: "4.9", label: "Average Rating" },
-  { icon: Users, value: "2,500+", label: "Happy Guests" },
-  { icon: Award, value: "#1", label: "Brunch in SoBe" },
+const getStats = (t: (key: string) => string) => [
+  { icon: Star, value: "4.9", label: t("brunch.avgRating") },
+  { icon: Users, value: t("brunch.happyGuestsCount"), label: t("brunch.happyGuests") },
+  { icon: Award, value: t("brunch.number1"), label: t("brunch.brunchInSoBe") },
 ];
 
 function BrunchNewsletter() {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -106,10 +108,10 @@ function BrunchNewsletter() {
             <Mail className="text-[#FF8F75]" size={24} />
           </div>
           <h2 className="text-3xl md:text-4xl font-display font-semibold text-[#4C5254] mb-4">
-            Never Miss a Brunch Special
+            {t("newsletter.neverMiss")}
           </h2>
           <p className="text-[#666] mb-8">
-            Get exclusive updates on seasonal menus, chef's specials, and VIP brunch events delivered to your inbox.
+            {t("newsletter.exclusiveUpdates")}
           </p>
 
           {status === "success" ? (
@@ -118,8 +120,8 @@ function BrunchNewsletter() {
               animate={{ opacity: 1, scale: 1 }}
               className="bg-[#FF8F75]/10 border border-[#FF8F75]/30 rounded-lg p-8"
             >
-              <p className="text-[#FF8F75] text-xl font-display font-semibold mb-2">You're on the list!</p>
-              <p className="text-[#666]">Check your inbox for a welcome from The Local House.</p>
+              <p className="text-[#FF8F75] text-xl font-display font-semibold mb-2">{t("newsletter.youreOnTheList")}</p>
+              <p className="text-[#666]">{t("newsletter.checkInbox")}</p>
             </motion.div>
           ) : (
             <div>
@@ -128,14 +130,14 @@ function BrunchNewsletter() {
                   type="text"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  placeholder="First name"
+                  placeholder={t("newsletter.firstName")}
                   className="px-5 py-4 bg-white border border-[#E5DED5] rounded-lg text-[#4C5254] placeholder-[#999] text-sm focus:outline-none focus:border-[#FF8F75] sm:w-36"
                 />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email address"
+                  placeholder={t("newsletter.emailAddress")}
                   required
                   className="flex-1 px-5 py-4 bg-white border border-[#E5DED5] rounded-lg text-[#4C5254] placeholder-[#999] text-sm focus:outline-none focus:border-[#FF8F75]"
                 />
@@ -144,13 +146,13 @@ function BrunchNewsletter() {
                   disabled={status === "loading"}
                   className="px-8 py-4 bg-[#FF8F75] text-white font-semibold text-sm rounded-lg hover:bg-[#e67c63] transition-all duration-300 disabled:opacity-50 whitespace-nowrap"
                 >
-                  {status === "loading" ? "Joining..." : "Subscribe"}
+                  {status === "loading" ? t("newsletter.joining") : t("newsletter.subscribe")}
                 </button>
               </form>
               {status === "error" && (
-                <p className="text-red-500 text-sm mt-3">Something went wrong. Please try again.</p>
+                <p className="text-red-500 text-sm mt-3">{t("newsletter.errorMessage")}</p>
               )}
-              <p className="text-[#999] text-xs mt-4">No spam, just brunch. Unsubscribe anytime.</p>
+              <p className="text-[#999] text-xs mt-4">{t("newsletter.noSpam")}</p>
             </div>
           )}
         </motion.div>
@@ -160,12 +162,14 @@ function BrunchNewsletter() {
 }
 
 export default function Brunch() {
+  const { t } = useTranslation();
+  const stats = getStats(t);
   return (
     <div>
       {/* SEO Components */}
       <SEOHead {...seoConfigs.brunch} />
       <SEOSchema page="brunch" />
-      
+
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-[#FAF7F2]">
         <div className="absolute inset-0">
@@ -187,7 +191,7 @@ export default function Brunch() {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF8F75]/90 rounded-full text-sm font-medium mb-6">
-              🍳 Voted Best Brunch in South Beach
+              🍳 {t("brunch.votedBest")}
             </span>
           </motion.div>
 
@@ -197,7 +201,7 @@ export default function Brunch() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold mb-6"
           >
-            Best Brunch in Miami Beach
+            {t("brunch.bestBrunchMiami")}
           </motion.h1>
 
           <motion.p
@@ -206,7 +210,7 @@ export default function Brunch() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-white/90 mb-4"
           >
-            An Ocean Drive Tradition Since 2012
+            {t("brunch.oceanDriveTradition")}
           </motion.p>
 
           <motion.div
@@ -216,7 +220,7 @@ export default function Brunch() {
             className="flex items-center justify-center gap-3 mb-10"
           >
             <Clock className="text-[#FF8F75]" size={24} />
-            <span className="text-xl font-medium">Daily 8AM – 4PM</span>
+            <span className="text-xl font-medium">{t("brunch.daily8am")}</span>
           </motion.div>
 
           <motion.div
@@ -231,7 +235,7 @@ export default function Brunch() {
               rel="noopener noreferrer"
               className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded inline-block"
             >
-              Reserve for Brunch
+              {t("brunch.reserveForBrunch")}
             </a>
           </motion.div>
         </div>
@@ -271,20 +275,13 @@ export default function Brunch() {
           <div className="max-w-3xl mx-auto text-center">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-6">
-              Where Brunch Becomes an Experience
+              {t("brunch.whereBrunchBecomes")}
             </h2>
             <p className="text-lg text-[#666] leading-relaxed mb-6">
-              At The Local House, brunch isn't just a meal—it's our way of welcoming you in.
-              Tucked into the South of Fifth neighborhood, just steps from the beach, we're
-              known for creating a relaxed, coastal setting where good food and genuine
-              hospitality come first.
+              {t("brunch.storyP1")}
             </p>
             <p className="text-lg text-[#666] leading-relaxed">
-              Our menu highlights comforting favorites with fresh, local touches—from our
-              legendary lobster eggs benedict and fluffy pancakes to lighter, seasonal plates
-              that feel right at home by the ocean. Whether you join us on the patio with a
-              mimosa in hand or settle into our cozy dining room, our team is here to make
-              you feel cared for.
+              {t("brunch.storyP2")}
             </p>
           </div>
         </div>
@@ -296,10 +293,10 @@ export default function Brunch() {
           <div className="text-center mb-16">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-4">
-              Brunch Favorites
+              {t("brunch.brunchFavorites")}
             </h2>
             <p className="text-lg text-[#666]">
-              Fresh, local ingredients crafted into unforgettable dishes
+              {t("brunch.freshLocal")}
             </p>
           </div>
 
@@ -334,7 +331,7 @@ export default function Brunch() {
           <div className="text-center mt-12">
             <Link href="/restaurant">
               <span className="text-[#FF8F75] font-medium hover:underline">
-                View Full Menu →
+                {t("brunch.viewFullMenu")}
               </span>
             </Link>
           </div>
@@ -342,13 +339,13 @@ export default function Brunch() {
           {/* Brunch Nearby Link */}
           <div className="mt-12 bg-[#FAF7F2] p-8 rounded-lg text-center">
             <h3 className="text-2xl font-display font-semibold text-[#4C5254] mb-4">
-              Looking for brunch nearby?
+              {t("brunch.lookingForBrunch")}
             </h3>
             <p className="text-[#666] mb-6 max-w-2xl mx-auto">
-              The Local House is your destination for the best brunch in Miami Beach. Located in South of Fifth, just steps from South Beach.
+              {t("brunch.localHouseDestination")}
             </p>
             <Link href="/brunch-near-me-miami-beach" className="inline-block px-6 py-3 bg-[#FF8F75] text-white font-medium rounded hover:bg-[#e67c63] transition-colors">
-              Find Brunch Near You
+              {t("brunch.findBrunchNear")}
             </Link>
           </div>
         </div>
@@ -367,11 +364,10 @@ export default function Brunch() {
               >
                 <div className="w-16 h-px bg-[#FF8F75] mb-6" />
                 <h2 className="text-4xl font-display font-semibold text-white mb-6">
-                  Signature Brunch Cocktails
+                  {t("brunch.signatureCocktails")}
                 </h2>
                 <p className="text-gray-400 leading-relaxed mb-8">
-                  No brunch is complete without our craft cocktails. From our famous Bloody Mary
-                  to refreshing mimosas, we've got the perfect pairing for your meal.
+                  {t("brunch.cocktailsIntro")}
                 </p>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center border-b border-gray-700 pb-3">
@@ -415,62 +411,24 @@ export default function Brunch() {
           <div className="max-w-3xl mx-auto">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-8 text-center">
-              Brunch on Ocean Drive
+              {t("brunch.brunchOnOceanDrive")}
             </h2>
             <div className="prose prose-lg text-[#666] leading-relaxed space-y-6">
-              <p>
-                Looking for the perfect <strong>brunch in Miami Beach</strong>? The Local House
-                offers an unmatched brunch experience right on Ocean Drive, in the heart of the exclusive
-                South of Fifth neighborhood. Since 2012, our Italian-owned restaurant has been serving
-                Miami Beach's most talked-about brunch — combining fresh, locally-sourced ingredients
-                with Mediterranean flair and genuine hospitality.
-              </p>
-              <p>
-                Our <strong>weekend brunch in Miami Beach</strong> has become a tradition for locals and
-                visitors alike. Every Saturday and Sunday, guests fill our sun-drenched patio and cozy
-                dining room to enjoy dishes like our legendary <strong>Lobster Eggs Benedict</strong> —
-                butter-poached Maine lobster over perfectly poached eggs with silky hollandaise on a
-                toasted English muffin. Paired with a glass of prosecco or a craft cocktail, it's the ultimate
-                South Beach brunch experience.
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: t("brunch.seoP1") }} />
+              <p dangerouslySetInnerHTML={{ __html: t("brunch.seoP2") }} />
 
               <h2 className="text-3xl font-display font-semibold text-[#4C5254] !mt-12 !mb-6">
-                Sunday Brunch Miami Beach — A Local Tradition
+                {t("brunch.sundayBrunchTitle")}
               </h2>
-              <p>
-                <strong>Sunday brunch at The Local House</strong> is more than a meal — it's a Miami Beach
-                ritual. Whether you're celebrating a birthday, catching up with friends, or enjoying a
-                lazy morning after a night on South Beach, our team makes every visit feel special.
-                We serve brunch <strong>daily from 8AM to 4PM</strong>, so you never have to miss out —
-                even on a Tuesday.
-              </p>
-              <p>
-                Our menu goes beyond the classics. From fluffy buttermilk pancakes topped with seasonal
-                berries to our indulgent Breakfast Smash Burger with Wagyu beef and a fried egg, there's
-                something for every craving. Add a craft Bloody Mary, an espresso martini, or a classic
-                mimosa — the perfect way to start your day in Miami Beach.
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: t("brunch.seoP3") }} />
+              <p>{t("brunch.seoP4")}</p>
 
               <h2 className="text-3xl font-display font-semibold text-[#4C5254] !mt-12 !mb-6">
-                Brunch with Ocean Drive Views
+                {t("brunch.oceanDriveViewsTitle")}
               </h2>
-              <p>
-                What sets The Local House apart from every other <strong>brunch spot in Miami Beach</strong>?
-                Location, food, and soul. Sitting at 400 Ocean Drive, you're steps from the sand,
-                surrounded by Art Deco architecture and tropical palms. Our patio offers prime people-watching
-                while you sip your morning coffee or afternoon cocktail.
-              </p>
-              <p>
-                We've been rated <strong>#1 Brunch in South Beach</strong> with a 4.9-star average across
-                over 2,500 reviews. Guests consistently praise our warm service, generous portions, and
-                the unmistakable quality of every plate that leaves our kitchen. Whether you're a first-time
-                visitor or a regular, the Local House team treats you like family.
-              </p>
-              <p>
-                Ready to taste why thousands choose us every week? <strong>Reserve your brunch table
-                on OpenTable</strong> — especially for weekends, when our tables fill up fast. Walk-ins
-                are always welcome, but a reservation guarantees your spot at Miami Beach's best brunch.
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: t("brunch.seoP5") }} />
+              <p dangerouslySetInnerHTML={{ __html: t("brunch.seoP6") }} />
+              <p dangerouslySetInnerHTML={{ __html: t("brunch.seoP7") }} />
             </div>
           </div>
         </div>
@@ -482,46 +440,22 @@ export default function Brunch() {
           <div className="max-w-3xl mx-auto">
             <div className="w-16 h-px bg-[#FF8F75] mx-auto mb-6" />
             <h2 className="text-4xl font-display font-semibold text-[#4C5254] mb-4 text-center">
-              Brunch FAQ
+              {t("brunch.brunchFAQ")}
             </h2>
             <p className="text-lg text-[#666] text-center mb-12">
-              Everything you need to know about brunch at The Local House
+              {t("brunch.faqSubtitle")}
             </p>
 
             <div className="space-y-4">
               {[
-                {
-                  q: "Is Local House the best brunch in Miami Beach?",
-                  a: "Yes — The Local House has been voted #1 Brunch in South Beach and Miami Beach, with a 4.9-star rating from over 2,500 guests. Our famous Lobster Eggs Benedict, craft cocktails, and Ocean Drive patio dining have made us the go-to brunch destination since 2012. We've been featured in Eater Miami, Miami New Times, and recommended by thousands of locals and visitors."
-                },
-                {
-                  q: "What cocktails do you serve at brunch?",
-                  a: "We offer a curated brunch cocktail menu including classic mimosas ($14 or $45 for a bottle of prosecco), our famous homemade Bloody Mary ($16), and the Wake Me Up espresso cocktail ($18). You can also enjoy our full cocktail menu with craft creations and seasonal specials."
-                },
-                {
-                  q: "What time does brunch start at The Local House?",
-                  a: "Brunch is served daily from 8:00 AM to 4:00 PM — seven days a week, including weekdays. Whether you're an early riser or prefer a late morning, we've got you covered. Our kitchen serves the full brunch menu during all hours."
-                },
-                {
-                  q: "Do I need a reservation for weekend brunch?",
-                  a: "We highly recommend making a reservation through OpenTable for weekend brunch (Saturday and Sunday), as tables fill up quickly — especially between 10AM and 1PM. Walk-ins are always welcome, but wait times during peak hours can be 20–40 minutes. Weekday brunch is more relaxed and walk-ins are easily accommodated."
-                },
-                {
-                  q: "Where is The Local House located?",
-                  a: "The Local House is located at 400 Ocean Drive, in the South of Fifth (SoFi) neighborhood of Miami Beach, FL 33139. We're just steps from the beach, South Pointe Park, and Lummus Park. The restaurant is on the ground floor of our boutique hotel, with both indoor dining and a beautiful outdoor patio on Ocean Drive."
-                },
-                {
-                  q: "What are the most popular brunch dishes?",
-                  a: "Our most ordered brunch dishes are the Lobster Eggs Benedict ($33) — butter-poached Maine lobster with perfectly poached eggs and silky hollandaise — followed by the Fluffy Buttermilk Pancakes ($18), the Avocado Toast ($16), and the Breakfast Smash Burger ($22) with Wagyu beef and a fried egg. The Lobster Roll ($38) is also a guest favorite."
-                },
-                {
-                  q: "Is the brunch patio pet-friendly?",
-                  a: "Yes! Our outdoor patio on Ocean Drive is pet-friendly. Bring your furry friend and enjoy brunch al fresco. We provide water bowls for four-legged guests. Please note that pets are only allowed on the outdoor patio, not inside the restaurant."
-                },
-                {
-                  q: "Can I host a private brunch event at The Local House?",
-                  a: "Absolutely! We host private brunch events including birthdays, bridal showers, corporate brunches, and celebrations. We can accommodate groups of up to 40 guests with customized menus and beverage packages. Contact us at (305) 538-5529 or visit our private events page for more information."
-                }
+                { q: t("brunch.faq1Q"), a: t("brunch.faq1A") },
+                { q: t("brunch.faq2Q"), a: t("brunch.faq2A") },
+                { q: t("brunch.faq3Q"), a: t("brunch.faq3A") },
+                { q: t("brunch.faq4Q"), a: t("brunch.faq4A") },
+                { q: t("brunch.faq5Q"), a: t("brunch.faq5A") },
+                { q: t("brunch.faq6Q"), a: t("brunch.faq6A") },
+                { q: t("brunch.faq7Q"), a: t("brunch.faq7A") },
+                { q: t("brunch.faq8Q"), a: t("brunch.faq8A") }
               ].map((faq, index) => (
                 <motion.details
                   key={index}
@@ -558,13 +492,13 @@ export default function Brunch() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#4C5254] mb-6">
-              Join Us for Miami's #1 Brunch
+              {t("brunch.joinUs")}
             </h2>
             <p className="text-xl text-[#666] max-w-2xl mx-auto mb-4">
-              Thousands of happy guests have made us their favorite brunch spot on Ocean Drive.
+              {t("brunch.thousandsHappy")}
             </p>
             <p className="text-lg text-[#999] max-w-xl mx-auto mb-10">
-              Daily 8AM – 4PM · Walk-ins welcome, reservations recommended
+              {t("brunch.walkIns")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -573,13 +507,13 @@ export default function Brunch() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#FF8F75] text-white font-medium tracking-wide hover:bg-[#e67c63] transition-all duration-300 rounded"
               >
-                Reserve on OpenTable
+                {t("brunch.reserveOpenTable")}
               </a>
               <a
                 href="tel:+13055385529"
                 className="px-8 py-4 border-2 border-[#FF8F75] text-[#FF8F75] font-medium tracking-wide hover:bg-[#FF8F75] hover:text-white transition-all duration-300 rounded"
               >
-                Call (305) 538-5529
+                {t("brunch.callUs")}
               </a>
             </div>
           </motion.div>

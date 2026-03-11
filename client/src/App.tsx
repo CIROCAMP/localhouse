@@ -23,6 +23,8 @@ import PrivateEvents from "./pages/PrivateEvents";
 import LocalSpots from "./pages/LocalSpots";
 import LeaveReview from "./pages/LeaveReview";
 import AdminNewsletter from "./pages/AdminNewsletter";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import { AccessibilityToolbar } from "./components/AccessibilityToolbar";
 import { Redirect } from "./components/Redirect";
 
@@ -47,6 +49,8 @@ function Router() {
         <Route path="/local-spots" component={LocalSpots} />
         <Route path="/leave-review" component={LeaveReview} />
         <Route path="/admin/newsletter" component={AdminNewsletter} />
+        <Route path="/privacy-policy" component={PrivacyPolicy} />
+        <Route path="/terms-of-service" component={TermsOfService} />
 
         {/* ============================================ */}
         {/* SEO REDIRECTS - Old URLs from previous site */}
@@ -91,8 +95,8 @@ function Router() {
         <Route path="/offers-gallery/">{() => <Redirect to="/gallery" />}</Route>
         <Route path="/store/cart">{() => <Redirect to="/" />}</Route>
         <Route path="/store/cart/">{() => <Redirect to="/" />}</Route>
-        <Route path="/terms-and-conditions">{() => <Redirect to="/" />}</Route>
-        <Route path="/terms-and-conditions/">{() => <Redirect to="/" />}</Route>
+        <Route path="/terms-and-conditions">{() => <Redirect to="/terms-of-service" />}</Route>
+        <Route path="/terms-and-conditions/">{() => <Redirect to="/terms-of-service" />}</Route>
         <Route path="/the-local-house-team">{() => <Redirect to="/culture" />}</Route>
         <Route path="/the-local-house-team/">{() => <Redirect to="/culture" />}</Route>
         <Route path="/location/hours-location">{() => <Redirect to="/contact" />}</Route>
