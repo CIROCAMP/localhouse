@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 // Declare global tracking functions
@@ -16,6 +17,8 @@ import { toast } from "sonner";
 import { SEOHead, seoConfigs } from "@/components/SEOHead";
 import { SEOSchema } from "@/components/SEOSchema";
 
+const SUPABASE_URL = "https://kzqvdwibtuoronyphiuq.supabase.co";
+
 /*
  * Design: Miami Art Deco Revival
  * Contact page with form, map, and contact info
@@ -23,10 +26,44 @@ import { SEOSchema } from "@/components/SEOSchema";
 
 export default function Contact() {
   const { t } = useTranslation();
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Message sent! We'll get back to you soon.");
+    setSending(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/contact-form`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          first_name: formData.get("first_name"),
+          last_name: formData.get("last_name"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      toast.success("Message sent! We'll get back to you soon.");
+      form.reset();
+    } catch (err) {
+      toast.error(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -196,6 +233,7 @@ export default function Contact() {
                         {t("contact.firstNameLabel")}
                       </label>
                       <Input
+                        name="first_name"
                         type="text"
                         placeholder="John"
                         className="bg-[#FAF7F2] border-[#E5DED5]"
@@ -207,6 +245,7 @@ export default function Contact() {
                         {t("contact.lastNameLabel")}
                       </label>
                       <Input
+                        name="last_name"
                         type="text"
                         placeholder="Doe"
                         className="bg-[#FAF7F2] border-[#E5DED5]"
@@ -220,6 +259,7 @@ export default function Contact() {
                       {t("contact.emailLabel")}
                     </label>
                     <Input
+                      name="email"
                       type="email"
                       placeholder="john@example.com"
                       className="bg-[#FAF7F2] border-[#E5DED5]"
@@ -232,6 +272,7 @@ export default function Contact() {
                       {t("contact.phoneLabel")}
                     </label>
                     <Input
+                      name="phone"
                       type="tel"
                       placeholder="+1 (555) 000-0000"
                       className="bg-[#FAF7F2] border-[#E5DED5]"
@@ -243,6 +284,7 @@ export default function Contact() {
                       {t("contact.subjectLabel")}
                     </label>
                     <Input
+                      name="subject"
                       type="text"
                       placeholder={t("contact.subjectPlaceholder")}
                       className="bg-[#FAF7F2] border-[#E5DED5]"
@@ -255,6 +297,7 @@ export default function Contact() {
                       {t("contact.messageLabel")}
                     </label>
                     <Textarea
+                      name="message"
                       placeholder={t("contact.messagePlaceholder")}
                       rows={5}
                       className="bg-[#FAF7F2] border-[#E5DED5] resize-none"
@@ -264,9 +307,10 @@ export default function Contact() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-[#FF8F75] hover:bg-[#e67c63] text-white py-6"
+                    disabled={sending}
+                    className="w-full bg-[#FF8F75] hover:bg-[#e67c63] text-white py-6 disabled:opacity-50"
                   >
-                    {t("contact.sendButton")}
+                    {sending ? "Sending..." : t("contact.sendButton")}
                   </Button>
                 </form>
               </div>
