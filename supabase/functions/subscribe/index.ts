@@ -86,7 +86,7 @@ Deno.serve(async (req: Request) => {
       .replace(/{{first_name}}/g, first_name || "Guest")
       .replace(/{{unsubscribe_link}}/g, unsubscribeLink);
 
-    await fetch("https://api.resend.com/emails", {
+    const emailRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -99,6 +99,11 @@ Deno.serve(async (req: Request) => {
         html: personalizedHtml,
       }),
     });
+
+    if (!emailRes.ok) {
+      const errBody = await emailRes.text();
+      console.error("Resend welcome email failed:", emailRes.status, errBody);
+    }
 
     return new Response(JSON.stringify({ success: true, message: "Subscribed successfully" }), { headers });
   } catch (err) {
