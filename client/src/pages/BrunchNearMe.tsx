@@ -136,10 +136,10 @@ export default function BrunchNearMe() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a
-              href="https://order.toasttab.com/online/the-local-house"
+              href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => gtag_report_conversion('https://order.toasttab.com/online/the-local-house')}
+              onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')}
               className="px-8 py-4 bg-white text-[#FF8F75] font-bold rounded hover:bg-gray-100 transition-all duration-300 text-lg"
             >
               Reserve Your Brunch Table
@@ -217,10 +217,10 @@ export default function BrunchNearMe() {
 
           <div className="text-center">
             <a
-              href="https://order.toasttab.com/online/the-local-house"
+              href="https://www.opentable.com/the-local-house"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => gtag_report_conversion('https://order.toasttab.com/online/the-local-house')}
+              onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')}
               className="inline-block px-8 py-4 bg-[#FF8F75] text-white font-bold rounded hover:bg-[#e67c63] transition-all duration-300 text-lg"
             >
               Reserve Your Table Now
@@ -238,10 +238,10 @@ export default function BrunchNearMe() {
           The Local House is Miami Beach's #1 rated brunch destination. Open daily 8AM-4PM with famous Lobster Eggs Benedict, craft cocktails, and ocean views.
         </p>
         <a
-          href="https://order.toasttab.com/online/the-local-house"
+          href="https://www.opentable.com/the-local-house"
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => gtag_report_conversion('https://order.toasttab.com/online/the-local-house')}
+          onClick={() => gtag_report_conversion('https://www.opentable.com/the-local-house')}
           className="inline-block px-8 py-4 bg-white text-[#FF8F75] font-bold rounded hover:bg-gray-100 transition-all duration-300 text-lg"
         >
           Book Your Brunch Now
