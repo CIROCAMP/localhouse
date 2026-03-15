@@ -1,8 +1,8 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
-const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY")!;
+const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY") || "";
 const NOTIFY_EMAIL = "info@localhouse.com";
-const FROM_EMAIL = "Local House <noreply@localhouse.com>";
+const FROM_EMAIL = "Local House <newsletter@localhouse.com>";
 
 function escapeHtml(str: string): string {
   return str
@@ -25,6 +25,14 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
+    if (!RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not set");
+      return new Response(
+        JSON.stringify({ error: "Email service not configured" }),
+        { status: 500, headers }
+      );
+    }
+
     const { first_name, last_name, email, phone, subject, message } =
       await req.json();
 

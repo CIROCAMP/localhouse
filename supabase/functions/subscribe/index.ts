@@ -57,11 +57,36 @@ Deno.serve(async (req: Request) => {
 
     const { data: existing } = await supabase
       .from("newsletter_subscribers")
-      .select("id, subscribed")
+      .select("id, subscribed, first_name")
       .eq("email", email.toLowerCase())
       .single();
 
     if (existing && existing.subscribed) {
+      // Still send welcome email so returning subscribers get confirmation
+      const unsubscribeLink = `${SUPABASE_URL}/functions/v1/unsubscribe?email=${encodeURIComponent(email.toLowerCase())}`;
+      const personalizedHtml = WELCOME_HTML
+        .replace(/{{first_name}}/g, existing.first_name || first_name || "Guest")
+        .replace(/{{unsubscribe_link}}/g, unsubscribeLink);
+
+      const emailRes = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${RESEND_API_KEY}`,
+        },
+        body: JSON.stringify({
+          from: FROM_EMAIL,
+          to: [email.toLowerCase()],
+          subject: "Welcome to Local House \u2013 Miami Beach",
+          html: personalizedHtml,
+        }),
+      });
+
+      if (!emailRes.ok) {
+        const errBody = await emailRes.text();
+        console.error("Resend welcome email failed (existing):", emailRes.status, errBody);
+      }
+
       return new Response(JSON.stringify({ message: "Already subscribed" }), { headers });
     }
 
@@ -86,7 +111,7 @@ Deno.serve(async (req: Request) => {
       .replace(/{{first_name}}/g, first_name || "Guest")
       .replace(/{{unsubscribe_link}}/g, unsubscribeLink);
 
-    await fetch("https://api.resend.com/emails", {
+    const emailRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -99,6 +124,11 @@ Deno.serve(async (req: Request) => {
         html: personalizedHtml,
       }),
     });
+
+    if (!emailRes.ok) {
+      const errBody = await emailRes.text();
+      console.error("Resend welcome email failed:", emailRes.status, errBody);
+    }
 
     return new Response(JSON.stringify({ success: true, message: "Subscribed successfully" }), { headers });
   } catch (err) {
